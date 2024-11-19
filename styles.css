@@ -1,0 +1,197 @@
+/* Reset some default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 50px; /* Ensure header doesn't overlap content */
+}
+
+/* Header Styles */
+header {
+  background-color: #005f73; /* Rich teal for a modern feel */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Container for all content (centered layout) */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Facts List */
+#facts {
+  margin: 40px 0;
+}
+
+#facts h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.fact-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.fact-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fact-title {
+  font-size: 1.5rem;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.fact-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .fact-list {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+}
+
+/* Interactive Section (Random Fact) */
+#interactive {
+  margin: 40px 0;
+  text-align: center;
+}
+
+#randomFactBtn {
+  background-color: #0077b6; /* Button color matching the fact title */
+  color: white;
+  font-size: 1rem;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#randomFactBtn:hover {
+  background-color: #005f73;
+}
+
+#randomFactDisplay {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section */
+footer {
+  background-color: #005f73;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Smooth Scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+#randomFactBtn:focus {
+  outline: 3px solid #ffb13b;
+  outline-offset: 2px;
+}
+
+footer a {
+  color: #ffb13b;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
