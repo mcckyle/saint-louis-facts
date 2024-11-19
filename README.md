@@ -1,3 +1,4 @@
+
 # Saint Louis Fun Facts
 
 A simple, interactive website that highlights fun and interesting facts about Saint Louis, Missouri. This project aims to showcase the rich history, vibrant culture, and unique attractions of this iconic Midwestern city. Whether you're a local or a visitor, explore these high-quality facts to learn more about Saint Louis and its place in American history.
@@ -23,3 +24,28 @@ A simple, interactive website that highlights fun and interesting facts about Sa
 ├── styles.css            # CSS file for styling the webpage
 ├── script.js             # JavaScript file that powers dynamic behavior (random fact & search)
 └── README.md             # Project documentation
+```
+
+## Installation
+
+To view the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kmccol1/saint-louis-facts.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd saint-louis-facts
+   ```
+
+3. Open the `index.html` file in your browser.
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository, make your changes, and submit a pull request. We welcome improvements to the project, including new facts, better functionality, or design enhancements.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
