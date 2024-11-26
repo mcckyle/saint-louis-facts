@@ -7,11 +7,11 @@
 
 /* Body styles */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Unified font for consistency */
   background-color: #f7f7f7;
   color: #333;
   line-height: 1.6;
-  padding-top: 50px; /* Ensure header doesn't overlap content */
+  padding-top: 0; /* Removed unnecessary padding */
   background-image: url('https://example.com/saint-louis-texture.jpg'); /* Add Saint Louis themed texture */
   background-size: cover;
   background-position: center;
@@ -24,19 +24,21 @@ header {
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Merriweather', serif; /* Serif font for header */
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Larger size for header */
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller to fit with the design */
   font-weight: 300;
   letter-spacing: 1px;
 }
+
 
 /* Container for all content (centered layout) */
 .container {
