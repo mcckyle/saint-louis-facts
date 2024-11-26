@@ -12,11 +12,14 @@ body {
   color: #333;
   line-height: 1.6;
   padding-top: 50px; /* Ensure header doesn't overlap content */
+  background-image: url('https://example.com/saint-louis-texture.jpg'); /* Add Saint Louis themed texture */
+  background-size: cover;
+  background-position: center;
 }
 
 /* Header Styles */
 header {
-  background-color: #005f73; /* Rich teal for a modern feel */
+  background-color: #b81d1d; /* Cardinals Red */
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -32,6 +35,7 @@ header h1 {
 header p {
   font-size: 1.2rem;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 /* Container for all content (centered layout) */
@@ -51,6 +55,7 @@ header p {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'Lora', serif; /* Softer font for a warm touch */
 }
 
 .intro p {
@@ -83,10 +88,11 @@ header p {
 
 .fact-item {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 12px; /* Softer, rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .fact-item:hover {
@@ -96,7 +102,7 @@ header p {
 
 .fact-title {
   font-size: 1.5rem;
-  color: #0077b6;
+  color: #005f73; /* Arch Steel Gray */
   margin-bottom: 10px;
 }
 
@@ -144,10 +150,12 @@ header p {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 #randomFactBtn:hover {
   background-color: #005f73;
+  transform: translateY(-2px); /* Lifting effect on hover */
 }
 
 #randomFactDisplay {
@@ -164,19 +172,9 @@ header p {
   animation: fadeIn 0.5s ease;
 }
 
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* Footer Section */
 footer {
-  background-color: #005f73;
+  background-color: #b81d1d; /* Cardinals Red */
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -205,4 +203,10 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Add a Saint Louis-inspired pattern or texture for certain sections */
+.intro, .fact-list, #interactive {
+  background: rgba(255, 255, 255, 0.7); /* Slight opacity for a layered effect */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
 }
