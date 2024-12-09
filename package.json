@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://kmccol1.github.io/saint-louis-facts",
   "scripts": {
-    "test", "jest",
+    "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
