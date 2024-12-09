@@ -1,0 +1,46 @@
+/* General styling for the Intro section */
+.intro {
+  background-color: #f4f8fb;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 900px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title styling for the Intro section */
+.intro h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph styling */
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: 'Georgia', serif;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .intro {
+    padding: 2rem 1rem;
+  }
+
+  .intro h2 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+}

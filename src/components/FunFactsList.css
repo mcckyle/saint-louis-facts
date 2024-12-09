@@ -1,0 +1,67 @@
+/* FunFactsList.css */
+
+/* Container for the Fun Facts Section */
+#facts {
+  margin: 40px 0;
+  text-align: center;
+}
+
+#facts h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Merriweather', serif; /* Serif font for headings */
+  font-weight: bold;
+}
+
+/* List styling for the facts */
+.fact-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* Each fact item box styling */
+.fact-list li {
+  background-color: #fff;
+  border-radius: 12px; /* Rounded corners for each fact box */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+}
+
+.fact-list li:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Fact title styling */
+.fact-list h3 {
+  font-size: 1.5rem;
+  color: #b81d1d; /* Cardinals Red */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Fact description styling */
+.fact-list p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .fact-list {
+    grid-template-columns: 1fr; /* Switch to single column layout on small screens */
+  }
+
+  #facts h2 {
+    font-size: 1.8rem; /* Slightly smaller heading on small screens */
+  }
+}

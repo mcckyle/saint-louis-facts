@@ -3,9 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out; /* Smooth transition for all elements */
 }
 
-/* Body styles */
+/* Global Styles */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif; /* Unified font for consistency */
   background-color: #f7f7f7;
@@ -15,6 +16,7 @@ body {
   background-image: url('https://example.com/saint-louis-texture.jpg'); /* Add Saint Louis themed texture */
   background-size: cover;
   background-position: center;
+  transition: background-color 0.3s ease-in-out; /* Smooth background transition */
 }
 
 /* Header Styles */
@@ -25,12 +27,14 @@ header {
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: 'Merriweather', serif; /* Serif font for header */
+  transition: background-color 0.3s ease;
 }
 
 header h1 {
   font-size: 3rem; /* Larger size for header */
   font-weight: bold;
   margin-bottom: 10px;
+  text-transform: uppercase; /* Added uppercase for emphasis */
 }
 
 header p {
@@ -39,12 +43,12 @@ header p {
   letter-spacing: 1px;
 }
 
-
 /* Container for all content (centered layout) */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 0; /* Added padding for spacing */
 }
 
 /* Intro Section */
@@ -58,6 +62,7 @@ header p {
   color: #333;
   margin-bottom: 20px;
   font-family: 'Lora', serif; /* Softer font for a warm touch */
+  text-transform: capitalize; /* Capitalizing for better structure */
 }
 
 .intro p {
@@ -66,6 +71,7 @@ header p {
   margin: 0 auto;
   color: #555;
   line-height: 1.7;
+  padding: 0 1rem; /* Added padding for mobile responsiveness */
 }
 
 /* Facts List */
@@ -151,7 +157,7 @@ header p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
@@ -211,4 +217,16 @@ footer a:hover {
 .intro, .fact-list, #interactive {
   background: rgba(255, 255, 255, 0.7); /* Slight opacity for a layered effect */
   backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border-radius: 10px;
+  padding: 2rem; /* Added padding for better spacing */
+}
+
+/* Keyframe animation for fading in content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

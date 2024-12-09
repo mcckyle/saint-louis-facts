@@ -1,0 +1,42 @@
+/* General styling for the Footer */
+footer {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Container styling for proper alignment */
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Paragraph styling for the copyright text */
+footer p {
+  font-size: 1rem;
+  color: #ecf0f1;
+  margin: 0;
+}
+
+/* Hover effect for copyright text */
+footer p:hover {
+  color: #f39c12;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  footer {
+    padding: 1rem 0;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}

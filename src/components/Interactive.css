@@ -1,0 +1,93 @@
+/* General layout for the Interactive section */
+#interactive {
+  background-color: #f0f4f8;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* Title styling */
+#interactive h2 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for the random fact button */
+#randomFactBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+#randomFactBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+#randomFactBtn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for the displayed random fact */
+#randomFactDisplay {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Title styling for the fact */
+#randomFactDisplay h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* Description styling for the fact */
+#randomFactDisplay p {
+  font-family: 'Georgia', serif;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: left;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #interactive {
+    padding: 1.5rem;
+  }
+
+  #randomFactBtn {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  #randomFactDisplay h3 {
+    font-size: 1.2rem;
+  }
+
+  #randomFactDisplay p {
+    font-size: 1rem;
+  }
+}

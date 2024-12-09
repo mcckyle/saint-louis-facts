@@ -1,0 +1,53 @@
+/* General header styling */
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 5px solid #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the header content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Styling for the main title */
+header h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Styling for the paragraph description */
+header p {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f0f4f8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
