@@ -36,10 +36,12 @@
     "vite": "^6.0.3"
   },
   "jest": {
-    "testEnvironment": "jest-environment-jsdom",
+    "testEnvironment": "jsdom",
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   }
 }
