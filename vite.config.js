@@ -6,4 +6,5 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Ensures that the build files go to the 'dist' directory
   },
+  base: '/saint-louis-facts/',
 });
