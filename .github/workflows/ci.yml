@@ -30,7 +30,14 @@ jobs:
     - name: Build the project
       run: npm run build
 
+    - name: Set Git configuration
+        run: |
+            git config user.name "GitHub Actions"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Deploy to GitHub Pages
-      run: npm run deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            npm run build
+            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh-pages -d dist
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
