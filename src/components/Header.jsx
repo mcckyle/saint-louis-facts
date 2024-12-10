@@ -1,4 +1,5 @@
 // src/components/Header.jsx
+import React, { useState } from 'react';
 import './Header.css'; // Import the CSS file for styling
 
 function Header() {
