@@ -32,8 +32,8 @@ jobs:
 
     - name: Set Git configuration
       run: |
-    git config user.name "GitHub Actions"
-    git config user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name "GitHub Actions"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Deploy to GitHub Pages
       run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh-pages -d dist
