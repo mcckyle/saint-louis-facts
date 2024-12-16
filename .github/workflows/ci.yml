@@ -30,6 +30,9 @@ jobs:
     - name: Build the project
       run: npm run build
 
+    - name: Install gh-pages locally
+      run: npm install gh-pages --save-dev
+
     - name: Set Git configuration
       run: |
         git config user.name "GitHub Actions"
@@ -37,8 +40,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npm install gh-pages --save-dev
         npm run build
-        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh-pages -d dist
+        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npx gh-pages -d dist
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
