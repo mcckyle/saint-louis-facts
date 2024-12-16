@@ -36,21 +36,21 @@ Follow these steps to set up and run the project locally:
    cd saint-louis-facts
    ```
 
-3. Install the dependencies:
+3. Install dependencies:
    ```bash
    npm install
    ```
 
 ## Usage
 
-1. Run the application locally using Vite:
+1. Run the application locally with Vite:
    ```bash
    npm run dev
    ```
 
-2. Open your browser and go to the URL provided by Vite, typically:
+2. Open your browser and visit the URL provided by Vite, typically:
    ```
-   http://localhost:5173
+   http://localhost:5173/saint-louis-facts/
    ```
 
 You will see the landing page with facts about Greater Saint Louis. Click the **Get a Fun Fact** button to display a random fact.
@@ -61,6 +61,9 @@ You will see the landing page with facts about Greater Saint Louis. Click the **
 saint-louis-facts/
 │
 ├── public/
+│   ├── images/
+│   │   └── gateway-arch-background.jpg
+│   │
 │   └── vite.svg
 │
 ├── dist/
@@ -130,3 +133,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **React** for providing a powerful framework for building user interfaces.
 - **CSS** for styling the application.
+- **Vite**: For offering an exceptional build tool that significantly improved the development experience with its fast and efficient workflow.
+- **Saint Louis**: For being an inspiring city full of history and culture, serving as the backdrop for this project and a source of endless inspiration.
