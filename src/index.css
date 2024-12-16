@@ -12,8 +12,7 @@ body {
   background-color: #f7f7f7;
   color: #333;
   line-height: 1.6;
-  padding-top: 0; /* Removed unnecessary padding */
-  background-image: url('https://example.com/saint-louis-texture.jpg'); /* Add Saint Louis themed texture */
+  padding-top: 0;
   background-size: cover;
   background-position: center;
   transition: background-color 0.3s ease-in-out; /* Smooth background transition */

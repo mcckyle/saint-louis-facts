@@ -1,13 +1,15 @@
 // src/components/Header.jsx
 import React, { useState } from 'react';
+//import gatewayArchImage from '../public/images/gateway-arch-background.jpg';
 import './Header.css'; // Import the CSS file for styling
 
-function Header() {
+function Header()
+{
   return (
-    <header>
+    <header className="header">
       <div className="container">
-        <h1>Saint Louis Fun Facts</h1>
-        <p>Discover interesting and fun facts about the Gateway to the West!</p>
+        <h1 className="header-title">Saint Louis Facts</h1>
+        <p className="header-description">Discover interesting and fun facts about the Gateway to the West!</p>
       </div>
     </header>
   );

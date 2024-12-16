@@ -1,53 +1,59 @@
-/* General header styling */
-header {
-  background-color: #007bff;
+/* Header styling */
+.header {
+  background: url('/images/gateway-arch-background.jpg');
+  background-position: center;
+  background-size: cover; /* Ensure the image covers the entire header */
+  height: 400px; /* Set a height for the header */
   color: #fff;
-  padding: 3rem 1.5rem;
   text-align: center;
-  border-bottom: 5px solid #0056b3;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 80px 20px;
 }
 
-/* Container for the header content */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
-/* Styling for the main title */
-header h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+.header-title {
+  font-family: 'Bebas Neue', sans-serif; /* Strong, bold font */
+  font-size: 4rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  margin: 0;
+  padding-bottom: 10px;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+  display: inline-block;
 }
 
-/* Styling for the paragraph description */
-header p {
-  font-family: 'Georgia', serif;
-  font-size: 1.2rem;
+.header-description {
+  font-family: 'Georgia', serif; /* Elegant, classic font */
+  font-size: 1.5rem;
+  font-weight: 300;
   line-height: 1.6;
   color: #f0f4f8;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
+  margin: 20px auto;
+  padding: 0 15px;
+  background: rgba(0, 0, 0, 0.4); /* Matching background for consistency */
+}
+
+/* Optional hover effect for title */
+.header-title:hover {
+  color: #f9a825; /* A bright color to catch attention */
+  cursor: pointer;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  header {
-    padding: 2rem 1rem;
+  .header {
+    padding: 50px 20px;
   }
 
-  header h1 {
-    font-size: 2.5rem;
+  .header-title {
+    font-size: 3rem; /* Slightly smaller title for smaller screens */
   }
 
-  header p {
-    font-size: 1rem;
+  .header-description {
+    font-size: 1.2rem; /* Adjust description font size */
   }
 }

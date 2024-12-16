@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from './components/Header';
+
 import Intro from './components/Intro';
 import FunFactsList from './components/FunFactsList';
 import Interactive from './components/Interactive';
 import Footer from './components/Footer';
-import './index.css'; // Optional: Your existing styles
+import './index.css';
+import './App.css';
+import Header from './components/Header';
 
-function App() {
+function App()
+{
   return (
     <div>
       <Header />

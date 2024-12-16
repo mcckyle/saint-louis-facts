@@ -1,32 +1,39 @@
-# Saint Louis Fun Facts
+![Workflow Status](https://github.com/kmccol1/saint-louis-facts/actions/workflows/ci.yml/badge.svg)
 
-A React web application showcasing fun and high-quality facts about Saint Louis, Missouri. The app highlights the city's rich history, iconic landmarks, and unique attractions, offering users an interactive way to discover more about this vibrant city.
+# Saint Louis Facts
 
-## Features
+🏙️ Discover interesting facts about Saint Louis, Missouri! Built with React for an interactive and engaging experience.
 
-- Display a list of fun facts about Saint Louis.
-- Get a random fun fact on demand.
-- User-friendly, responsive design with an interactive experience.
+## 🌟 Features
 
-## Technologies Used
+- 🏙️ **Discover** a curated list of fascinating facts about Saint Louis.
+- 🎲 **Surprise Yourself** with a random fun fact at the click of a button.
+- 📱 **Responsive Design** for an enjoyable experience on any device.
+- 🖱️ **Interactive and User-Friendly** interface to explore facts with ease.
 
-- **React**: JavaScript library for building user interfaces.
-- **HTML/CSS**: For structuring and styling the application.
-- **JavaScript (ES6+)**: To manage state and interactivity.
-- **React Hooks**: For managing state and side-effects.
+## 🛠️ Technologies Used
 
-## Installation
+- **React**: A robust JavaScript library for building dynamic and interactive user interfaces.
+- **Vite**: A fast and modern build tool optimized for frontend development, ensuring quick setup and blazing-fast hot module replacement (HMR).
+- **HTML/CSS**: For structuring and designing a responsive, user-friendly application.
+- **JavaScript (ES6+)**: Enhancing functionality with modern syntax and state management.
+- **React Hooks**: Simplifying state and side-effect management within functional components.
+- **Deployment**: Hosted via [GitHub Pages](https://pages.github.com/) for easy public access.
+- **Continuous Integration**: Automated testing and builds powered by [GitHub Actions](https://github.com/features/actions).
 
-To get started with the project, follow these steps:
+## 🚀 Installation
 
-1. Clone the repository:
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository**
+   Use the following command to clone the project repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/saint-louis-fun-facts.git
+   git clone https://github.com/your-username/saint-louis-facts.git
    ```
    
 2. Navigate into the project directory:
    ```bash
-   cd saint-louis-fun-facts
+   cd saint-louis-facts
    ```
 
 3. Install the dependencies:
@@ -36,36 +43,73 @@ To get started with the project, follow these steps:
 
 ## Usage
 
-1. Run the application locally:
+1. Run the application locally using Vite:
    ```bash
-   npm start
+   npm run dev
    ```
 
-2. Open your browser and go to:
+2. Open your browser and go to the URL provided by Vite, typically:
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
-You will see the landing page with a list of fun facts about Saint Louis. Click the **Get a Fun Fact** button to display a random fact.
+You will see the landing page with facts about Greater Saint Louis. Click the **Get a Fun Fact** button to display a random fact.
 
 ## Project Structure
 
 ```
-saint-louis-fun-facts/
+saint-louis-facts/
 │
 ├── public/
-│   ├── index.html            # The HTML file
-│   └── ...
+│   └── vite.svg
+│
+├── dist/
+│   ├── assets/
+│   │   ├── index-XXXXXX.js    # Component for GitHub pages deployment.
+│   │   └── index-XXXXXX.css   # Component for GitHub pages deployment.
+│   │
+│   ├── index.html             # Main app component
+│   └── vite.svg               # Entry point for React app
 │
 ├── src/
 │   ├── components/
-│   │   ├── FunFactsList.js   # Component displaying all facts
-│   │   └── Interactive.js    # Component for random fact functionality
-│   ├── App.js                # Main app component
-│   └── index.js              # Entry point for React app
+│   │   ├── Footer.css
+│   │   └── Footer.jsx
+│   │   ├── FunFactsList.css   # Fact component styling.
+│   │   └── FunFactsList.jsx   # Component displaying all facts
+│   │   ├── Header.css
+│   │   └── Header.jsx
+│   │   ├── Interactive.css
+│   │   └── Interactive.jsx
+│   │   ├── Intro.css
+│   │   └── Intro.jsx
+│   │ 
+│   ├── __mocks__/
+│   │   └── styleMock.js
+│   │
+│   ├── __tests__/
+│   │   ├── Footer.test.js
+│   │   ├── Header.test.js
+│   │   ├── Interactive.test.js
+│   │   └── Intro.test.js
+│   │
+│   ├── assets/
+│   │   └── react.svg
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
 │
 ├── package.json              # Project metadata and dependencies
-└── README.md                 # Project documentation
+├── package-lock.json         # Project documentation
+├── .gitignore                # Project configuration
+├── LICENSE                   # Project documentation
+├── babel.config.cjs          # Project configuration
+├── eslint.config.js          # Project configuration
+├── index.html                # Project documentation
+├── README.md                 # Project documentation
+└── vite.config.js            # Project configuration
 ```
 
 ## Contributing

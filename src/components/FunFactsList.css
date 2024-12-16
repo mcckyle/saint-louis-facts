@@ -65,3 +65,21 @@
     font-size: 1.8rem; /* Slightly smaller heading on small screens */
   }
 }
+
+/* Style for the source section */
+.source {
+  margin-top: 10px;
+}
+
+/* Style for the source links */
+.source-link {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
