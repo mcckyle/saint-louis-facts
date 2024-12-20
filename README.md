@@ -7,7 +7,7 @@
 ## 🌟 Features
 
 - 🏙️ **Discover** a curated list of fascinating facts about Saint Louis.
-- 🎲 **Surprise Yourself** with a random fun fact at the click of a button.
+- 🎲 **Surprise Yourself** with a random fact at the click of a button.
 - 📱 **Responsive Design** for an enjoyable experience on any device.
 - 🖱️ **Interactive and User-Friendly** interface to explore facts with ease.
 
@@ -66,6 +66,13 @@ saint-louis-facts/
 │   │
 │   └── vite.svg
 │
+├── .github/
+│   ├── workflows/
+│       └── ci.yml             # Github actions config.
+│
+├── node_modules/
+│   └── /...                   # Node JS dependencies.
+│
 ├── dist/
 │   ├── assets/
 │   │   ├── index-XXXXXX.js    # Component for GitHub pages deployment.
@@ -89,6 +96,9 @@ saint-louis-facts/
 │   │ 
 │   ├── __mocks__/
 │   │   └── styleMock.js
+│   │
+│   ├── data/
+│   │   └── facts.js
 │   │
 │   ├── __tests__/
 │   │   ├── Footer.test.js

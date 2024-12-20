@@ -1,15 +1,16 @@
 import React from 'react';
 import './Intro.css'; // Import the CSS file for styling
 
-function Intro() {
+function Intro()
+{
   return (
-    <section className="intro">
-      <h2>Why Saint Louis?</h2>
+    <section className="intro" aria-label="Introduction">
+    <h2>Discover the Heart of Saint Louis</h2>
       <p>
-        Saint Louis, Missouri, is a city rich in history, culture, and unique attractions.
-        From the iconic Gateway Arch to its vibrant food scene, there's always something
-        interesting happening in this Midwestern gem. Explore these high-quality facts
-        to learn more about this amazing city.
+        Nestled along the mighty Mississippi, Saint Louis is a city that thrives on its vibrant spirit, storied past, and welcoming community.
+        From the iconic Gateway Arch standing tall as a beacon of progress to its soulful blues, barbecue, and neighborhoods brimming with charm,
+        this city invites you to celebrate its unique blend of history and modern energy. Dive into these carefully curated facts and uncover
+        the essence of the Gateway to the West!
       </p>
     </section>
   );

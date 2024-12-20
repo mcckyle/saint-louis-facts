@@ -1,12 +1,15 @@
 /* Header styling */
 .header {
-  background: url('/images/gateway-arch-background.jpg');
-  background-position: center;
-  background-size: cover; /* Ensure the image covers the entire header */
-  height: 400px; /* Set a height for the header */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/images/gateway-arch-background.jpg') center / cover no-repeat;
+  height: 400px;
   color: #fff;
   text-align: center;
-  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
 }
 
 .container {
@@ -15,45 +18,69 @@
 }
 
 .header-title {
-  font-family: 'Bebas Neue', sans-serif; /* Strong, bold font */
-  font-size: 4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font scaling */
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 0;
-  padding-bottom: 10px;
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6); /* Improved contrast for readability */
+  border-radius: 5px; /* Slight rounding for modern touch */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
   display: inline-block;
+  transition: color 0.3s ease, background 0.3s ease; /* Smooth transitions */
 }
 
 .header-description {
-  font-family: 'Georgia', serif; /* Elegant, classic font */
-  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.25rem;
   font-weight: 300;
-  line-height: 1.6;
-  color: #f0f4f8;
-  max-width: 800px;
+  line-height: 1.8;
+  color: #e0e7ec; /* Softer text color for elegance */
+  max-width: 700px;
   margin: 20px auto;
-  padding: 0 15px;
-  background: rgba(0, 0, 0, 0.4); /* Matching background for consistency */
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-/* Optional hover effect for title */
+/* Hover effect for title */
 .header-title:hover {
-  color: #f9a825; /* A bright color to catch attention */
+  color: #ffd700; /* Gold */
+  background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
   cursor: pointer;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .header {
-    padding: 50px 20px;
+    padding: 40px 15px;
+    height: 300px;
   }
 
   .header-title {
-    font-size: 3rem; /* Slightly smaller title for smaller screens */
+    font-size: clamp(2rem, 4vw, 3rem);
+    padding: 8px 15px;
   }
 
   .header-description {
-    font-size: 1.2rem; /* Adjust description font size */
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 10px 15px;
+  }
+}
+
+/* Accessibility for high-contrast mode */
+@media (prefers-contrast: high) {
+  .header {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .header-title,
+  .header-description {
+    background: none;
+    box-shadow: none;
   }
 }

@@ -2,30 +2,108 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Interactive from '../components/Interactive';
 
-test('renders button and displays fact on click', () => {
-  render(<Interactive />);
+// Mock data for testing
+jest.mock('../data/facts', () => ({
+  facts: [
+    { title: 'Fact 1', description: 'Description 1' },
+    { title: 'Fact 2', description: 'Description 2' },
+    { title: 'Fact 3', description: 'Description 3' },
+  ],
+}));
 
-  const button = screen.getByText(/Get a Fun Fact/i);
-  fireEvent.click(button);
+describe('Interactive Component', () => {
+  beforeEach(() => {
+    render(<Interactive />);
+  });
 
-  // Use getByRole to select the specific heading
-  const factTitle = screen.getByRole('heading', { level: 3 });
+  // test('renders the interactive section with a button', () => {
+  //   const section = screen.getByRole('region', { name: /interactive/i });
+  //   expect(section).toBeInTheDocument();
+  //
+  //   const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+  //   expect(button).toBeInTheDocument();
+  // });
 
-  // Ensure the fact title (h3) appears after the button is clicked
-  expect(factTitle).toBeInTheDocument();
-});
+  test('does not display a fact initially', () => {
+    const factTitle = screen.queryByRole('heading', { level: 3 });
+    expect(factTitle).toBeNull(); // Fact should not be displayed before button click
+  });
 
-test('button text changes after clicking to display fact', () => {
-  render(<Interactive />);
-  const button = screen.getByText(/Get a Fun Fact/i);
-  fireEvent.click(button);
+  test('displays a random fact when button is clicked', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    fireEvent.click(button);
 
-  // Assuming the button text changes to something like "Get a Fun Fact"
-  expect(button).toHaveTextContent(/Get a Fun Fact/i);
-});
+    const factTitle = screen.getByRole('heading', { level: 3 });
+    expect(factTitle).toBeInTheDocument();
 
-test('does not display fact before button click', () => {
-  render(<Interactive />);
-  const factTitle = screen.queryByRole('heading', { level: 3 });
-  expect(factTitle).toBeNull(); // Ensures no fact is shown initially
+    const factDescription = screen.getByText(/Description [1-3]/);
+    expect(factDescription).toBeInTheDocument();
+  });
+
+  // test('renders a different fact on subsequent button clicks', () => {
+  //   const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+  //
+  //   // Click multiple times and check if the fact changes
+  //   fireEvent.click(button);
+  //   const firstFactTitle = screen.getByRole('heading', { level: 3 }).textContent;
+  //
+  //   fireEvent.click(button);
+  //   const secondFactTitle = screen.getByRole('heading', { level: 3 }).textContent;
+  //
+  //   // Ensure at least two different facts were shown (not guaranteed unless the data is large)
+  //   expect(firstFactTitle).not.toEqual(secondFactTitle);
+  // });
+
+  // test('ensures the fact display is accessible with aria-live', () => {
+  //   const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+  //   fireEvent.click(button);
+  //
+  //   const factDisplay = screen.getByRole('region', { name: /interactive/i });
+  //   expect(factDisplay).toHaveAttribute('aria-live', 'polite');
+  // });
+
+  test('fact title has appropriate styling class', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    fireEvent.click(button);
+
+    const factTitle = screen.getByRole('heading', { level: 3 });
+    expect(factTitle).toHaveClass('fact-title');
+  });
+
+  test('fact description has appropriate styling class', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    fireEvent.click(button);
+
+    const factDescription = screen.getByText(/Description [1-3]/);
+    expect(factDescription).toHaveClass('fact-description');
+  });
+
+  test('ensures button is focusable and interactive', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    button.focus();
+    expect(button).toHaveFocus();
+
+    fireEvent.click(button);
+    expect(button).toHaveTextContent(/Show Me a Fact/i); // Verify text remains consistent
+  });
+
+  test('handles clicking the button multiple times without errors', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    for (let i = 0; i < 5; i++) {
+      fireEvent.click(button);
+      const factTitle = screen.getByRole('heading', { level: 3 });
+      expect(factTitle).toBeInTheDocument();
+    }
+  });
+
+  test('renders appropriate fact content after button click', () => {
+    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    fireEvent.click(button);
+
+    const factTitle = screen.getByRole('heading', { level: 3 });
+    const factDescription = screen.getByText(/Description [1-3]/);
+
+    expect(factTitle).toBeTruthy();
+    expect(factDescription).toBeTruthy();
+  });
 });

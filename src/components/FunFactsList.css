@@ -1,85 +1,103 @@
-/* FunFactsList.css */
-
-/* Container for the Fun Facts Section */
-#facts {
-  margin: 40px 0;
+/* Section Styling */
+.fun-facts {
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1000px;
   text-align: center;
 }
 
-#facts h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-family: 'Merriweather', serif; /* Serif font for headings */
-  font-weight: bold;
+.fun-facts h2 {
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 2rem;
 }
 
-/* List styling for the facts */
+/* Fact List Styling */
 .fact-list {
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 20px;
   padding: 0;
+  margin: 0;
 }
 
-/* Each fact item box styling */
-.fact-list li {
-  background-color: #fff;
-  border-radius: 12px; /* Rounded corners for each fact box */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.fact-item {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Fact Title Styling */
+.fact-title {
+  font-size: 1.8rem;
   font-family: 'Roboto', sans-serif;
-  color: #555;
+  color: #0d47a1;
+  margin-bottom: 0.5rem;
 }
 
-.fact-list li:hover {
-  transform: translateY(-5px); /* Slight lift effect */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Fact title styling */
-.fact-list h3 {
-  font-size: 1.5rem;
-  color: #b81d1d; /* Cardinals Red */
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-/* Fact description styling */
-.fact-list p {
-  font-size: 1rem;
-  color: #555;
+/* Fact Description Styling */
+.fact-description {
+  font-size: 1.2rem;
   line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  color: #37474f;
+  margin-bottom: 1rem;
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-  .fact-list {
-    grid-template-columns: 1fr; /* Switch to single column layout on small screens */
-  }
-
-  #facts h2 {
-    font-size: 1.8rem; /* Slightly smaller heading on small screens */
-  }
+/* Fact Sources Styling */
+.fact-sources {
+  font-size: 0.9rem;
+  color: #546e7a;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Style for the source section */
-.source {
-  margin-top: 10px;
+.fact-sources span {
+  font-weight: 600;
 }
 
-/* Style for the source links */
 .source-link {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 14px;
-  color: #007bff;
+  color: #1e88e5;
   text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .source-link:hover {
+  color: #0d47a1;
   text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fun-facts {
+    padding: 2rem 1.5rem;
+  }
+
+  .fun-facts h2 {
+    font-size: 2rem;
+  }
+
+  .fact-title {
+    font-size: 1.5rem;
+  }
+
+  .fact-description {
+    font-size: 1rem;
+  }
+
+  .fact-item {
+    padding: 1.2rem;
+  }
 }

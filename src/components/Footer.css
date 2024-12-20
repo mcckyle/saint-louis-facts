@@ -1,42 +1,76 @@
-/* General styling for the Footer */
-footer {
-  background-color: #2c3e50;
-  color: #ffffff;
-  padding: 1.5rem 0;
+/* General footer styling */
+.footer {
+  background: #f1c40f; /* Warm gold */
+  color: #2c3e50; /* Dark charcoal for text */
+  padding: 2rem 1rem;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   position: relative;
-  bottom: 0;
-  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Container styling for proper alignment */
-footer .container {
-  max-width: 1200px;
+/* Container for footer content */
+.footer-container {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Paragraph styling for the copyright text */
-footer p {
-  font-size: 1rem;
-  color: #ecf0f1;
-  margin: 0;
+/* Footer text styling */
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2c3e50; /* Ensure readability with dark text */
 }
 
-/* Hover effect for copyright text */
-footer p:hover {
-  color: #f39c12;
-  cursor: pointer;
+/* Footer links styling */
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Responsive design */
+.footer-link {
+  color: #2c3e50; /* Dark color for links */
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+/* Hover effects for footer links */
+.footer-link:hover,
+.footer-link:focus {
+  background-color: #f39c12; /* Lighter golden yellow */
+  color: white; /* White text on hover for contrast */
+  border-color: #f1c40f; /* Border color to match background */
+  transform: scale(1.05);
+}
+
+/* Back to top link styling */
+.footer-link[aria-label="Back to top"] {
+  font-weight: bold;
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
-  footer {
-    padding: 1rem 0;
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  footer p {
-    font-size: 0.9rem;
+  .footer-links {
+    gap: 0.8rem;
+  }
+
+  .footer-link {
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 }

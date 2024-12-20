@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro Component renders the intro section with correct structure 1`] = `
+<div>
+  <section
+    aria-label="Introduction"
+    class="intro"
+  >
+    <h2>
+      Discover the Heart of Saint Louis
+    </h2>
+    <p>
+      Nestled along the mighty Mississippi, Saint Louis is a city that thrives on its vibrant spirit, storied past, and welcoming community. From the iconic Gateway Arch standing tall as a beacon of progress to its soulful blues, barbecue, and neighborhoods brimming with charm, this city invites you to celebrate its unique blend of history and modern energy. Dive into these carefully curated facts and uncover the essence of the Gateway to the West!
+    </p>
+  </section>
+</div>
+`;
