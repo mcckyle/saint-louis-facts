@@ -1,9 +1,8 @@
-/* Reset some default styles for consistency */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  transition: all 0.3s ease-in-out; /* Smooth transition for all elements */
+  transition: all 0.3s ease;
 }
 
 /* Global Styles */

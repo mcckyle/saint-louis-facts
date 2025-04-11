@@ -157,5 +157,12 @@ export const facts = [
       { name: "Saint Louis Symphony Orchestra", url: "https://www.slso.org/" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/St._Louis_Symphony_Orchestra" }
     ]
+  },
+  {
+    title: "Saint Louis Etymology",
+    description: "Saint Louis city is named for Louis IX of France, and construction began in 1765.",
+    sources: [
+      { name: "Saint Louis City website", url: "https://www.stlouis-mo.gov/visit-play/stlouis-history.cfm" }
+    ]
   }
 ];
