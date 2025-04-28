@@ -1,3 +1,8 @@
+//Filename: Intro.test.js
+//Author: Kyle McColgan
+//Date: 28 April 2025
+//Description: Contains the Jest unit tests for the facts Intro section.
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Intro from '../components/Intro';
@@ -14,11 +19,11 @@ describe('Intro Component', () => {
 
   test('renders the correct heading', () => {
     const heading = screen.getByRole('heading', { level: 2 });
-    expect(heading).toHaveTextContent(/Discover the Heart of Saint Louis/i);
+    expect(heading).toHaveTextContent(/Welcome to the Heart of Saint Louis/i);
   });
 
   test('renders a paragraph with the correct description', () => {
-    const paragraph = screen.getByText(/Nestled along the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Along the banks of the mighty Mississippi/i);
     expect(paragraph).toBeInTheDocument();
   });
 
@@ -49,7 +54,7 @@ describe('Intro Component', () => {
   });
 
   test('the paragraph text is visible and not empty', () => {
-    const paragraph = screen.getByText(/Nestled along the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Along the banks of the mighty Mississippi/i);
     expect(paragraph).toBeVisible();
     expect(paragraph).not.toBeEmptyDOMElement();
   });

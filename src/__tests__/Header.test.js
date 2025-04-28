@@ -1,4 +1,8 @@
-// src/__tests__/Header.test.js
+//Filename: Header.test.js
+//Author: Kyle McColgan
+//Date: 28 April 2025
+//Description: Contains the Jest unit tests for the facts Header section.
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Header from '../components/Header';
@@ -21,7 +25,7 @@ describe('Header Component', () => {
   // Test 3: Check if the description renders
   test('renders the header description', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Discover interesting facts about the Gateway to the West!/i);
+    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
     expect(descriptionElement).toBeInTheDocument();
   });
 
@@ -35,8 +39,8 @@ describe('Header Component', () => {
   // Test 5: Check if the description has the correct class
   test('description has the correct class', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Discover interesting facts about the Gateway to the West!/i);
-    expect(descriptionElement).toHaveClass('header-description');
+    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
+    expect(descriptionElement).toHaveClass('header-subtitle');
   });
 
   // Test 6: Check if the container div exists
@@ -70,7 +74,7 @@ describe('Header Component', () => {
   // Test 10: Ensure the description has correct text content
   test('description has correct text content', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Discover interesting facts about the Gateway to the West!/i);
-    expect(descriptionElement.textContent).toBe('Discover interesting facts about the Gateway to the West!');
+    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
+    expect(descriptionElement.textContent).toBe('Explore fascinating facts about the Gateway to the West.');
   });
 });

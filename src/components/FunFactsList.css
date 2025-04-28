@@ -1,12 +1,26 @@
-/* Section Styling */
+/* Fun Facts Section Styling */
 .fun-facts {
   background: linear-gradient(135deg, #ffffff, #e3f2fd);
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  max-width: 1000px;
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin: 3rem auto;
+  max-width: 1100px;
   text-align: center;
+}
+
+.facts-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Heading Styling */
+.fun-facts-heading {
+  font-size: 2.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #0d47a1;
+  margin-bottom: 2.5rem;
 }
 
 .fun-facts h2 {
@@ -24,41 +38,42 @@
   margin: 0;
 }
 
+/* Individual Fact Item */
 .fact-item {
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Fact Title Styling */
+/* Fact Title */
 .fact-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-family: 'Roboto', sans-serif;
-  color: #0d47a1;
-  margin-bottom: 0.5rem;
+  color: #1a237e;
+  margin-bottom: 1rem;
 }
 
 /* Fact Description Styling */
 .fact-description {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8;
   font-family: 'Open Sans', sans-serif;
   color: #37474f;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 /* Fact Sources Styling */
 .fact-sources {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #546e7a;
   font-family: 'Roboto', sans-serif;
 }
@@ -70,8 +85,8 @@
 .source-link {
   color: #1e88e5;
   text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
+  margin: 0 0.4rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .source-link:hover {
@@ -82,22 +97,22 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .fun-facts {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
-  .fun-facts h2 {
-    font-size: 2rem;
+  .fun-facts-heading {
+    font-size: 2.25rem;
   }
 
   .fact-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .fact-description {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .fact-item {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
 }

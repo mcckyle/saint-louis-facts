@@ -1,11 +1,10 @@
 /* General footer styling */
 .footer {
-  background: #f1c40f; /* Warm gold */
-  color: #2c3e50; /* Dark charcoal for text */
+  background-color: #f1c40f; /* Warm gold */
+  color: #2c3e50; /* Dark text for contrast */
   padding: 2rem 1rem;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  position: relative;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -16,44 +15,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Footer text */
+.footer-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Footer links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
 }
 
-/* Footer text styling */
-.footer-text {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2c3e50; /* Ensure readability with dark text */
-}
-
-/* Footer links styling */
-.footer-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .footer-link {
-  color: #2c3e50; /* Dark color for links */
+  color: #2c3e50;
   font-size: 1.1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border: 1px solid transparent;
   border-radius: 4px;
-  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
 }
 
 /* Hover effects for footer links */
 .footer-link:hover,
 .footer-link:focus {
-  background-color: #f39c12; /* Lighter golden yellow */
-  color: white; /* White text on hover for contrast */
-  border-color: #f1c40f; /* Border color to match background */
+  background-color: #f39c12; /* Slightly deeper gold on hover */
+  color: #ffffff;
+  border-color: #f1c40f;
   transform: scale(1.05);
 }
 
-/* Back to top link styling */
+/* Special styling for 'Back to Top' */
 .footer-link[aria-label="Back to top"] {
   font-weight: bold;
 }
@@ -61,8 +59,7 @@
 /* Responsive styling */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
+    padding: 1rem;
   }
 
   .footer-links {
@@ -70,7 +67,7 @@
   }
 
   .footer-link {
-    padding: 0.5rem;
     font-size: 1rem;
+    padding: 0.4rem 0.8rem;
   }
 }

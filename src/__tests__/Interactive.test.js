@@ -1,3 +1,8 @@
+//Filename: Interactive.test.js
+//Author: Kyle McColgan
+//Date: 28 April 2025
+//Description: Contains the Jest unit tests for the facts Interactive section.
+
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Interactive from '../components/Interactive';
@@ -30,7 +35,7 @@ describe('Interactive Component', () => {
   });
 
   test('displays a random fact when button is clicked', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     fireEvent.click(button);
 
     const factTitle = screen.getByRole('heading', { level: 3 });
@@ -63,7 +68,7 @@ describe('Interactive Component', () => {
   // });
 
   test('fact title has appropriate styling class', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     fireEvent.click(button);
 
     const factTitle = screen.getByRole('heading', { level: 3 });
@@ -71,7 +76,7 @@ describe('Interactive Component', () => {
   });
 
   test('fact description has appropriate styling class', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     fireEvent.click(button);
 
     const factDescription = screen.getByText(/Description [1-3]/);
@@ -79,7 +84,7 @@ describe('Interactive Component', () => {
   });
 
   test('ensures button is focusable and interactive', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     button.focus();
     expect(button).toHaveFocus();
 
@@ -88,7 +93,7 @@ describe('Interactive Component', () => {
   });
 
   test('handles clicking the button multiple times without errors', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     for (let i = 0; i < 5; i++) {
       fireEvent.click(button);
       const factTitle = screen.getByRole('heading', { level: 3 });
@@ -97,7 +102,7 @@ describe('Interactive Component', () => {
   });
 
   test('renders appropriate fact content after button click', () => {
-    const button = screen.getByRole('button', { name: /Generate a random fact about Saint Louis/i });
+    const button = screen.getByRole('button', { name: /Generate a random Saint Louis fact/i });
     fireEvent.click(button);
 
     const factTitle = screen.getByRole('heading', { level: 3 });

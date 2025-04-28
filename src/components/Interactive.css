@@ -1,6 +1,6 @@
 /* General styling for the interactive section */
 .interactive {
-  background-color: #eaf6f9;
+  background: linear-gradient(135deg, #eaf6f9, #ffffff);
   padding: 3rem 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -10,17 +10,18 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* Title styling */
+/* Section Title */
 .interactive-title {
   font-size: 2.5rem;
   color: #2c3e50;
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
-/* Button styling */
+/* Button */
 .interactive-button {
   background-color: #3498db;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.2rem;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -36,6 +37,7 @@
 
 .interactive-button:focus {
   outline: 3px solid #1d6fa5;
+  outline-offset: 4px;
 }
 
 /* Fact display styling */
@@ -49,15 +51,19 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Fact Title */
 .fact-title {
   font-size: 1.8rem;
   color: #2c3e50;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
+/* Fact Description */
 .fact-description {
   font-size: 1.2rem;
   color: #34495e;
+  line-height: 1.6;
 }
 
 /* Animation for the fact display */

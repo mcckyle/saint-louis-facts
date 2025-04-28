@@ -1,3 +1,8 @@
+//Filename: Footer.test.js
+//Author: Kyle McColgan
+//Date: 28 April 2025
+//Description: Contains the Jest unit tests for the facts Footer section.
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Footer from '../components/Footer';
@@ -6,7 +11,7 @@ describe('Footer Component', () => {
   test('renders the footer with the correct text', () => {
     render(<Footer />);
     expect(
-      screen.getByText(/This project is inspired by the vibrant culture and history of Saint Louis./i)
+      screen.getByText(/This project draws inspiration from the vibrant culture and rich history of Saint Louis./i)
     ).toBeInTheDocument();
   });
 
@@ -48,7 +53,7 @@ describe('Footer Component', () => {
 
   test('renders the container div with appropriate class name', () => {
     render(<Footer />);
-    const container = screen.getByText(/vibrant culture and history/i).closest('.footer-container');
+    const container = screen.getByText(/vibrant culture and rich history/i).closest('.footer-container');
     expect(container).toBeInTheDocument();
   });
 
@@ -74,7 +79,7 @@ describe('Footer Component', () => {
 
   test('displays the footer text with the correct class', () => {
     render(<Footer />);
-    const footerText = screen.getByText(/vibrant culture and history/i);
+    const footerText = screen.getByText(/vibrant culture and rich history/i);
     expect(footerText).toHaveClass('footer-text');
   });
 });

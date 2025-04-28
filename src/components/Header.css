@@ -1,85 +1,88 @@
 /* Header styling */
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/images/gateway-arch-background.jpg') center / cover no-repeat;
-  height: 400px;
-  color: #fff;
-  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+  url('/images/gateway-arch-background.jpg') center / cover no-repeat;
+  height: 450px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 60px 20px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
-.container {
+/* Container within header */
+.header-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Main title */
 .header-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font scaling */
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   margin: 0;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.6); /* Improved contrast for readability */
-  border-radius: 5px; /* Slight rounding for modern touch */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   display: inline-block;
-  transition: color 0.3s ease, background 0.3s ease; /* Smooth transitions */
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.header-description {
-  font-family: 'Georgia', serif;
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #e0e7ec; /* Softer text color for elegance */
+/* Subtitle */
+.header-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #e3f2fd;
   max-width: 700px;
-  margin: 20px auto;
-  padding: 15px 20px;
+  margin: 20px auto 0;
+  padding: 12px 20px;
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Hover effect for title */
+/* Hover interaction */
 .header-title:hover {
-  color: #ffd700; /* Gold */
-  background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  color: #ffd700;
   cursor: pointer;
 }
 
-/* Mobile responsiveness */
+/* Responsive design */
 @media (max-width: 768px) {
   .header {
+    height: 320px;
     padding: 40px 15px;
-    height: 300px;
   }
 
   .header-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    padding: 8px 15px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    padding: 10px 16px;
   }
 
-  .header-description {
+  .header-subtitle {
     font-size: 1rem;
-    line-height: 1.5;
     padding: 10px 15px;
   }
 }
 
-/* Accessibility for high-contrast mode */
+/* High contrast mode accessibility */
 @media (prefers-contrast: high) {
   .header {
-    background: rgba(0, 0, 0, 0.9);
+    background: #000;
   }
 
   .header-title,
-  .header-description {
+  .header-subtitle {
     background: none;
     box-shadow: none;
   }
