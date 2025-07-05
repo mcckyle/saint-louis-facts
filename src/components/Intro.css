@@ -1,57 +1,78 @@
+/* Filename: Intro.css */
+
 /* General styling for the Intro section */
-.intro {
-  background: linear-gradient(135deg, #e8f0fe, #c5dfff);
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  margin: 3rem auto;
-  max-width: 960px;
-  font-family: 'Roboto', sans-serif;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.intro
+{
+    background: linear-gradient(135deg, #f5f0e6, #fdf6e3);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    margin: 4rem auto;
+    max-width: 1000px;
+    font-family: 'Playfair Display', 'Garamond', serif;
+    border: 2.5px solid #d4af37; /* Gold border. */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: rgba(253, 246, 227, 0.95);
 }
 
-.intro:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+.intro:hover
+{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
 }
 
-/* Title styling for the Intro section */
-.intro h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #0d47a1;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1.5px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
+/* Title styling for the Intro section. */
+.intro h2
+{
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #7c0a02; /* Color: Burgundy. */
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', 'Garamond', serif;
+    letter-spacing: 2.5px;
+    text-shadow: 1px 1px 0 #d4af37; /* Gold shadow. */
+    border-bottom: 3px double #d4af37;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
-/* Wrapper for intro paragraph */
-.intro-text {
-  max-width: 720px;
-  margin: 0 auto;
+/* Wrapper for Intro section paragraph. */
+.intro-text
+{
+    max-width: 820px;
+    margin: 0 auto;
 }
 
-/* Paragraph styling */
-.intro p {
-  font-size: 1.25rem;
-  line-height: 1.85;
-  color: #455a64;
-  font-family: 'Open Sans', sans-serif;
+/* Paragraph styling. */
+.intro p
+{
+    font-size: 1.35rem;
+    line-height: 1.9;
+    color: #3a3a3a;
+    font-family: 'Garamond', serif;
+    padding: 0 1.25rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 1.2rem;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
 }
 
-/* Mobile responsiveness */
+/* Responsiveness. */
 @media (max-width: 768px) {
   .intro {
     padding: 2.5rem 1.5rem;
   }
 
   .intro h2 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+    letter-spacing: 1.8px;
   }
 
   .intro p {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    padding: 0 1rem;
   }
 }

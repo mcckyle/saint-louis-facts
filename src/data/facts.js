@@ -17,7 +17,7 @@ export const facts = [
   },
   {
     title: "Saint Louis Zoo",
-    description: "The Saint Louis Zoo, one of the oldest zoos in the country, is also one of the few to remain free of charge for visitors.",
+    description: "The Saint Louis Zoo, built for the 1904 World's Fair, is one of the oldest zoos in the country and is also one of the few zoos in the country to offer free admission.",
     sources: [
       { name: "Saint Louis Zoo", url: "https://www.stlzoo.org/" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/Saint_Louis_Zoo" }
@@ -40,7 +40,7 @@ export const facts = [
   },
   {
     title: "Saint Louis Science Center",
-    description: "A premier science museum with interactive exhibits, IMAX theaters, and a planetarium located in Forest Park.",
+    description: "The Saint Louis Science Center was founded in 1963 and includes a science museum and planetarium. It is one of two science centers in the United States which offers free general admission.",
     sources: [
       { name: "Saint Louis Science Center", url: "https://www.slsc.org/" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/Saint_Louis_Science_Center" }
@@ -63,10 +63,11 @@ export const facts = [
     ]
   },
   {
-    title: "1904 World's Fair",
-    description: "Saint Louis hosted the 1904 World's Fair, introducing the world to innovations like the ice cream cone and Dr. Pepper.",
+    title: "1904 World's Fair and Olympics",
+    description: "In 1904, The City of Saint Louis hosted a world's fair at Forest Park called the Louisana Purchase Exposition, as well as the Summer Olympics, introducing the world to innovations like the ice cream cone and Dr. Pepper and becoming the first non-European city to host the games.",
     sources: [
       { name: "Missouri History Museum", url: "https://mohistory.org/" },
+      { name: "Olympics - Web Archive", url: "https://web.archive.org/web/20080815120301/http://www.olympic.org/uk/games/past/index_uk.asp?OLGT=1&OLGY=1904" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/Louisiana_Purchase_Exposition" }
     ]
   },

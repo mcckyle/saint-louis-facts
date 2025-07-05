@@ -1,31 +1,92 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
+/*Filename: index.css */
+
+/* Reset and base transition. */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
 }
 
-/* Global Styles */
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Unified font for consistency */
-  background-color: #f7f7f7;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 0;
-  background-size: cover;
-  background-position: center;
-  transition: background-color 0.3s ease-in-out; /* Smooth background transition */
-}
-
+/* Global styles. */
 html
 {
   scroll-behavior: smooth;
 }
 
-/* Container for all content (centered layout) */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0; /* Added padding for spacing */
+body
+{
+    font-family: 'Playfair Display', 'Garamond', serif; /* Unified font for consistency */
+    background: linear-gradient(to bottom right, #fdf6e3, #f8ecd7);
+    color: #2c2c2c;
+    line-height: 1.7;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+/* Container. */
+.container
+{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0; /* Added padding for spacing. */
+}
+
+/* Global heading styles. */
+h1, h2, h3, h4
+{
+    font-family: 'Playfair Display', 'Garamond', serif;
+    color: #2a2a72;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+h1
+{
+    font-size: 3rem;
+}
+
+h1
+{
+    font-size: 2.25rem;
+}
+
+/* Paragraph styles. */
+p
+{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #3a2f2f;
+    margin-bottom: 1.5rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Utilities. */
+.fade-in
+{
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn
+{
+    to {
+      opacity: 1;
+    }
 }

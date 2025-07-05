@@ -1,81 +1,102 @@
-/* Header styling */
-.header {
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-  url('/images/gateway-arch-background.jpg') center / cover no-repeat;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+/* Filename: Header.css */
+
+/* Header styling. */
+.header
+{
+    background: linear-gradient(rgba(24, 20, 18, 0.75), rgba(24, 20, 18, 0.75)),
+    url('/images/gateway-arch-background.jpg') center / cover no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 90px 20px;
+    color: #fdf6e3;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Playfair Display', 'Garamond', serif;
+    border-bottom: 6px solid #bfa437;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
 }
 
-/* Container within header */
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Container within header styling. */
+.header-container
+{
+    max-width: 1180px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    padding: 2rem 3rem;
 }
 
-/* Main title */
-.header-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin: 0;
-  padding: 12px 24px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  display: inline-block;
-  transition: background 0.3s ease, transform 0.3s ease;
+/* Main title styling. */
+.header-title
+{
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin: 0;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 3px solid #d4af37;
+    border-radius: 14px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+    display: inline-block;
+    color: #fefcf9;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease;
 }
 
-/* Subtitle */
-.header-subtitle {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: #e3f2fd;
-  max-width: 700px;
-  margin: 20px auto 0;
-  padding: 12px 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Subtitle styling. */
+.header-subtitle
+{
+    font-family: 'Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff3d0;
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 16px 28px;
+    background: rgba(0, 0, 0, 0.55);
+    border-left: 6px solid #d4af37;
+    border-right: 6px solid #d4af37;
+    border-radius: 12px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
 }
 
-/* Hover interaction */
-.header-title:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
-  color: #ffd700;
-  cursor: pointer;
+/* Hover on Title interaction styles. */
+.header-title:hover
+{
+    background: rgba(255, 255, 255, 0.20);
+    transform: scale(1.05) translateY(-4px);
+    color: #ffd700;
+    border-color: #ffd700;
+    cursor: pointer;
 }
 
-/* Responsive design */
+/* Responsive design styles. */
 @media (max-width: 768px) {
   .header {
-    height: 320px;
-    padding: 40px 15px;
+    height: 360px;
+    padding: 50px 15px;
   }
 
   .header-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    padding: 10px 16px;
+    font-size: clamp(2.5rem, 5vw, 3.2rem);
+    padding: 14px 24px;
   }
 
   .header-subtitle {
-    font-size: 1rem;
-    padding: 10px 15px;
+    font-size: 1.1rem;
+    padding: 12px 18px;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   }
 }
 
-/* High contrast mode accessibility */
+/* High contrast mode accessibility. */
 @media (prefers-contrast: high) {
   .header {
     background: #000;
@@ -84,6 +105,8 @@
   .header-title,
   .header-subtitle {
     background: none;
+    border: none;
     box-shadow: none;
+    color: #fff;
   }
 }
