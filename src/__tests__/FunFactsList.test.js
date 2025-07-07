@@ -30,5 +30,5 @@ test("renders the section title", () => {
 //TODO: Fix hardcoded facts number...
 test("renders the correct number of fact items", () => {
     render(<FunFactsList />);
-    expect(screen.getAllByRole("listitem")).toHaveLength(21);
+    expect(screen.getAllByRole("listitem")).toHaveLength(22);
 });

@@ -1,7 +1,14 @@
 export const facts = [
   {
+    title: "Founding",
+    description: "The City of Saint Louis was founded by fur traders Pierre Laclede Liguest and stepson Auguste Choteau on February 15, 1764. The city was named after King Louis IX of France.",
+    sources: [
+      { name: "Secretary of State website", url: "https://www.sos.mo.gov/archives/history/timeline/1" }
+    ]
+  },
+  {
     title: "Gateway Arch",
-    description: "The Gateway Arch in Saint Louis is the tallest man-made monument in the United States, standing at 630 feet. It symbolizes the westward expansion of the United States.",
+    description: "The Gateway Arch in Saint Louis is the tallest man-made monument in the United States, standing at 630 feet (192 m). It symbolizes the westward expansion of the United States.",
     sources: [
       { name: "National Park Service", url: "https://www.nps.gov/jeff/index.htm" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/Gateway_Arch" }
@@ -129,7 +136,7 @@ export const facts = [
   },
   {
     title: "City Museum",
-    description: "The City Museum is an eclectic mixture of children's playground, funhouse, and architectural marvel, created from repurposed industrial and architectural objects.",
+    description: "The City Museum is a unique mixture of children's playground, funhouse, and architectural marvel, created from repurposed industrial and architectural objects.",
     sources: [
       { name: "City Museum", url: "https://www.citymuseum.org/" },
       { name: "Wikipedia", url: "https://en.wikipedia.org/wiki/City_Museum" }
@@ -161,7 +168,7 @@ export const facts = [
   },
   {
     title: "Saint Louis Etymology",
-    description: "Saint Louis city is named for Louis IX of France, and construction began in 1765.",
+    description: "Saint Louis city is named after King Louis IX of France, and construction began in 1765.",
     sources: [
       { name: "Saint Louis City website", url: "https://www.stlouis-mo.gov/visit-play/stlouis-history.cfm" }
     ]
