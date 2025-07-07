@@ -1,7 +1,7 @@
 //Filename: FunFactsList.test.js
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the Jest unit tests for the facts FunFactsList section.
+//Date: 07 July 2025
+//Description: This file contains the Jest unit tests for the facts section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
@@ -22,13 +22,17 @@ const mockFacts = [
   },
 ];
 
+// jest.mock("../data/facts", () => ({ facts: mockFacts }));
+
 test("renders the section title", () => {
-  render(<FunFactsList />);
-  expect(screen.getByText(/Discover Fascinating Facts About Saint Louis/i)).toBeInTheDocument();
+    render(<FunFactsList facts={mockFacts} />);
+    expect(
+      screen.getByText(/Discover Fascinating Facts About Saint Louis/i))
+    .toBeInTheDocument();
 });
 
 //TODO: Fix hardcoded facts number...
 test("renders the correct number of fact items", () => {
-    render(<FunFactsList />);
-    expect(screen.getAllByRole("listitem")).toHaveLength(22);
+    render(<FunFactsList facts={mockFacts} />);
+    expect(screen.getAllByRole("listitem")).toHaveLength(mockFacts.length);
 });

@@ -168,7 +168,7 @@ export const facts = [
   },
   {
     title: "Saint Louis Etymology",
-    description: "Saint Louis city is named after King Louis IX of France, and construction began in 1765.",
+    description: "The City of Saint Louis is named after King Louis IX of France, and construction began in 1765.",
     sources: [
       { name: "Saint Louis City website", url: "https://www.stlouis-mo.gov/visit-play/stlouis-history.cfm" }
     ]
