@@ -11,7 +11,7 @@ function FunFactsList()
 {
     return (
         <section id="facts" className="fun-facts" role="region" aria-labelledby="facts-heading">
-            <div className = "facts=container" data-testid="facts-container">
+            <div className = "facts-container" data-testid="facts-container">
                 <h2 id="facts-heading" className="fun-facts-heading">Discover Fascinating Facts About Saint Louis </h2>
                 <ul className="fact-list">
                     {facts.map((fact, index) => (
