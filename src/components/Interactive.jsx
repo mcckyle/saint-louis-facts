@@ -18,19 +18,22 @@ function Interactive()
 
     return (
         <section id="interactive" className="interactive" role="region" aria-labelledby="interactive-title">
-            <h2 id="interactive-title" className="interactive-title">Discover a Random Fact</h2>
-                <button
-                    className="interactive-button"
-                    onClick={getRandomFact}
-                    aria-label="Generate a random fact about Saint Louis."
-                >
-                  Show Me a Fact
-                </button>
+            <h2 id="interactive-title" className="interactive-title">
+              Discover a Random Fact
+            </h2>
+
+            <button
+                className="interactive-button"
+                onClick={getRandomFact}
+                aria-label="Generate a random fact about Saint Louis."
+            >
+                Show Me a Fact
+            </button>
 
             {randomFact && (
-                <div className="interactive-fact-display" aria-live="polite">
+                <div id="interactive-fact" className="interactive-fact-display" aria-live="polite">
                     <h3 className="fact-title">{randomFact.title}</h3>
-                        <p className="fact-description">{randomFact.description}</p>
+                    <p className="fact-description">{randomFact.description}</p>
                 </div>
             )}
         </section>
