@@ -1,7 +1,7 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the React component for the facts Interactive section.
+//Date: 07 July 2025
+//Description: This file contains the React component for the facts Interactive section.
 
 import React, { useState, useCallback } from "react";
 import { facts } from "../data/facts";
@@ -17,12 +17,12 @@ function Interactive()
     }, []);
 
     return (
-        <section id="interactive" className="interactive">
-            <h2 className="interactive-title">Discover a Random Fact</h2>
+        <section id="interactive" className="interactive" role="region" aria-labelledby="interactive-title">
+            <h2 id="interactive-title" className="interactive-title">Discover a Random Fact</h2>
                 <button
                     className="interactive-button"
                     onClick={getRandomFact}
-                    aria-label="Generate a random Saint Louis fact"
+                    aria-label="Generate a random fact about Saint Louis."
                 >
                   Show Me a Fact
                 </button>
