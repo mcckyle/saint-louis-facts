@@ -9,12 +9,12 @@ import './Footer.css';
 function Footer()
 {
     return (
-        <footer className="footer">
+        <footer className="footer" role="contentinfo" aria-label="Site Footer">
             <div className="footer-container">
                 <p className="footer-text">
-                    This project draws inspiration from the vibrant culture and rich history of Saint Louis. Special thanks to the city’s official organizations for their ongoing dedication to preserving and sharing its heritage.
+                    This project draws inspiration from the vibrant culture and rich history of Saint Louis. Special thanks to the city’s official organizations for their dedication to preserving its legacy.
                 </p>
-                <nav className="footer-links" aria-label="Footer navigation">
+                <nav className="footer-links" aria-label="Footer Navigation Links">
                     <a
                         href="https://www.stlouis-mo.gov"
                         target="_blank"
@@ -35,7 +35,7 @@ function Footer()
                     </a>
                     <a
                         href="#top"
-                        className="footer-link"
+                        className="footer-link footer-back-to-top"
                         aria-label="Back to top"
                     >
                         Back to Top
