@@ -1,7 +1,7 @@
 //Filename: Intro.jsx
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the React component for the facts Intro section.
+//Date: 07 July 2025
+//Description: This file contains the React component for the facts Intro section.
 
 import React from 'react';
 import './Intro.css';
@@ -9,7 +9,7 @@ import './Intro.css';
 function Intro()
 {
     return (
-        <section className="intro" aria-label="Introduction">
+        <section className="intro" role="region" aria-label="Introduction">
             <h2>Welcome to the Heart of Saint Louis</h2>
             <div className="intro-text">
                 <p>

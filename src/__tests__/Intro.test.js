@@ -1,7 +1,7 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the Jest unit tests for the facts Intro section.
+//Date: 07 July 2025
+//Description: This file contains the Jest unit tests for the facts Intro section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
@@ -59,10 +59,10 @@ describe('Intro Component', () => {
     expect(paragraph).not.toBeEmptyDOMElement();
   });
 
-  // test('renders an accessible region with appropriate role', () => {
-  //   render(<Intro />);
-  //   const introSection = screen.getByRole('region');
-  //   expect(introSection).toHaveAttribute('role', 'region');
-  // });
+  test('renders an accessible region with appropriate role', () => {
+    // render(<Intro />);
+    const introSection = screen.getByRole('region');
+    expect(introSection).toHaveAttribute('role', 'region');
+  });
 
 });

@@ -5,6 +5,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
   <section
     aria-label="Introduction"
     class="intro"
+    role="region"
   >
     <h2>
       Welcome to the Heart of Saint Louis
