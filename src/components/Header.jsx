@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 28 April 2025
+//Date: 07 July 2025
 //Description: Contains the React component for the facts Header section.
 
 import React, { useState } from 'react';

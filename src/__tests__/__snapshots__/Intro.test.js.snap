@@ -3,11 +3,14 @@
 exports[`Intro Component renders the intro section with correct structure 1`] = `
 <div>
   <section
-    aria-label="Introduction"
+    aria-labelledby="intro-heading"
     class="intro"
     role="region"
   >
-    <h2>
+    <h2
+      class="intro-title"
+      id="intro-heading"
+    >
       Welcome to the Heart of Saint Louis
     </h2>
     <div

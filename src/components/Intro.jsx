@@ -9,8 +9,11 @@ import './Intro.css';
 function Intro()
 {
     return (
-        <section className="intro" role="region" aria-label="Introduction">
-            <h2>Welcome to the Heart of Saint Louis</h2>
+        <section className="intro" role="region" aria-labelledby="intro-heading">
+            <h2 id="intro-heading" className="intro-title">
+              Welcome to the Heart of Saint Louis
+            </h2>
+
             <div className="intro-text">
                 <p>
                     Along the banks of the mighty Mississippi, Saint Louis shines with a vibrant spirit, rich history, and a warm, welcoming community.

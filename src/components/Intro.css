@@ -3,39 +3,40 @@
 /* General styling for the Intro section */
 .intro
 {
-    background: linear-gradient(135deg, #f5f0e6, #fdf6e3);
-    padding: 4rem 2rem;
+    background: linear-gradient(130deg, #fdf7e4, #f9eccc);
+    padding: 4.5rem 2rem;
     text-align: center;
-    border-radius: 18px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
     margin: 4rem auto;
     max-width: 1000px;
     font-family: 'Playfair Display', 'Garamond', serif;
-    border: 2.5px solid #d4af37; /* Gold border. */
+    border: 4px double #d4af37; /* Gold border. */
+    position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    background-color: rgba(253, 246, 227, 0.95);
+
+    /*background-color: rgba(253, 246, 227, 0.95);*/
 }
 
 .intro:hover
 {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+    transform: translateY(-6px);
+    box-shadow: 0 22px 56px rgba(0, 0, 0, 0.25);
 }
 
 /* Title styling for the Intro section. */
 .intro h2
 {
-    font-size: 3.4rem;
-    font-weight: 700;
-    color: #7c0a02; /* Color: Burgundy. */
-    margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', 'Garamond', serif;
-    letter-spacing: 2.5px;
-    text-shadow: 1px 1px 0 #d4af37; /* Gold shadow. */
-    border-bottom: 3px double #d4af37;
-    display: inline-block;
-    padding-bottom: 0.5rem;
+  font-family: 'Cinzel Decorative', serif;
+    font-size: 3.6rem;
+    color: #5e2b00;
+    margin-bottom: 1.6rem;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 4px double #d4af37;
+    display: inline-block;
+    padding-bottom: 0.7rem;
+    text-shadow: 1.5px 1.5px #d4af37; /* Gold shadow. */
 }
 
 /* Wrapper for Intro section paragraph. */
@@ -48,31 +49,32 @@
 /* Paragraph styling. */
 .intro p
 {
-    font-size: 1.35rem;
-    line-height: 1.9;
-    color: #3a3a3a;
+    font-size: 1.4rem;
+    line-height: 1.95;
     font-family: 'Garamond', serif;
-    padding: 0 1.25rem;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 1.2rem;
-    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
+    color: #2d2d2d;
+    padding: 1.5rem 1.8rem;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 12px;
+    margin-top: 1.4rem;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.18);
+    border-left: 6px solid #bfa437;
+    border-right: 6px solid #bfa437;
 }
 
 /* Responsiveness. */
 @media (max-width: 768px) {
   .intro {
-    padding: 2.5rem 1.5rem;
+    padding: 3rem 1.2rem;
   }
 
-  .intro h2 {
-    font-size: 2.6rem;
-    letter-spacing: 1.8px;
+  .intro-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
   }
 
   .intro p {
     font-size: 1.15rem;
-    padding: 0 1rem;
+    padding: 1rem 1.2rem;
   }
 }
