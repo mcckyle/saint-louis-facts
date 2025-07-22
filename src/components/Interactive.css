@@ -1,112 +1,164 @@
 /* Filename: Interactive.css */
 
-/* General styling for the Interactive section. */
+/* General Styling for the Interactive Section. */
 .interactive
 {
-    background: linear-gradient(135deg, #fdf6e3 0%, #f8efd4 100%);
+    background: linear-gradient(145deg, #fdf6e3 0%, #f8efd4 100%);
     padding: 4.5rem 2rem;
-    border-radius: 22px;
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    border-radius: 24px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
     text-align: center;
-    max-width: 920px;
+    max-width: 940px;
     margin: 4rem auto;
     font-family: 'Playfair Display', 'Garamond', serif;
-    border: 4px double #d4af37;
+    border: 5px double #d4af37;
     position: relative;
     overflow: hidden;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle Golden Glow Visual Effects. */
+.interactive::before
+{
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
+    z-index: 0;
 }
 
 .interactive:hover
 {
-    transform: translateY(-6px);
-    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.22);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.22);
 }
 
 /* Section Title. */
 .interactive-title
 {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: #5d1f0c;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.4rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
     border-bottom: 4px double #d4af37;
-    padding-bottom: 0.6rem;
-    text-shadow: 1.5px 1.5px 0 #d4af37; /* Gold shadow. */
+    padding-bottom: 0.8rem;
+    text-shadow: 2px 2px 0 #d4af37; /* Gold shadow. */
     display: inline-block;
+    position: relative;
 }
 
 /* The Button styles. */
 .interactive-button
 {
-    background: linear-gradient(to right, #b8860b, #d9af37);
-    color: #fffdf4;
-    font-size: 1.35rem;
-    padding: 1.05rem 2.6rem;
+    background: linear-gradient(120deg, #b8860b, #d9af37);
+    color: #fffef8;
+    font-size: 1.4rem;
+    padding: 1.2rem 2.8rem;
     border: none;
-    border-radius: 55px;
+    border-radius: 60px;
     cursor: pointer;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.22), 0 10px 28px rgba(0, 0, 0, 0.25);
-    transition: transform 0.25s, background 0.35s ease;
+    letter-spacing: 1.2px;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 12px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, background 0.4s ease;
+}
+
+/* Golden Shimmer Animation on Hover Visual Effects. */
+.interactive-button::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -70%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.interactive-button:hover::after
+{
+    left: 140%;
 }
 
 .interactive-button:hover
 {
-    background: linear-gradient(to right, #a77800, #c79d25);
+    background: linear-gradient(120deg, #a77800, #c79d25);
     transform: scale(1.08);
 }
 
-.interactive-button:focus
+/*.interactive-button:focus
 {
     outline: 3px solid #ffb13b;
     outline-offset: 4px;
-}
+}*/
 
-/* Display area for facts styling. */
+/* Fact Display Card Styling. */
 .interactive-fact-display
 {
-    margin-top: 2.8rem;
-    padding: 2.2rem 2rem;
-    background-color: rgba(255, 255, 255, 0.92);
-    border: 3px solid #e2d4b7;
-    border-radius: 16px;
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
-    animation: fadeIn 0.65s ease-in-out;
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 3px solid #d4af37;
+    border-radius: 18px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+    animation: fadeInCard 0.75s ease-in-out;
+    position: relative;
 }
 
-/* Displayed Fact Title styling. */
+/* Decorative Golden Stripe. */
+.interactive-fact-display::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #d4af37, #b8860b);
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+
+/* Fact Title Styling. */
 .fact-title
 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-family: 'Cinzel Decorative', serif;
     color: #2c1b18;
-    margin-bottom: 1.2rem;
-    text-shadow: 1px 1px 0 #bfa67a;
+    margin-bottom: 1.4rem;
+    text-shadow: 1px 1px 0 #bfa437;
     letter-spacing: 1px;
 }
 
-/* Displayed fact text content styles. */
+/* Fact Description Text Content Styles. */
 .fact-description
 {
     font-size: 1.35rem;
     color: #3b2f2f;
     line-height: 1.9;
-    font-family: 'Garamond', serif;
-    max-width: 680px;
+    font-family: 'Lora', serif;
+    max-width: 700px;
     margin: 0 auto;
+    padding: 1rem 1.4rem;
+    border-left: 6px solid #d4af37;
+    background: rgba(255, 255, 255, 0.8);
 }
 
-/* Animation for the fact display. */
-@keyframes fadeIn {
+/* Animation for the Fact Display. */
+@keyframes fadeInCard {
   from {
     opacity: 0;
-    transform: translateY(-14px);
+    transform: translateY(-18px);
   }
   to {
     opacity: 1;
@@ -114,24 +166,24 @@
   }
 }
 
-/* Mobile styles. */
+/* Mobile Styles. */
 @media (max-width: 768px) {
   .interactive {
     padding: 3rem 1.4rem;
   }
 
   .interactive-title {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     letter-spacing: 2px;
   }
 
   .interactive-button {
-    font-size: 1.1rem;
-    padding: 0.85rem 1.9rem;
+    font-size: 1.2rem;
+    padding: 0.95rem 2rem;
   }
 
   .fact-title {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
   }
 
   .fact-description {

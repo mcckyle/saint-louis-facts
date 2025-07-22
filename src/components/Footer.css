@@ -1,19 +1,20 @@
 /* Filename: Footer.css */
 
-/* General footer styling */
+/* General Footer Styling. */
 .footer
 {
-    background: linear-gradient(to right, #fbf5e3, #f3e2c4);
-    color: #382714;
+    background: linear-gradient(135deg, #faf3e0, #f6e7c5);
+    color: #3b2a16;
     padding: 4rem 2rem;
     text-align: center;
     font-family: 'Playfair Display', 'Garamond', serif;
-    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.15);
-    border-top: 6px double #d4af37;
+    box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.15);
+    border-top: 8px double #d4af37;
     position: relative;
+    animation: fadeUp 1s ease-in-out;
 }
 
-/* Container for footer content. */
+/* Container for Footer Content. */
 .footer-container
 {
     max-width: 1100px;
@@ -23,72 +24,104 @@
     align-items: center;
 }
 
-/* Footer text styles. */
+/* Footer Text Styles. */
 .footer-text
 {
     margin-bottom: 2.5rem;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.85;
     color: #4b2f1d;
     font-weight: 500;
-    max-width: 900px;
-    text-shadow: 0.5px 0.5px #ebd8a9;
+    max-width: 920px;
+    text-shadow: 0.5px 0.5px #e6d8b1;
+    font-style: italic;
+    border-bottom: 1px dashed #d4af37;
+    padding-bottom: 1rem;
 }
 
-/* Navigation link container styles. */
+/* Navigation Link Container Styles. */
 .footer-links
 {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.8rem;
     justify-content: center;
+    margin-top: 1.5rem;
 }
 
 /* Core footer link styles. */
 .footer-link
 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-family: 'Cinzel', serif;
     color: #3b2f1e;
     text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 12px;
+    padding: 0.75rem 1.8rem;
+    border-radius: 14px;
     border: 2px solid #d4af37;
-    background: linear-gradient(to bottom, #fffaf0, #f6e2b3);
-    box-shadow: inset 1px 1px #fffdf2, 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #fff9f0, #f6e3b5);
+    box-shadow: inset 1px 1px #fffdf2, 0 4px 14px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
     transition: background-color 0.3s, transform 0.25s, color 0.3s;
 }
 
-/* Hover effects for footer links. */
+/* Hover shimmer effect. */
+.footer-link::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.footer-link:hover::after
+{
+    left: 130%;
+}
+
+/* Hover Effects for Footer Links. */
 .footer-link:hover,
 .footer-link:focus
 {
     background: linear-gradient(to bottom, #fbe8a6, #dfc377);
     color: #1d1408;
     transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Special styling for the 'Back to Top' button. */
+/* Special Styling for the 'Back to Top' Button. */
 .footer-back-to-top
 {
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
     border: 3px solid #b8860b;
-    background: linear-gradient(to bottom, #fffce6, #f7e4ad);
+    background: linear-gradient(to bottom, #fffbe6, #f7e4ad);
     color: #472e10;
-    box-shadow: inset 0 1px 2px #fff, 0 4px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0 1px 3px #fff, 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.footer-back-to-top:hover
+{
+    background: linear-gradient(to bottom, #fffe899, #e0c77d);
+    transform: scale(1.12) translateY(-2px);
 }
 
 /* Responsive styling. */
-@media (max-width: 768px) {
+@media (max-width: 768px)
+{
   .footer {
     padding: 2.8rem 1.2rem;
   }
 
   .footer-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .footer-links {
@@ -100,4 +133,16 @@
     font-size: 1rem;
     padding: 0.55rem 1.2rem;
   }
+}
+
+@keyframes fadeUp
+{
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
 }

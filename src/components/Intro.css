@@ -1,80 +1,129 @@
 /* Filename: Intro.css */
 
-/* General styling for the Intro section */
+/* General Styling for the Intro Section. */
 .intro
 {
-    background: linear-gradient(130deg, #fdf7e4, #f9eccc);
+    background: linear-gradient(140deg, #fdf7e4, #f9eccc);
     padding: 4.5rem 2rem;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-    margin: 4rem auto;
-    max-width: 1000px;
+    border-radius: 24px;
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.22);
+    margin: 4.5rem auto;
+    max-width: 1020px;
     font-family: 'Playfair Display', 'Garamond', serif;
-    border: 4px double #d4af37; /* Gold border. */
+    border: 5px double #d4af37; /* Gold border. */
     position: relative;
+    overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    /*background-color: rgba(253, 246, 227, 0.95);*/
+/* Golden Radial Glow Behind the Section. */
+.intro::before
+{
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07), transparent 70%);
+    z-index: 0;
 }
 
 .intro:hover
 {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 56px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 28px 72px rgba(0, 0, 0, 0.28);
 }
 
-/* Title styling for the Intro section. */
+/* Title Styling for the Intro Section. */
 .intro-title
 {
-  font-family: 'Cinzel Decorative', serif;
-    font-size: 3.6rem;
-    color: #5e2b00;
-    margin-bottom: 1.6rem;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3.8rem;
+    color: #4b2606;
+    margin-bottom: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     border-bottom: 4px double #d4af37;
     display: inline-block;
     padding-bottom: 0.7rem;
-    text-shadow: 1.5px 1.5px #d4af37; /* Gold shadow. */
+    text-shadow: 2px 2px #d4af37; /* Golden shadow. */
+    position: relative;
 }
 
-/* Wrapper for Intro section paragraph. */
+/* Subtle Golden Shimmer Underline Visual Effect. */
+.intro-title::after
+{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #d4af37, #fff4c2, #d4af37);
+    background-size: 200% auto;
+    animation: shimmer 6s linear infinite;
+}
+
+/* Intro Text Content Container Styling. */
 .intro-text
 {
-    max-width: 820px;
+    max-width: 850px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-/* Paragraph styling. */
+/* Intro Paragraph Styling. */
 .intro p
 {
-    font-size: 1.4rem;
-    line-height: 1.95;
-    font-family: 'Garamond', serif;
-    color: #2d2d2d;
-    padding: 1.5rem 1.8rem;
-    background-color: rgba(255, 255, 255, 0.88);
-    border-radius: 12px;
-    margin-top: 1.4rem;
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.18);
-    border-left: 6px solid #bfa437;
-    border-right: 6px solid #bfa437;
+    font-size: 1.45rem;
+    line-height: 2.1;
+    font-family: 'Lora', serif;
+    color: #2e2e2e;
+    padding: 1.8rem 2rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 14px;
+    margin-top: 1.8rem;
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.2);
+    border-left: 6px solid #d4af37;
+    border-right: 6px solid #d4af37;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Responsiveness. */
+/* Decorative Gradient Glow Inside the Intro Paragraph. */
+.intro p::before
+{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.08) transparent);
+    z-index: -1;
+}
+
+@keyframes shimmer
+{
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Responsive Design Styles. */
 @media (max-width: 768px) {
   .intro {
-    padding: 3rem 1.2rem;
+    padding: 3rem 1.4rem;
   }
 
   .intro-title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     letter-spacing: 2px;
   }
 
   .intro p {
-    font-size: 1.15rem;
-    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.3rem;
   }
 }
