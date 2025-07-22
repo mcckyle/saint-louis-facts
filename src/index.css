@@ -1,15 +1,14 @@
-/*Filename: index.css */
+/* Filename: index.css */
 
-/* Reset and base transition. */
+/* CSS Reset and Base Transition. */
 *
 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.3s ease;
 }
 
-/* Global styles. */
+/* Global Document Styling. */
 html
 {
     scroll-behavior: smooth;
@@ -17,25 +16,18 @@ html
 
 body
 {
-    font-family: 'Playfair Display', 'Garamond', serif; /* Unified font for consistency */
+    font-family: 'Playfair Display', 'Garamond', serif; /* Unified font for consistency. */
     background: linear-gradient(145deg, #fdf6e3, #f8e7c4);
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
     color: #2c2c2c;
     line-height: 1.75;
-}
-
-main
-{
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*justify-content: center;*/
-    padding: 3rem 1rem;
+    justify-content: center;
 }
 
-/* Container. */
+/* Layout Container Utility Styling. */
 .container
 {
     width: 92%;
@@ -44,42 +36,16 @@ main
     padding: 2rem 0; /* Added padding for spacing. */
 }
 
-/* Global heading styles. */
-h1, h2, h3, h4
-{
-    font-family: 'Playfair Display', 'Garamond', serif;
-    color: #472e10;
-    letter-spacing: 0.6px;
-    line-height: 1.4;
-    font-weight: 700;
-    text-shadow: 1px 1px 0 #d4af37;
-}
-
-h1
-{
-    font-size: 3.25rem;
-}
-
-h1
-{
-    font-size: 2.5rem;
-}
-
-/* Paragraph styles. */
+/* Paragraph Global Styles. */
 p
 {
-    font-size: 1.2rem;
-    line-height: 1.9;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: #3a2f2f;
-    margin: 0 auto 1.6rem;
-    max-width: 860px;
-    background: rgba(255, 255, 255, 0.75);
-    padding: 0.8rem 1.2rem;
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(212, 175, 55, 0.08);
+    margin-bottom: 1.5rem;
 }
 
-/* Utilities. */
+/* Fade-in Animation Styling. */
 .fade-in
 {
     opacity: 0;
