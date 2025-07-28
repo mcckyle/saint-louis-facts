@@ -1,10 +1,10 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 07 July 2025
+//Date: 27 July 2025
 //Description: This file contains the React component for the facts Interactive section.
 
 import React, { useState, useCallback } from "react";
-import { facts } from "../data/facts";
+import { facts } from "../../data/facts";
 import './Interactive.css';
 
 function Interactive()

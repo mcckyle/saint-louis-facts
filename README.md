@@ -61,13 +61,10 @@ You will see the landing page with facts about Greater Saint Louis. Click the **
 saint-louis-facts/
 │
 ├── public/
-│   ├── images/
-│   │   └── gateway-arch-background.jpg
-│   │
 │   └── vite.svg
 │
 ├── .github/
-│   ├── workflows/
+│   └── workflows/
 │       └── ci.yml             # Github actions config.
 │
 ├── node_modules/
@@ -107,7 +104,8 @@ saint-louis-facts/
 │   │   └── Intro.test.js
 │   │
 │   ├── assets/
-│   │   └── react.svg
+│   │   └── images/
+│   │       └── gateway-arch-background.jpg
 │   │
 │   ├── App.jsx
 │   ├── App.css

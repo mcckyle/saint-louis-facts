@@ -1,11 +1,11 @@
 //Filename: Interactive.test.js
 //Author: Kyle McColgan
-//Date: 07 July 2025
+//Date: 27 July 2025
 //Description: This file contains the Jest unit tests for the facts Interactive section.
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Interactive from '../components/Interactive';
+import Interactive from '../components/Interactive/Interactive.jsx';
 
 // Mock the data module for testing purposes.
 jest.mock('../data/facts', () => ({

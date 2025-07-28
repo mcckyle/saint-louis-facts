@@ -1,11 +1,11 @@
 //Filename: Header.test.js
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the Jest unit tests for the facts Header section.
+//Date: 27 July 2025
+//Description: This file contains the Jest unit tests for the facts Header section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Header from '../components/Header';
+import Header from '../components/Header/Header.jsx';
 
 describe('Header Component', () => {
   // Test 1: Check if the header renders

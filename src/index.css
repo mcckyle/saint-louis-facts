@@ -1,33 +1,39 @@
 /* Filename: index.css */
 
-/* CSS Reset and Base Transition. */
-*
+/* ========================================
+    CSS Reset and Base Transition Styles.
+=========================================== */
+*,
+*::before,
+*::after
 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Global Document Styling. */
 html
 {
     scroll-behavior: smooth;
+    font-size: 16px; /* Root font size for rem scaling. */
 }
 
 body
 {
-    font-family: 'Playfair Display', 'Garamond', serif; /* Unified font for consistency. */
-    background: linear-gradient(145deg, #fdf6e3, #f8e7c4);
+    font-family: var(--font-body, 'Lora', 'Georgia', serif);
+    background: linear-gradient(145deg, var(--color-bg), var(--color-bg-alt));
     background-attachment: fixed;
-    background-size: cover;
-    color: #2c2c2c;
+    color: var(--color-text);
     line-height: 1.75;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
-/* Layout Container Utility Styling. */
+/* =======================
+   Layout Utility Styles.
+========================== */
 .container
 {
     width: 92%;
@@ -39,13 +45,28 @@ body
 /* Paragraph Global Styles. */
 p
 {
-    font-size: 1.1rem;
+    font-size: 1.125rem; /* ~18px. */
     line-height: 1.8;
-    color: #3a2f2f;
+    color: var(--color-text-muted, #3a2f2f);
     margin-bottom: 1.5rem;
 }
 
-/* Fade-in Animation Styling. */
+a
+{
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover
+{
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* =======================
+   Animations Styles.
+=========================== */
 .fade-in
 {
     opacity: 0;
@@ -56,5 +77,20 @@ p
 {
     to {
       opacity: 1;
+    }
+}
+
+/* =======================
+   Accessibility Styles.
+============================ */
+
+@media (prefers-reduced-motion: reduce)
+{
+    *
+    {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

@@ -1,11 +1,11 @@
 //Filename: FunFactsList.test.js
 //Author: Kyle McColgan
-//Date: 21 July 2025
+//Date: 27 July 2025
 //Description: This file contains the Jest unit tests for the facts section.
 
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
-import FunFactsList from '../components/FunFactsList';
+import FunFactsList from '../components/FunFactsList/FunFactsList.jsx';
 
 // Mock data for testing purposes.
 const mockFacts = [

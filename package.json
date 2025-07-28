@@ -45,6 +45,7 @@
       "^.+\\.(js|jsx|mjs)$": "babel-jest"
     },
     "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/src/__mocks__/fileMock.js",
       "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
     },
     "testEnvironment": "jsdom",

@@ -1,11 +1,11 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 28 April 2025
+//Date: 27 July 2025
 //Description: Contains the Jest unit tests for the facts Footer section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer.jsx';
 
 describe('Footer Component', () => {
   test('renders the footer with the correct text', () => {

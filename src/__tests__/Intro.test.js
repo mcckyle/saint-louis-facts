@@ -1,11 +1,11 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 07 July 2025
+//Date: 27 July 2025
 //Description: This file contains the Jest unit tests for the facts Intro section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Intro from '../components/Intro';
+import Intro from '../components/Intro/Intro.jsx';
 
 describe('Intro Component', () => {
   beforeEach(() => {

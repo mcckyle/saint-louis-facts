@@ -1,42 +1,59 @@
 /* Filename: Footer.css */
 
-/* General Footer Styling. */
+/* =================
+   Footer Styling.
+==================== */
 .footer
 {
-    background: linear-gradient(135deg, #faf3e0, #f6e7c5);
+    position: relative;
+    width: 100%;
+    background: linear-gradient(145deg, #fdf6e3, #f8efd4);
     color: #3b2a16;
-    padding: 4rem 2rem;
+    padding: 5rem 3rem;
     text-align: center;
     font-family: 'Playfair Display', 'Garamond', serif;
-    box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.15);
     border-top: 8px double #d4af37;
-    position: relative;
-    animation: fadeUp 1s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.15);
+
+    /*animation: fadeUp 1s ease-in-out;*/
 }
 
-/* Container for Footer Content. */
+/* Ambient Golden Glow. */
+.footer::before
+{
+    content: '';
+    position: absolute;
+    top: -40%; left: -40%;
+    width: 180%; height: 180%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07), transparent 70%);
+    z-index: 0;
+}
+
+/* Footer Content Container Styling. */
 .footer-container
 {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-/* Footer Text Styles. */
+/* Footer Intro Text Styles. */
 .footer-text
 {
-    margin-bottom: 2.5rem;
-    font-size: 1.35rem;
-    line-height: 1.85;
+    font-size: 1.4rem;
+    line-height: 2rem;
     color: #4b2f1d;
-    font-weight: 500;
-    max-width: 920px;
-    text-shadow: 0.5px 0.5px #e6d8b1;
     font-style: italic;
+    text-shadow: 0.5px 0.5px #f3e6bf;
+    max-width: 920px;
+    margin-bottom: 3rem;
     border-bottom: 1px dashed #d4af37;
-    padding-bottom: 1rem;
+    padding-bottom: 1.2rem;
 }
 
 /* Navigation Link Container Styles. */
@@ -49,35 +66,33 @@
     margin-top: 1.5rem;
 }
 
-/* Core footer link styles. */
+/* Core Footer Link Styles. */
 .footer-link
 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-family: 'Cinzel', serif;
     color: #3b2f1e;
     text-decoration: none;
-    padding: 0.75rem 1.8rem;
+    padding: 0.8rem 2rem;
     border-radius: 14px;
     border: 2px solid #d4af37;
     background: linear-gradient(to bottom, #fff9f0, #f6e3b5);
-    box-shadow: inset 1px 1px #fffdf2, 0 4px 14px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 1px 1px #fffdf2, 0 6px 18px rgba(0, 0, 0, 0.14);
     position: relative;
     overflow: hidden;
-    transition: background-color 0.3s, transform 0.25s, color 0.3s;
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.3s ease;
 }
 
-/* Hover shimmer effect. */
+/* Hover Shine Animation Effect Styles. */
 .footer-link::after
 {
     content: "";
     position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
+    top: 0; left: -80%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transform: skewX(-25deg);
-    transition: 0.5s;
+    transition: left 0.6s ease;
 }
 
 .footer-link:hover::after
@@ -86,16 +101,15 @@
 }
 
 /* Hover Effects for Footer Links. */
-.footer-link:hover,
-.footer-link:focus
+.footer-link:hover
 {
     background: linear-gradient(to bottom, #fbe8a6, #dfc377);
     color: #1d1408;
     transform: scale(1.08);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 
-/* Special Styling for the 'Back to Top' Button. */
+/* Special Button: Back to Top. */
 .footer-back-to-top
 {
     font-weight: 800;
@@ -109,19 +123,19 @@
 
 .footer-back-to-top:hover
 {
-    background: linear-gradient(to bottom, #fffe899, #e0c77d);
+    background: linear-gradient(to bottom, #fff6cc, #e0c77d);
     transform: scale(1.12) translateY(-2px);
 }
 
-/* Responsive styling. */
+/* Responsive Design Styling. */
 @media (max-width: 768px)
 {
   .footer {
-    padding: 2.8rem 1.2rem;
+    padding: 3rem 1.4rem;
   }
 
   .footer-text {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .footer-links {
@@ -131,11 +145,11 @@
 
   .footer-link {
     font-size: 1rem;
-    padding: 0.55rem 1.2rem;
+    padding: 0.7rem 1.4rem;
   }
 }
 
-@keyframes fadeUp
+/*@keyframes fadeUp
 {
     from {
       opacity: 0;
@@ -145,4 +159,4 @@
       opacity: 1;
       transform: translateY(0);
     }
-}
+}*/

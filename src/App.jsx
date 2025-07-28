@@ -1,25 +1,26 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 07 July 2025
-//Description: Contains the React root component for the facts website.
+//Date: 27 July 2025
+//Description: This file contains the React root component for the facts website.
 
-import React from 'react';
-
-import Header from './components/Header';
-import Intro from './components/Intro';
-import FunFactsList from './components/FunFactsList';
-import Interactive from './components/Interactive';
-import Footer from './components/Footer';
+import React, {useRef} from 'react';
+import Header from './components/Header/Header.jsx';
+import Intro from './components/Intro/Intro.jsx';
+import FunFactsList from './components/FunFactsList/FunFactsList.jsx';
+import Interactive from './components/Interactive/Interactive.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 import './App.css';
 
 function App()
 {
+  const introRef = useRef(null);
+
   return (
       <div>
-          <Header />
+          <Header scrollTargetRef={introRef} />
           <main className="main-content">
-            <Intro />
+            <Intro ref={introRef} />
             <FunFactsList />
             <Interactive />
           </main>

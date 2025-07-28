@@ -1,10 +1,10 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 07 July 2025
+//Date: 27 July 2025
 //Description: This file contains the React component for the facts list section.
 
 import React from 'react';
-import { facts as defaultFacts } from "../data/facts";
+import { facts as defaultFacts } from "../../data/facts";
 import './FunFactsList.css';
 
 function FunFactsList({ facts = defaultFacts })
