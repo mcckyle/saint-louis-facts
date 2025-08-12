@@ -1,7 +1,7 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the React component for the facts Interactive section.
+//Date: 11 August 2025
+//Description: This file contains the React component for the Saint Louis Facts Interactive section.
 
 import React, { useState, useCallback } from "react";
 import { facts } from "../../data/facts";

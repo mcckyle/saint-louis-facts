@@ -5,55 +5,34 @@
 ==================== */
 .footer
 {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(145deg, #fdf6e3, #f8efd4);
+    background: linear-gradient(160deg, #fdfaf4 0%, #faf3e6 100%);
     color: #3b2a16;
-    padding: 5rem 3rem;
+    padding: 4rem 2rem 2rem;
+    border-top: 4px solid #d4af37;
+    font-family: 'Lora', serif;
     text-align: center;
-    font-family: 'Playfair Display', 'Garamond', serif;
-    border-top: 8px double #d4af37;
-    overflow: hidden;
-    box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.15);
-
-    /*animation: fadeUp 1s ease-in-out;*/
-}
-
-/* Ambient Golden Glow. */
-.footer::before
-{
-    content: '';
-    position: absolute;
-    top: -40%; left: -40%;
-    width: 180%; height: 180%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.07), transparent 70%);
-    z-index: 0;
+    position: relative;
 }
 
 /* Footer Content Container Styling. */
 .footer-container
 {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    gap: 2rem;
 }
 
 /* Footer Intro Text Styles. */
 .footer-text
 {
-    font-size: 1.4rem;
-    line-height: 2rem;
-    color: #4b2f1d;
+    font-size: 1.2rem;
+    max-width: 800px;
+    color: #4b3b27;
     font-style: italic;
-    text-shadow: 0.5px 0.5px #f3e6bf;
-    max-width: 920px;
-    margin-bottom: 3rem;
-    border-bottom: 1px dashed #d4af37;
-    padding-bottom: 1.2rem;
+    line-height: 1.6;
 }
 
 /* Navigation Link Container Styles. */
@@ -61,93 +40,96 @@
 {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.8rem;
+    gap: 1.2rem;
     justify-content: center;
-    margin-top: 1.5rem;
 }
 
 /* Core Footer Link Styles. */
 .footer-link
 {
-    font-size: 1.25rem;
-    font-family: 'Cinzel', serif;
-    color: #3b2f1e;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #d4af37;
+    border-radius: 50px;
+    background: transparent;
+    color: #3b2a16;
     text-decoration: none;
-    padding: 0.8rem 2rem;
-    border-radius: 14px;
-    border: 2px solid #d4af37;
-    background: linear-gradient(to bottom, #fff9f0, #f6e3b5);
-    box-shadow: inset 1px 1px #fffdf2, 0 6px 18px rgba(0, 0, 0, 0.14);
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, background-color 0.4s ease, color 0.3s ease;
-}
 
-/* Hover Shine Animation Effect Styles. */
-.footer-link::after
-{
-    content: "";
-    position: absolute;
-    top: 0; left: -80%;
-    width: 50%; height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transform: skewX(-25deg);
-    transition: left 0.6s ease;
-}
-
-.footer-link:hover::after
-{
-    left: 130%;
+    transition: all 0.3s ease;
 }
 
 /* Hover Effects for Footer Links. */
 .footer-link:hover
 {
-    background: linear-gradient(to bottom, #fbe8a6, #dfc377);
-    color: #1d1408;
-    transform: scale(1.08);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    background: #d4af37;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Special Button: Back to Top. */
 .footer-back-to-top
 {
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    border: 3px solid #b8860b;
-    background: linear-gradient(to bottom, #fffbe6, #f7e4ad);
-    color: #472e10;
-    box-shadow: inset 0 1px 3px #fff, 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    background: #d4af37;
+    color: #fff;
 }
 
 .footer-back-to-top:hover
 {
-    background: linear-gradient(to bottom, #fff6cc, #e0c77d);
-    transform: scale(1.12) translateY(-2px);
+    background: #b38e25;
+}
+
+.footer-copy
+{
+    font-size: 0.85rem;
+    color: #6a5840;
 }
 
 /* Responsive Design Styling. */
 @media (max-width: 768px)
 {
   .footer {
-    padding: 3rem 1.4rem;
+    padding: 3rem 1rem 1.5rem;
   }
 
   .footer-text {
-    font-size: 1.15rem;
-  }
-
-  .footer-links {
-    gap: 1rem;
-    flex-direction: column;
+    font-size: 1rem;
   }
 
   .footer-link {
-    font-size: 1rem;
-    padding: 0.7rem 1.4rem;
+    padding: 0.6rem 1.2rem;
   }
 }
+
+/*.footer::before
+ {  *
+ content: '';
+ position: absolute;
+ top: -40%; left: -40%;
+ width: 180%; height: 180%;
+ background: radial-gradient(circle, rgba(212, 175, 55, 0.07), transparent 70%);
+ z-index: 0;
+ }*/
+
+/*.footer-link::after
+{
+  content: "";
+  position: absolute;
+  top: 0; left: -80%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+}
+
+.footer-link:hover::after
+{
+  left: 130%;
+}*/
 
 /*@keyframes fadeUp
 {

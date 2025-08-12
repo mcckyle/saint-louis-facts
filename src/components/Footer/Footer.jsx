@@ -1,13 +1,15 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 28 April 2025
-//Description: Contains the React component for the facts Footer section.
+//Date: 11 August 2025
+//Description: This file contains the React component for the Saint Louis Facts Footer section.
 
 import React from 'react';
 import './Footer.css';
 
 function Footer()
 {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="footer" role="contentinfo" aria-label="Site Footer">
             <div className="footer-container">
@@ -38,12 +40,16 @@ function Footer()
                         className="footer-link footer-back-to-top"
                         aria-label="Back to top"
                     >
-                        Back to Top
+                        ↑ Back to Top
                     </a>
                 </nav>
+
+                <small className="footer-copy">
+                  &copy; {currentYear} Saint Louis Facts. All rights reserved.
+                </small>
             </div>
         </footer>
-  );
+    );
 }
 
 export default Footer;
