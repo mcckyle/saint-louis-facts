@@ -1,7 +1,7 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the Jest unit tests for the facts Intro section.
+//Date: 11 August 2025
+//Description: This file contains the Jest unit tests for the Saint Louis Facts Intro section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
