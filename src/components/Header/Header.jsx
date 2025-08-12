@@ -1,7 +1,7 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the React component for the facts Header section.
+//Date: 11 August 2025
+//Description: This file contains the React component for the Saint Louis Facts Header section.
 
 import React from 'react';
 import gatewayArchImage from '../../assets/images/gateway-arch-background.jpg';
@@ -10,27 +10,27 @@ import './Header.css';
 function Header({ scrollTargetRef })
 {
     return (
-        <header className="header" role="banner" aria-label="Page Header">
+        <header className="header" role="banner" aria-label="Saint Louis Landing Section">
           <img
             src={gatewayArchImage}
-            alt="Saint Louis Skyline"
+            alt="Gateway Arch with the Saint Louis skyline"
             className="header-image"
           />
           <div className="header-overlay">
             <div className="header-content" data-testid="header-container">
-                <h1 className="header-title">Saint&nbsp;Louis, Missouri</h1>
+                <h1 className="header-title">Saint&nbsp;Louis</h1>
                     <p className="header-subtitle">
-                        Explore fascinating facts about the Gateway to the West.
+                        From the Gateway Arch to the Mississippi River - experience the heart of the Midwest.
                     </p>
-                    <div
-                         aria-hidden="true"
-                         className="header-chevron"
-                         onClick={() => {
-                             scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' });
-                         }}
+                    <button
+                      className="scroll-cue"
+                      onClick={() => scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                      aria-label="Scroll to Introduction"
                     >
-                        ▼
-                    </div>
+                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </button>
                 </div>
             </div>
         </header>

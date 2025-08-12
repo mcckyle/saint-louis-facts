@@ -18,28 +18,28 @@ describe('Header Component', () => {
   // Test 2: Check if the title renders
   test('renders the header title', () => {
     render(<Header />);
-    const titleElement = screen.getByText(/Saint Louis, Missouri/i);
+    const titleElement = screen.getByText(/Saint Louis/i);
     expect(titleElement).toBeInTheDocument();
   });
 
   // Test 3: Check if the description renders
   test('renders the header description', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
     expect(descriptionElement).toBeInTheDocument();
   });
 
   // Test 4: Check if the title has the correct class
   test('title has the correct class', () => {
     render(<Header />);
-    const titleElement = screen.getByText(/Saint Louis, Missouri/i);
+    const titleElement = screen.getByText(/Saint Louis/i);
     expect(titleElement).toHaveClass('header-title');
   });
 
   // Test 5: Check if the description has the correct class
   test('description has the correct class', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
     expect(descriptionElement).toHaveClass('header-subtitle');
   });
 
@@ -68,13 +68,13 @@ describe('Header Component', () => {
   test('header is accessible', () => {
     render(<Header />);
     const headerElement = screen.getByRole('banner');
-    expect(headerElement).toHaveAttribute('aria-label', 'Page Header');
+    expect(headerElement).toHaveAttribute('aria-label', 'Saint Louis Landing Section');
   });
 
   // Test 10: Ensure the description has correct text content
   test('description has correct text content', () => {
     render(<Header />);
-    const descriptionElement = screen.getByText(/Explore fascinating facts about the Gateway to the West./i);
-    expect(descriptionElement.textContent).toBe('Explore fascinating facts about the Gateway to the West.');
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
+    expect(descriptionElement.textContent).toBe('From the Gateway Arch to the Mississippi River - experience the heart of the Midwest.');
   });
 });
