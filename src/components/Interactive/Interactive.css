@@ -5,191 +5,148 @@
  ================================= */
 .interactive
 {
-    position: relative;
-    width: 100%;
-    padding: 6rem 4rem;
-    background: linear-gradient(145deg, #fdf6e3 0%, #f8efd4 100%);
-    border-top: 6px double #d4af37;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #fdfaf3, #f7f1e0);
     text-align: center;
-    overflow: hidden;
-    /*transition: transform 0.4s ease, box-shadow 0.4s ease;*/
 }
-
-/* Golden Ambient Glow Visual Effects. */
-.interactive::before
-{
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
-    z-index: 0;
-}
-
-/*.interactive:hover
-{
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.22);
-}*/
 
 /* Section Heading Styles. */
 .interactive-title
 {
     font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #4b2a0a;
-    margin-bottom: 2.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 4px double #d4af37;
-    padding-bottom: 0.8rem;
-    text-shadow: 2px 2px #d4af37; /* Gold shadow. */
-    display: inline-block;
-    position: relative;
+    margin-bottom: 0.5rem;
 }
 
-.interactive-title::after
+.interactive-subtitle
 {
-    content: '';
-    position: absolute;
-    bottom: -8px; left: 0;
-    width: 100%; height: 3px;
-    background: linear-gradient(to right, #d4af37, #fff4c2, #d4af37);
-    background-size: 200% auto;
-    animation: shimmer 6s linear infinite;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: #5a4635;
+    margin-bottom: 2.5rem;
 }
 
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(120deg, #b8860b, #d9af37);
-    color: #fffef8;
-    font-size: 1.5rem;
-    padding: 1.2rem 3rem;
+    background: linear-gradient(120deg, #b8860b, #d4af37);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.9rem 2.2rem;
     border: none;
-    border-radius: 60px;
+    border-radius: 50px;
     cursor: pointer;
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 12px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    transition: transform 0.3s, background 0.4s ease;
-}
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
 
-/* Hover Shine Visual Effects. */
-.interactive-button::after
-{
-    content: '';
-    position: absolute;
-    top: 0; left: -70%;
-    width: 50%; height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.6s ease;
-}
-
-.interactive-button:hover::after
-{
-    left: 140%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interactive-button:hover
 {
-    background: linear-gradient(120deg, #a77800, #c79d25);
-    transform: scale(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4);
 }
-
-/*.interactive-button:focus
-{
-    outline: 3px solid #ffb13b;
-    outline-offset: 4px;
-}*/
 
 /* Fact Display Card Styling. */
 .interactive-fact-display
 {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: rgba(255, 255, 255, 0.96);
-    border-left: 6px solid #d4af37;
-    border-right: 6px solid #d4af37;
-    border-radius: 20px;
-    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
-    animation: fadeInCard 0.8s ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Decorative Glowing Stripe. */
-.interactive-fact-display::before
-{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 6px; height: 100%;
-    background: linear-gradient(to bottom, #d4af37, #b8860b);
+    margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInCard 0.5s ease-in-out;
 }
 
 /* Fact Title Styling. */
 .fact-title
 {
-    font-size: 2.2rem;
     font-family: 'Cinzel Decorative', serif;
-    color: #2c1b18;
-    margin-bottom: 1.2rem;
-    text-shadow: 1px 1px 0 #bfa437;
-    letter-spacing: 1px;
+    font-size: 1.8rem;
+    color: #4b2a0a;
+    margin-bottom: 0.8rem;
 }
 
 /* Fact Description Styles. */
 .fact-description
 {
-    font-size: 1.35rem;
-    color: #3b2f2f;
-    line-height: 1.9;
     font-family: 'Lora', serif;
-    padding: 1rem 1.4rem;
-    background: rgba(255, 255, 255, 0.88);
-    border-radius: 12px;
-    box-shadow: inset 0 0 12px rgba(212, 175, 55, 0.15);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #3b2f2f;
 }
 
 /* Animations Styles. */
 @keyframes fadeInCard {
-  from { opacity: 0; transform: translateY(-18px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
 }
 
 /* Mobile Styles. */
 @media (max-width: 768px) {
   .interactive {
-    padding: 3rem 1.4rem;
-  }
-
-  .interactive-title {
-    font-size: 2.6rem;
+    padding: 3rem 1.2rem;
   }
 
   .interactive-button {
-    font-size: 1.2rem;
-    padding: 0.95rem 2rem;
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
   }
 
   .fact-title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
 
   .fact-description {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
 }
+
+/*.interactive-title::after
+{
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(to right, #d4af37, #fff4c2, #d4af37);
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+}*/
+
+/*.interactive-button::after
+{
+  content: '';
+  position: absolute;
+  top: 0; left: -70%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.interactive-button:hover::after
+{
+  left: 140%;
+}*/
+
+/*.interactive-fact-display::before
+{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px; height: 100%;
+  background: linear-gradient(to bottom, #d4af37, #b8860b);
+}*/
+/* @keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}*/

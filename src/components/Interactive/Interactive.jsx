@@ -7,7 +7,7 @@ import React, { useState, useCallback } from "react";
 import { facts } from "../../data/facts";
 import './Interactive.css';
 
-function Interactive()
+export default function Interactive()
 {
     const [randomFact, setRandomFact] = useState(null);
 
@@ -21,6 +21,10 @@ function Interactive()
             <h2 id="interactive-title" className="interactive-title">
               Discover a Random Fact
             </h2>
+
+            <p className="interactive-subtitle">
+              Click below to uncover something unique about Saint Louis.
+            </p>
 
             <button
                 className="interactive-button"
@@ -37,7 +41,5 @@ function Interactive()
                 </div>
             )}
         </section>
-  );
+    );
 }
-
-export default Interactive;
