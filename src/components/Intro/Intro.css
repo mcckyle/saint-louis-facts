@@ -7,17 +7,15 @@
 {
     position: relative;
     width: 100%;
-    padding: 6rem 4rem;
-    background: linear-gradient(145deg, #fdf7e4, #f9eccc);
-    box-shadow: inset 0 -4px 24px rgba(0, 0, 0, 0.08);
-    border-top: 6px double #d4af37;
+    padding: 6rem 2rem;
+    background: linear-gradient(160deg, #fffdf9, #f8f5eb);
+    border-top: 4px solid var(--color-accent);
     text-align: center;
     overflow: hidden;
-    animation: fadeInIntro 1.2s ease forwards;
-    transition: background 0.4s ease, padding 0.4s ease;
+    animation: fadeInIntro 1s ease forwards;
 }
 
-/* Golden Radial Glow Behind the Section. */
+/* Soft Golden Radial Glow Behind the Section. */
 .intro::before
 {
     content: '';
@@ -26,48 +24,22 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06), transparent 70%);
     z-index: 0;
-}
-
-.intro::after
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-    opacity: 0.05;
-    z-index: 0;
-    animation: sparkle 20s linear infinite;
-    pointer-events: none;
 }
 
 /* Intro Title Styling. */
 .intro-title
 {
     font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(3rem, 5vw, 4.2rem);
-    color: #4b2606;
-    margin-bottom: 2rem;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    margin-bottom: 1.8rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.6rem;
-    border-bottom: 4px double #d4af37;
-    text-shadow: none;
+    letter-spacing: 2px;
     background: linear-gradient(45deg, #b8860b, #d4af37, #ffecb3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: text-shadow 0.3s ease;
-}
-
-.intro-title:hover
-{
-    text-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
+    position: relative;
 }
 
 /* Shimmer Effect on Underline. */
@@ -75,79 +47,73 @@
 {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
     height: 3px;
     background: linear-gradient(to right, #d4af37, #fff4c2, #d4af37);
     background-size: 200% auto;
-    animation: shimmer 6s linear infinite;
+    animation: shimmer 5s linear infinite;
 }
 
-/* Intro Text Block Styling. */
-.intro-text
+/* Lead Text Styling. */
+.intro-lead
 {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    position: relative;
     z-index: 1;
+    position: relative;
 }
 
 /* Intro Paragraph Styling. */
 .intro p
 {
-    font-size: 1.5rem;
-    line-height: 2.1;
+    font-size: 1.4rem;
+    line-height: 1.9;
     font-family: 'Lora', serif;
-    color: #2e2e2e;
-    margin-top: 2rem;
-    padding: 2rem 2.5rem;
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 18px;
-    box-shadow: 0 16px 40px rgba(212, 175, 55, 0.18);
-    border-left: 6px solid #d4af37;
-    border-right: 6px solid #d4af37;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    color: #3a3a3a;
+    margin: 1.2rem auto 0;
+    padding: 1.2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intro p:hover
 {
-    transform: scale(1.02);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Decorative Shimmer Inside the Intro Paragraph. */
-.intro p::before
+/* Scroll Cue Styles. */
+.intro-scroll-cue
+{
+    width: 26px;
+    height: 46px;
+    border: 2px solid var(--color-accent);
+    border-radius: 20px;
+    position: relative;
+    margin: 2rem auto 0;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+}
+
+.intro-scroll-cue::before
 {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.06) transparent);
-    z-index: -1;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: scrollDot 1.5s infinite;
 }
 
-.intro-scroll-cue
-{
-    font-size: 1.6rem;
-    color: #b8860b;
-    margin-top: 2rem;
-    animation: bounce 2s infinite ease-in-out;
-}
-
-.intro-scroll-cue:hover
-{
-    color: #ffd700;
-    transform: scale(1.2);
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-}
-
+/* Animations Styles. */
 @keyframes shimmer
 {
     0% { background-position: 0% center; }
@@ -155,41 +121,88 @@
 }
 
 @keyframes fadeInIntro {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes sparkle
+@keyframes scrollDot
 {
-    from { background-position: 0 0; }
-    to { background-position: 1000px 1000px; }
-}
-
-@keyframes bounce
-{
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    50% { transform: translate(-50%, 14px); opacity: 0.6; }
+    100% { transform: translate(-50%, 0); opacity: 1; }
 }
 
 /* Responsive Design Styles. */
 @media (max-width: 768px) {
   .intro {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
   }
 
   .intro-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .intro p {
-    font-size: 1.2rem;
-    padding: 1.2rem;
-    max-width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
   }
 }
+
+/* *** Old styles past this line!! ****/
+
+/*.intro::after
+ {  *
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ opacity: 0.05;
+ z-index: 0;
+ animation: sparkle 20s linear infinite;
+ pointer-events: none;
+ }*/
+
+/*.intro-title:hover
+{
+    text-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
+}*/
+
+/*.intro p::before
+ {  *
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.06) transparent);
+ z-index: -1;
+ }*/
+
+/*.intro-scroll-cue:hover
+ {  *
+ color: #ffd700;
+ transform: scale(1.2);
+ transition: transform 0.3s ease, color 0.3s ease;
+ cursor: pointer;
+ }*/
+
+/*@keyframes bounce
+ {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(8px); }
+ }*/
+
+/*@keyframes sparkle
+{
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+@keyframes pulseLine
+{
+    0%, 100% { transform: scaleY(1); opacity: 0.6; }
+    50% { transform: scaleY(1.4); opacity: 1; }
+}*/

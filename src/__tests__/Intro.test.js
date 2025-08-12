@@ -23,7 +23,7 @@ describe('Intro Component', () => {
   });
 
   test('renders a paragraph with the correct description', () => {
-    const paragraph = screen.getByText(/Along the banks of the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Saint Louis - where the mighty Mississippi/i);
     expect(paragraph).toBeInTheDocument();
   });
 
@@ -37,10 +37,10 @@ describe('Intro Component', () => {
     expect(headings).toHaveLength(1);
   });
 
-  test('contains exactly one paragraph element', () => {
+  test('contains exactly two paragraph elements', () => {
     const { container } = render(<Intro />);
     const paragraphs = container.querySelectorAll('p');
-    expect(paragraphs).toHaveLength(1);
+    expect(paragraphs).toHaveLength(2);
   });
 
   test('contains no additional content besides the heading and paragraph', () => {
@@ -54,7 +54,7 @@ describe('Intro Component', () => {
   });
 
   test('the paragraph text is visible and not empty', () => {
-    const paragraph = screen.getByText(/Along the banks of the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Saint Louis - where the mighty Mississippi/i);
     expect(paragraph).toBeVisible();
     expect(paragraph).not.toBeEmptyDOMElement();
   });

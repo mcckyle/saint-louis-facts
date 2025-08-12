@@ -1,6 +1,6 @@
 //Filename: Intro.jsx
 //Author: Kyle McColgan
-//Date: 27 July 2025
+//Date: 11 August 2025
 //Description: This file contains the React component for the facts Intro section.
 
 import React from 'react';
@@ -18,13 +18,14 @@ const Intro = React.forwardRef((props, ref) => (
             Welcome to the Heart of Saint Louis
         </h2>
 
-        <div className="intro-text">
-            <p>
-                Along the banks of the mighty Mississippi, Saint Louis shines with a vibrant spirit, rich history, and a warm, welcoming community.
-                From the soaring Gateway Arch to the soulful rhythms of blues music, barbecue, and neighborhoods full of character,
-                this city offers a dynamic blend of past and present. Explore these curated facts and experience the essence of the Gateway to the West!
+        <div className="intro-lead fade-in-delay">
+            <p className="fade-in-delay">
+                Saint Louis - where the mighty Mississippi meets a city of soul, flavour, and history.
             </p>
-        <div className="intro-scroll-cue" aria-hidden="true">↓</div>
+            <p className="fade-in-delay-2">
+                From the Gateway Arch to blues, barbecue, and neighborhood gems - discover the best of the Gateway to the West.
+            </p>
+          <div className="intro-scroll-cue" aria-hidden="true"></div>
         </div>
     </section>
 ));

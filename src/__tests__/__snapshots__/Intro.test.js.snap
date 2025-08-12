@@ -15,17 +15,22 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       Welcome to the Heart of Saint Louis
     </h2>
     <div
-      class="intro-text"
+      class="intro-lead fade-in-delay"
     >
-      <p>
-        Along the banks of the mighty Mississippi, Saint Louis shines with a vibrant spirit, rich history, and a warm, welcoming community. From the soaring Gateway Arch to the soulful rhythms of blues music, barbecue, and neighborhoods full of character, this city offers a dynamic blend of past and present. Explore these curated facts and experience the essence of the Gateway to the West!
+      <p
+        class="fade-in-delay"
+      >
+        Saint Louis - where the mighty Mississippi meets a city of soul, flavour, and history.
+      </p>
+      <p
+        class="fade-in-delay-2"
+      >
+        From the Gateway Arch to blues, barbecue, and neighborhood gems - discover the best of the Gateway to the West.
       </p>
       <div
         aria-hidden="true"
         class="intro-scroll-cue"
-      >
-        ↓
-      </div>
+      />
     </div>
   </section>
 </div>
