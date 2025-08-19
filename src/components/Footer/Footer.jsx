@@ -45,7 +45,7 @@ function Footer()
                 </nav>
 
                 <small className="footer-copy">
-                  &copy; {currentYear} Saint Louis Facts. All rights reserved.
+                  &copy; {currentYear} Saint Louis Facts. Designed in Saint Louis by Kyle McColgan.
                 </small>
             </div>
         </footer>
