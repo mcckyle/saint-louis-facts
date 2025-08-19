@@ -1,7 +1,7 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the React component for the facts list section.
+//Date: 18 August 2025
+//Description: This file contains the React component for the Saint Louis facts list section.
 
 import React from 'react';
 import { facts as defaultFacts } from "../../data/facts";
@@ -18,7 +18,7 @@ function FunFactsList({ facts = defaultFacts })
 
                 <ul className="fact-list">
                     {facts.map((fact, index) => (
-                        <li key={index} className="fact-item">
+                        <li key={index} className="fact-item fade-in-delay">
                             <h3 className="fact-title">{fact.title}</h3>
                             <p className="fact-description">{fact.description}</p>
 
