@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-river);
+    background: var(--color-river);
 }
 
 .header-image
@@ -20,21 +20,26 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(70%) contrast(1.08) saturate(1.1);
+    filter: brightness(70%) contrast(1.05) saturate(1.08);
     transform: scale(1.05);
-    transition: transform 10s ease;
+
+    transition: transform 12s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.1);
+    transform: scale(1.12);
 }
 
 .header-overlay
 {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at bottom, rgba(30, 63, 102, 0.65) 0%, rgba(0, 0, 0, 0.7) 80%);
+    background: radial-gradient(
+      circle at bottom,
+      rgba(30, 63, 102, 0.55) 0%,
+      rgba(0, 0, 0, 0.75) 85%
+    );
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,49 +53,59 @@
     color: var(--white);
     max-width: 960px;
     padding: 2rem;
+
     animation: fadeInUp 1.4s ease forwards;
 }
 
 /* Main Title Styling. */
 .header-title
 {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: var(--font-heading);
     font-size: clamp(3rem, 6vw, 5.6rem);
     text-transform: uppercase;
     letter-spacing: 6px;
     margin-bottom: 1rem;
-    background: linear-gradient(120deg, var(--color-accent), #fff3b0, var(--color-accent));
+    background: linear-gradient(
+      120deg,
+      var(--color-sunset-gold),
+      var(--color-arch-silver),
+      var(--color-sunset-gold)
+    );
     background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    animation: shimmer 8s linear infinite;
+
+    animation: shimmer 10s linear infinite;
 }
 
 /* Subtitle Styling. */
 .header-subtitle
 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.4rem;
     letter-spacing: 0.5px;
-    color: #f5f3e9;
+    color: var(--color-bg-alt);
     margin-bottom: 2.5rem;
     opacity: 0.9;
 }
 
-/* Floating Chevron Scroll Indicator Styling. */
+/* Scroll Cue Styling. */
 .scroll-cue
 {
     background: none;
     border: none;
-    color: var(--color-accent);
+    color: var(--color-sunset-gold);
     cursor: pointer;
+
     animation: float 2.5s ease-in-out infinite;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .scroll-cue:hover
 {
-    transform: scale(1.15);
+    transform: scale(1.2);
+    color: var(--color-arch-silver);
 }
 
 /* Keyframes for Effects Styles. */
@@ -106,7 +121,7 @@
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
-  50% { opacity: 1; transform: translateY(0px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Design Styles. */
@@ -124,8 +139,9 @@
     font-size: 1.2rem;
   }
 
-  .header-chevron {
-    font-size: 2rem;
+  .scroll-cue svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
