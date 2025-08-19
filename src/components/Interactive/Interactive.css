@@ -6,49 +6,53 @@
 .interactive
 {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #fdfaf3, #f7f1e0);
+    background: linear-gradient(135deg, var(--color-bg-alt), var(--color-bg));
     text-align: center;
 }
 
 /* Section Heading Styles. */
 .interactive-title
 {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #4b2a0a;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .interactive-subtitle
 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.2rem;
-    color: #5a4635;
+    color: var(--color-text-muted);
     margin-bottom: 2.5rem;
 }
 
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(120deg, #b8860b, #d4af37);
-    color: white;
+    background: linear-gradient(120deg, var(--color-sunset-gold), #fff3b0);
+    color: var(--white);
     font-size: 1.2rem;
-    padding: 0.9rem 2.2rem;
+    padding: 1rem 2.4rem;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-heading);
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .interactive-button:hover
 {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(120deg, var(--color-sunset-gold), #fff4c2);
 }
 
 /* Fact Display Card Styling. */
@@ -59,18 +63,19 @@
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
+
     animation: fadeInCard 0.5s ease-in-out;
 }
 
 /* Fact Title Styling. */
 .fact-title
 {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: var(--font-heading);
     font-size: 1.8rem;
     color: #4b2a0a;
     margin-bottom: 0.8rem;
@@ -79,16 +84,22 @@
 /* Fact Description Styles. */
 .fact-description
 {
-    font-family: 'Lora', serif;
+    font-family: var(--font-body);
     font-size: 1.2rem;
-    line-height: 1.7;
-    color: #3b2f2f;
+    line-height: 1.75;
+    color: var(--color-text);
 }
 
 /* Animations Styles. */
 @keyframes fadeInCard {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in
+{
+    opacity: 0;
+    animation: fadeInCard 0.6s ease forwards;
 }
 
 /* Mobile Styles. */
@@ -99,7 +110,7 @@
 
   .interactive-button {
     font-size: 1rem;
-    padding: 0.8rem 1.6rem;
+    padding: 0.8rem 1.8rem;
   }
 
   .fact-title {
