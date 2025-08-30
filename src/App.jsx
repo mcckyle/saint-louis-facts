@@ -1,6 +1,6 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 27 July 2025
+//Date: 29 August 2025
 //Description: This file contains the React root component for the facts website.
 
 import React, {useRef} from 'react';
@@ -17,9 +17,10 @@ function App()
   const introRef = useRef(null);
 
   return (
-      <div>
+      <div id="top">
+        <a href="#main" className="skip-link">Skip to main content</a>
           <Header scrollTargetRef={introRef} />
-          <main className="main-content">
+          <main id="main" className="main-content" role="main" aria-label="Main content">
             <Intro ref={introRef} />
             <FunFactsList />
             <Interactive />
