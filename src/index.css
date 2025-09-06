@@ -13,7 +13,7 @@
 html
 {
     font-size: 16px; /* Root font size for rem scaling. */
-    --webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
 }
@@ -27,8 +27,11 @@ body
     line-height: 1.7;
 
     background:
-      radial-gradient(1200px 600px at 50% -200px, color-mix(in oklab, var(--color-bg) 85%, var(--color-arch-silver) 15%), transparent 70%),
+      radial-gradient(1200px 600px at 50% -200px,
+        color-mix(in oklab, var(--color-bg) 85%, var(--color-arch-silver) 15%),
+        transparent 70%),
       linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,7 +61,7 @@ a:hover
 {
     color: var(--color-accent);
     text-decoration: underline;
-    text-decoration-offset: 3px;
+    text-underline-offset: 3px;
 }
 
 /* Paragraph Global Styles. */
@@ -70,7 +73,7 @@ p
 }
 
 
-/* =======================
+/* ========================
    Animations Styles.
 =========================== */
 .fade-in
@@ -84,8 +87,8 @@ p
     to { opacity: 1; }
 }
 
-/* =======================
-   Accessibility Styles.
+/* =========================
+   Reduced Motion Styles.
 ============================ */
 @media (prefers-reduced-motion: reduce)
 {

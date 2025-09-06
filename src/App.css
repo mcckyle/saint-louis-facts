@@ -8,13 +8,13 @@
     /* Core Palette. */
     --color-river: #124e78; /* Color: Mississippi River Blue. */
     --color-arch-silver: #BFC7CF; /* Color: Gateway Arch Silver. */
-    --color-forest-green: #2F6E4F;
-    --color-brick-red: #7A2E2E;
-    --color-sunset-gold: #D4AF37;
-    --color-cloud: #FFFDF7;
-    --stl-mist: #F2F4F7;
-    --stl-ink: #1F2328;
-    --stl-muted: #59636E;
+    --color-forest-green: #2F6E4F; /* Color: Forest Park Green. */
+    --color-brick-red: #7A2E2E; /* Color: Soulard Brick. */
+    --color-sunset-gold: #D4AF37; /* Color: Museum Accent Gold. */
+    --color-cloud: #FFFDF7; /* Color: Cloud (base). */
+    --stl-mist: #F2F4F7; /* Color: Skyline Mist. */
+    --stl-ink: #1F2328; /* Color: Ink (text). */
+    --stl-muted: #59636E; /* Color: Muted text. */
 
     /* Semantic Tokens. */
     --color-bg: var(--color-cloud);
@@ -33,7 +33,7 @@
     --font-heading: 'Playfair Display', 'Garamond', serif;
     --font-body: 'Lora', 'Georgia', serif;
 
-    /* Shape and Motion. */
+    /* Shapes and Motion. */
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 24px;
@@ -129,7 +129,10 @@ button
     cursor: pointer;
     box-shadow: var(--shadow-sm);
 
-    transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+    transition: transform var(--transition),
+                box-shadow var(--transition),
+                background var(--transition),
+                border-color var(--transition);
 }
 
 button:hover
