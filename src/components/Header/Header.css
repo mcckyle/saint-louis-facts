@@ -1,8 +1,8 @@
 /* Filename: Header.css */
 
-/* ========================
+/* ============================
    Header Section Styling.
-=========================== */
+=============================== */
 .header
 {
     position: relative;
@@ -23,22 +23,22 @@
     filter: brightness(70%) contrast(1.05) saturate(1.08);
     transform: scale(1.05);
 
-    transition: transform 12s ease;
+    transition: transform 10s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.12);
+    transform: scale(1.1);
 }
 
 .header-overlay
 {
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-      circle at bottom,
-      rgba(30, 63, 102, 0.55) 0%,
-      rgba(0, 0, 0, 0.75) 85%
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.7) 100%
     );
     display: flex;
     align-items: center;
@@ -54,16 +54,16 @@
     max-width: 960px;
     padding: 2rem;
 
-    animation: fadeInUp 1.4s ease forwards;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 /* Main Title Styling. */
 .header-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 6vw, 5.6rem);
+    font-size: clamp(3rem, 6vw, 5.5rem);
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     margin-bottom: 1rem;
     background: linear-gradient(
       120deg,
@@ -74,93 +74,88 @@
     background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 
-    animation: shimmer 10s linear infinite;
+    animation: shimmer 8s linear infinite;
 }
 
 /* Subtitle Styling. */
 .header-subtitle
 {
     font-family: var(--font-body);
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    letter-spacing: 0.4px;
     color: var(--color-bg-alt);
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 /* Scroll Cue Styling. */
 .scroll-cue
 {
-    background: none;
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 215, 0, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--color-sunset-gold);
+    border-radius: 50%;
+    padding: 0.8rem;
     color: var(--color-sunset-gold);
     cursor: pointer;
 
     animation: float 2.5s ease-in-out infinite;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .scroll-cue:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.15);
+    background: rgba(255, 215, 0, 0.25);
     color: var(--color-arch-silver);
 }
 
 /* Keyframes for Effects Styles. */
-@keyframes shimmer {
+@keyframes shimmer
+{
   0%  { background-position: 0% center; }
   100% { background-position: 200% center; }
 }
 
-@keyframes float {
+@keyframes float
+{
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(10px); }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUp
+{
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Design Styles. */
-@media (max-width: 768px) {
-  .header {
-    height: 70vh;
+@media (max-width: 768px)
+{
+  .header
+  {
+      height: 70vh;
   }
 
-  .header-title {
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    letter-spacing: 3px;
+  .header-title
+  {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      letter-spacing: 2px;
   }
 
-  .header-subtitle {
-    font-size: 1.2rem;
+  .header-subtitle
+  {
+      font-size: 1.1rem;
   }
 
-  .scroll-cue svg {
-    width: 28px;
-    height: 28px;
+  .scroll-cue svg
+  {
+      width: 26px;
+      height: 26px;
   }
 }
-
-/*@keyframes glow {
-  from { text-shadow: 0 0 6px rgba(212, 175, 55, 0.6), 0 0 12px rgba(212, 175, 55, 0.4); }
-  to { text-shadow: 0 0 14px rgba(212, 175, 55, 1), 0 0 28px rgba(212, 175, 55, 0.8); }
-}*/
-
-/* High Contrast Mode Styles. */
-/*@media (prefers-contrast: high) {
-  .header {
-    background: #000 !important;
-  }
-
-  .header-title,
-  .header-subtitle {
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: #fff !important;
-  }
-}*/

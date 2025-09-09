@@ -15,16 +15,12 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       Welcome to the Heart of Saint Louis
     </h2>
     <div
-      class="intro-lead fade-in-delay"
+      class="intro-lead"
     >
-      <p
-        class="fade-in-delay"
-      >
+      <p>
         Saint Louis - where the mighty Mississippi meets a city of soul, flavour, and history.
       </p>
-      <p
-        class="fade-in-delay-2"
-      >
+      <p>
         From the Gateway Arch to blues, barbecue, and neighborhood gems - discover the best of the Gateway to the West.
       </p>
       <div

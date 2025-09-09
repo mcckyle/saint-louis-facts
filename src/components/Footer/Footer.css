@@ -1,20 +1,18 @@
 /* Filename: Footer.css */
 
-/* =================
+/* ======================
    Footer Styling.
-==================== */
+========================= */
 .footer
 {
     background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
-    color: var(--color-text-muted);
     padding: 4rem 2rem 2rem;
     border-top: 4px solid var(--color-sunset-gold);
-    font-family: var(--font-body);
     text-align: center;
-    position: relative;
+    font-family: var(--font-body);
 }
 
-/* Footer Content Container Styling. */
+/* Footer Container Styling. */
 .footer-container
 {
     max-width: 1100px;
@@ -28,35 +26,35 @@
 /* Footer Intro Text Styles. */
 .footer-text
 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     max-width: 800px;
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* Navigation Link Container Styles. */
+/* Footer Links Container Styles. */
 .footer-links
 {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem;
     justify-content: center;
+    gap: 1rem;
 }
 
-/* Core Footer Link Styles. */
+/* Individual Link Styles. */
 .footer-link
 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    padding: 0.7rem 1.5rem;
+    padding: 0.6rem 1.4rem;
     border: 1px solid var(--color-sunset-gold);
-    border-radius: var(--border-radius);
-    background: transparent;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
     color: var(--color-text);
     text-decoration: none;
+    backdrop-filter: blur(6px);
     position: relative;
-    overflow: hidden;
 
     transition: all 0.3s ease;
 }
@@ -67,7 +65,7 @@
     background: var(--color-sunset-gold);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Special Button: Back to Top. */
@@ -76,6 +74,7 @@
     font-weight: 700;
     background: var(--color-sunset-gold);
     color: var(--white);
+    border: none;
 }
 
 .footer-back-to-top:hover
@@ -86,59 +85,37 @@
 .footer-copy
 {
     font-size: 0.85rem;
-    color: #6a5840;
+    color: #5a4630;
+}
+
+.footer-highlight
+{
+    font-weight: 600;
+    background: linear-gradient(
+      45deg,
+      var(--color-sunset-gold),
+      var(--color-arch-silver)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Responsive Design Styling. */
 @media (max-width: 768px)
 {
-  .footer {
-    padding: 3rem 1rem 1.5rem;
-  }
-
-  .footer-text {
-    font-size: 1rem;
-  }
-
-  .footer-link {
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-/*.footer::before
- {  *
- content: '';
- position: absolute;
- top: -40%; left: -40%;
- width: 180%; height: 180%;
- background: radial-gradient(circle, rgba(212, 175, 55, 0.07), transparent 70%);
- z-index: 0;
- }*/
-
-/*.footer-link::after
-{
-  content: "";
-  position: absolute;
-  top: 0; left: -80%;
-  width: 50%; height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transform: skewX(-25deg);
-  transition: left 0.6s ease;
-}
-
-.footer-link:hover::after
-{
-  left: 130%;
-}*/
-
-/*@keyframes fadeUp
-{
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+    .footer
+    {
+        padding: 3rem 1rem 1.5rem;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    .footer-text
+    {
+        font-size: 1rem;
     }
-}*/
+
+    .footer-link
+    {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.1rem;
+    }
+}

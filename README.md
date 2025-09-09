@@ -139,7 +139,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-- **React** for providing a powerful framework for building user interfaces.
-- **CSS** for styling the application.
-- **Vite**: For offering an exceptional build tool that significantly improved the development experience with its fast and efficient workflow.
-- **Saint Louis**: For being an inspiring city full of history and culture, serving as the backdrop for this project and a source of endless inspiration.
+- **React** - for powering a dynamic and modern user experience.
+- **CSS** - for bringing structure and styles to the application's design.
+- **Vite** - for a lightning-fast and efficient development workflow.
+- **Saint Louis** - for the plethora of history and culture, as well as serving as the backdrop for this project and a source of endless inspiration.

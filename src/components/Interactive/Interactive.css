@@ -1,8 +1,8 @@
 /* Filename: Interactive.css */
 
-/* ===============================
+/* ==================================
    Interactive Section Styling.
- ================================= */
+ ==================================== */
 .interactive
 {
     padding: 5rem 2rem;
@@ -14,17 +14,17 @@
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     color: #4b2a0a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .interactive-subtitle
 {
     font-family: var(--font-body);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--color-text-muted);
     margin-bottom: 2.5rem;
 }
@@ -32,132 +32,95 @@
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(120deg, var(--color-sunset-gold), #fff3b0);
-    color: var(--white);
-    font-size: 1.2rem;
-    padding: 1rem 2.4rem;
+    background: linear-gradient(120deg, var(--color-sunset-gold), #ffd66b);
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 1rem 2.2rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 40px;
     cursor: pointer;
     font-family: var(--font-heading);
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
 }
 
 .interactive-button:hover
 {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
-    background: linear-gradient(120deg, var(--color-sunset-gold), #fff4c2);
+    background: linear-gradient(120deg, var(--color-sunset-gold), #ffe082);
 }
 
 /* Fact Display Card Styling. */
 .interactive-fact-display
 {
     margin-top: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 700px;
+    margin-inline: auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: var(--border-radius);
+    border-radius: 16px;
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
-
-    animation: fadeInCard 0.5s ease-in-out;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Fact Title Styling. */
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: #4b2a0a;
-    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    color: #3a1f00;
+    margin-bottom: 0.75rem;
 }
 
 /* Fact Description Styles. */
 .fact-description
 {
     font-family: var(--font-body);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.75;
     color: var(--color-text);
 }
 
 /* Animations Styles. */
-@keyframes fadeInCard {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp
+{
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.fade-in
+.fade-up
 {
     opacity: 0;
-    animation: fadeInCard 0.6s ease forwards;
+    animation: fadeUp 0.6s ease forwards;
 }
 
 /* Mobile Styles. */
-@media (max-width: 768px) {
-  .interactive {
-    padding: 3rem 1.2rem;
+@media (max-width: 768px)
+{
+  .interactive
+  {
+      padding: 3rem 1.2rem;
   }
 
-  .interactive-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.8rem;
+  .interactive-button
+  {
+      font-size: 1rem;
+      padding: 0.85rem 1.8rem;
   }
 
-  .fact-title {
-    font-size: 1.5rem;
+  .fact-title
+  {
+      font-size: 1.4rem;
   }
 
-  .fact-description {
-    font-size: 1.05rem;
+  .fact-description
+  {
+      font-size: 1rem;
   }
 }
-
-/*.interactive-title::after
-{
-  content: '';
-  position: absolute;
-  bottom: -8px; left: 0;
-  width: 100%; height: 3px;
-  background: linear-gradient(to right, #d4af37, #fff4c2, #d4af37);
-  background-size: 200% auto;
-  animation: shimmer 6s linear infinite;
-}*/
-
-/*.interactive-button::after
-{
-  content: '';
-  position: absolute;
-  top: 0; left: -70%;
-  width: 50%; height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.6s ease;
-}
-
-.interactive-button:hover::after
-{
-  left: 140%;
-}*/
-
-/*.interactive-fact-display::before
-{
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 6px; height: 100%;
-  background: linear-gradient(to bottom, #d4af37, #b8860b);
-}*/
-/* @keyframes shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}*/

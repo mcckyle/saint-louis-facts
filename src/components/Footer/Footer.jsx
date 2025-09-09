@@ -1,7 +1,7 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 11 August 2025
-//Description: This file contains the React component for the Saint Louis Facts Footer section.
+//Date: 08 September 2025
+//Description: This file contains the Footer component for the Saint Louis Facts React project.
 
 import React from 'react';
 import './Footer.css';
@@ -16,7 +16,10 @@ function Footer()
                 <p className="footer-text">
                     This project draws inspiration from the vibrant culture and rich history of Saint Louis. Special thanks to the city’s official organizations for their dedication to preserving its legacy.
                 </p>
-                <nav className="footer-links" aria-label="Footer Navigation Links">
+                <nav
+                  className="footer-links"
+                  aria-label="Footer Navigation Links"
+                >
                     <a
                         href="https://www.stlouis-mo.gov"
                         target="_blank"
@@ -45,7 +48,8 @@ function Footer()
                 </nav>
 
                 <small className="footer-copy">
-                  &copy; {currentYear} Saint Louis Facts. Designed in Saint Louis by Kyle McColgan.
+                  &copy; {currentYear} Saint Louis Facts. Designed in Saint Louis by {" "}
+                  <span className="footer-highlight">Kyle McColgan</span>
                 </small>
             </div>
         </footer>
