@@ -27,8 +27,8 @@ body
     color: var(--color-text);
 
     background:
-      radial-gradient(900px 500px at 50% -150px,
-        color-mix(in oklab, var(--color-bg) 88%, var(--color-arch-silver) 12%),
+      radial-gradient(1000px 600px at 50% -200px,
+        color-mix(in oklab, var(--color-bg) 90%, var(--color-primary) 10%),
         transparent 70%),
       linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
 
@@ -38,15 +38,6 @@ body
 
     display: flex;
     flex-direction: column;
-}
-
-/* =======================
-   Layout Utility Styles.
-========================== */
-.container
-{
-    width: min(1100px, 92%);
-    margin-inline: auto;
 }
 
 /* ================
@@ -67,12 +58,14 @@ a:hover
     text-underline-offset: 0.25em;
 }
 
-/* Paragraph Global Styles. */
+/* ==============================
+   Paragraph Global Styles.
+================================= */
 p
 {
     margin: 0 0 1rem;
     font-size: 1.05rem;
-    color: var(--color-text-muted, #59636E);
+    color: var(--color-text-muted);
 }
 
 /* ========================

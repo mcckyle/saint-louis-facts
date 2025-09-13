@@ -1,7 +1,7 @@
 //Filename: Header.test.js
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the Jest unit tests for the facts Header section.
+//Date: 12 September 2025
+//Description: This file contains the Jest unit tests for the Saint Louis facts project Header component.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
@@ -68,7 +68,7 @@ describe('Header Component', () => {
   test('header is accessible', () => {
     render(<Header />);
     const headerElement = screen.getByRole('banner');
-    expect(headerElement).toHaveAttribute('aria-label', 'Saint Louis Landing Section');
+    expect(headerElement).toHaveAttribute('aria-label', 'Saint Louis landing section');
   });
 
   // Test 10: Ensure the description has correct text content

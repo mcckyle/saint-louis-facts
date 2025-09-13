@@ -5,7 +5,7 @@
  ==================================== */
 .interactive
 {
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
     background: linear-gradient(135deg, var(--color-bg-alt), var(--color-bg));
     text-align: center;
 }
@@ -15,10 +15,23 @@
 {
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.2rem);
-    color: #4b2a0a;
+    color: var(--color-primary);
     margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+}
+
+.interactive-title .highlight
+{
+    background: linear-gradient(
+        120deg,
+        var(--color-accent) 30%,
+        var(--color-highlight) 70%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .interactive-subtitle
@@ -32,18 +45,18 @@
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(120deg, var(--color-sunset-gold), #ffd66b);
-    color: #fff;
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    color: var(--color-bg);
     font-size: 1.1rem;
     padding: 1rem 2.2rem;
     border: none;
-    border-radius: 40px;
+    border-radius: 9999px;
     cursor: pointer;
     font-family: var(--font-heading);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 6px 18px rgba(18, 78, 120, 0.3);
 
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
 }
@@ -51,22 +64,22 @@
 .interactive-button:hover
 {
     transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
-    background: linear-gradient(120deg, var(--color-sunset-gold), #ffe082);
+    box-shadow: 0 10px 28px rgba(18, 78, 120, 0.4);
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 }
 
 /* Fact Display Card Styling. */
 .interactive-fact-display
 {
     margin-top: 3rem;
-    max-width: 700px;
+    max-width: 720px;
     margin-inline: auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(18, 78, 120, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Fact Title Styling. */
@@ -74,7 +87,7 @@
 {
     font-family: var(--font-heading);
     font-size: 1.6rem;
-    color: #3a1f00;
+    color: var(--color-primary);
     margin-bottom: 0.75rem;
 }
 
@@ -82,8 +95,8 @@
 .fact-description
 {
     font-family: var(--font-body);
-    font-size: 1.1rem;
-    line-height: 1.75;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--color-text);
 }
 
@@ -103,24 +116,24 @@
 /* Mobile Styles. */
 @media (max-width: 768px)
 {
-  .interactive
-  {
-      padding: 3rem 1.2rem;
-  }
+    .interactive
+    {
+        padding: 3.5rem 1.2rem;
+    }
 
-  .interactive-button
-  {
-      font-size: 1rem;
-      padding: 0.85rem 1.8rem;
-  }
+    .interactive-button
+    {
+        font-size: 1rem;
+        padding: 0.85rem 1.8rem;
+    }
 
-  .fact-title
-  {
-      font-size: 1.4rem;
-  }
+    .fact-title
+    {
+        font-size: 1.4rem;
+    }
 
-  .fact-description
-  {
-      font-size: 1rem;
-  }
+    .fact-description
+    {
+        font-size: 1rem;
+    }
 }

@@ -8,27 +8,27 @@
     position: relative;
     width: 100%;
     padding: 6rem 2rem;
-    background: linear-gradient(160deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 4px solid var(--color-sunset-gold);
+    background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
+    border-top: 3px solid var(--color-accent);
     text-align: center;
     overflow: hidden;
     z-index: 0;
 
-    animation: fadeInIntro 1s ease forwards;
+    animation: fadeInIntro 1.2s ease forwards;
 }
 
-/* Soft Radial Glow Behind the Section. */
+/* Soft Golden Radial Glow Behind the Section. */
 .intro::before
 {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
     background: radial-gradient(
         circle,
-        rgba(212, 175, 55, 0.06),
+        rgba(255, 223, 0, 0.08),
         transparent 70%
     );
     z-index: -1;
@@ -38,71 +38,75 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    margin-bottom: 1.8rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 2rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+
     background: linear-gradient(
         45deg,
-        var(--color-sunset-gold),
-        var(--color-arch-silver),
-        #fff8d6
+        var(--color-accent),
+        var(--color-highlight),
+        var(--color-primary)
     );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
 }
 
-/* Shimmer Effect on Underline. */
+/* Underline Shimmer Effect Styles. */
 .intro-title::after
 {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: -14px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 50%;
     height: 3px;
+
     background: linear-gradient(
         to right,
-        var(--color-sunset-gold),
-        var(--color-arch-silver),
-        var(--color-sunset-gold)
+        var(--color-accent),
+        var(--color-highlight),
+        var(--color-primary)
     );
+    );
+
     background-size: 200% auto;
     border-radius: 2px;
 
-    animation: shimmer 8s linear infinite;
+    animation: shimmer 9s linear infinite;
 }
 
 /* Lead Text Styling. */
 .intro-lead
 {
-    max-width: 760px;
+    max-width: 740px;
     margin: 0 auto;
-    position: relative;
 }
 
 /* Intro Paragraph Styling. */
 .intro p
 {
     font-family: var(--font-body);
-    font-size: 1.25rem;
-    line-height: 1.8;
+    font-size: 1.2rem;
+    line-height: 1.75;
     color: var(--color-text);
     margin: 1.2rem auto 0;
-    padding: 1.2rem 1.5rem;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    padding: 1.2rem 1.4rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intro p:hover
 {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll Cue (mouse shape) Styles. */
@@ -110,13 +114,12 @@
 {
     width: 28px;
     height: 48px;
-    border: 2px solid var(--color-sunset-gold);
+    border: 2px solid var(--color-highlight);
     border-radius: 20px;
     position: relative;
     margin: 3rem auto 0;
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(255, 223, 0, 0.08);
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
 }
 
 .intro-scroll-cue::before
@@ -127,11 +130,11 @@
     left: 50%;
     width: 6px;
     height: 6px;
-    background: var(--color-sunset-gold);
+    background: var(--color-highlight);
     border-radius: 50%;
     transform: translateX(-50%);
 
-    animation: scrollDot 1.6s infinite;
+    animation: scrollDot 1.8s infinite;
 }
 
 /* Animations Styles. */
@@ -157,21 +160,21 @@
 /* Responsive Design Styles. */
 @media (max-width: 768px)
 {
-  .intro
-  {
-      padding: 3rem 1rem;
-  }
+    .intro
+    {
+        padding: 3rem 1rem;
+    }
 
-  .intro-title
-  {
-      font-size: 2.2rem;
-  }
+    .intro-title
+    {
+        font-size: 2.2rem;
+    }
 
-  .intro p
-  {
-      font-size: 1.1rem;
-      padding: 1rem;
-  }
+    .intro p
+    {
+        font-size: 1.05rem;
+        padding: 1rem;
+    }
 }
 
 /* *** Old styles past this line!! ****/

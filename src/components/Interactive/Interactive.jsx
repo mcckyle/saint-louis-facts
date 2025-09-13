@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 08 September 2025
+//Date: 12 September 2025
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -24,7 +24,7 @@ export default function Interactive()
           aria-labelledby="interactive-title"
         >
             <h2 id="interactive-title" className="interactive-title">
-              Discover a Random Fact
+              Discover a <span className="highlight">Random Fact</span>
             </h2>
 
             <p className="interactive-subtitle">
