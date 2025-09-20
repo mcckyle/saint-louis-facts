@@ -1,7 +1,7 @@
 //Filename: Interactive.test.js
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: This file contains the Jest unit tests for the facts Interactive section.
+//Date: 17 September 2025
+//Description: This file contains the Jest unit tests for the Saint Louis facts project Interactive section.
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
@@ -63,7 +63,7 @@ describe('Interactive Component', () => {
 
     //Wait for the <h3> (level 3) to render, then check its parent element.
     const titleElement = await screen.findByRole("heading", { level: 3 });
-    const liveRegion = titleElement.closest(".interactive-fact-display");
+    const liveRegion = titleElement.closest(".interactive-fact");
 
     expect(liveRegion).toHaveAttribute("aria-live", "polite");
   });

@@ -37,9 +37,9 @@
 
     /* Shapes and Motion. */
     --border-radius: 14px;
-    --shadow-xs: 0 1px 6px rgba(18, 78, 120, 0.06);
-    --shadow-sm: 0 4px 14px rgba(18, 78, 120, 0.08);
-    --shadow-md: 0 8px 22px rgba(18, 78, 120, 0.10);
+    --shadow-xs: 0 1px 6px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.16);
 
     --transition: 200ms cubic-bezier(.2, .7, .2, 1);
 }
@@ -78,16 +78,6 @@
     display: grid;
     gap: clamp(2rem, 3vw, 3rem);
     padding-block: clamp(2rem, 3vw, 3rem);
-}
-
-/* =========================
-   Layout Utility Styles.
-============================ */
-.container
-{
-    /*width: min(1100px, 92%);*/
-    width: 100%;
-    margin: 0 auto;
 }
 
 /* ==========================
@@ -154,7 +144,7 @@ button:active
     box-shadow: var(--shadow-xs);
 }
 
-/* Accessibility Focus State Styles. */
+/* Focus Styles. */
 button:focus-visible,
 a:focus-visible
 {
@@ -215,3 +205,12 @@ a:focus-visible
  --color-success: var(--color-forest-green);
  --color-danger: var(--color-brick-red);
 */
+
+/* =========================
+ *  Layout Utility Styles.
+ = *=========================== */
+/*.container
+{
+    width: 100%;
+    margin: 0 auto;
+}*/

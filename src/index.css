@@ -27,10 +27,10 @@ body
     color: var(--color-text);
 
     background:
-      radial-gradient(1000px 600px at 50% -200px,
-        color-mix(in oklab, var(--color-bg) 90%, var(--color-primary) 10%),
+      linear-gradient(180deg, var(--color-bg), var(--color-bg-alt)),
+      radial-gradient(800px 600px at 50% -150px,
+        color-mix(in oklab, var(--color-bg) 92%, var(--color-primary) 8%),
         transparent 70%),
-      linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
 
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;

@@ -26,11 +26,7 @@
     left: -40%;
     width: 180%;
     height: 180%;
-    background: radial-gradient(
-        circle,
-        rgba(255, 223, 0, 0.08),
-        transparent 70%
-    );
+    background: radial-gradient(circle, rgba(255, 223, 0, 0.07), transparent 70%);
     z-index: -1;
 }
 
@@ -60,7 +56,7 @@
 {
     content: '';
     position: absolute;
-    bottom: -14px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
@@ -72,12 +68,11 @@
         var(--color-highlight),
         var(--color-primary)
     );
-    );
 
     background-size: 200% auto;
     border-radius: 2px;
 
-    animation: shimmer 9s linear infinite;
+    animation: shimmer 8s linear infinite;
 }
 
 /* Lead Text Styling. */
@@ -96,17 +91,17 @@
     color: var(--color-text);
     margin: 1.2rem auto 0;
     padding: 1.2rem 1.4rem;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intro p:hover
 {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Scroll Cue (mouse shape) Styles. */
@@ -118,7 +113,7 @@
     border-radius: 20px;
     position: relative;
     margin: 3rem auto 0;
-    background: rgba(255, 223, 0, 0.08);
+    background: rgba(255, 223, 0, 0.06);
     backdrop-filter: blur(4px);
 }
 
@@ -133,6 +128,7 @@
     background: var(--color-highlight);
     border-radius: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 0 6px var(--color-highlight);
 
     animation: scrollDot 1.8s infinite;
 }

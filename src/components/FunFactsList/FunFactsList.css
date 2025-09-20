@@ -18,10 +18,18 @@
 {
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    color: var(--color-primary);
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background: linear-gradient(
+        45deg,
+        var(--color-accent),
+        var(--color-highlight),
+        var(--color-primary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     position: relative;
 }
 
@@ -32,8 +40,8 @@
     display: block;
     height: 3px;
     margin: 1rem auto 0;
-    width: 80%;
-    max-width: 480px;
+    width: 70%;
+    max-width: 400px;
 
     background: linear-gradient(
       to right,
@@ -44,7 +52,7 @@
     background-size: 200% auto;
     border-radius: 2px;
 
-    animation: shimmer 6s linear infinite;
+    animation: shimmer 8s linear infinite;
 }
 
 .fun-facts-heading .highlight
@@ -69,20 +77,18 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
-
-    /*max-width: 1200px;*/
 }
 
 /* Fact Item Card Styling. */
 .fact-item
 {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
     padding: 2rem;
 
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -90,8 +96,8 @@
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
     border-color: var(--color-accent);
 }
 
@@ -100,8 +106,8 @@
 {
     font-family: var(--font-heading);
     font-size: 1.6rem;
-    color: var(--color-primary);
     margin-bottom: 1rem;
+    color: var(--color-primary);
 }
 
 /* Fact Description Styling. */
@@ -133,12 +139,13 @@
 
 .source-link
 {
-    background: var(--color-bg-alt);
+    background: rgba(255, 255, 255, 0.85);
     color: var(--color-primary);
-    padding: 0.4rem 0.9rem;
+    padding: 0.45rem 1rem;
     border-radius: 9999px;
     font-size: 0.9rem;
     text-decoration: none;
+
 
     transition: all 0.3s ease;
 }
@@ -147,6 +154,7 @@
 {
     background: var(--color-highlight);
     color: var(--color-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* Animations Styles. */

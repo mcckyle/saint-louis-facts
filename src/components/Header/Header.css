@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(65%) contrast(1.05) saturate(1.1);
+    filter: brightness(65%) contrast(1.08) saturate(1.15);
     transform: scale(1.05);
 
     transition: transform 12s ease;
@@ -31,7 +31,7 @@
 
 .header:hover .header-image
 {
-    transform: scale(1.12);
+    transform: scale(1.1);
 }
 
 /* Overlay Gradient Styles. */
@@ -80,7 +80,8 @@
     background-size: 250%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.55);
+
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 
     animation: shimmer 10s linear infinite;
 }
@@ -91,9 +92,9 @@
     font-family: var(--font-body);
     font-size: 1.25rem;
     letter-spacing: 0.4px;
-    color: var(--stl-muted);
+    color: var(--color-inverse);
+    opacity: 0.85;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
 }
 
 /* Scroll Cue Styling. */
@@ -102,7 +103,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 223, 0, 0.15);
+    background: rgba(255, 210, 0, 0.15);
     backdrop-filter: blur(6px);
     border: 1px solid var(--color-highlight);
     border-radius: 50%;
@@ -114,16 +115,16 @@
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-.scroll-cue:hover
+.scroll-cue:hover,
 .scroll-cue:focus
 {
     transform: scale(1.15);
-    background: rgba(255, 223, 0, 0.25);
+    background: rgba(255, 210, 0, 0.25);
     color: var(--color-accent);
     outline: none;
 }
 
-/* Keyframes for Effects Styles. */
+/* Keyframes Styles. */
 @keyframes shimmer
 {
     0%  { background-position: 0% center; }
