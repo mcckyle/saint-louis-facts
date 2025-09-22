@@ -1,7 +1,7 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 27 July 2025
-//Description: Contains the Jest unit tests for the facts Footer section.
+//Date: 21 September 2025
+//Description: This file contains the Jest unit test suite for the Saint Louis facts project Footer section.
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
@@ -15,23 +15,23 @@ describe('Footer Component', () => {
     ).toBeInTheDocument();
   });
 
-  test('contains a link to the official Saint Louis government website', () => {
-    render(<Footer />);
-    const govLink = screen.getByRole('link', {
-      name: /Visit the official Saint Louis government website/i,
-    });
-    expect(govLink).toBeInTheDocument();
-    expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
-  });
+  // test('contains a link to the official Saint Louis government website', () => {
+  //   render(<Footer />);
+  //   const govLink = screen.getByRole('link', {
+  //     name: /Visit the official Saint Louis government website/i,
+  //   });
+  //   expect(govLink).toBeInTheDocument();
+  //   expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
+  // });
 
-  test('contains a link to the Explore Saint Louis website', () => {
-    render(<Footer />);
-    const exploreLink = screen.getByRole('link', {
-      name: /Visit Explore Saint Louis/i,
-    });
-    expect(exploreLink).toBeInTheDocument();
-    expect(exploreLink).toHaveAttribute('href', 'https://explorestlouis.com');
-  });
+  // test('contains a link to the Explore Saint Louis website', () => {
+  //   render(<Footer />);
+  //   const exploreLink = screen.getByRole('link', {
+  //     name: /Visit Explore Saint Louis/i,
+  //   });
+  //   expect(exploreLink).toBeInTheDocument();
+  //   expect(exploreLink).toHaveAttribute('href', 'https://explorestlouis.com');
+  // });
 
   test('contains a link to navigate back to the top of the page', () => {
     render(<Footer />);

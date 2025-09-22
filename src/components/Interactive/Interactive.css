@@ -5,7 +5,7 @@
  ==================================== */
 .interactive
 {
-    padding: 5rem 2rem;
+    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
     background: linear-gradient(135deg, var(--color-bg), var(--color-bg-alt));
     text-align: center;
 }
@@ -14,20 +14,19 @@
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     color: var(--color-primary);
     margin-bottom: 0.75rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    position: relative;
 }
 
 .interactive-title .highlight
 {
     background: linear-gradient(
         120deg,
-        var(--color-accent) 25%,
-        var(--color-highlight) 75%
+        var(--color-accent) 30%,
+        var(--color-highlight) 70%
     );
 
     -webkit-background-clip: text;
@@ -37,7 +36,7 @@
 .interactive-subtitle
 {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--color-text-muted);
     margin-bottom: 2rem;
 }
@@ -45,10 +44,11 @@
 /* The Button Styling. */
 .interactive-button
 {
+    display: inline-block;
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     font-size: 1rem;
-    padding: 0.9rem 2rem;
+    padding: 0.9rem 2.2rem;
     border: none;
     border-radius: 9999px;
     cursor: pointer;
@@ -58,13 +58,13 @@
     letter-spacing: 0.5px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .interactive-button:hover
 {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 }
 
@@ -75,10 +75,9 @@
     max-width: 680px;
     margin-inline: auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    backdrop-filter: blur(12px) saturate(120%);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
     animation: fadeUp 0.6s ease forwards;
@@ -88,7 +87,7 @@
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
     color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
@@ -112,24 +111,9 @@
 /* Mobile Styles. */
 @media (max-width: 768px)
 {
-    .interactive
-    {
-        padding: 3.5rem 1.2rem;
-    }
-
     .interactive-button
     {
         font-size: 0.95rem;
         padding: 0.8rem 1.6rem;
-    }
-
-    .fact-title
-    {
-        font-size: 1.3rem;
-    }
-
-    .fact-description
-    {
-        font-size: 0.95rem;
     }
 }

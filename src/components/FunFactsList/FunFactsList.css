@@ -11,16 +11,18 @@
     border-top: 3px solid var(--color-accent);
     text-align: center;
     overflow: hidden;
+    z-index: 0;
 }
 
 /* Section Heading Styling. */
 .fun-facts-heading
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+
     background: linear-gradient(
         45deg,
         var(--color-accent),
@@ -29,19 +31,18 @@
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     position: relative;
 }
 
 /* Shimmer Underline. */
 .fun-facts-heading::after
 {
-    content: '';
+    content: "";
     display: block;
     height: 3px;
     margin: 1rem auto 0;
-    width: 70%;
-    max-width: 400px;
+    width: 65%%;
+    max-width: 380px;
 
     background: linear-gradient(
       to right,
@@ -50,9 +51,9 @@
       var(--color-primary)
     );
     background-size: 200% auto;
-    border-radius: 2px;
+    border-radius: 3px;
 
-    animation: shimmer 8s linear infinite;
+    animation: shimmer 6s linear infinite;
 }
 
 .fun-facts-heading .highlight
@@ -67,7 +68,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Fact List Layout Styling. */
+/* Fact List Layout Grid Styling. */
 .fact-list
 {
     display: grid;
@@ -82,22 +83,24 @@
 /* Fact Item Card Styling. */
 .fact-item
 {
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2rem;
 
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
 }
 
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
     transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
     border-color: var(--color-accent);
 }
 
@@ -105,7 +108,7 @@
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     margin-bottom: 1rem;
     color: var(--color-primary);
 }
@@ -134,27 +137,30 @@
 {
     font-weight: 600;
     color: var(--color-accent);
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
 }
 
 .source-link
 {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--color-primary);
-    padding: 0.45rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 9999px;
     font-size: 0.9rem;
     text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
 
-    transition: all 0.3s ease;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .source-link:hover
 {
     background: var(--color-highlight);
     color: var(--color-bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 /* Animations Styles. */
@@ -167,7 +173,7 @@
 .fade-in-delay
 {
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeUp 0.9s ease forwards;
 }
 
 .fact-item:nth-child(odd) { animation-delay: 0.15s; }
@@ -175,7 +181,7 @@
 
 @keyframes fadeUp
 {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(22px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -184,16 +190,16 @@
 {
     .fun-facts
     {
-        padding: 3.5rem 1rem;
+        padding: 3.5rem 1.2rem;
     }
 
     .fact-title
     {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .fact-description
     {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
 }

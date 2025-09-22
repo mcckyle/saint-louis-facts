@@ -1,7 +1,7 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 16 September 2025
-//Description: This file contains the React root component for the facts project.
+//Date: 21 September 2025
+//Description: This file contains the React root component for the Saint Louis facts project.
 
 import React, { useRef } from 'react';
 import Header from './components/Header/Header.jsx';
@@ -17,10 +17,15 @@ function App()
   const introRef = useRef(null);
 
   return (
-      <div id="top">
+      <div id="top" className="app-container">
         <a href="#main" className="skip-link">Skip to main content</a>
           <Header scrollTargetRef={introRef} />
-          <main id="main" className="main-content" role="main" aria-label="Main content">
+          <main
+            id="main"
+            className="main-content fade-in"
+            role="main"
+            aria-label="Main content"
+          >
             <Intro ref={introRef} />
             <FunFactsList />
             <Interactive />

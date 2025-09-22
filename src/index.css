@@ -13,7 +13,6 @@
 html
 {
     font-size: 16px; /* Root font size for rem scaling. */
-    -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
 }
@@ -22,27 +21,20 @@ body
 {
     margin: 0;
     min-height: 100vh;
-    font-family: var(--font-body, 'Lora', 'Georgia', serif);
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--color-text);
 
-    background:
-      linear-gradient(180deg, var(--color-bg), var(--color-bg-alt)),
-      radial-gradient(800px 600px at 50% -150px,
-        color-mix(in oklab, var(--color-bg) 92%, var(--color-primary) 8%),
-        transparent 70%),
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt))
+                fixed;
 
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    display: flex;
-    flex-direction: column;
 }
 
-/* ================
-   Link Styles.
-=================== */
+/* =====================
+   Global Link Styles.
+======================== */
 a
 {
     color: var(--color-primary);
@@ -59,7 +51,7 @@ a:hover
 }
 
 /* ==============================
-   Paragraph Global Styles.
+   Global Paragraph Styles.
 ================================= */
 p
 {

@@ -1,4 +1,4 @@
-![Workflow Status](https://github.com/kmccol1/saint-louis-facts/actions/workflows/ci.yml/badge.svg)
+![Workflow Status](https://github.com/mcckyle/saint-louis-facts/actions/workflows/ci.yml/badge.svg)
 
 # Saint Louis Facts
 

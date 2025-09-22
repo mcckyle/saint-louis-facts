@@ -6,7 +6,7 @@
 .footer
 {
     background: linear-gradient(160deg, var(--color-bg), var(--color-bg-alt));
-    padding: 3.5rem 2rem 2rem;
+    padding: clamp(2.5rem, 6vw, 3.5rem) 1.5rem;
     border-top: 2px solid var(--color-primary);
     text-align: center;
     font-family: var(--font-body);
@@ -26,7 +26,7 @@
 /* Footer Intro Text Styles. */
 .footer-text
 {
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 2vw, 1.05rem);
     max-width: 760px;
     color: var(--color-text-muted);
     font-style: italic;
@@ -48,20 +48,27 @@
     font-size: 0.95rem;
     font-weight: 500;
     padding: 0.55rem 1.4rem;
-    border: 1px solid var(--color-primary);
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--color-text);
     text-decoration: none;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-primary);
     backdrop-filter: blur(6px);
 
-    transition: all 0.3s ease;
+    transition: background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 /* Hover Effects for Footer Links. */
 .footer-link:hover
 {
-    background: var(--color-accent);
+    background: linear-gradient(
+      120deg,
+      var(--color-accent),
+      var(--color-highlight)
+    );
+
     color: var(--color-bg);
     transform: translateY(-2px);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
@@ -71,14 +78,19 @@
 .footer-back-to-top
 {
     font-weight: 600;
+    border: none;
     background: var(--color-highlight);
     color: var(--color-primary);
-    border: none;
 }
 
 .footer-back-to-top:hover
 {
-    background: var(--color-accent);
+    background: linear-gradient(
+      120deg,
+      var(--color-accent),
+      var(--color-highlight)
+    );
+
     color: var(--color-bg);
 }
 
@@ -98,6 +110,7 @@
       var(--color-accent),
       var(--color-highlight)
     );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -117,6 +130,7 @@
     bottom: -2px;
     width: 100%;
     height: 2px;
+    border-radius: 2px;
     background: linear-gradient(
         to right,
         var(--color-primary),
@@ -124,9 +138,8 @@
         var(--color-highlight)
     );
     background-size: 200% auto;
-    border-radius: 2px;
 
-    animation: shimmer 6s linear infinite;
+    animation: shimmer 5s linear infinite;
 }
 
 /* Gradient Shimmer Underline Styles. */
@@ -139,14 +152,9 @@
 /* Responsive Design Styling. */
 @media (max-width: 768px)
 {
-    .footer
-    {
-        padding: 2.5rem 1rem 1.25rem;
-    }
-
     .footer-text
     {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .footer-link
