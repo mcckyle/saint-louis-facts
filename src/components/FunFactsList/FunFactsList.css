@@ -5,13 +5,10 @@
 =================================== */
 .fun-facts
 {
-    position: relative;
-    padding: 6rem 2rem;
+    padding: clamp(4rem, 6vw, 6rem) 2rem;
     background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
     border-top: 3px solid var(--color-accent);
     text-align: center;
-    overflow: hidden;
-    z-index: 0;
 }
 
 /* Section Heading Styling. */
@@ -24,14 +21,18 @@
     letter-spacing: 1px;
 
     background: linear-gradient(
-        45deg,
+        120deg,
         var(--color-accent),
         var(--color-highlight),
         var(--color-primary)
     );
+
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
+
+    animation: shimmer 8s linear infinite;
 }
 
 /* Shimmer Underline. */
@@ -41,8 +42,9 @@
     display: block;
     height: 3px;
     margin: 1rem auto 0;
-    width: 65%%;
+    width: 65%;
     max-width: 380px;
+    border-radius: 3px;
 
     background: linear-gradient(
       to right,
@@ -50,19 +52,15 @@
       var(--color-highlight),
       var(--color-primary)
     );
-    background-size: 200% auto;
-    border-radius: 3px;
 
-    animation: shimmer 6s linear infinite;
+    background-size: 200% auto;
+
+    animation: shimmer 8s linear infinite;
 }
 
 .fun-facts-heading .highlight
 {
-    background: linear-gradient(
-        120deg,
-        var(--color-accent),
-        var(--color-highlight)
-    );
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -83,24 +81,24 @@
 /* Fact Item Card Styling. */
 .fact-item
 {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    background: var(--color-elevated);
+    backdrop-filter: blur(8px);
+    border-radius: var(--border-radius);
     padding: 2rem;
 
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-xs);
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    transition: transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
 }
 
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
     transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-sm);
     border-color: var(--color-accent);
 }
 
@@ -108,7 +106,7 @@
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.55rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--color-primary);
 }
@@ -137,40 +135,32 @@
 {
     font-weight: 600;
     color: var(--color-accent);
-    margin-right: 0.25rem;
 }
 
 .source-link
 {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-bg-alt);
     color: var(--color-primary);
     padding: 0.4rem 1rem;
     border-radius: 9999px;
     font-size: 0.9rem;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-xs);
 
 
-    transition: background 0.3s ease,
-                color 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: background var(--transition),
+                color var(--transition),
+                box-shadow var(--transition);
 }
 
 .source-link:hover
 {
     background: var(--color-highlight);
     color: var(--color-bg);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Animations Styles. */
-@keyframes shimmer
-{
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-}
-
-.fade-in-delay
+.fade-up
 {
     opacity: 0;
     animation: fadeUp 0.9s ease forwards;
@@ -183,6 +173,13 @@
 {
     from { opacity: 0; transform: translateY(22px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animations Styles. */
+@keyframes shimmer
+{
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* Mobile Responsiveness Design. */

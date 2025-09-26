@@ -5,13 +5,13 @@
 ======================== */
 :root
 {
-    /* Core Saint Louis Flag Color Palette. */
+    /* Saint Louis Flag Color Palette. */
     --stl-red: #D01C1F; /* Color: Vibrant Red (Flag Background). */
     --stl-blue: #003DA5; /* Color: Deep River Blue (Mississippi/Missouri). */
     --stl-yellow: #FFD200; /* Color: Fleur-de-lis Yellow. */
     --stl-white: #FFFFFF; /* Color: Crisp White (Flag Waves). */
 
-    /* Supporting Neutral Colors. */
+    /* Neutral Colors. */
     --stl-ink: #1C1C1C; /* Color: Strong Ink Black For Text. */
     --stl-muted: #5E6A75; /* Color: Muted Gray For Secondary Text. */
     --stl-light: #F7F9FB; /* Color: Light Neutral Background. */
@@ -32,8 +32,8 @@
     --color-inverse: var(--stl-white);
 
     /* Fonts. */
-    --font-heading: 'Playfair Display', 'Garamond', serif;
-    --font-body: 'Lora', 'Georgia', serif;
+    --font-heading: "Playfair Display", "Garamond", serif;
+    --font-body: "Lora", "Georgia", serif;
 
     /* Shapes and Motion. */
     --border-radius: 14px;
@@ -41,7 +41,7 @@
     --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.12);
     --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.16);
 
-    --transition: 200ms cubic-bezier(.2, .7, .2, 1);
+    --transition: 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* Dark Mode Variables. */
@@ -66,7 +66,7 @@
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-body);
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -76,12 +76,11 @@
 .main-content
 {
     flex: 1;
-    /*width: min(95%, 1200px);*/
     width: 100%;
     margin: 0 auto;
     display: grid;
     gap: clamp(2rem, 3vw, 3rem);
-    padding-block: clamp(2rem, 3vw, 4rem);
+    padding-block: clamp(2rem, 4vw, 4rem);
 }
 
 /* ==========================
@@ -129,16 +128,16 @@ button
     cursor: pointer;
     box-shadow: var(--shadow-sm);
 
-    transition: transform var(--transition),
-                box-shadow var(--transition),
-                background var(--transition);
+    transition: background var(--transition),
+                transform var(--transition),
+                box-shadow var(--transition);
 }
 
 button:hover
 {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
     background: var(--color-accent);
+    box-shadow: var(--shadow-md);
 }
 
 button:active
@@ -153,7 +152,6 @@ a:focus-visible
 {
     outline: 3px solid var(--color-highlight);
     outline-offset: 3px;
-    border-radius: var(--border-radius);
 }
 
 /* =====================
@@ -163,9 +161,6 @@ a:focus-visible
 {
     position: absolute;
     left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
 }
 
 .skip-link:focus
@@ -173,62 +168,12 @@ a:focus-visible
     position: fixed;
     left: 1rem;
     top: 1rem;
-    width: auto;
-    height: auto;
     background: var(--color-elevated);
     color: var(--color-primary);
     padding: 0.6rem 1rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
-    z-index: 1000;
     border: 1px solid var(--color-border);
+
+    z-index: 1000;
 }
-
-/* *** Legacy colors past this line! *** */
-/*
- --color-river: #124E78;
- --color-arch-silver: #BFC7CF;
- --color-forest-green: #2F6E4F;
- --color-brick-red: #7A2E2E;
- --color-sunset-gold: #D4AF37;
- --color-cloud: #FFFDF7;
- --stl-mist: #F2F4F7;
- --stl-ink: #1F2328;
- --stl-muted: #59636E;
-
- --color-bg: var(--color-cloud);
- --color-bg-alt: #FAFBFD;
- --color-elevated: #FFF;
- --color-border: #E5E9EF;
- --color-text: var(--stl-ink);
- --color-text-muted: var(--stl-muted);
-
- --color-primary: var(--color-river);
- --color-accent: var(--color-sunset-gold);
- --color-success: var(--color-forest-green);
- --color-danger: var(--color-brick-red);
-*/
-
-/* =========================
- *  Layout Utility Styles.
- = *=========================== */
-/*.container
-{
-    width: 100%;
-    margin: 0 auto;
-}*/
-
-/* ==========================
- * Root Container Styles.
- = ==*========================== */
-/*
-#root
-{
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  min-height: 100%;
-
-  transition: background var(--transition), color var(--transition);
-}
-*/

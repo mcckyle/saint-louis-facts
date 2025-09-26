@@ -1,6 +1,6 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 21 September 2025
+//Date: 25 September 2025
 //Description: This file contains the React root component for the Saint Louis facts project.
 
 import React, { useRef } from 'react';
@@ -18,19 +18,18 @@ function App()
 
   return (
       <div id="top" className="app-container">
-        <a href="#main" className="skip-link">Skip to main content</a>
-          <Header scrollTargetRef={introRef} />
-          <main
-            id="main"
-            className="main-content fade-in"
-            role="main"
-            aria-label="Main content"
-          >
-            <Intro ref={introRef} />
-            <FunFactsList />
-            <Interactive />
-          </main>
-          <Footer />
+        <Header scrollTargetRef={introRef} />
+        <main
+          id="main"
+          className="main-content fade-in"
+          role="main"
+          aria-label="Main content"
+        >
+          <Intro ref={introRef} />
+          <FunFactsList />
+          <Interactive />
+        </main>
+        <Footer />
       </div>
   );
 }

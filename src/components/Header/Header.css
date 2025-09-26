@@ -9,9 +9,8 @@
     width: 100%;
     height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 
     overflow: hidden;
 }
@@ -38,14 +37,9 @@
 {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.75) 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75));
+    display: grid;
+    place-items: center;
     padding: 0 1rem;
 }
 
@@ -57,16 +51,16 @@
     max-width: 960px;
     padding: 2rem;
 
-    animation: fadeInUp 1.2s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 /* Main Title With Gradient Shimmer Styling. */
 .header-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-size: clamp(2.6rem, 6vw, 5rem);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin-bottom: 1rem;
 
     background: linear-gradient(
@@ -76,21 +70,20 @@
       var(--color-primary)
     );
 
-    background-size: 200%;
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 12s linear infinite;
+    animation: shimmer 10s linear infinite;
 }
 
 /* Subtitle Styling. */
 .header-subtitle
 {
     font-family: var(--font-body);
-    font-size: 1.2rem;
-    color: var(--color-inverse);
+    font-size: clamp(1rem, 2vw, 1.25rem);
     opacity: 0.85;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Scroll Cue Styling. */
@@ -101,10 +94,9 @@
     justify-content: center;
 
     background: rgba(255, 210, 0, 0.1);
-    backdrop-filter: blur(6px);
     border: 1px solid var(--color-highlight);
     border-radius: 50%;
-    padding: 0.7rem;
+    padding: 0.65rem;
     color: var(--color-highlight);
     cursor: pointer;
 
@@ -138,7 +130,7 @@
 
 @keyframes fadeInUp
 {
-    from { opacity: 0; transform: translateY(40px); }
+    from { opacity: 0; transform: translateY(32px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -153,17 +145,10 @@
     .header-title
     {
         font-size: clamp(2rem, 6vw, 3.5rem);
-        letter-spacing: 1.5px;
     }
 
     .header-subtitle
     {
-        font-size: 1.05rem;
-    }
-
-    .scroll-cue svg
-    {
-        width: 24px;
-        height: 24px;
+        font-size: 1rem;
     }
 }

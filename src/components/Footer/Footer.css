@@ -5,7 +5,7 @@
 ========================= */
 .footer
 {
-    background: linear-gradient(160deg, var(--color-bg), var(--color-bg-alt));
+    background: linear-gradient(145deg, var(--color-bg), var(--color-bg-alt));
     padding: clamp(2.5rem, 6vw, 3.5rem) 1.5rem;
     border-top: 2px solid var(--color-primary);
     text-align: center;
@@ -20,13 +20,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.5rem;
 }
 
 /* Footer Intro Text Styles. */
 .footer-text
 {
-    font-size: clamp(1rem, 2vw, 1.05rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
     max-width: 760px;
     color: var(--color-text-muted);
     font-style: italic;
@@ -39,43 +39,36 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.75rem;
 }
 
 /* Individual Link Styles. */
 .footer-link
 {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 1.6vw, 0.95rem);
     font-weight: 500;
-    padding: 0.55rem 1.4rem;
+    padding: 0.5rem 1.3rem;
     border-radius: 9999px;
     text-decoration: none;
     color: var(--color-text);
-    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--color-primary);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(6px);
 
-    transition: background 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 /* Hover Effects for Footer Links. */
 .footer-link:hover
 {
-    background: linear-gradient(
-      120deg,
-      var(--color-accent),
-      var(--color-highlight)
-    );
-
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
     transform: translateY(-2px);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 /* Special Button: Back to Top. */
-.footer-back-to-top
+.back-to-top
 {
     font-weight: 600;
     border: none;
@@ -83,14 +76,9 @@
     color: var(--color-primary);
 }
 
-.footer-back-to-top:hover
+.back-to-top:hover
 {
-    background: linear-gradient(
-      120deg,
-      var(--color-accent),
-      var(--color-highlight)
-    );
-
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
 }
 
@@ -104,12 +92,7 @@
 .footer-highlight
 {
     font-weight: 600;
-    background: linear-gradient(
-      120deg,
-      var(--color-primary),
-      var(--color-accent),
-      var(--color-highlight)
-    );
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -131,12 +114,7 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background: linear-gradient(
-        to right,
-        var(--color-primary),
-        var(--color-accent),
-        var(--color-highlight)
-    );
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
     background-size: 200% auto;
 
     animation: shimmer 5s linear infinite;
@@ -154,12 +132,12 @@
 {
     .footer-text
     {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .footer-link
     {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.45rem 1rem;
     }
 }

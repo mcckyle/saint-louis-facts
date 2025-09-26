@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 21 September 2025
+//Date: 23 September 2025
 //Description: This file contains the Jest unit test suite for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -11,27 +11,27 @@ describe('Footer Component', () => {
   test('renders the footer with the correct text', () => {
     render(<Footer />);
     expect(
-      screen.getByText(/This project draws inspiration from the vibrant culture and rich history of Saint Louis./i)
+      screen.getByText(/Inspired by the vibrant culture and history of Saint Louis./i)
     ).toBeInTheDocument();
   });
 
-  // test('contains a link to the official Saint Louis government website', () => {
-  //   render(<Footer />);
-  //   const govLink = screen.getByRole('link', {
-  //     name: /Visit the official Saint Louis government website/i,
-  //   });
-  //   expect(govLink).toBeInTheDocument();
-  //   expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
-  // });
+  test('contains a link to the official Saint Louis government website', () => {
+    render(<Footer />);
+    const govLink = screen.getByRole('link', {
+      name: /Saint Louis Government/i,
+    });
+    expect(govLink).toBeInTheDocument();
+    expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
+  });
 
-  // test('contains a link to the Explore Saint Louis website', () => {
-  //   render(<Footer />);
-  //   const exploreLink = screen.getByRole('link', {
-  //     name: /Visit Explore Saint Louis/i,
-  //   });
-  //   expect(exploreLink).toBeInTheDocument();
-  //   expect(exploreLink).toHaveAttribute('href', 'https://explorestlouis.com');
-  // });
+  test('contains a link to the Explore Saint Louis website', () => {
+    render(<Footer />);
+    const exploreLink = screen.getByRole('link', {
+      name: /Explore Saint Louis/i,
+    });
+    expect(exploreLink).toBeInTheDocument();
+    expect(exploreLink).toHaveAttribute('href', 'https://explorestlouis.com');
+  });
 
   test('contains a link to navigate back to the top of the page', () => {
     render(<Footer />);
@@ -53,7 +53,7 @@ describe('Footer Component', () => {
 
   test('renders the container div with appropriate class name', () => {
     render(<Footer />);
-    const container = screen.getByText(/vibrant culture and rich history/i).closest('.footer-container');
+    const container = screen.getByText(/vibrant culture and history/i).closest('.footer-container');
     expect(container).toBeInTheDocument();
   });
 
@@ -79,7 +79,7 @@ describe('Footer Component', () => {
 
   test('displays the footer text with the correct class', () => {
     render(<Footer />);
-    const footerText = screen.getByText(/vibrant culture and rich history/i);
+    const footerText = screen.getByText(/vibrant culture and history/i);
     expect(footerText).toHaveClass('footer-text');
   });
 });
