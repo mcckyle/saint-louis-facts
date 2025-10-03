@@ -23,7 +23,7 @@ function App()
           id="main"
           className="main-content fade-in"
           role="main"
-          aria-label="Main content"
+          aria-label="Saint Louis facts and culture"
         >
           <Intro ref={introRef} />
           <FunFactsList />

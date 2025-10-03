@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kmccol1.github.io/saint-louis-facts",
+  "homepage": "https://mcckyle.github.io/saint-louis-facts",
   "scripts": {
     "test": "jest",
     "predeploy": "npm run build",
@@ -14,6 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "motion": "^12.23.22",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -50,7 +51,8 @@
     },
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
-      "@testing-library/jest-dom"
+      "@testing-library/jest-dom",
+      "<rootDir>/jest.setup.js"
     ],
     "extensionsToTreatAsEsm": [
       ".jsx"

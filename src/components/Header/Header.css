@@ -24,7 +24,7 @@
     filter: brightness(65%) contrast(1.05);
     transform: scale(1.05);
 
-    transition: transform 15s ease;
+    transition: transform 18s ease-in-out;
 }
 
 .header:hover .header-image
@@ -37,7 +37,7 @@
 {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75));
     display: grid;
     place-items: center;
     padding: 0 1rem;
@@ -54,11 +54,11 @@
     animation: fadeInUp 1s ease forwards;
 }
 
-/* Main Title With Gradient Shimmer Styling. */
+/* Title With The Smooth Gradient Styling. */
 .header-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-size: clamp(2.8rem, 6vw, 5rem);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 1rem;
@@ -70,11 +70,11 @@
       var(--color-primary)
     );
 
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 10s linear infinite;
+    animation: shimmer 12s ease-in-out infinite;
 }
 
 /* Subtitle Styling. */
@@ -83,7 +83,9 @@
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.25rem);
     opacity: 0.85;
-    margin-bottom: 2rem;
+    letter-spacing: 0.3px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
 }
 
 /* Scroll Cue Styling. */
@@ -93,25 +95,30 @@
     align-items: center;
     justify-content: center;
 
-    background: rgba(255, 210, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--color-highlight);
     border-radius: 50%;
-    padding: 0.65rem;
+    padding: 0.75rem;
     color: var(--color-highlight);
     cursor: pointer;
 
-    animation: float 2.5s ease-in-out infinite;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+    animation: float 2.8s ease-in-out infinite;
     transition: transform var(--transition),
                 background var(--transition),
-                color var(--transition);
+                color var(--transition),
+                box-shadow var(--transition);
 }
 
 .scroll-cue:hover,
 .scroll-cue:focus
 {
     transform: scale(1.15);
-    background: rgba(255, 210, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--color-accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     outline: none;
 }
 
@@ -144,11 +151,12 @@
 
     .header-title
     {
-        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
     }
 
     .header-subtitle
     {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
     }
 }

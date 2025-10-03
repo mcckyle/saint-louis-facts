@@ -16,13 +16,13 @@
     animation: fadeInIntro 1s ease forwards;
 }
 
-/* Soft Golden Radial Glow. */
+/* Subtle Radial Glow. */
 .intro::before
 {
     content: '';
     position: absolute;
     inset: -40%;
-    background: radial-gradient(circle, rgba(255, 223, 0, 0.07), transparent 70%);
+    background: radial-gradient(circle, rgba(255, 223, 0, 0.05), transparent 70%);
     z-index: -1;
 }
 
@@ -30,7 +30,7 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -42,25 +42,25 @@
         var(--color-primary)
     );
 
-    background-size: 200% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
 
-    animation: shimmer 8s linear infinite;
+    animation: shimmer 10s ease-in-out infinite;
 }
 
 /* Underline Shimmer Effect Styles. */
 .intro-title::after
 {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 45%;
     height: 3px;
-    border-radius: 3px;
+    border-radius: 2px;
 
     background: linear-gradient(
         to right,
@@ -68,10 +68,10 @@
         var(--color-highlight),
         var(--color-primary)
     );
-
     background-size: 200% auto;
+    opacity: 0.8;
 
-    animation: shimmer 8s linear infinite;
+    animation: shimmer 10s ease-in-out infinite;
 }
 
 /* Lead Text Styling. */
@@ -87,18 +87,16 @@
     font-size: 1.12rem;
     line-height: 1.65;
     margin: 1.2rem auto 0;
-    padding: 1rem 1.25rem;
-    background: var(--color-elevated);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-xs);
+    color: var(--color-text);
+    opacity: 0.95;
 
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition: transform var(--transition), opacity var(--transition);
 }
 
 .intro p:hover
 {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+    opacity: 1;
 }
 
 /* Scroll Cue (mouse shape) Styles. */
@@ -109,13 +107,15 @@
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
     margin: 3rem auto 0;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
     position: relative;
 }
 
 .intro-scroll-cue::before
 {
-    content: "";
+    content: '';
     position: absolute;
     top: 8px;
     left: 50%;
@@ -125,7 +125,7 @@
     border-radius: 50%;
     transform: translateX(-50%);
 
-    animation: scrollDot 1.6s infinite;
+    animation: scrollDot 1.8s ease-in-out infinite;
 }
 
 /* Animations Styles. */
@@ -144,7 +144,7 @@
 @keyframes scrollDot
 {
     0% { transform: translate(-50%, 0); opacity: 1; }
-    50% { transform: translate(-50%, 16px); opacity: 0.6; }
+    50% { transform: translate(-50%, 18px); opacity: 0.5; }
     100% { transform: translate(-50%, 0); opacity: 1; }
 }
 
@@ -159,6 +159,10 @@
     .intro p
     {
         font-size: 1rem;
-        padding: 0.85rem;
+    }
+
+    .intro-scroll-cue
+    {
+        margin-top: 2.5rem;
     }
 }

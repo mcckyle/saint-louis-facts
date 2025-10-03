@@ -146,7 +146,7 @@ button:active
     box-shadow: var(--shadow-xs);
 }
 
-/* Focus Styles. */
+/* Focus Ring Styles. */
 button:focus-visible,
 a:focus-visible
 {

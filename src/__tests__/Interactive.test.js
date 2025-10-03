@@ -1,6 +1,6 @@
 //Filename: Interactive.test.js
 //Author: Kyle McColgan
-//Date: 17 September 2025
+//Date: 1 October 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Interactive section.
 
 import React from 'react';
@@ -95,22 +95,26 @@ describe('Interactive Component', () => {
   });
 
   //Test #7: Each button click reveals a different fact.
-  test('Multiple action button clicks display different facts.', () => {
-    const spy = jest.spyOn(Math, "random").mockReturnValueOnce(0.0).mockReturnValueOnce(0.9);
+  test('Multiple action button clicks display different facts.', async () => {
+    jest.spyOn(Math, "random")
+      .mockReturnValueOnce(0.0) //First Fact (index 0).
+      .mockReturnValueOnce(0.9); //Last Fact (index 2).
 
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /generate a random fact about saint louis/i,
     });
 
+    //First click => Fact 1.
     fireEvent.click(button);
-    const firstTitle = screen.getByRole("heading", { level: 3 }).textContent;
+    const firstTitle = await screen.findByText("Fact 1");
 
+    //Second click => Fact 3.
     fireEvent.click(button);
-    const secondTitle = screen.getByRole("heading", { level: 3 }).textContent;
+    const secondTitle = await screen.findByText("Fact 3");
 
-    expect(firstTitle).not.toBe(secondTitle);
+    expect(firstTitle.textContent).not.toBe(secondTitle.textContent);
 
-    spy.mockRestore();
+    Math.random.mockRestore();
   });
 
   //Test #8: Only ONE fact container gets rendered at a time.
@@ -149,8 +153,6 @@ describe('Interactive Component', () => {
 
     expect(region).toHaveAttribute("id", "interactive");
   });
-
-
 
   // --- OLD TESTS BELOW THIS LINE ---
   //

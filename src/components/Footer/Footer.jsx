@@ -1,6 +1,6 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 23 September 2025
+//Date: 1 October 2025
 //Description: This file contains the footer component for the Saint Louis Facts React project.
 
 import React from 'react';
@@ -19,25 +19,33 @@ function Footer()
                 </p>
 
                 <nav className="footer-links" aria-label="Footer Navigation">
-                    <a
+                  <ul>
+                    <li>
+                      <a
                         href="https://www.stlouis-mo.gov"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="footer-link"
-                    >
+                      >
                         Saint Louis Government
-                    </a>
-                    <a
+                      </a>
+                    </li>
+                    <li>
+                      <a
                         href="https://explorestlouis.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="footer-link"
-                    >
+                      >
                         Explore Saint Louis
-                    </a>
-                    <a href="#top" className="footer-link back-to-top">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#top" className="footer-link back-to-top">
                         ↑ Back to Top
-                    </a>
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
 
                 <small className="footer-copy">
