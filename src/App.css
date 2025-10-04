@@ -79,8 +79,9 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    gap: clamp(2rem, 3vw, 3rem);
-    padding-block: clamp(2rem, 4vw, 4rem);
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-block: clamp(2rem, 6vw, 5rem);
+    padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
 /* ==========================
@@ -103,7 +104,7 @@ h1
 h2
 {
     font-size: clamp(1.75rem, 4vw, 2.4rem);
-    color: var(--color-accent);
+    color: var(--color-text);
 }
 
 h3
@@ -126,7 +127,7 @@ button
     font-weight: 600;
     border-radius: 999px;
     cursor: pointer;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-xs);
 
     transition: background var(--transition),
                 transform var(--transition),
@@ -137,7 +138,7 @@ button:hover
 {
     transform: translateY(-2px);
     background: var(--color-accent);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
 }
 
 button:active

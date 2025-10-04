@@ -32,25 +32,22 @@ body
 }
 
 /* =====================
-   Global Link Styles.
+   Global Links Styles.
 ======================== */
 a
 {
     color: var(--color-primary);
     font-weight: 500;
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    background-position: 0 100%;
+    border-bottom: 2px solid transparent;
 
-    transition: color var(--transition), background-size var(--transition);
+    transition: color var(--transition), border-color var(--transition);
 }
 
 a:hover
 {
     color: var(--color-accent);
-    background-size: 100% 2px;
+    border-color: currentColor;
 }
 
 /* ==============================

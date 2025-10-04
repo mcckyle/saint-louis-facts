@@ -22,14 +22,15 @@
     height: 100%;
     object-fit: cover;
     filter: brightness(65%) contrast(1.05);
-    transform: scale(1.05);
+    transform: translateY(0);
+    will-change: transform;
 
-    transition: transform 18s ease-in-out;
+    transition: transform 12s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.1);
+    transform: translateY(-2%);
 }
 
 /* Overlay Gradient Styles. */
@@ -37,7 +38,7 @@
 {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
     display: grid;
     place-items: center;
     padding: 0 1rem;
@@ -48,10 +49,10 @@
 {
     text-align: center;
     color: var(--color-inverse);
-    max-width: 960px;
+    max-width: 800px;
     padding: 2rem;
 
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 /* Title With The Smooth Gradient Styling. */
@@ -74,7 +75,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 12s ease-in-out infinite;
+    animation: shimmer 10s ease-in-out infinite;
 }
 
 /* Subtitle Styling. */
@@ -82,8 +83,7 @@
 {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.25rem);
-    opacity: 0.85;
-    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem;
     line-height: 1.6;
 }
@@ -95,31 +95,25 @@
     align-items: center;
     justify-content: center;
 
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid var(--color-highlight);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--color-highlight);
     border-radius: 50%;
     padding: 0.75rem;
     color: var(--color-highlight);
-    cursor: pointer;
 
-    backdrop-filter: blur(8px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 
-    animation: float 2.8s ease-in-out infinite;
-    transition: transform var(--transition),
-                background var(--transition),
-                color var(--transition),
-                box-shadow var(--transition);
+    animation: float 3s ease-in-out infinite;
+    transition: all var(--transition);
 }
 
 .scroll-cue:hover,
 .scroll-cue:focus
 {
-    transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.2);
     color: var(--color-accent);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    outline: none;
 }
 
 /* Keyframes Styles. */

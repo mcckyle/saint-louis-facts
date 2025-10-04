@@ -12,7 +12,12 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       class="intro-title"
       id="intro-heading"
     >
-      Welcome to the Heart of Saint Louis
+      Welcome to the Heart of 
+      <span
+        class="highlight"
+      >
+        Saint Louis
+      </span>
     </h2>
     <div
       class="intro-lead"

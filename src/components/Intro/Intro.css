@@ -6,11 +6,10 @@
 .intro
 {
     position: relative;
-    width: 100%;
-    padding: clamp(3.5rem, 6vw, 6rem) 1.5rem;
-    background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
-    border-top: 3px solid var(--color-accent);
+    padding: clamp(4rem, 7vw, 6rem) 1.5rem;
     text-align: center;
+    background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
+    border-top: 2px solid var(--color-accent);
     overflow: hidden;
 
     animation: fadeInIntro 1s ease forwards;
@@ -30,10 +29,10 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
 
     background: linear-gradient(
         120deg,
@@ -45,33 +44,20 @@
     background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    position: relative;
 
     animation: shimmer 10s ease-in-out infinite;
 }
 
-/* Underline Shimmer Effect Styles. */
-.intro-title::after
+.intro-title .highlight
 {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 45%;
-    height: 3px;
-    border-radius: 2px;
-
     background: linear-gradient(
-        to right,
+        120deg,
         var(--color-accent),
-        var(--color-highlight),
-        var(--color-primary)
+        var(--color-highlight)
     );
-    background-size: 200% auto;
-    opacity: 0.8;
 
-    animation: shimmer 10s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Lead Text Styling. */
@@ -84,31 +70,28 @@
 /* Intro Paragraph Styling. */
 .intro p
 {
-    font-size: 1.12rem;
+    font-size: 1.1rem;
     line-height: 1.65;
     margin: 1.2rem auto 0;
     color: var(--color-text);
     opacity: 0.95;
 
-    transition: transform var(--transition), opacity var(--transition);
+    transition: opacity var(--transition);
 }
 
 .intro p:hover
 {
-    transform: translateY(-2px);
     opacity: 1;
 }
 
 /* Scroll Cue (mouse shape) Styles. */
 .intro-scroll-cue
 {
-    width: 28px;
-    height: 48px;
+    width: 26px;
+    height: 46px;
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
-    margin: 3rem auto 0;
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    margin: 2.5rem auto 0;
 
     position: relative;
 }
@@ -160,9 +143,29 @@
     {
         font-size: 1rem;
     }
-
-    .intro-scroll-cue
-    {
-        margin-top: 2.5rem;
-    }
 }
+
+/* Underline Shimmer Effect Styles. */
+/*.intro-title::after
+{
+ content: '';
+ position: absolute;
+ bottom: -12px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 45%;
+ height: 3px;
+ border-radius: 2px;
+
+ background: linear-gradient(
+     to right,
+var(--color-accent),
+var(--color-highlight),
+var(--color-primary)
+);
+background-size: 200% auto;
+opacity: 0.8;
+
+animation: shimmer 10s ease-in-out infinite;
+}
+*/
