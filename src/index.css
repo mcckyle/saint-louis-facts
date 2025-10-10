@@ -25,7 +25,12 @@ body
     line-height: 1.6;
     color: var(--color-text);
 
-    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt)) fixed;
+    background: linear-gradient(
+      180deg,
+      var(--color-bg),
+      var(--color-bg-alt) 60%,
+      var(--color-bg)
+    ) fixed;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

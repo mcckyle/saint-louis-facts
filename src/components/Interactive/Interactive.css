@@ -5,37 +5,68 @@
  ==================================== */
 .interactive
 {
-    padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem;
-    background: linear-gradient(145deg, var(--color-bg), var(--color-bg-alt));
+    padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+    background: linear-gradient(160deg, var(--color-bg), var(--color-bg-alt));
     text-align: center;
+    border-top: 2px solid var(--color-accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-container
+{
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 /* Section Heading Styles. */
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 0.75rem;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
 
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
+
+    background-size: 250% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    animation: shimmer 10s linear infinite;
 }
 
-.interactive-title .highlight
+.interactive-title::after
 {
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
+    content: "";
+    display: block;
+    height: 2px;
+    width: 60%;
+    max-width: 340px;
+    margin: 1.4rem auto 0;
+    border-radius: 3px;
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+        90deg,
+        var(--color-accent),
+        var(--color-highlight),
+        var(--color-primary)
+    );
+
+    background-size: 200% auto;
+
+    animation: shimmer 10s linear infinite;
 }
 
+/* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
     font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
 }
 
 /* The Button Styling. */
@@ -44,40 +75,37 @@
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     font-size: 1rem;
-    padding: 0.9rem 2rem;
+    padding: 1rem 2.4rem;
     border: none;
     border-radius: 9999px;
     cursor: pointer;
     font-family: var(--font-heading);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     box-shadow: var(--shadow-sm);
 
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 .interactive-button:hover
 {
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 }
 
 /* Fact Card Styling. */
 .interactive-fact
 {
-    margin-top: 2.5rem;
-    max-width: 640px;
-    margin-inline: auto;
-    padding: 2rem;
+    margin-top: 3rem;
     background: var(--color-elevated);
     border-radius: var(--border-radius);
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow-xs);
+    padding: 2rem;
+
     border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-xs);
+    backdrop-filter: blur(12px);
 }
 
 /* Fact Title Styling. */
@@ -86,7 +114,7 @@
     font-family: var(--font-heading);
     font-size: 1.4rem;
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 /* Fact Description Styles. */
@@ -94,8 +122,15 @@
 {
     font-family: var(--font-body);
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--color-text);
+}
+
+/* Animations Styles. */
+@keyframes shimmer
+{
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* Mobile Styles. */
@@ -104,20 +139,11 @@
     .interactive-button
     {
         font-size: 0.9rem;
-        padding: 0.75rem 1.4rem;
+        padding: 0.85rem 1.8rem;
     }
 
-    .interactive-face
+    .interactive-fact
     {
-        padding: 1.5rem;
+        padding: 1.6rem;
     }
 }
-
-/* Animations Styles. */
-/*
-@keyframes fadeUp
-{
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-*/

@@ -5,63 +5,91 @@
 ========================= */
 .footer
 {
-    background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
-    padding: clamp(2.5rem, 6vw, 3.5rem) 1.5rem;
-    border-top: 1px solid var(--color-primary);
+    position: relative;
+    background: linear-gradient(170deg, var(--color-bg-alt), var(--color-bg));
+    border-top: 1px solid var(--color-border);
+    padding: clamp(2.8rem, 6vw, 3.8rem) 1.5rem;
+
     text-align: center;
-    font-family: var(--font-body);
     color: var(--color-text);
+    font-family: var(--font-body);
+
+    overflow: hidden;
+    isolation: isolate;
 }
 
-/* Footer Container Styling. */
-.footer-container
+/* Footer Ambient Glow Styles. */
+.footer::before
+{
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 215, 0, 0.05),
+        transparent 75%
+    );
+    filter: blur(70px);
+    z-index: -1;
+}
+
+/* Inner Layout Styles. */
+.footer-inner
 {
     max-width: 1080px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.75rem;
+    gap: 2rem;
+
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Footer Intro Text Styles. */
-.footer-text
+/* Footer Intro Message Styles. */
+.footer-message
 {
-    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
     max-width: 720px;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.8;
+    opacity: 0.9;
+
+    transition: opacity 0.3s ease;
+}
+
+.footer-message:hover
+{
+    opacity: 1;
 }
 
 /* Footer Navigation Styles. */
-.footer-links ul
+.footer-nav ul
 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
 
+    gap: 0.8rem;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Individual Link Styles. */
+/* Navigation Links Styles. */
 .footer-link
 {
-    font-size: clamp(0.9rem, 1.6vw, 0.95rem);
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
     font-weight: 500;
-    padding: 0.5rem 1.3rem;
+    padding: 0.55rem 1.4rem;
     border-radius: 9999px;
     text-decoration: none;
     color: var(--color-text);
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-border);
     background: transparent;
 
-    transition: transform 0.25s ease,
-                background 0.25s ease,
-                color 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 /* Hover Effects for Footer Links. */
@@ -69,31 +97,42 @@
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xs);
 }
 
 /* Special Button: Back to Top. */
 .back-to-top
 {
     font-weight: 600;
-    border: none;
-    background: var(--color-highlight);
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
+    border: none;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .back-to-top:hover
 {
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
-    color: var(--color-bg);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Copy and Author Credit Styles. */
-.footer-copy
+/* Footer Copyright Styles. */
+.footer-meta
 {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-text-muted);
+    opacity: 0.85;
 }
 
+.footer-brand
+{
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Highlight Gradient Text Styles. */
 .footer-highlight
 {
     font-weight: 600;
@@ -103,6 +142,7 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* Author Signature Styles. */
 .footer-author
 {
     font-weight: 600;
@@ -122,7 +162,7 @@
     background: linear-gradient(to right, var(--color-primary), var(--color-accent));
     background-size: 200% auto;
 
-    animation: shimmer 5s linear infinite;
+    animation: shimmer 4s linear infinite;
 }
 
 /* Gradient Shimmer Underline Styles. */
@@ -132,17 +172,28 @@
     100% { background-position: 200% center; }
 }
 
+@keyframes fadeInUp
+{
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive Design Styling. */
 @media (max-width: 768px)
 {
-    .footer-text
+    .footer-message
     {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .footer-link
     {
         font-size: 0.85rem;
         padding: 0.45rem 1rem;
+    }
+
+    .footer-meta
+    {
+        font-size: 0.85rem;
     }
 }

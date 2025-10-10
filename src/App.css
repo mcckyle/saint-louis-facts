@@ -84,6 +84,21 @@
     padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
+section
+{
+    background: var(--color-elevated);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-xs);
+    padding: clamp(2rem, 4vw, 3.5rem);
+
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+section:hover
+{
+    box-shadow: var(--shadow-sm);
+}
+
 /* ==========================
     Global Headings Styles.
 ============================= */
@@ -136,7 +151,7 @@ button
 
 button:hover
 {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.03);
     background: var(--color-accent);
     box-shadow: var(--shadow-sm);
 }

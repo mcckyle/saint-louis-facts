@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 1 October 2025
+//Date: 7 October 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -15,14 +15,14 @@ describe('Footer Component', () => {
   // Test #1:
   test('renders the footer with the correct text', () => {
     expect(
-      screen.getByText(/Inspired by the vibrant culture and history of Saint Louis./i)
+      screen.getByText(/Inspired by the vibrant spirit of Saint Louis./i)
     ).toBeInTheDocument();
   });
 
   // Test #2:
   test('contains a link to the official Saint Louis government website', () => {
     const govLink = screen.getByRole('link', {
-      name: /Saint Louis Government/i,
+      name: /Saint Louis Gov/i,
     });
     expect(govLink).toBeInTheDocument();
     expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
@@ -31,7 +31,7 @@ describe('Footer Component', () => {
   // Test #3:
   test('contains a link to the Explore Saint Louis website', () => {
     const exploreLink = screen.getByRole('link', {
-      name: /Explore Saint Louis/i,
+      name: /Explore STL/i,
     });
     expect(exploreLink).toBeInTheDocument();
     expect(exploreLink).toHaveAttribute('href', 'https://explorestlouis.com');
@@ -57,7 +57,7 @@ describe('Footer Component', () => {
 
   // Test #6:
   test('renders the container div with appropriate class name', () => {
-    const container = screen.getByText(/vibrant culture and history/i).closest('.footer-container');
+    const container = screen.getByText(/vibrant spirit/i).closest('.footer-inner');
     expect(container).toBeInTheDocument();
   });
 
@@ -83,7 +83,7 @@ describe('Footer Component', () => {
 
   // Test #10:
   test('displays the footer text with the correct class', () => {
-    const footerText = screen.getByText(/vibrant culture and history/i);
-    expect(footerText).toHaveClass('footer-text');
+    const footerText = screen.getByText(/vibrant spirit/i);
+    expect(footerText).toHaveClass('footer-message');
   });
 });
