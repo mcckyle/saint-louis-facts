@@ -1,16 +1,16 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 3 October 2025
+//Date: 12 October 2025
 //Description: This file contains the React root component for the Saint Louis facts project.
 
-import React, { useRef } from 'react';
-import Header from './components/Header/Header.jsx';
-import Intro from './components/Intro/Intro.jsx';
-import FunFactsList from './components/FunFactsList/FunFactsList.jsx';
-import Interactive from './components/Interactive/Interactive.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import React, { useRef } from "react";
+import Header from "./components/Header/Header.jsx";
+import Intro from "./components/Intro/Intro.jsx";
+import FunFactsList from "./components/FunFactsList/FunFactsList.jsx";
+import Interactive from "./components/Interactive/Interactive.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
-import './App.css';
+import "./App.css";
 
 function App()
 {
@@ -19,6 +19,7 @@ function App()
   return (
       <div id="top" className="app-container">
         <Header scrollTargetRef={introRef} />
+
         <main
           id="main"
           className="main-content fade-in"
@@ -29,6 +30,7 @@ function App()
           <FunFactsList />
           <Interactive />
         </main>
+
         <Footer />
       </div>
   );

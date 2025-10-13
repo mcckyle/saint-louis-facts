@@ -13,12 +13,6 @@
     overflow: hidden;
 }
 
-.interactive-container
-{
-    max-width: 720px;
-    margin: 0 auto;
-}
-
 /* Section Heading Styles. */
 .interactive-title
 {
@@ -28,33 +22,15 @@
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
 
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
-
-    background-size: 250% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: shimmer 10s linear infinite;
-}
-
-.interactive-title::after
-{
-    content: "";
-    display: block;
-    height: 2px;
-    width: 60%;
-    max-width: 340px;
-    margin: 1.4rem auto 0;
-    border-radius: 3px;
-
     background: linear-gradient(
-        90deg,
+        120deg,
         var(--color-accent),
         var(--color-highlight),
         var(--color-primary)
     );
 
-    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     animation: shimmer 10s linear infinite;
 }

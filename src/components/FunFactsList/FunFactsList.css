@@ -18,10 +18,9 @@
 {
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.2rem);
-    margin-bottom: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    line-height: 1.1;
+    margin-bottom: 3rem;
 
     background: linear-gradient(
         120deg,
@@ -30,7 +29,6 @@
         var(--color-primary)
     );
 
-    background-size: 250% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -55,8 +53,6 @@
       var(--color-primary)
     );
 
-    background-size: 200% auto;
-
     animation: shimmer 10s linear infinite;
 }
 
@@ -65,12 +61,12 @@
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 2.2rem;
+    max-width: 1100px;
 
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    max-width: 1100px;
 }
 
 /* Fact Item Card Styling. */
@@ -91,8 +87,8 @@
 .fact-item:hover
 {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
 }
 
 /* Fact Title Styling. */
@@ -111,7 +107,7 @@
     font-size: 1rem;
     line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 /* Fact Sources Styling. */
@@ -119,8 +115,8 @@
 {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
     justify-content: center;
+    gap: 0.6rem;
 }
 
 .sources-label

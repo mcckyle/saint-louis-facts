@@ -33,7 +33,7 @@
 
 .intro-content
 {
-    max-width: 840px;
+    max-width: 800px;
     margin-inline: auto;
 }
 
@@ -41,11 +41,11 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 5vw, 3.6rem);
+    font-size: clamp(2.6rem, 5vw, 3.4rem);
     text-transform: uppercase;
-    letter-spacing: 1.1px;
+    letter-spacing: 1px;
+    line-height: 1.15;
     margin-bottom: 2rem;
-    line-height: 1.2;
 
     background: linear-gradient(
         120deg,
@@ -54,11 +54,26 @@
         var(--color-primary)
     );
 
-    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     animation: shimmer 9s ease-in-out infinite;
+}
+
+.intro-text
+{
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.75;
+    color: var(--color-text);
+    opacity: 0.9;
+    margin: 1rem 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.intro-text:hover
+{
+    opacity: 1;
 }
 
 /* Highlighted Word Styles. */
@@ -74,31 +89,8 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Lead Paragraphs Styles. */
-.intro-lead
-{
-    max-width: 720px;
-    margin: 0 auto;
-    color: var(--color-text);
-}
-
-.intro p
-{
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-    line-height: 1.75;
-    margin-top: 1.25rem;
-    opacity: 0.9;
-
-    transition: opacity 0.3s ease;
-}
-
-.intro p:hover
-{
-    opacity: 1;
-}
-
 /* Scroll Cue (Mouse Shape) Styles. */
-.intro-scroll-cue
+.scroll-cue
 {
     width: 28px;
     height: 50px;
@@ -109,7 +101,7 @@
     opacity: 0.85;
 }
 
-.intro-scroll-cue::before
+.scroll-cue::before
 {
     content: '';
     position: absolute;
@@ -152,7 +144,7 @@
         font-size: 2.1rem;
     }
 
-    .intro p
+    .intro-text
     {
         font-size: 1rem;
     }

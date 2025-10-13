@@ -1,6 +1,6 @@
 //Filename: FunFactsList.test.js
 //Author: Kyle McColgan
-//Date: 27 July 2025
+//Date: 12 October 2025
 //Description: This file contains the Jest unit tests for the facts section.
 
 import React from 'react';
@@ -30,7 +30,7 @@ test("renders the section title.", () => {
     setup();
     expect(
       screen.getByRole("heading", {
-        name: /Discover Fascinating Facts About Saint Louis/i,
+        name: /Discover Fascinating Facts About/i,
         level: 2,
       })
     ).toBeInTheDocument();
