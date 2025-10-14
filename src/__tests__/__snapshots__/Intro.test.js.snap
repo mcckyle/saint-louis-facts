@@ -25,7 +25,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       <p
         class="intro-text"
       >
-        Where the mighty Mississippi meets a city of soul, creativity, and timeless character.
+        Where the Mississippi meets a city of soul, creativity, and timeless character.
       </p>
       <p
         class="intro-text"

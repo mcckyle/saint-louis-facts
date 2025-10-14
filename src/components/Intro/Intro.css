@@ -8,7 +8,7 @@
     position: relative;
     padding: clamp(5rem, 8vw, 7rem) 1.5rem;
     text-align: center;
-    background: linear-gradient(170deg, var(--color-bg), var(--color-bg-alt));
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     border-top: 2px solid var(--color-accent);
     overflow: hidden;
     isolation: isolate;
@@ -16,15 +16,15 @@
     animation: fadeInUp 1.2s ease forwards;
 }
 
-/* Subtle Ambient Glow. */
+/* Ambient Glow With Subtle Depth Styles. */
 .intro::before
 {
-    content: '';
+    content: "";
     position: absolute;
     inset: -40%;
     background: radial-gradient(
       circle,
-      rgba(255, 215, 0, 0.05),
+      rgba(255, 215, 0, 0.06),
       transparent 75%
     );
     z-index: -1;
@@ -33,7 +33,7 @@
 
 .intro-content
 {
-    max-width: 800px;
+    max-width: 780px;
     margin-inline: auto;
 }
 
@@ -41,11 +41,11 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 5vw, 3.4rem);
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     line-height: 1.15;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 
     background: linear-gradient(
         120deg,
@@ -62,10 +62,11 @@
 
 .intro-text
 {
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.75;
     color: var(--color-text);
-    opacity: 0.9;
+    opacity: 0.92;
     margin: 1rem 0;
 
     transition: opacity 0.3s ease;
@@ -98,12 +99,12 @@
     border-radius: 20px;
     margin: 3.2rem auto 0;
     position: relative;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 .scroll-cue::before
 {
-    content: '';
+    content: "";
     position: absolute;
     top: 8px;
     left: 50%;
@@ -141,7 +142,7 @@
 {
     .intro-title
     {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
     }
 
     .intro-text

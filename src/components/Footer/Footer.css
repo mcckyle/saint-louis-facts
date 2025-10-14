@@ -18,20 +18,22 @@
     isolation: isolate;
 }
 
-/* Footer Ambient Golden Shimmer Styles. */
+/* Footer Ambient Golden Glow Styles. */
 .footer::before
 {
     content: "";
     position: absolute;
-    inset: -50%;
+    inset: -40%;
     background: radial-gradient(
-        circle at 50% 70%,
-        rgba(255, 215, 0, 0.06),
+        circle at 50% 80%,
+        rgba(255, 215, 0, 0.04),
         transparent 75%
     );
-    filter: blur(100px);
+    filter: blur(70px);
     z-index: -1;
-    opacity: 0.8;
+    opacity: 0.6;
+
+    animation: gentleGlow 12s ease-in-out infinite alternate;
 }
 
 /* Inner Layout Styles. */
@@ -42,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.2rem;
+    gap: 2rem;
 
     animation: fadeInUp 1.1s ease forwards;
 }
@@ -54,7 +56,7 @@
     font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.75;
+    line-height: 1.7;
     opacity: 0.9;
 
     transition: opacity 0.4s ease;
@@ -83,15 +85,15 @@
 {
     font-size: clamp(0.9rem, 1.6vw, 1rem);
     font-weight: 500;
-    padding: 0.55rem 1.4rem;
+    padding: 0.6rem 1.4rem;
     border-radius: 9999px;
     text-decoration: none;
     color: var(--color-text);
     border: 1px solid var(--color-border);
-    background: transparent;
-    will-change: transform, box-shadow;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(6px);
 
-    transition: all 0.35s ease;
+    transition: all 0.3s ease;
 }
 
 /* Hover Effects for Footer Links. */
@@ -100,7 +102,7 @@
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.25);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Special Button: Back to Top. */
@@ -111,13 +113,13 @@
     color: var(--color-bg);
     border: none;
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: var(--shadow-xs);
 }
 
 .back-to-top:hover
 {
     transform: translateY(-4px);
-    box-shadow: 0 5px 14px rgba(255, 215, 0, 0.25);
+    box-shadow: var(--shadow-md);
 }
 
 /* Footer Copyright Styles. */
@@ -164,7 +166,7 @@
     background: linear-gradient(to right, var(--color-primary), var(--color-accent));
     background-size: 200% auto;
 
-    animation: shimmer 4s linear infinite;
+    animation: shimmer 5s linear infinite;
 }
 
 /* Gradient Shimmer Underline Styles. */
@@ -180,12 +182,18 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes gentleGlow
+{
+    from { opacity: 0.5; transform: scale(1); }
+    to { opacity: 0.8; transform: scale(1.05); }
+}
+
 /* Responsive Design Styling. */
 @media (max-width: 768px)
 {
     .footer-inner
     {
-        gap: 1.8rem;
+        gap: 1.6rem;
     }
 
     .footer-message
@@ -197,7 +205,7 @@
     .footer-link
     {
         font-size: 0.85rem;
-        padding: 0.45rem 1rem;
+        padding: 0.5rem 1.1rem;
     }
 
     .footer-meta

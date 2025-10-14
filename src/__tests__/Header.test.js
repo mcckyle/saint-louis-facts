@@ -1,6 +1,6 @@
 //Filename: Header.test.js
 //Author: Kyle McColgan
-//Date: 1 October 2025
+//Date: 13 October 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Header component.
 
 import React from 'react';
@@ -26,7 +26,7 @@ describe('Header Component', () => {
 
   // Test #3: Check if the description renders
   test('renders the header description', () => {
-    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the enduring heart of the Midwest./i);
     expect(descriptionElement).toBeInTheDocument();
   });
 
@@ -38,7 +38,7 @@ describe('Header Component', () => {
 
   // Test #5: Check if the description has the correct class
   test('description has the correct class', () => {
-    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the enduring heart of the Midwest./i);
     expect(descriptionElement).toHaveClass('header-subtitle');
   });
 
@@ -68,7 +68,7 @@ describe('Header Component', () => {
 
   // Test #10: Ensure the description has correct text content
   test('description has correct text content', () => {
-    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the heart of the Midwest./i);
-    expect(descriptionElement.textContent).toBe('From the Gateway Arch to the Mississippi River - experience the heart of the Midwest.');
+    const descriptionElement = screen.getByText(/From the Gateway Arch to the Mississippi River - experience the enduring heart of the Midwest./i);
+    expect(descriptionElement.textContent).toBe('From the Gateway Arch to the Mississippi River - experience the enduring heart of the Midwest.');
   });
 });

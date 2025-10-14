@@ -1,6 +1,6 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 8 October 2025
+//Date: 13 October 2025
 //Description: This file contains the Jest unit tests for the Saint Louis Facts project Intro section.
 
 import React from 'react';
@@ -23,7 +23,7 @@ describe('Intro Component', () => {
   });
 
   test('renders a paragraph with the correct description', () => {
-    const paragraph = screen.getByText(/Where the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Where the Mississippi/i);
     expect(paragraph).toBeInTheDocument();
   });
 
@@ -54,7 +54,7 @@ describe('Intro Component', () => {
   });
 
   test('the paragraph text is visible and not empty', () => {
-    const paragraph = screen.getByText(/Where the mighty Mississippi/i);
+    const paragraph = screen.getByText(/Where the Mississippi/i);
     expect(paragraph).toBeVisible();
     expect(paragraph).not.toBeEmptyDOMElement();
   });

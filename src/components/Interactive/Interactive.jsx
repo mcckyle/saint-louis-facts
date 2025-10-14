@@ -38,7 +38,7 @@ export default function Interactive()
             onClick={getRandomFact}
             aria-label="Generate a random fact about Saint Louis."
             whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.98 }}
+            whileTap={{ scale: 0.97 }}
           >
               Show Me a Fact
           </motion.button>

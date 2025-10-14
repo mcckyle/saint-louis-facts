@@ -6,7 +6,7 @@
 .fun-facts
 {
     padding: clamp(5rem, 8vw, 8rem) 1.5rem;
-    background: linear-gradient(170deg, var(--color-bg-alt), var(--color-bg));
+    background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
     border-top: 2px solid var(--color-accent);
     text-align: center;
     position: relative;
@@ -20,7 +20,7 @@
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.8rem;
 
     background: linear-gradient(
         120deg,
@@ -43,7 +43,7 @@
     height: 2px;
     width: 60%;
     max-width: 340px;
-    margin: 1.5rem auto 0;
+    margin: 1.25rem auto 0;
     border-radius: 3px;
 
     background: linear-gradient(

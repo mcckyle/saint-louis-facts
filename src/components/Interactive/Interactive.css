@@ -6,7 +6,7 @@
 .interactive
 {
     padding: clamp(5rem, 8vw, 8rem) 1.5rem;
-    background: linear-gradient(160deg, var(--color-bg), var(--color-bg-alt));
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     text-align: center;
     border-top: 2px solid var(--color-accent);
     position: relative;
@@ -20,7 +20,7 @@
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 
     background: linear-gradient(
         120deg,
@@ -41,7 +41,7 @@
     font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--color-text-muted);
     max-width: 620px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.4rem;
     line-height: 1.7;
 }
 
