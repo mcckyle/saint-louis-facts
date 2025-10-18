@@ -21,14 +21,15 @@
 {
     content: "";
     position: absolute;
-    inset: -40%;
+    inset: -30%;
     background: radial-gradient(
-      circle,
-      rgba(255, 215, 0, 0.06),
-      transparent 75%
+      circle at center,
+      rgba(255, 215, 0, 0.05),
+      transparent 70%
     );
+
+    filter: blur(90px);
     z-index: -1;
-    filter: blur(80px);
 }
 
 .intro-content
@@ -41,11 +42,11 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.4rem);
+    font-size: clamp(2.4rem, 5vw, 3.3rem);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    line-height: 1.15;
+    letter-spacing: 1.3px;
     margin-bottom: 1.75rem;
+    line-height: 1.1;
 
     background: linear-gradient(
         120deg,
@@ -57,7 +58,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 9s ease-in-out infinite;
+    animation: shimmer 8s ease-in-out infinite;
 }
 
 .intro-text
@@ -66,7 +67,7 @@
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.75;
     color: var(--color-text);
-    opacity: 0.92;
+    opacity: 0.9;
     margin: 1rem 0;
 
     transition: opacity 0.3s ease;
@@ -99,7 +100,7 @@
     border-radius: 20px;
     margin: 3.2rem auto 0;
     position: relative;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .scroll-cue::before

@@ -1,6 +1,6 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 13 October 2025
+//Date: 16 October 2025
 //Description: This file contains the footer component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -14,9 +14,9 @@ function Footer()
     <footer className="footer" role="contentinfo" aria-label="Site Footer">
       <div className="footer-inner">
         <p className="footer-message">
-            Inspired by the vibrant spirit of Saint Louis - where history
-            meets innovation, and resilience shapes its rhythm. Special thanks to
-            those who preserve and celebrate the city's living legacy.
+          Inspired by the vibrant spirit of Saint Louis - where history meets
+          innovation, and resilience shapes its rhythm. Special thanks to those
+          who preserve and celebrate the city's living legacy.
         </p>
 
         <nav className="footer-nav" aria-label="Footer Navigation">

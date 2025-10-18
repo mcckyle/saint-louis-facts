@@ -19,8 +19,7 @@
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 2.8rem;
+    margin-bottom: 3rem;
 
     background: linear-gradient(
         120deg,
@@ -32,7 +31,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 10s linear infinite;
+    animation: shimmer 9s ease-in-out infinite;
 }
 
 /* Shimmer Underline. */
@@ -52,16 +51,14 @@
       var(--color-highlight),
       var(--color-primary)
     );
-
-    animation: shimmer 10s linear infinite;
 }
 
 /* Fact List Grid Layout Styling. */
 .fact-list
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.4rem;
     max-width: 1100px;
 
     margin: 0 auto;
@@ -78,7 +75,7 @@
 
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-xs);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 
     transition: all 0.3s ease;
 }
