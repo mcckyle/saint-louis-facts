@@ -50,9 +50,8 @@ function Footer()
         </nav>
 
         <small className="footer-meta">
-          &copy; {currentYear}{" "}
-          <span className="footer-brand">Saint Louis Facts</span> ·
-          Designed with pride in{" "}
+          © {currentYear} <span className="footer-brand">Saint Louis Facts</span>
+          &nbsp;· Designed in{" "}
           <span className="footer-highlight">Saint Louis</span> by{" "}
           <span className="footer-author">Kyle McColgan</span>
         </small>

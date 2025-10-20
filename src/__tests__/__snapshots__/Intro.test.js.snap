@@ -9,7 +9,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
     role="region"
   >
     <div
-      class="intro-content"
+      class="intro-inner"
     >
       <h2
         class="intro-title"
@@ -23,12 +23,12 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
         </span>
       </h2>
       <p
-        class="intro-text"
+        class="intro-subtext"
       >
         Where the Mississippi meets a city of soul, creativity, and timeless character.
       </p>
       <p
-        class="intro-text"
+        class="intro-subtext"
       >
         From the Gateway Arch to its blues, baseball, and barbecue - explore the rhythm, resilience, and rich spirit that define the 
         <span

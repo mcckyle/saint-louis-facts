@@ -1,8 +1,8 @@
 /* Filename: App.css */
 
-/* =====================
+/* ====================================
     Root Variables.
-======================== */
+======================================= */
 :root
 {
     /* Saint Louis Flag Color Palette. */
@@ -35,12 +35,12 @@
     --font-body: "Lora", "Georgia", serif;
 
     /* Shapes and Motion. */
-    --border-radius: 14px;
+    --border-radius: 16px;
     --shadow-xs: 0 1px 6px rgba(0, 0, 0, 0.08);
     --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.12);
-    --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.16);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.16);
 
-    --transition: 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    --transition: 240ms cubic-bezier(0.25, 0.7, 0.4, 1);
 }
 
 /* Dark Mode Variables. */
@@ -57,9 +57,9 @@
     --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.48);
 }
 
-/* ==========================
-   Layout Styles.
-============================= */
+/* ====================================
+   App Layout Styles.
+======================================= */
 .app-container
 {
     display: flex;
@@ -69,7 +69,7 @@
     background: linear-gradient(
       180deg,
       var(--color-bg),
-      var(--color-bg-alt) 70%,
+      var(--color-bg-alt) 75%,
       var(--color-bg)
     );
 
@@ -83,33 +83,37 @@
 {
     flex: 1;
     display: grid;
-    gap: clamp(2.5rem, 5vw, 5rem);
-    padding-block: clamp(3rem, 6vw, 5rem);
-    padding-inline: clamp(1.5rem, 5vw, 4rem);
+    gap: clamp(3rem, 5vw, 5rem);
+    padding-block: clamp(3.5rem, 7vw, 5rem);
+    padding-inline: clamp(1.75rem, 5vw, 4rem);
 }
 
+/* Section Containers Styles. */
 section
 {
     background: var(--color-elevated);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-xs);
-    padding: clamp(2rem, 4vw, 3.5rem);
+    padding: clamp(2.25rem, 4vw, 3.5rem);
 
-    transition: background var(--transition), box-shadow var(--transition);
+    transition: background var(--transition),
+                box-shadow var(--transition),
+                transform var(--transition);
 }
 
 section:hover
 {
     box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
 }
 
-/* ==========================
+/* ====================================
     Global Headings Styles.
-============================= */
+======================================= */
 h1, h2, h3
 {
     font-family: var(--font-heading);
-    line-height: 1.2;
+    line-height: 1.25;
     margin: 0 0 0.75rem;
 }
 
@@ -122,6 +126,7 @@ h1
 h2
 {
     font-size: clamp(1.75rem, 4vw, 2.4rem);
+    color: var(--color-accent);
 }
 
 h3
@@ -129,9 +134,9 @@ h3
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
-/* ===================
+/* ====================================
    Buttons Styles.
-====================== */
+======================================= */
 button
 {
     border: none;
@@ -143,7 +148,7 @@ button
     );
 
     color: var(--color-inverse);
-    padding: 0.9rem 1.4rem;
+    padding: 0.9rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 999px;
@@ -156,21 +161,13 @@ button
 
 button:hover
 {
-    transform: translateY(-3px) scale(1.03);
+    transform: translateY(-3px) scale(1.04);
     box-shadow: var(--shadow-sm);
 }
 
-/* Focus Ring Styles. */
-button:focus-visible,
-a:focus-visible
-{
-    outline: 3px solid var(--color-highlight);
-    outline-offset: 3px;
-}
-
-/* =====================
+/* ====================================
    Skip Link Styles.
-======================== */
+======================================= */
 .skip-link
 {
     position: absolute;
@@ -192,13 +189,13 @@ a:focus-visible
     z-index: 1000;
 }
 
-/* ==========================
-   Animations Styles.
-============================= */
+/* ====================================
+   Fade Animations Styles.
+======================================= */
 .fade-in
 {
     opacity: 0;
-    animation: fadeIn 600ms ease forwards;
+    animation: fadeIn 700ms ease forwards;
 }
 
 @keyframes fadeIn

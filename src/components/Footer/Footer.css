@@ -1,8 +1,8 @@
 /* Filename: Footer.css */
 
-/* ======================
+/* ====================================
    Footer Styling.
-========================= */
+======================================= */
 .footer
 {
     position: relative;
@@ -10,28 +10,28 @@
     border-top: 1px solid var(--color-border);
     padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
 
-    color: var(--color-text);
     text-align: center;
+    color: var(--color-text);
     font-family: var(--font-body);
 
     overflow: hidden;
     isolation: isolate;
 }
 
-/* Footer Ambient Glow Styles. */
+/* Footer Ambient Golden Glow Styles. */
 .footer::before
 {
     content: "";
     position: absolute;
     inset: -40%;
     background: radial-gradient(
-        circle at 50% 75%,
+        circle at 50% 80%,
         rgba(255, 215, 0, 0.05),
         transparent 70%
     );
 
-    filter: blur(80px);
-    opacity: 0.5;
+    filter: blur(100px);
+    opacity: 0.45;
     z-index: -1;
 
     animation: softPulse 14s ease-in-out infinite alternate;
@@ -45,15 +45,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.2rem;
 
-    animation: fadeInUp 1.2s ease forwards;
+    animation: fadeInUp 1.1s ease forwards;
 }
 
-/* Footer Intro Message Styles. */
+/* Footer Message Styles. */
 .footer-message
 {
-    max-width: 720px;
+    max-width: 740px;
     font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
@@ -68,20 +68,19 @@
     opacity: 1;
 }
 
-/* Footer Navigation Styles. */
+/* Footer Navigation Links Styles. */
 .footer-links
 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 0.8rem;
+    gap: 0.9rem;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Navigation Links Styles. */
 .footer-link
 {
     font-size: clamp(0.9rem, 1.6vw, 1rem);
@@ -91,7 +90,7 @@
     text-decoration: none;
     color: var(--color-text);
     border: 1px solid var(--color-border);
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(8px);
 
     transition: all 0.3s ease;
@@ -126,7 +125,7 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Footer Copyright Styles. */
+/* Footer Meta Line Styles. */
 .footer-meta
 {
     font-size: 0.9rem;

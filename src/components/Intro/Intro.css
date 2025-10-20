@@ -1,12 +1,12 @@
 /* Filename: Intro.css */
 
-/* ===========================
+/* ====================================
    Intro Section Styling.
-============================== */
+======================================= */
 .intro
 {
     position: relative;
-    padding: clamp(5rem, 8vw, 7rem) 1.5rem;
+    padding: clamp(6rem, 8vw, 9rem) 1.5rem clamp(4rem, 7vw, 6rem);
     text-align: center;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     border-top: 2px solid var(--color-accent);
@@ -21,20 +21,20 @@
 {
     content: "";
     position: absolute;
-    inset: -30%;
+    inset: -20%;
     background: radial-gradient(
       circle at center,
-      rgba(255, 215, 0, 0.05),
-      transparent 70%
+      rgba(255, 215, 0, 0.06),
+      transparent 75%
     );
 
-    filter: blur(90px);
+    filter: blur(120px);
     z-index: -1;
 }
 
-.intro-content
+.intro-inner
 {
-    max-width: 780px;
+    max-width: 760px;
     margin-inline: auto;
 }
 
@@ -42,7 +42,7 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 5vw, 3.3rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     text-transform: uppercase;
     letter-spacing: 1.3px;
     margin-bottom: 1.75rem;
@@ -58,22 +58,22 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 8s ease-in-out infinite;
+    animation: shimmer 9s ease-in-out infinite;
 }
 
-.intro-text
+.intro-subtext
 {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.75;
     color: var(--color-text);
     opacity: 0.9;
-    margin: 1rem 0;
+    margin: 1.25rem 0;
 
     transition: opacity 0.3s ease;
 }
 
-.intro-text:hover
+.intro-subtext:hover
 {
     opacity: 1;
 }
@@ -98,7 +98,7 @@
     height: 50px;
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
-    margin: 3.2rem auto 0;
+    margin: 3rem auto 0;
     position: relative;
     opacity: 0.85;
 }
@@ -133,9 +133,8 @@
 
 @keyframes scrollDot
 {
-    0% { transform: translate(-50%, 0); opacity: 1; }
+    0%, 100% { transform: translate(-50%, 0); opacity: 1; }
     50% { transform: translate(-50%, 18px); opacity: 0.5; }
-    100% { transform: translate(-50%, 0); opacity: 1; }
 }
 
 /* Responsive Design Styles. */
@@ -146,7 +145,7 @@
         font-size: 2.2rem;
     }
 
-    .intro-text
+    .intro-subtext
     {
         font-size: 1rem;
     }
