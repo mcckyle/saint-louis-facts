@@ -6,14 +6,14 @@
 .intro
 {
     position: relative;
-    padding: clamp(6rem, 8vw, 9rem) 1.5rem clamp(4rem, 7vw, 6rem);
+    padding: clamp(6rem, 8vw, 9rem) 1.5rem clamp(5rem, 8vw, 7rem);
     text-align: center;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     border-top: 2px solid var(--color-accent);
     overflow: hidden;
     isolation: isolate;
 
-    animation: fadeInUp 1.2s ease forwards;
+    animation: fadeInUp 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 /* Ambient Glow With Subtle Depth Styles. */
@@ -21,14 +21,14 @@
 {
     content: "";
     position: absolute;
-    inset: -20%;
+    inset: -25%;
     background: radial-gradient(
-      circle at center,
-      rgba(255, 215, 0, 0.06),
-      transparent 75%
+      circle at 50% 40%,
+      rgba(255, 215, 0, 0.08),
+      transparent 80%
     );
 
-    filter: blur(120px);
+    filter: blur(140px);
     z-index: -1;
 }
 
@@ -42,10 +42,10 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.6rem, 5.5vw, 3.6rem);
     text-transform: uppercase;
-    letter-spacing: 1.3px;
-    margin-bottom: 1.75rem;
+    letter-spacing: 1.1px;
+    margin-bottom: 2rem;
     line-height: 1.1;
 
     background: linear-gradient(
@@ -55,10 +55,11 @@
         var(--color-primary)
     );
 
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 9s ease-in-out infinite;
+    animation: shimmer 12s ease-in-out infinite;
 }
 
 .intro-subtext
@@ -67,10 +68,10 @@
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.75;
     color: var(--color-text);
-    opacity: 0.9;
-    margin: 1.25rem 0;
+    opacity: 0.85;
+    margin: 1.5rem 0;
 
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .intro-subtext:hover
@@ -99,8 +100,9 @@
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
     margin: 3rem auto 0;
+    margin-top: 4rem;
     position: relative;
-    opacity: 0.85;
+    opacity: 0.75;
 }
 
 .scroll-cue::before

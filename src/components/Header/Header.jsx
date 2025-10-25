@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 16 October 2025
+//Date: 24 October 2025
 //Description: This file contains the header component for the Saint Louis Facts React project Header section.
 
 import React from "react";
@@ -17,7 +17,7 @@ function Header({ scrollTargetRef })
     <header
       className="header"
       role="banner"
-      aria-label="Saint Louis landing section with city skyline."
+      aria-label="Saint Louis landing section with skyline and Gateway Arch."
     >
       <div className="header-image-container" aria-hidden="true">
         <img
@@ -31,15 +31,19 @@ function Header({ scrollTargetRef })
 
       <div className="header-overlay">
         <div className="header-content" data-testid="header-container">
-          <h1 className="header-title">Saint&nbsp;Louis</h1>
+          <h1 className="header-title">
+            Saint&nbsp;Louis
+            <span className="header-dot">·</span>
+          </h1>
           <p className="header-subtitle">
-            From the Gateway Arch to the Mississippi River - experience the enduring
-            heart of the Midwest.
+            Gateway to the West - where history, architecture, and innovation
+            meet along the Mississippi.
           </p>
+
           <button
             className="scroll-cue"
             onClick={handleScroll}
-            aria-label="Scroll to the Introduction section."
+            aria-label="Scroll to Introduction section."
           >
             <svg
               width="28"
