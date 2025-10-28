@@ -8,11 +8,11 @@
     position: relative;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     border-top: 1px solid var(--color-border);
-    padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
+    padding: clamp(3rem, 5vw, 4rem) 1.5rem;
 
     text-align: center;
-    font-family: var(--font-body);
     color: var(--color-text);
+    font-family: var(--font-body);
 
     overflow: hidden;
     isolation: isolate;
@@ -23,15 +23,15 @@
 {
     content: "";
     position: absolute;
-    inset: -30%;
+    inset: -25%;
     background: radial-gradient(
         circle at 50% 80%,
-        rgba(255, 215, 0, 0.04),
+        rgba(255, 215, 0, 0.05),
         transparent 70%
     );
 
-    filter: blur(90px);
-    opacity: 0.4;
+    filter: blur(80px);
+    opacity: 0.35;
     z-index: -1;
 }
 
@@ -43,9 +43,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.2rem;
 
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 1.1s ease forwards;
 }
 
 /* Footer Message Styles. */
@@ -56,7 +56,7 @@
     color: var(--color-text-muted);
     font-style: italic;
     line-height: 1.75;
-    opacity: 0.85;
+    opacity: 0.9;
 
     transition: opacity 0.4s ease;
 }
@@ -100,7 +100,7 @@
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: var(--shadow-sm);
     outline: none;
 }
@@ -112,14 +112,15 @@
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     border: none;
-
     box-shadow: var(--shadow-xs);
+
+    transition: all 0.35s ease;
 }
 
 .back-to-top:hover,
 .back-to-top:focus
 {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.04);
     box-shadow: var(--shadow-md);
 }
 
@@ -208,11 +209,3 @@
         font-size: 0.85rem;
     }
 }
-
-/*
-@keyframes softPulse
-{
-    from { opacity: 0.4; transform: scale(1); }
-    to { opacity: 0.7; transform: scale(1.05); }
-}
-*/

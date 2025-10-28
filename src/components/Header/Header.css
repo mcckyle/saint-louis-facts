@@ -32,16 +32,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(55%) contrast(1.08) grayscale(1);
-    transform: scale(1.04);
+    filter: brightness(60%) contrast(1.1) grayscale(1);
+    transform: scale(1.05);
 
-    transition: transform 12s ease, filter 2s ease;
+    transition: transform 15s ease, filter 2.5s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.07);
-    filter: brightness(70%) contrast(1.2);
+    transform: scale(1.1);
+    filter: brightness(75%) contrast(1.25);
 }
 
 /* Overlay Gradient Styles. */
@@ -51,12 +51,11 @@
     inset: 0;
     display: grid;
     place-items: center;
-    padding-inline: 1.5rem;
 
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.25) 10%,
-      rgba(0, 0, 0, 0.85) 85%
+    background: radial-gradient(
+      circle at center 70%,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.85) 90%
     );
 
     backdrop-filter: blur(5px);
@@ -92,7 +91,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 12s ease-in-out infinite;
+    animation: shimmer 10s ease-in-out infinite;
 }
 
 .header-dot
@@ -122,8 +121,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 3rem;
+    height: 3rem;
 
     border-radius: 50%;
     border: 1.5px solid var(--color-highlight);
@@ -131,12 +130,9 @@
 
     color: var(--color-highlight);
     backdrop-filter: blur(6px);
-    cursor: pointer;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 
-    transition: transform var(--transition),
-                box-shadow var(--transition),
-                color var(--transition);
+    transition: all 0.3s ease;
     animation: float 3.8s ease-in-out infinite;
 }
 
@@ -144,7 +140,6 @@
 .scroll-cue:focus-visible
 {
     transform: translateY(-8px) scale(1.08);
-    background: rgba(255, 255, 255, 0.18);
     color: var(--color-accent);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
 }

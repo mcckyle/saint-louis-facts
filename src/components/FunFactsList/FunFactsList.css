@@ -5,11 +5,11 @@
 ======================================= */
 .fun-facts
 {
-    padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
     text-align: center;
-    border-top: 2px solid var(--color-accent);
     overflow: hidden;
+    box-shadow: var(--shadow-soft);
 }
 
 .facts-inner
@@ -36,7 +36,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 9s ease-in-out infinite;
+    animation: shimmer 12s ease-in-out infinite;
 }
 
 /* Shimmer Underline. */
@@ -77,20 +77,20 @@
     padding: 2rem;
 
     border: 1px solid var(--color-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-soft);
     backdrop-filter: blur(10px);
 
-    transition: transform 0.35s ease,
-                box-shadow 0.35s ease,
-                border-color 0.35s ease;
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                border-color var(--transition-base);
 }
 
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: var(--color-accent);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Fact Title Styling. */

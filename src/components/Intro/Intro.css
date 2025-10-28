@@ -6,14 +6,14 @@
 .intro
 {
     position: relative;
-    padding: clamp(6rem, 8vw, 9rem) 1.5rem clamp(5rem, 8vw, 7rem);
+    padding: var(--section-padding-y) var(--section-padding-x);
     text-align: center;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 2px solid var(--color-accent);
     overflow: hidden;
     isolation: isolate;
+    box-shadow: var(--shadow-soft);
 
-    animation: fadeInUp 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation: fadeInUp 1.6s var(--transition-base) forwards;
 }
 
 /* Ambient Glow With Subtle Depth Styles. */
@@ -24,11 +24,11 @@
     inset: -25%;
     background: radial-gradient(
       circle at 50% 40%,
-      rgba(255, 215, 0, 0.08),
-      transparent 80%
+      rgba(255, 215, 0, 0.07),
+      transparent 75%
     );
 
-    filter: blur(140px);
+    filter: blur(120px);
     z-index: -1;
 }
 
@@ -42,7 +42,7 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 5.5vw, 3.6rem);
+    font-size: clamp(2.6rem, 5.5vw, 3.8rem);
     text-transform: uppercase;
     letter-spacing: 1.1px;
     margin-bottom: 2rem;
@@ -59,19 +59,18 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 12s ease-in-out infinite;
+    animation: shimmer 14s ease-in-out infinite;
 }
 
 .intro-subtext
 {
-    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.75;
     color: var(--color-text);
-    opacity: 0.85;
+    opacity: 0.9;
+    line-height: 1.75;
     margin: 1.5rem 0;
 
-    transition: opacity 0.4s ease;
+    transition: opacity var(--transition-base);
 }
 
 .intro-subtext:hover
@@ -95,14 +94,15 @@
 /* Scroll Cue (Mouse Shape) Styles. */
 .scroll-cue
 {
-    width: 28px;
-    height: 50px;
+    margin-top: 4rem;
+    opacity: 0.75;
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
-    margin: 3rem auto 0;
-    margin-top: 4rem;
+    width: 28px;
+    height: 50px;
     position: relative;
-    opacity: 0.75;
+
+    transition: opacity var(--transition-base);
 }
 
 .scroll-cue::before
@@ -118,6 +118,11 @@
     transform: translateX(-50%);
 
     animation: scrollDot 1.8s ease-in-out infinite;
+}
+
+.scroll-cue:hover
+{
+    opacity: 1;
 }
 
 /* Animations Styles. */

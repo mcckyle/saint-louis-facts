@@ -5,11 +5,11 @@
  ==================================== */
 .interactive
 {
-    padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     text-align: center;
-    border-top: 2px solid var(--color-accent);
     position: relative;
+    box-shadow: var(--shadow-soft);
 }
 
 /* Section Heading Styles. */
@@ -48,22 +48,22 @@
 {
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
-    font-size: 1rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
     padding: 1rem 2.4rem;
+
     border: none;
     border-radius: 9999px;
     cursor: pointer;
-    font-family: var(--font-heading);
-    font-weight: 600;
+
     letter-spacing: 0.6px;
     text-transform: uppercase;
     box-shadow: var(--shadow-sm);
-
-    position: relative;
     overflow: hidden;
+    position: relative;
     isolation: isolate;
 
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
 }
 
 .interactive-button::before
@@ -91,7 +91,7 @@
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Fact Card Styling. */

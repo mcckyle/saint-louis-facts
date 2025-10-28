@@ -1,13 +1,13 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 24 October 2025
+//Date: 27 October 2025
 //Description: This file contains the header component for the Saint Louis Facts React project Header section.
 
 import React from "react";
 import gatewayArchImage from "../../assets/images/gateway-arch-background.jpg";
 import "./Header.css";
 
-function Header({ scrollTargetRef })
+function Header ({ scrollTargetRef })
 {
   const handleScroll = () => {
     scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' });
