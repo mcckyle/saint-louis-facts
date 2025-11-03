@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 7 October 2025
+//Date: 03 November 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -15,7 +15,7 @@ describe('Footer Component', () => {
   // Test #1:
   test('renders the footer with the correct text', () => {
     expect(
-      screen.getByText(/Inspired by the vibrant spirit of Saint Louis./i)
+      screen.getByText(/Celebrating the enduring spirit of/i)
     ).toBeInTheDocument();
   });
 
@@ -57,7 +57,7 @@ describe('Footer Component', () => {
 
   // Test #6:
   test('renders the container div with appropriate class name', () => {
-    const container = screen.getByText(/vibrant spirit/i).closest('.footer-inner');
+    const container = screen.getByText(/enduring spirit/i).closest('.footer-inner');
     expect(container).toBeInTheDocument();
   });
 
@@ -83,7 +83,7 @@ describe('Footer Component', () => {
 
   // Test #10:
   test('displays the footer text with the correct class', () => {
-    const footerText = screen.getByText(/vibrant spirit/i);
+    const footerText = screen.getByText(/enduring spirit/i);
     expect(footerText).toHaveClass('footer-message');
   });
 });

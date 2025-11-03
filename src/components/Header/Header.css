@@ -1,8 +1,8 @@
 /* Filename: Header.css */
 
-/* ============================
+/* ====================================
    Header Section Styling.
-=============================== */
+======================================= */
 .header
 {
     position: relative;
@@ -32,16 +32,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(60%) contrast(1.1) grayscale(1);
+    filter: brightness(65%) contrast(1.15) grayscale(1);
     transform: scale(1.05);
 
-    transition: transform 15s ease, filter 2.5s ease;
+    transition: transform 10s ease, filter 2.5s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.1);
-    filter: brightness(75%) contrast(1.25);
+    transform: scale(1.08);
+    filter: brightness(75%) contrast(1.2);
 }
 
 /* Overlay Gradient Styles. */
@@ -53,12 +53,13 @@
     place-items: center;
 
     background: radial-gradient(
-      circle at center 70%,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.85) 90%
-    );
+      circle at 50% 70%,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.8) 80%
+    ),
+    linear-gradient(to top, rgba(255, 215, 0, 0.08), transparent 70%);
 
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
 }
 
 /* Header Content Block Styling. */
@@ -68,7 +69,7 @@
     max-width: 720px;
     padding: 2.5rem 1rem;
 
-    animation: fadeInUp 1.3s ease forwards;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 /* Title With Gradient Styling. */
@@ -76,14 +77,14 @@
 {
     font-family: var(--font-heading);
     font-size: clamp(3rem, 6vw, 5rem);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 1.25rem;
 
     background: linear-gradient(
       100deg,
-      var(--color-accent),
       var(--color-highlight),
+      var(--color-accent),
       var(--color-primary)
     );
 
@@ -91,14 +92,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 10s ease-in-out infinite;
-}
-
-.header-dot
-{
-    background: var(--color-highlight);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: shimmer 12s ease-in-out infinite;
 }
 
 /* Subtitle Styling. */
@@ -106,12 +100,12 @@
 {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.25rem);
-    color: rgba(255, 255, 255, 0.88);
-    margin: 0 auto 2.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 auto 3rem;
     line-height: 1.75;
     max-width: 600px;
 
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Scroll Cue Styling. */
@@ -133,7 +127,7 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 
     transition: all 0.3s ease;
-    animation: float 3.8s ease-in-out infinite;
+    animation: float 3.6s ease-in-out infinite;
 }
 
 .scroll-cue:hover,
@@ -141,7 +135,6 @@
 {
     transform: translateY(-8px) scale(1.08);
     color: var(--color-accent);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
 }
 
 /* Keyframes Styles. */

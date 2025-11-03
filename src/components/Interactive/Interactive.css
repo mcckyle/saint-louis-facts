@@ -20,12 +20,7 @@
     text-transform: uppercase;
     margin-bottom: 1.25rem;
 
-    background: linear-gradient(
-        120deg,
-        var(--color-accent),
-        var(--color-highlight),
-        var(--color-primary)
-    );
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -56,42 +51,19 @@
     border-radius: 9999px;
     cursor: pointer;
 
-    letter-spacing: 0.6px;
     text-transform: uppercase;
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
+    box-shadow: var(--shadow-soft);
     position: relative;
-    isolation: isolate;
+    overflow: hidden;
 
-    transition: all var(--transition-base);
-}
-
-.interactive-button::before
-{
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 215, 0, 0.2),
-      transparent 60%
-    );
-
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.interactive-button:hover::before
-{
-    opacity: 1;
+    transition: all var(--transition);
 }
 
 .interactive-button:hover
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     transform: translateY(-3px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Fact Card Styling. */
@@ -100,9 +72,9 @@
     margin-top: 3rem;
     padding: 2rem 2.4rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--color-border);
-    background: var(--color-elevated);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--stl-border);
+    background: var(--color-bg-alt);
+    box-shadow: var(--shadow-soft);
     backdrop-filter: blur(10px);
 
     animation: fadeReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -111,7 +83,6 @@
 /* Fact Title Styling. */
 .interactive-fact .fact-title
 {
-    font-family: var(--font-heading);
     font-size: 1.4rem;
     color: var(--color-primary);
     margin-bottom: 0.6rem;
@@ -120,7 +91,6 @@
 /* Fact Description Styles. */
 .interactive-fact .fact-description
 {
-    font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.7;
     color: var(--color-text);

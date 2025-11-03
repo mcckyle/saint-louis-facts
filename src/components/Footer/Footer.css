@@ -6,19 +6,19 @@
 .footer
 {
     position: relative;
-    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 1px solid var(--color-border);
     padding: clamp(3rem, 5vw, 4rem) 1.5rem;
-
     text-align: center;
+
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+    border-top: 1px solid var(--stl-border);
     color: var(--color-text);
-    font-family: var(--font-body);
 
     overflow: hidden;
     isolation: isolate;
+    box-shadow: var(--shadow-soft);
 }
 
-/* Footer Ambient Glow Styles. */
+/* Footer Ambient Depth Styles. */
 .footer::before
 {
     content: "";
@@ -26,12 +26,12 @@
     inset: -25%;
     background: radial-gradient(
         circle at 50% 80%,
-        rgba(255, 215, 0, 0.05),
+        rgba(255, 215, 0, 0.04),
         transparent 70%
     );
 
-    filter: blur(80px);
-    opacity: 0.35;
+    filter: blur(90px);
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -43,19 +43,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.2rem;
+    gap: 2rem;
 
-    animation: fadeInUp 1.1s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 /* Footer Message Styles. */
 .footer-message
 {
-    max-width: 720px;
+    max-width: 680px;
     font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.75;
+    line-height: 1.7;
     opacity: 0.9;
 
     transition: opacity 0.4s ease;
@@ -86,9 +86,10 @@
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
     text-decoration: none;
+
+    color: var(--color-text);
     border: 1px solid var(--color-border);
     background: rgba(255, 255, 255, 0.03);
-    color: var(--color-text);
     backdrop-filter: blur(6px);
 
     transition: all 0.3s ease;
@@ -100,8 +101,8 @@
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-3px);
+    box-shadow: 0 0 16px rgba(255, 215, 0, 0.25);
     outline: none;
 }
 
@@ -112,16 +113,14 @@
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     border: none;
-    box-shadow: var(--shadow-xs);
-
-    transition: all 0.35s ease;
+    box-shadow: var(--shadow-soft);
 }
 
 .back-to-top:hover,
 .back-to-top:focus
 {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Meta Line Styles. */
