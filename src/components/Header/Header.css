@@ -6,7 +6,6 @@
 .header
 {
     position: relative;
-    width: 100%;
     height: 100vh;
 
     display: grid;
@@ -32,15 +31,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(65%) contrast(1.15) grayscale(1);
-    transform: scale(1.05);
+    filter: brightness(68%) contrast(1.1) grayscale(1);
+    transform: scale(1.03);
 
-    transition: transform 10s ease, filter 2.5s ease;
+    transition: transform 12s ease, filter 3s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.08);
+    transform: scale(1.05);
     filter: brightness(75%) contrast(1.2);
 }
 
@@ -52,12 +51,8 @@
     display: grid;
     place-items: center;
 
-    background: radial-gradient(
-      circle at 50% 70%,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 80%
-    ),
-    linear-gradient(to top, rgba(255, 215, 0, 0.08), transparent 70%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.35) 45%),
+                radial-gradient(circle at 50% 70%, rgba(255, 210, 0, 0.12), transparent 85%);
 
     backdrop-filter: blur(6px);
 }
@@ -67,45 +62,38 @@
 {
     text-align: center;
     max-width: 720px;
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
 
-    animation: fadeInUp 1.2s ease forwards;
+    animation: fadeInUp 1.3s ease forwards;
 }
 
 /* Title With Gradient Styling. */
 .header-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 6vw, 5rem);
-    letter-spacing: 1.5px;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    letter-spacing: 2px;
 
-    background: linear-gradient(
-      100deg,
-      var(--color-highlight),
-      var(--color-accent),
-      var(--color-primary)
-    );
+    background: linear-gradient(120deg, var(--color-highlight), var(--color-accent), var(--color-primary));
 
-    background-size: 300%;
+    background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 12s ease-in-out infinite;
+    animation: gradientShift 16s ease-in-out infinite alternate;
 }
 
 /* Subtitle Styling. */
 .header-subtitle
 {
-    font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.25rem);
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 auto 3rem;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
     line-height: 1.75;
-    max-width: 600px;
+    margin-top: 1.25rem;
+    margin-bottom: 3rem;
 
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
 /* Scroll Cue Styling. */
@@ -115,18 +103,18 @@
     align-items: center;
     justify-content: center;
 
-    width: 3rem;
-    height: 3rem;
+    width: 3.25rem;
+    height: 3.25rem;
 
     border-radius: 50%;
     border: 1.5px solid var(--color-highlight);
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.1);
 
     color: var(--color-highlight);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
     animation: float 3.6s ease-in-out infinite;
 }
 
@@ -135,13 +123,14 @@
 {
     transform: translateY(-8px) scale(1.08);
     color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 /* Keyframes Styles. */
-@keyframes shimmer
+@keyframes gradientShift
 {
     0%  { background-position: 0% center; }
-    100% { background-position: 200% center; }
+    100% { background-position: 100% center; }
 }
 
 @keyframes float
@@ -161,18 +150,19 @@
 {
     .header
     {
-        height: 80vh;
+        height: 82vh;
     }
 
     .header-title
     {
-        font-size: clamp(2.2rem, 6vw, 3.8rem);
+        font-size: clamp(2.2rem, 6vw, 3.6rem);
     }
 
     .header-subtitle
     {
         font-size: 0.98rem;
-        max-width: 92%;
+        max-width: 90%;
+        margin-inline: auto;
     }
 
     .scroll-cue

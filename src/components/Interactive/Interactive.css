@@ -5,102 +5,115 @@
  ==================================== */
 .interactive
 {
-    padding: var(--section-padding-y) var(--section-padding-x);
-    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+    padding-block: clamp(6rem, 10vw, 8rem);
+    padding-inline: var(--section-padding-x);
     text-align: center;
-    position: relative;
-    box-shadow: var(--shadow-soft);
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
 }
 
 /* Section Heading Styles. */
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.2rem;
 
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
+    background: linear-gradient(
+      100deg,
+      var(--color-accent),
+      var(--color-highlight),
+      var(--color-primary)
+    );
 
+    background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 9s ease-in-out infinite;
+    animation: gradientShift 22s ease-in-out infinite alternate;
 }
 
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
     color: var(--color-text-muted);
     max-width: 620px;
-    margin: 0 auto 2.4rem;
+    margin: 0 auto 2.5rem;
     line-height: 1.7;
 }
 
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(
+      120deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+
     color: var(--color-bg);
     font-family: var(--font-heading);
     font-weight: 600;
+    text-transform: uppercase;
     padding: 1rem 2.4rem;
 
     border: none;
     border-radius: 9999px;
     cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 
-    text-transform: uppercase;
-    box-shadow: var(--shadow-soft);
-    position: relative;
-    overflow: hidden;
-
-    transition: all var(--transition);
+    transition: all 0.3s ease;
 }
 
 .interactive-button:hover
 {
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+      120deg,
+      var(--color-accent),
+      var(--color-highlight)
+    );
+
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 
 /* Fact Card Styling. */
 .interactive-fact
 {
-    margin-top: 3rem;
+    margin-top: 2.8rem;
     padding: 2rem 2.4rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--stl-border);
-    background: var(--color-bg-alt);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(6px);
 
-    animation: fadeReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: fadeReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Fact Title Styling. */
 .interactive-fact .fact-title
 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--color-primary);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Fact Description Styles. */
 .interactive-fact .fact-description
 {
     font-size: 1rem;
-    line-height: 1.7;
     color: var(--color-text);
+    line-height: 1.7;
 }
 
 /* Animations Styles. */
-@keyframes shimmer
+@keyframes gradientShift
 {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
+    from { background-position: 0% center; }
+    to { background-position: 100% center; }
 }
 
 @keyframes fadeReveal

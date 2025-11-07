@@ -6,31 +6,31 @@
 .footer
 {
     position: relative;
-    padding: clamp(3rem, 5vw, 4rem) 1.5rem;
+    padding-block: clamp(3rem, 6vw, 4rem);
+    padding-inline: var(--section-padding-x);
     text-align: center;
 
-    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 1px solid var(--stl-border);
     color: var(--color-text);
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 
     overflow: hidden;
     isolation: isolate;
-    box-shadow: var(--shadow-soft);
 }
 
-/* Footer Ambient Depth Styles. */
+/* Footer Ambient Glow Styles. */
 .footer::before
 {
     content: "";
     position: absolute;
-    inset: -25%;
+    inset: -40%;
     background: radial-gradient(
-        circle at 50% 80%,
-        rgba(255, 215, 0, 0.04),
-        transparent 70%
+      circle at 50% 80%,
+      rgba(255, 215, 0, 0.05),
+      transparent 75%
     );
 
-    filter: blur(90px);
+    filter: blur(100px);
     opacity: 0.3;
     z-index: -1;
 }
@@ -45,7 +45,7 @@
     align-items: center;
     gap: 2rem;
 
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeUp 1.2s ease forwards;
 }
 
 /* Footer Message Styles. */
@@ -55,7 +55,7 @@
     font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.7;
+    line-height: 1.75;
     opacity: 0.9;
 
     transition: opacity 0.4s ease;
@@ -88,9 +88,9 @@
     text-decoration: none;
 
     color: var(--color-text);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
 
     transition: all 0.3s ease;
 }
@@ -102,7 +102,7 @@
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
     transform: translateY(-3px);
-    box-shadow: 0 0 16px rgba(255, 215, 0, 0.25);
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.25);
     outline: none;
 }
 
@@ -113,14 +113,15 @@
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     border: none;
-    box-shadow: var(--shadow-soft);
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .back-to-top:hover,
 .back-to-top:focus
 {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* Footer Meta Line Styles. */
@@ -129,6 +130,7 @@
     font-size: 0.9rem;
     color: var(--color-text-muted);
     opacity: 0.85;
+    letter-spacing: 0.02em;
 }
 
 .footer-brand
@@ -151,8 +153,8 @@
 .footer-author
 {
     font-weight: 600;
-    position: relative;
     color: var(--color-text);
+    position: relative;
 }
 
 .footer-author::after
@@ -164,10 +166,10 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-    background-size: 200% auto;
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    background-size: 200%;
 
-    animation: shimmer 6s linear infinite;
+    animation: shimmer 14s ease-in-out infinite;
 }
 
 /* Gradient Shimmer Underline Styles. */
@@ -177,7 +179,7 @@
     100% { background-position: 200% center; }
 }
 
-@keyframes fadeInUp
+@keyframes fadeUp
 {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
