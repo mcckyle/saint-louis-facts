@@ -9,6 +9,7 @@
     padding-inline: var(--section-padding-x);
     text-align: center;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+    overflow: hidden;
 }
 
 /* Section Heading Styles. */
@@ -17,7 +18,7 @@
     font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3rem);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
     margin-bottom: 1.2rem;
 
     background: linear-gradient(
@@ -39,9 +40,10 @@
 {
     font-size: clamp(1rem, 1.6vw, 1.15rem);
     color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 2.5rem;
+    max-width: 640px;
+    margin: 0 auto 2.6rem;
     line-height: 1.7;
+    opacity: 0.85;
 }
 
 /* The Button Styling. */
@@ -94,7 +96,7 @@
 }
 
 /* Fact Title Styling. */
-.interactive-fact .fact-title
+.fact-title
 {
     font-size: 1.35rem;
     color: var(--color-primary);
@@ -102,7 +104,7 @@
 }
 
 /* Fact Description Styles. */
-.interactive-fact .fact-description
+.fact-description
 {
     font-size: 1rem;
     color: var(--color-text);

@@ -63,15 +63,17 @@
 
 .intro-subtext
 {
-    font-family: var(--font-body);
     font-size: clamp(1rem, 1.6vw, 1.15rem);
     color: var(--color-text-muted);
     line-height: 1.75;
     margin: 1.1rem auto;
     max-width: 640px;
-
     opacity: 0.95;
+
+    transition: opacity 0.3s ease;
 }
+
+.intro-subtext:hover { opacity: 1; }
 
 /* Highlighted Word Styles. */
 .highlight
@@ -115,10 +117,7 @@
     animation: scrollDot 2.3s ease-in-out infinite;
 }
 
-.scroll-cue:hover
-{
-    opacity: 1;
-}
+.scroll-cue:hover { opacity: 1; }
 
 /* Animations Styles. */
 @keyframes gradientShift

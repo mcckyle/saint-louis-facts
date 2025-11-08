@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 16 October 2025
+//Date: 7 November 2025
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -18,46 +18,49 @@ export default function Interactive()
     }, []);
 
     return (
-      <section
-        id="interactive"
-        className="interactive"
-        aria-labelledby="interactive-title"
-      >
+      <section id="interactive" className="interactive" aria-labelledby="interactive-title">
         <div className="interactive-container">
-          <h2 id="interactive-title" className="interactive-title">
+          <motion.h2
+            id="interactive-title"
+            className="interactive-title"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             Discover a <span className="highlight">Random Fact</span>
-          </h2>
+          </motion.h2>
 
           <p className="interactive-subtitle">
-            Click below to uncover something unique about Saint Louis.
+            Click below to uncover something unique about Saint&nbsp;Louis.
           </p>
 
           <motion.button
             className="interactive-button"
             onClick={getRandomFact}
             aria-label="Generate a random fact about Saint Louis."
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 250 }}
           >
               Show Me a Fact
           </motion.button>
 
-        <AnimatePresence mode="wait">
-          {randomFact && (
-            <motion.div
-              key={randomFact.title}
-              className="interactive-fact"
-              aria-live="polite"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.45}}
-            >
-              <h3 className="fact-title">{randomFact.title}</h3>
-              <p className="fact-description">{randomFact.description}</p>
-            </motion.div>
-          )}
-          </AnimatePresence>
+          <AnimatePresence mode="wait">
+            {randomFact && (
+              <motion.div
+                key={randomFact.title}
+                className="interactive-fact"
+                aria-live="polite"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+              >
+                <h3 className="fact-title">{randomFact.title}</h3>
+                <p className="fact-description">{randomFact.description}</p>
+              </motion.div>
+            )}
+            </AnimatePresence>
         </div>
       </section>
     );
