@@ -7,12 +7,12 @@
 {
     position: relative;
     padding-block: clamp(3rem, 6vw, 4rem);
-    padding-inline: var(--section-padding-x);
+    padding-inline: var(--pad-x);
     text-align: center;
 
     color: var(--color-text);
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 
     overflow: hidden;
     isolation: isolate;
@@ -26,12 +26,12 @@
     inset: -40%;
     background: radial-gradient(
       circle at 50% 80%,
-      rgba(255, 215, 0, 0.05),
+      rgba(255, 215, 0, 0.08),
       transparent 75%
     );
 
-    filter: blur(100px);
-    opacity: 0.3;
+    filter: blur(90px);
+    opacity: 0.25;
     z-index: -1;
 }
 
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.2rem;
 
     animation: fadeUp 1.2s ease forwards;
 }
@@ -55,7 +55,7 @@
     font-size: clamp(1rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.75;
+    line-height: 1.8;
     opacity: 0.9;
 
     transition: opacity 0.4s ease;
@@ -86,23 +86,26 @@
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
     text-decoration: none;
-
     color: var(--color-text);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
 
     transition: all 0.3s ease;
 }
 
+.footer-link.subtle
+{
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+}
+
 /* Hover Effects for Footer Links. */
-.footer-link:hover,
-.footer-link:focus
+.footer-link.subtle:hover,
+.footer-link.subtle:focus
 {
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     color: var(--color-bg);
     transform: translateY(-3px);
-    box-shadow: 0 0 14px rgba(255, 215, 0, 0.25);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
     outline: none;
 }
 
@@ -114,14 +117,14 @@
     color: var(--color-bg);
     border: none;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .back-to-top:hover,
 .back-to-top:focus
 {
     transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Meta Line Styles. */
@@ -190,7 +193,7 @@
 {
     .footer-inner
     {
-        gap: 1.6rem;
+        gap: 1.8rem;
     }
 
     .footer-message

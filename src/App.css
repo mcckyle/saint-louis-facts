@@ -30,11 +30,11 @@
     /* Fonts and Motion. */
     --font-heading: "Playfair Display", serif;
     --font-body: "Lora", serif;
-    --border-radius: 16px;
+    --radius: 16px;
     --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
 
-    --section-padding-y: clamp(4rem, 7vw, 7rem);
-    --section-padding-x: clamp(1.5rem, 4vw, 3.5rem);
+    --pad-x: clamp(1.5rem, 4vw, 3.5rem);
+    --pad-y: clamp(4rem, 7vw, 7rem);
 
     --transition: 280ms cubic-bezier(0.25, 0.8, 0.4, 1);
 }
@@ -56,9 +56,9 @@
     flex-direction: column;
     min-height: 100vh;
 
-    font-family: var(--font-body);
-    color: var(--color-text);
     background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
     scroll-behavior: smooth;
 
     transition: background 0.4s ease, color 0.4s ease;
@@ -69,8 +69,8 @@
     flex: 1;
     display: grid;
     gap: clamp(3rem, 6vw, 6rem);
-    padding-block: var(--section-padding-y);
-    padding-inline: var(--section-padding-x);
+    padding-block: var(--pad-y);
+    padding-inline: var(--pad-x);
 
     background: linear-gradient(180deg, var(--color-bg-alt), transparent 85%);
 }
@@ -81,7 +81,7 @@
 section
 {
     background: var(--color-bg-alt);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     padding: clamp(2.25rem, 4vw, 3.25rem);
     opacity: 0;
@@ -131,11 +131,9 @@ button
 {
     border-radius: 50px;
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
-
     color: var(--color-inverse);
     padding: 0.8rem 1.6rem;
     font-weight: 600;
-    border: none;
     cursor: pointer;
 
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -165,7 +163,7 @@ button:focus-visible
     background: var(--color-bg-alt);
     color: var(--color-primary);
     padding: 0.6rem 1rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--stl-border);
 

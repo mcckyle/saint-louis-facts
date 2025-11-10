@@ -8,10 +8,9 @@
     position: relative;
     text-align: center;
     padding-block: clamp(6rem, 10vw, 8rem);
-    padding-inline: var(--section-padding-x);
+    padding-inline: var(--pad-x);
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
     overflow: hidden;
-    isolation: isolate;
 }
 
 /* Ambient Glow Styles. */
@@ -22,12 +21,11 @@
     inset: -25%;
     background: radial-gradient(
       circle at 50% 40%,
-      rgba(255, 215, 0, 0.07),
+      rgba(255, 215, 0, 0.05),
       transparent 80%
     );
 
-    filter: blur(120px);
-    opacity: 0.8;
+    filter: blur(100px);
     z-index: -1;
 }
 
@@ -41,48 +39,34 @@
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    font-size: clamp(2.6rem, 5vw, 3.6rem);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.1;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.2rem;
 
-    background: linear-gradient(
-      100deg,
-      var(--color-accent),
-      var(--color-highlight),
-      var(--color-primary)
-    );
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
 
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: gradientShift 22s ease-in-out infinite alternate;
+    animation: gradientShift 18s ease-in-out infinite alternate;
 }
 
 .intro-subtext
 {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     color: var(--color-text-muted);
     line-height: 1.75;
     margin: 1.1rem auto;
     max-width: 640px;
-    opacity: 0.95;
-
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
 }
-
-.intro-subtext:hover { opacity: 1; }
 
 /* Highlighted Word Styles. */
 .highlight
 {
-    background: linear-gradient(
-      120deg,
-      var(--color-primary),
-      var(--color-accent)
-    );
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -91,15 +75,15 @@
 /* Scroll Cue (Mouse Shape) Styles. */
 .scroll-cue
 {
-    margin-top: 3.5rem;
-    width: 26px;
-    height: 48px;
+    margin-top: 3rem;
+    width: 28px;
+    height: 50px;
     border: 2px solid var(--color-highlight);
     border-radius: 20px;
-    opacity: 0.75;
+    opacity: 0.7;
     position: relative;
 
-    transition: opacity var(--transition);
+    transition: opacity 0.3s ease;
 }
 
 .scroll-cue::before
@@ -114,7 +98,7 @@
     border-radius: 50%;
     transform: translateX(-50%);
 
-    animation: scrollDot 2.3s ease-in-out infinite;
+    animation: scrollDot 2.2s ease-in-out infinite;
 }
 
 .scroll-cue:hover { opacity: 1; }
@@ -129,7 +113,7 @@
 @keyframes scrollDot
 {
     0%, 100% { transform: translate(-50%, 0); opacity: 1; }
-    50% { transform: translate(-50%, 22px); opacity: 0.4; }
+    50% { transform: translate(-50%, 20px); opacity: 0.4; }
 }
 
 /* Responsive Design Styles. */

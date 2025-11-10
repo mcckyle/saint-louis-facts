@@ -6,7 +6,7 @@
 .fun-facts
 {
     padding-block: clamp(6rem, 10vw, 8rem);
-    padding-inline: var(--section-padding-x);
+    padding-inline: var(--pad-x);
     background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
     text-align: center;
 }
@@ -21,23 +21,18 @@
 .fun-facts-heading
 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 0.03em;
     margin-bottom: 2.2rem;
 
-    background: linear-gradient(
-      100deg,
-      var(--color-accent),
-      var(--color-highlight),
-      var(--color-primary)
-    );
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200%;
 
-    animation: gradientShift 22s ease-in-out infinite alternate;
+    animation: gradientShift 18s ease-in-out infinite alternate;
 }
 
 /* Shimmer Underline. */
@@ -47,15 +42,10 @@
     display: block;
     height: 2px;
     width: 80%;
-    max-width: 260px;
+    max-width: 240px;
     margin: 1.2rem auto 0;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
     opacity: 0.75;
-
-    background: linear-gradient(
-      90deg,
-      var(--color-accent),
-      var(--color-highlight)
-    );
 }
 
 /* Fact List Grid Layout Styling. */
@@ -63,7 +53,7 @@
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: clamp(1.8rem, 3vw, 2.4rem);
+    gap: clamp(2rem, 3vw, 2.6rem);
 
     margin-top: 3rem;
     padding: 0;
@@ -74,11 +64,11 @@
 .fact-item
 {
     background: rgba(255, 255, 255, 0.04);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     padding: 2rem;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -87,15 +77,15 @@
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 /* Fact Title Styling. */
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
@@ -104,7 +94,7 @@
 .fact-description
 {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.7;
     color: var(--color-text);
     opacity: 0.9;
     margin-bottom: 1.2rem;
@@ -139,11 +129,7 @@
 
 .source-link:hover
 {
-    background: linear-gradient(
-      120deg,
-      var(--color-highlight),
-      var(--color-accent)
-    );
+    background: linear-gradient(120deg, var(--color-highlight), var(--color-accent));
 
     color: var(--color-bg);
 }

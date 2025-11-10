@@ -31,16 +31,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(70%) contrast(1.1) grayscale(1);
+    filter: brightness(68%) contrast(1.1) grayscale(1);
     transform: scale(1.02);
 
-    transition: transform 12s ease, filter 3s ease;
+    transition: transform 14s ease, filter 3s ease;
 }
 
 .header:hover .header-image
 {
-    transform: scale(1.04);
-    filter: brightness(78%) contrast(1.2);
+    transform: scale(1.05);
+    filter: brightness(75%) contrast(1.2);
 }
 
 /* Overlay Gradient Styles. */
@@ -51,8 +51,12 @@
     display: grid;
     place-items: center;
 
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 45%),
-                radial-gradient(circle at 50% 70%, rgba(255, 210, 0, 0.1), transparent 80%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.4) 45%
+    ),
+    radial-gradient(circle at 50% 70%, rgba(255, 210, 0, 0.1), transparent 80%);
 
     backdrop-filter: blur(6px);
 }
@@ -64,7 +68,7 @@
     max-width: 680px;
     padding: 2rem 1rem;
 
-    animation: fadeInUp 1.3s ease forwards;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 /* Title With Gradient Styling. */
@@ -75,7 +79,12 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 
-    background: linear-gradient(120deg, var(--color-highlight), var(--color-accent), var(--color-primary));
+    background: linear-gradient(
+      120deg,
+      var(--color-highlight),
+      var(--color-accent),
+      var(--color-primary)
+    );
 
     background-size: 200%;
     -webkit-background-clip: text;

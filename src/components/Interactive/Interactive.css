@@ -6,54 +6,44 @@
 .interactive
 {
     padding-block: clamp(6rem, 10vw, 8rem);
-    padding-inline: var(--section-padding-x);
+    padding-inline: var(--pad-x);
     text-align: center;
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    overflow: hidden;
 }
 
 /* Section Heading Styles. */
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 1.2rem;
 
-    background: linear-gradient(
-      100deg,
-      var(--color-accent),
-      var(--color-highlight),
-      var(--color-primary)
-    );
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
 
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: gradientShift 22s ease-in-out infinite alternate;
+    animation: gradientShift 18s ease-in-out infinite alternate;
 }
 
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     color: var(--color-text-muted);
     max-width: 640px;
-    margin: 0 auto 2.6rem;
+    margin: 0 auto 2.4rem;
     line-height: 1.7;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* The Button Styling. */
 .interactive-button
 {
-    background: linear-gradient(
-      120deg,
-      var(--color-primary),
-      var(--color-accent)
-    );
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
 
     color: var(--color-bg);
     font-family: var(--font-heading);
@@ -64,7 +54,7 @@
     border: none;
     border-radius: 9999px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
 
     transition: all 0.3s ease;
 }
@@ -72,33 +62,26 @@
 .interactive-button:hover
 {
     transform: translateY(-3px);
-    background: linear-gradient(
-      120deg,
-      var(--color-accent),
-      var(--color-highlight)
-    );
-
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
 }
 
 /* Fact Card Styling. */
 .interactive-fact
 {
-    margin-top: 2.8rem;
+    margin-top: 2.6rem;
     padding: 2rem 2.4rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
-
-    animation: fadeReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Fact Title Styling. */
 .fact-title
 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
@@ -116,12 +99,6 @@
 {
     from { background-position: 0% center; }
     to { background-position: 100% center; }
-}
-
-@keyframes fadeReveal
-{
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile Styles. */
