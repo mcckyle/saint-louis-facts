@@ -1,6 +1,6 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 8 November 2025
+//Date: 10 November 2025
 //Description: This file contains the parent React app component for the Saint Louis facts project.
 
 import React, { useRef } from "react";
@@ -17,12 +17,13 @@ function App()
   const introRef = useRef(null);
 
   return (
-    <div id="top" className="app-container">
+    <div id="top" className="app">
       <Header scrollTargetRef={introRef} />
 
       <main
         id="main"
-        className="main-content fade-in"
+        ref={introRef}
+        className="main fade-in"
         role="main"
         aria-label="Saint Louis facts and heritage content"
       >

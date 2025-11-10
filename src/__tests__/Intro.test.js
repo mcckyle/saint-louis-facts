@@ -1,6 +1,6 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 13 October 2025
+//Date: 11 November 2025
 //Description: This file contains the Jest unit tests for the Saint Louis Facts project Intro section.
 
 import React from 'react';
@@ -60,7 +60,6 @@ describe('Intro Component', () => {
   });
 
   test('renders an accessible region with appropriate role', () => {
-    // render(<Intro />);
     const introSection = screen.getByRole('region');
     expect(introSection).toHaveAttribute('role', 'region');
   });

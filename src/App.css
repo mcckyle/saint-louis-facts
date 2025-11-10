@@ -32,7 +32,6 @@
     --font-body: "Lora", serif;
     --radius: 16px;
     --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
-
     --pad-x: clamp(1.5rem, 4vw, 3.5rem);
     --pad-y: clamp(4rem, 7vw, 7rem);
 
@@ -40,7 +39,7 @@
 }
 
 /* Dark Mode Variables. */
-[data-theme='dark'] {
+[data-theme="dark"] {
     --color-bg: #0F141A;
     --color-bg-alt: #141A21;
     --color-text: #E8EDF3;
@@ -50,7 +49,7 @@
 /* ====================================
    App Layout Styles.
 ======================================= */
-.app-container
+.app
 {
     display: flex;
     flex-direction: column;
@@ -64,19 +63,18 @@
     transition: background 0.4s ease, color 0.4s ease;
 }
 
-.main-content
+.main
 {
     flex: 1;
     display: grid;
     gap: clamp(3rem, 6vw, 6rem);
-    padding-block: var(--pad-y);
-    padding-inline: var(--pad-x);
+    padding: var(--pad-y) var(--pad-x);
 
     background: linear-gradient(180deg, var(--color-bg-alt), transparent 85%);
 }
 
 /* ====================================
-   Section Containers Styles.
+   Section Styles.
 ======================================= */
 section
 {
@@ -88,12 +86,12 @@ section
     transform: translateY(40px);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: sectionFade 0.9s ease forwards;
+    animation: sectionFade 1s ease forwards;
 }
 
 section:hover
 {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
 }
 
@@ -187,5 +185,5 @@ button:focus-visible
 
 @keyframes sectionFade
 {
-    to { opacity: 1; }
+    to { opacity: 1; transform: translateY(0); }
 }

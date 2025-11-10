@@ -1,18 +1,18 @@
 /* Filename: Footer.css */
 
 /* ====================================
-   Footer Styling.
+   Footer Styles.
 ======================================= */
 .footer
 {
     position: relative;
-    padding-block: clamp(3rem, 6vw, 4rem);
+    padding-block: clamp(2.8rem, 6vw, 4rem);
     padding-inline: var(--pad-x);
     text-align: center;
 
-    color: var(--color-text);
     background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 
     overflow: hidden;
     isolation: isolate;
@@ -24,18 +24,14 @@
     content: "";
     position: absolute;
     inset: -40%;
-    background: radial-gradient(
-      circle at 50% 80%,
-      rgba(255, 215, 0, 0.08),
-      transparent 75%
-    );
+    background: radial-gradient(circle at 50% 80%, rgba(255, 215, 0, 0.08), transparent 75%);
 
     filter: blur(90px);
     opacity: 0.25;
     z-index: -1;
 }
 
-/* Inner Layout Styles. */
+/* Inner Container Styles. */
 .footer-inner
 {
     max-width: 1080px;
@@ -45,26 +41,23 @@
     align-items: center;
     gap: 2.2rem;
 
-    animation: fadeUp 1.2s ease forwards;
+    animation: fadeUp 1.1s ease forwards;
 }
 
 /* Footer Message Styles. */
 .footer-message
 {
-    max-width: 680px;
-    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    max-width: 640px;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.8;
+    line-height: 1.7;
     opacity: 0.9;
 
     transition: opacity 0.4s ease;
 }
 
-.footer-message:hover
-{
-    opacity: 1;
-}
+.footer-message:hover { opacity: 1; }
 
 /* Footer Navigation Links Styles. */
 .footer-links
@@ -73,43 +66,33 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 0.8rem;
+    gap: 1rem;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.footer-link
+.footer-links a
 {
     font-size: clamp(0.9rem, 1.6vw, 1rem);
     font-weight: 500;
-    padding: 0.6rem 1.4rem;
-    border-radius: 9999px;
     text-decoration: none;
     color: var(--color-text);
+    padding: 0.6rem 1.3rem;
+    border-radius: 9999px;
 
     transition: all 0.3s ease;
 }
 
-.footer-link.subtle
+/* Hover Effects for Footer Links Styles. */
+.footer-links a:hover,
+.footer-links a:focus-visible
 {
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
+    color: var(--color-accent);
+    transform: translateY(-2px);
 }
 
-/* Hover Effects for Footer Links. */
-.footer-link.subtle:hover,
-.footer-link.subtle:focus
-{
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
-    color: var(--color-bg);
-    transform: translateY(-3px);
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
-    outline: none;
-}
-
-/* Special Button: Back to Top. */
+/* Special Button: Back to Top Styles. */
 .back-to-top
 {
     font-weight: 600;
@@ -121,10 +104,10 @@
 }
 
 .back-to-top:hover,
-.back-to-top:focus
+.back-to-top:focus-visible
 {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Meta Line Styles. */
@@ -147,7 +130,6 @@
 {
     font-weight: 600;
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -188,28 +170,11 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design Styling. */
+/* Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner
-    {
-        gap: 1.8rem;
-    }
-
-    .footer-message
-    {
-        font-size: 0.95rem;
-        line-height: 1.65;
-    }
-
-    .footer-link
-    {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .footer-meta
-    {
-        font-size: 0.85rem;
-    }
+    .footer-inner { gap: 1.8rem; }
+    .footer-message { font-size: 0.9rem; line-height: 1.6; }
+    .footer-links a { font-size: 0.85rem; padding: 0.5rem 1rem; }
+    .footer-meta { font-size: 0.85rem; }
 }

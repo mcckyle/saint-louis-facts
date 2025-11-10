@@ -1,7 +1,7 @@
 /* Filename: Interactive.css */
 
 /* ==================================
-   Interactive Section Styling.
+   Interactive Section Styles.
  ==================================== */
 .interactive
 {
@@ -20,13 +20,12 @@
     letter-spacing: 0.04em;
     margin-bottom: 1.2rem;
 
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight), var(--color-primary));
-
-    background-size: 200%;
+    background: linear-gradient(115deg, var(--color-accent), var(--color-highlight), var(--color-primary));
+    background-size: 250%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: gradientShift 18s ease-in-out infinite alternate;
+    animation: gradientShift 16s ease-in-out infinite alternate;
 }
 
 /* Interactive Subtitle Styles. */
@@ -37,14 +36,13 @@
     max-width: 640px;
     margin: 0 auto 2.4rem;
     line-height: 1.7;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
-/* The Button Styling. */
+/* The Button Styles. */
 .interactive-button
 {
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
-
+    background: linear-gradient(115deg, var(--color-primary), var(--color-accent));
     color: var(--color-bg);
     font-family: var(--font-heading);
     font-weight: 600;
@@ -62,11 +60,11 @@
 .interactive-button:hover
 {
     transform: translateY(-3px);
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+    background: linear-gradient(115deg, var(--color-accent), var(--color-highlight));
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
 }
 
-/* Fact Card Styling. */
+/* Fact Card Styles. */
 .interactive-fact
 {
     margin-top: 2.6rem;
@@ -76,9 +74,13 @@
     background: rgba(255, 255, 255, 0.04);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
+
+    transition: transform 0.4s ease;
 }
 
-/* Fact Title Styling. */
+.interactive-fact:hover { transform: translateY(-2px); }
+
+/* Fact Title Styles. */
 .fact-title
 {
     font-size: 1.3rem;
@@ -101,7 +103,7 @@
     to { background-position: 100% center; }
 }
 
-/* Mobile Styles. */
+/* Media Query Styles. */
 @media (max-width: 768px)
 {
     .interactive-button

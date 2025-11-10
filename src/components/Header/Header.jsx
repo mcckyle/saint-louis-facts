@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 27 October 2025
+//Date: 10 November 2025
 //Description: This file contains the header component for the Saint Louis Facts React project Header section.
 
 import React from "react";
@@ -10,7 +10,7 @@ import "./Header.css";
 function Header ({ scrollTargetRef })
 {
   const handleScroll = () => {
-    scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' });
+    scrollTargetRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -19,21 +19,19 @@ function Header ({ scrollTargetRef })
       role="banner"
       aria-label="Saint Louis landing section with skyline and Gateway Arch."
     >
-      <div className="header-image-container" aria-hidden="true">
-        <img
-          src={gatewayArchImage}
-          alt="Grayscale photograph of the Saint Louis skyline with the Gateway Arch."
-          className="header-image"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
+      <img
+        src={gatewayArchImage}
+        alt="Grayscale landscape photograph of the Saint Louis skyline with the Gateway Arch."
+        className="header-image"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      />
 
       <div className="header-overlay">
-        <div className="header-content" data-testid="header-container">
+        <div className="header-content" data-testid="header-content">
           <h1 className="header-title">
-            Saint&nbsp;Louis
-            <span className="header-dot">·</span>
+            Saint&nbsp;Louis<span className="header-dot">·</span>
           </h1>
           <p className="header-subtitle">
             Gateway to the West - where history, architecture, and innovation
@@ -43,7 +41,7 @@ function Header ({ scrollTargetRef })
           <button
             className="scroll-cue"
             onClick={handleScroll}
-            aria-label="Scroll to Introduction section."
+            aria-label="Scroll to introduction."
           >
             <svg
               width="28"
