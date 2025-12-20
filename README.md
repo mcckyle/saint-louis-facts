@@ -28,7 +28,7 @@ Follow these steps to set up and run the project locally:
 1. **Clone the Repository**
    Use the following command to clone the project repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/saint-louis-facts.git
+   git clone https://github.com/mcckyle/saint-louis-facts.git
    ```
    
 2. Navigate into the project directory:

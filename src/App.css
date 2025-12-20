@@ -1,4 +1,4 @@
-/* Filename: App.css */
+/* Filename: src/App.css */
 
 /* ====================================
     Root Variables.
@@ -47,27 +47,13 @@
 }
 
 /* ====================================
-   App Layout Styles.
+   Main Content Styles.
 ======================================= */
-.app
-{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    scroll-behavior: smooth;
-
-    transition: background 0.4s ease, color 0.4s ease;
-}
-
 .main
 {
     flex: 1;
     display: grid;
-    gap: clamp(3rem, 6vw, 6rem);
+    gap: clamp(4rem, 8vw, 7rem);
     padding: var(--pad-y) var(--pad-x);
 
     background: linear-gradient(180deg, var(--color-bg-alt), transparent 85%);
@@ -82,11 +68,9 @@ section
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     padding: clamp(2.25rem, 4vw, 3.25rem);
-    opacity: 0;
     transform: translateY(40px);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: sectionFade 1s ease forwards;
 }
 
 section:hover
@@ -98,29 +82,10 @@ section:hover
 /* ====================================
    Headings Styles.
 ======================================= */
-h1, h2, h3
-{
-    font-family: var(--font-heading);
-    margin: 0 0 1rem;
-    letter-spacing: 0.02em;
-}
-
-h1
-{
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--color-primary);
-}
-
-h2
-{
-    font-size: clamp(1.75rem, 4vw, 2.3rem);
-    color: var(--color-accent);
-}
-
-h3
-{
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-}
+h1, h2, h3 { font-family: var(--font-heading); margin: 0 0 1rem; letter-spacing: 0.02em; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--color-primary); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.3rem); color: var(--color-accent); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 /* ====================================
    Buttons Styles.
@@ -171,19 +136,10 @@ button:focus-visible
 /* ====================================
    Fade Animations Styles.
 ======================================= */
-.fade-in
-{
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-}
+.fade-in { opacity: 0; animation: fadeIn 1s ease forwards; }
 
 @keyframes fadeIn
 {
     from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sectionFade
-{
     to { opacity: 1; transform: translateY(0); }
 }

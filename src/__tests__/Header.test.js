@@ -1,6 +1,6 @@
 //Filename: Header.test.js
 //Author: Kyle McColgan
-//Date: 10 November 2025
+//Date: 16 December 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Header component.
 
 import React from 'react';
@@ -26,7 +26,7 @@ describe('Header Component', () => {
 
   // Test #3: Check if the description renders.
   test('renders the header description', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation meet along the Mississippi./i);
+    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation converge along the Mississippi River./i);
     expect(descriptionElement).toBeInTheDocument();
   });
 
@@ -38,7 +38,7 @@ describe('Header Component', () => {
 
   // Test #5: Check if the description has the correct class.
   test('description has the correct class', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation meet along the Mississippi./i);
+    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation converge along the Mississippi River./i);
     expect(descriptionElement).toHaveClass('header-subtitle');
   });
 
@@ -68,7 +68,7 @@ describe('Header Component', () => {
 
   // Test #10: Ensure the description has correct text content.
   test('description has correct text content', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation meet along the Mississippi./i);
-    expect(descriptionElement.textContent).toBe('Gateway to the West - where history, architecture, and innovation meet along the Mississippi.');
+    const descriptionElement = screen.getByText(/Gateway to the West - where history, architecture, and innovation converge along the Mississippi River./i);
+    expect(descriptionElement.textContent).toBe('Gateway to the West - where history, architecture, and innovation converge along the Mississippi River.');
   });
 });
