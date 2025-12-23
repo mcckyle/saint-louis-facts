@@ -1,6 +1,6 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 16 December 2025
+//Date: 22 December 2025
 //Description: This file contains the facts list component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -14,7 +14,8 @@ function FunFactsList({ facts = defaultFacts })
     <section id="facts" className="fun-facts" role="region" aria-labelledby="facts-heading">
       <div className="facts-inner" data-testid="facts-container">
         <h2 id="facts-heading" className="fun-facts-heading">
-            Discover Fascinating Facts About <span className="highlight">Saint&nbsp;Louis</span>
+            Fascinating Facts About{" "}
+            <span className="highlight">Saint&nbsp;Louis</span>
         </h2>
 
         <ul className="fact-list">
@@ -22,17 +23,17 @@ function FunFactsList({ facts = defaultFacts })
             <motion.li
               key={index}
               className="fact-item"
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.4, delay: index * 0.035, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-64px" }}
             >
               <h3 className="fact-title">{fact.title}</h3>
               <p className="fact-description">{fact.description}</p>
 
               {fact.sources?.length > 0 && (
                 <div className="fact-sources">
-                  <span className="sources-label">Sources:</span>
+                  <span className="sources-label">Sources</span>
                   {fact.sources.map((source, sourceIndex) => (
                     <a
                       key={sourceIndex}

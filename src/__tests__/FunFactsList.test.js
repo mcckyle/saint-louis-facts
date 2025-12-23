@@ -1,6 +1,6 @@
 //Filename: FunFactsList.test.js
 //Author: Kyle McColgan
-//Date: 12 October 2025
+//Date: 22 December 2025
 //Description: This file contains the Jest unit tests for the facts section.
 
 import React from 'react';
@@ -30,7 +30,7 @@ test("renders the section title.", () => {
     setup();
     expect(
       screen.getByRole("heading", {
-        name: /Discover Fascinating Facts About/i,
+        name: /Fascinating Facts About/i,
         level: 2,
       })
     ).toBeInTheDocument();
@@ -50,21 +50,21 @@ test("renders each fact title.", () => {
     );
 });
 
-//Test #4: Shows 'Sources:' label only when a fact has sources listed.
-test("shows 'Sources:' label only for facts with at least one source listed.", () => {
+//Test #4: Shows 'Sources' label only when a fact has sources listed.
+test("shows 'Sources' label only for facts with at least one source listed.", () => {
     setup();
 
     //Gateway Arch fact has sources listed:
     const archFact = screen.getByRole("heading", {
       name: /gateway arch/i,
     }).closest("li");
-    expect(within(archFact).getByText(/sources:/i)).toBeInTheDocument();
+    expect(within(archFact).getByText(/sources/i)).toBeInTheDocument();
 
     //Toasted Ravioli fact does not have any sources listed:
     const ravioliFact = screen.getByRole("heading", {
       name: /toasted ravioli/i,
     }).closest("li");
-    expect(within(ravioliFact).queryByText(/sources:/i)).toBeNull();
+    expect(within(ravioliFact).queryByText(/sources/i)).toBeNull();
 });
 
 //Test #5: Correct href tag for source links.
@@ -88,7 +88,7 @@ test("source links have target='_blank' and rel='noopener noreferrer'.", () => {
 //Test #7: Section accessibility attributes.
 test("section has role='region' and is labelled by its heading.", () => {
     setup();
-    const region = screen.getByRole("region", { name: /discover fascinating facts/i });
+    const region = screen.getByRole("region", { name: /fascinating facts/i });
     expect(region).toBeInTheDocument();
 });
 
@@ -109,5 +109,5 @@ test("renders a list with correct number of items.", () => {
 test("renders gracefully when given an empty facts array.", () => {
   setup([]);
   expect(screen.queryAllByRole("listitem")).toHaveLength(0);
-  expect(screen.getByRole("heading", { name: /discover fascinating/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /fascinating facts/i })).toBeInTheDocument();
 });

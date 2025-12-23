@@ -51,7 +51,6 @@
 ======================================= */
 .main
 {
-    flex: 1;
     display: grid;
     gap: clamp(4rem, 8vw, 7rem);
     padding: var(--pad-y) var(--pad-x);
@@ -68,7 +67,6 @@ section
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     padding: clamp(2.25rem, 4vw, 3.25rem);
-    transform: translateY(40px);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -112,12 +110,7 @@ button:focus-visible
 /* ====================================
    Skip Link Styles.
 ======================================= */
-.skip-link
-{
-    position: absolute;
-    left: -9999px;
-}
-
+.skip-link { position: absolute; left: -9999px; }
 .skip-link:focus
 {
     position: fixed;

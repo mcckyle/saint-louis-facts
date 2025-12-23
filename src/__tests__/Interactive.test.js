@@ -1,6 +1,6 @@
 //Filename: Interactive.test.js
 //Author: Kyle McColgan
-//Date: 1 October 2025
+//Date: 22 December 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Interactive section.
 
 import React from 'react';
@@ -24,7 +24,7 @@ describe('Interactive Component', () => {
   //Test #1: Renders landmark and heading.
   test('renders an accessible region labelled by its heading.', () => {
     const region = screen.getByRole("region", {
-      name: /Discover a Random Fact/i,
+      name: /A moment of/i,
     });
     expect(region).toBeInTheDocument();
   });
@@ -32,7 +32,7 @@ describe('Interactive Component', () => {
   //Test #2: Renders button with proper aria-label attribute.
   test('renders the action button.', () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
     expect(button).toBeInTheDocument();
   });
@@ -40,7 +40,7 @@ describe('Interactive Component', () => {
   //Test #3: Clicking the button shows a fact.
   test('Fact gets displayed after clicking on the button.', () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
 
     fireEvent.click(button);
@@ -56,7 +56,7 @@ describe('Interactive Component', () => {
   //Test #4: The fact container includes the aria-live attribute when visible.
   test('Fact container includes the aria-live=polite when a fact gets displayed.', async () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
 
     fireEvent.click(button);
@@ -77,7 +77,7 @@ describe('Interactive Component', () => {
   //Test #6: Fact desciption gets rendered and corresponds to the displayed title.
   test('Clicking the action button shows corresponding description for the displayed title', () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
 
     fireEvent.click(button);
@@ -101,7 +101,7 @@ describe('Interactive Component', () => {
       .mockReturnValueOnce(0.9); //Last Fact (index 2).
 
     const button = screen.getByRole("button", {
-      name: /generate a random fact about saint louis/i,
+      name: /reveal a random fact about saint louis/i,
     });
 
     //First click => Fact 1.
@@ -120,7 +120,7 @@ describe('Interactive Component', () => {
   //Test #8: Only ONE fact container gets rendered at a time.
   test('Renders a single fact container after multiple clicks.', () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
 
     fireEvent.click(button);
@@ -138,7 +138,7 @@ describe('Interactive Component', () => {
   //Test #9: Action button remains focusable (keyboard navigation).
   test('The action button is focusable via the keyboard.', () => {
     const button = screen.getByRole("button", {
-      name: /Generate a Random Fact about Saint Louis/i,
+      name: /Reveal a Random Fact about Saint Louis/i,
     });
 
     button.focus();
@@ -148,7 +148,7 @@ describe('Interactive Component', () => {
   //Test #10: Region has correct id for anchor navigation.
   test('Section element carries the proper id attribute.', () => {
     const region = screen.getByRole("region", {
-      name: /Discover a Random Fact/i,
+      name: /A moment of/i,
     });
 
     expect(region).toHaveAttribute("id", "interactive");

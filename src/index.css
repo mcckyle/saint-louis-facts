@@ -15,7 +15,6 @@
 html
 {
     font-size: 16px; /* Root font size for rem scaling. */
-    text-size-adjust: 100%;
     scroll-behavior: smooth;
 }
 

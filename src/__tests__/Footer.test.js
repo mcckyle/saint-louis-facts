@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 10 November 2025
+//Date: 22 December 2025
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -20,7 +20,7 @@ describe('Footer Component', () => {
 
   // Test #2: Link to the Saint Louis Government website.
   test('contains a link to the official Saint Louis government website.', () => {
-    const govLink = screen.getByRole('link', { name: /Saint Louis Gov/i });
+    const govLink = screen.getByRole('link', { name: /City of Saint Louis/i });
     expect(govLink).toBeInTheDocument();
     expect(govLink).toHaveAttribute('href', 'https://www.stlouis-mo.gov');
     expect(govLink).toHaveClass('footer-link');
