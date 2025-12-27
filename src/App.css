@@ -47,8 +47,15 @@
 }
 
 /* ====================================
-   Main Content Styles.
+   Main Layout Styles.
 ======================================= */
+.app
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .main
 {
     display: grid;
@@ -59,7 +66,7 @@
 }
 
 /* ====================================
-   Section Styles.
+   Section Base Styles.
 ======================================= */
 section
 {

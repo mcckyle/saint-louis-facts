@@ -1,6 +1,6 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 22 December 2025
+//Date: 26 December 2025
 //Description: This file contains the facts list component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -25,7 +25,7 @@ function FunFactsList({ facts = defaultFacts })
               className="fact-item"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.035, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
               viewport={{ once: true, margin: "-64px" }}
             >
               <h3 className="fact-title">{fact.title}</h3>
@@ -33,7 +33,7 @@ function FunFactsList({ facts = defaultFacts })
 
               {fact.sources?.length > 0 && (
                 <div className="fact-sources">
-                  <span className="sources-label">Sources</span>
+                  <span className="sources-label">Sources:</span>
                   {fact.sources.map((source, sourceIndex) => (
                     <a
                       key={sourceIndex}

@@ -14,7 +14,15 @@
     isolation: isolate;
 }
 
-.interactive-container { max-width: 720px; margin-inline: auto; }
+/* Interactive Container Styles. */
+.interactive-container
+{
+    max-width: 720px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
 
 /* Section Heading Styles. */
 .interactive-title
@@ -23,7 +31,7 @@
     font-size: clamp(2rem, 4.6vw, 2.7rem);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
     -webkit-background-clip: text;
@@ -55,27 +63,36 @@
     border-radius: 9999px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
-.interactive-button:hover
+.interactive-button:hover,
+.interactive-button:focus-visible
 {
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* Fact Card Styles. */
 .interactive-fact
 {
     margin-top: 2.6rem;
-    padding: 2rem 2.1rem;
+    padding: 2rem 2.2rem;
 
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.035);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius);
-
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.interactive-fact:hover
+{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.045);
 }
 
 /* Fact Title Styles. */
