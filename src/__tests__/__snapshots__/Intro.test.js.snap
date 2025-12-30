@@ -31,7 +31,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       <p
         class="intro-body"
       >
-        From the Gateway Arch to its blues, baseball, and barbecue, discover the rhythm, resilience, and rich spirit of the
+        From the Gateway Arch to its blues, baseball, and barbecue, experience the rhythm, resilience, and rich spirit of the
          
         <span
           class="highlight"

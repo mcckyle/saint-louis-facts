@@ -12,6 +12,22 @@
     background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--color-text);
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+}
+
+/* Section Glow Layer Styles. */
+.footer::before
+{
+    content: "";
+    position: absolute;
+    inset: -30%;
+
+    background: radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.02), transparent 70%);
+
+    filter: blur(100px);
+    z-index: -1;
 }
 
 /* Footer Inner Container Styles. */
@@ -23,7 +39,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.2rem;
 }
 
 /* Footer Message Styles. */
@@ -63,18 +79,14 @@
     text-decoration: none;
 
     padding: 0.5rem 1.2rem;
-    border-radius: 9999px;
+    border-radius: 50px;
 
     transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 /* Hover and Focus Effects Styles. */
 .footer-link:hover,
-.footer-link:focus-visible
-{
-    color: var(--color-accent);
-    transform: translateY(-2px);
-}
+.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-2px); }
 
 /* Special Button: Back to Top Styles. */
 .back-to-top
@@ -101,27 +113,15 @@
     letter-spacing: 0.02em;
     display: flex;
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
 }
-
-.footer-brand
-{
-    font-weight: 600;
-    color: var(--color-primary);
-}
+.footer-brand { font-weight: 600; color: var(--color-primary); }
 
 /* Highlight Gradient Text Styles. */
-.footer-divider
-{
-    margin-inline: 0.35rem;
-}
+.footer-divider { margin-inline: 0.35rem; }
 
 /* Author Signature Styles. */
-.footer-author
-{
-    font-weight: 600;
-    color: var(--color-text);
-}
+.footer-author { font-weight: 600; color: var(--color-text); }
 
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)

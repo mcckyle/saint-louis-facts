@@ -10,9 +10,8 @@
     text-align: center;
 
     background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
-
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     isolation: isolate;
 }
 
@@ -23,9 +22,9 @@
     position: absolute;
     inset: -25%;
 
-    background: radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.03), transparent 70%);
+    background: radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.04), transparent 70%);
 
-    filter: blur(90px);
+    filter: blur(100px);
     z-index: -1;
 }
 
@@ -35,7 +34,7 @@
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
 /* Section Heading Styles. */
@@ -49,6 +48,7 @@
     position: relative;
 
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -72,7 +72,7 @@
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1.8rem, 3vw, 2.4rem);
+    gap: clamp(2rem, 3vw, 2.8rem);
 
     margin-top: 3rem;
     padding: 0;
@@ -84,10 +84,10 @@
 {
     background: rgba(255, 255, 255, 0.025);
     border-radius: var(--radius);
-    padding: 2rem 1.9rem;
+    padding: 2rem 1.8rem;
 
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-soft);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.25s ease;
 }
@@ -95,28 +95,28 @@
 /* Hover Interaction - Golden Glowing Visual Effect. */
 .fact-item:hover
 {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.035);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 /* Fact Title Styles. */
 .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.18rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
     color: var(--color-primary);
 }
 
 /* Fact Description Styles. */
 .fact-description
 {
-    font-size: 0.97rem;
-    line-height: 1.75;
+    font-size: 0.98rem;
+    line-height: 1.8;
     color: var(--color-text);
     opacity: 0.9;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.6rem;
 }
 
 /* Fact Sources Styles. */
@@ -137,7 +137,7 @@
 
 .source-link
 {
-    padding: 0.25rem 0.55rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 6px;
 
     color: var(--color-primary);
@@ -149,7 +149,7 @@
 
 .source-link:hover
 {
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.08);
     color: var(--color-highlight);
     transform: translateY(-1px);
 }

@@ -16,11 +16,15 @@ html
 {
     font-size: 16px; /* Root font size for rem scaling. */
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+#root { min-height: 100vh; }
 
 body
 {
     min-height: 100vh;
+    overflow: visible;
     font-family: var(--font-body), system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--color-text);
