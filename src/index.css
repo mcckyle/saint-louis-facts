@@ -25,7 +25,7 @@ body
 {
     min-height: 100vh;
     overflow: visible;
-    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--color-text);
     background: var(--color-bg);

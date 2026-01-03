@@ -55,7 +55,7 @@ function Footer()
           © {currentYear}{" "}
           <span className="footer-brand">Saint Louis Facts</span>
           <span className="footer-divider"> · </span>
-          Crafted in Saint Louis by{" "}
+          Designed in Saint Louis by{" "}
           <span className="footer-author">Kyle McColgan</span>
         </small>
       </div>

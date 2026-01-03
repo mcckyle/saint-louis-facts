@@ -10,12 +10,7 @@
     padding-inline: var(--pad-x);
     text-align: center;
 
-    background: linear-gradient(
-      180deg,
-      var(--color-bg),
-      var(--color-bg-alt)
-    );
-
+    background: var(--color-bg);
     overflow: visible;
     isolation: isolate;
 }
@@ -25,27 +20,25 @@
 {
     content: "";
     position: absolute;
-    inset: -25%;
+    inset: -20%;
 
     background: radial-gradient(
       circle at 50% 30%,
-      rgba(255, 215, 0, 0.05),
+      rgba(255, 215, 0, 0.03),
       transparent 70%
     );
 
-    filter: blur(100px);
+    filter: blur(80px);
     z-index: -1;
 }
 
 .intro-inner
 {
-    max-width: 760px;
+    max-width: 700px;
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
-    animation: fadeInUp 1s ease-out forwards;
+    gap: 1.8rem;
 }
 
 /* Title Styles. */
@@ -54,14 +47,9 @@
     font-family: var(--font-heading);
     font-size: clamp(2.4rem, 4.8vw, 3.2rem);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0;
-
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
 }
 
 /* Lead Paragraph Styles. */
@@ -87,54 +75,11 @@
 /* Highlighted Word Styles. */
 .highlight
 {
-    background: linear-gradient(120deg, var(--color-highlight), var(--color-accent));
+    background: var(--color-accent);
+    font-weight: 600;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-/* Scroll Cue (Mouse Shape) Styles. */
-.intro-scroll-cue
-{
-    margin: 3rem auto 0;
-    width: 28px;
-    height: 44px;
-
-    border: 1.5px solid var(--color-highlight);
-    border-radius: 20px;
-
-    opacity: 0.65;
-    position: relative;
-
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.intro-scroll-cue::before
-{
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    width: 6px;
-    height: 6px;
-    background: var(--color-highlight);
-    border-radius: 50%;
-    transform: translateX(-50%);
-
-    animation: scrollDot 2.6s ease-in-out infinite;
-}
-
-/* Animations Styles. */
-@keyframes scrollDot
-{
-    0%, 100% { transform: translate(-50%, 0); opacity: 1; }
-    50% { transform: translate(-50%, 18px); opacity: 0.35; }
-}
-
-@keyframes fadeInUp
-{
-    from { opacity: 0; transform: translateY(32px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Query Styles. */
@@ -143,5 +88,4 @@
     .intro-title { font-size: 2.1rem; }
     .intro-lead { font-size: 1rem; }
     .intro-body { font-size: 0.95rem; }
-    .intro-scroll-cue { width: 24px; height: 40px; }
 }

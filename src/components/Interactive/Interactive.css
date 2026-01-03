@@ -8,7 +8,7 @@
     padding-block: clamp(5rem, 8vw, 7rem);
     padding-inline: var(--pad-x);
     text-align: center;
-    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+    background: var(--color-bg-alt);
     position: relative;
     isolation: isolate;
     overflow: visible;
@@ -19,11 +19,11 @@
 {
     content: "";
     position: absolute;
-    inset: -25%;
+    inset: -20%;
 
-    background: radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.04), transparent 70%);
+    background: radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.03), transparent 70%);
 
-    filter: blur(100px);
+    filter: blur(80px);
     z-index: -1;
 }
 
@@ -34,7 +34,7 @@
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 2.8rem;
+    gap: 2.5rem;
 }
 
 /* Section Heading Styles. */
@@ -43,13 +43,9 @@
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4.6vw, 2.7rem);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     margin-bottom: 1rem;
-
-    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-accent);
 }
 
 /* Interactive Subtitle Styles. */
@@ -58,8 +54,8 @@
     font-size: clamp(1rem, 1.4vw, 1.1rem);
     color: var(--color-text-muted);
     max-width: 560px;
-    margin: 0 auto 2.6rem;
-    line-height: 1.75;
+    margin: 0 auto 2.4rem;
+    line-height: 1.7;
 }
 
 /* The Button Styles. */
@@ -79,7 +75,7 @@
     cursor: pointer;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .interactive-button:hover,
@@ -92,22 +88,21 @@
 /* Fact Card Styles. */
 .interactive-fact
 {
-    margin-top: 2.8rem;
-    padding: 2rem 2.2rem;
+    margin-top: 2.5rem;
+    padding: 2rem 2rem;
 
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-alt);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interactive-fact:hover
 {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.045);
 }
 
 /* Fact Title Styles. */

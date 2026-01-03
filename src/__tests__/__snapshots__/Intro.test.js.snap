@@ -15,8 +15,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
         class="intro-title"
         id="intro-heading"
       >
-        Welcome to the Heart of
-         
+        Welcome to the Heart of 
         <span
           class="highlight"
         >
@@ -40,10 +39,6 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
         </span>
         .
       </p>
-      <div
-        aria-hidden="true"
-        class="intro-scroll-cue"
-      />
     </div>
   </section>
 </div>
