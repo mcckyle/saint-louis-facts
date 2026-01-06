@@ -24,11 +24,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    transform: scale(1.05);
     filter: brightness(55%) contrast(1.05) saturate(0.9);
-    transform: scale(1.02);
     z-index: -2;
+
+    transition: transform 0.5s ease;
 }
+.header:hover .header-image { transform: scale(1.07); }
 
 /* Overlay Gradient Styles. */
 .header-overlay
@@ -40,50 +42,58 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.25)
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.2)
     );
 
     z-index: -1;
 }
 
-/* Header Content Block Styles. */
+/* Header Content Container Styles. */
 .header-content
 {
     text-align: center;
-    max-width: 680px;
-    padding: 2rem 1.5rem;
+    max-width: 700px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Title With Gradient Styles. */
+/* Title Styles. */
 .header-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-size: clamp(3rem, 7vw, 4.5rem);
     letter-spacing: 0.06em;
-    margin-bottom: 1rem;
-
     color: var(--color-highlight);
     text-transform: uppercase;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* Subtitle Styles. */
 .header-subtitle
 {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+
     line-height: 1.7;
-    max-width: 70%;
-    margin: 1.5rem auto 2.5rem;
+    max-width: 75%;
+    margin-inline: auto;
 
     letter-spacing: 0.01em;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
-/* Scroll Cue Styles. */
+/* Scroll Cue Button Styles. */
 .scroll-cue
 {
     display: inline-flex;
+    flex-direction: column;
+    align-self: center;
     align-items: center;
     justify-content: center;
 
@@ -91,9 +101,10 @@
     height: 3rem;
 
     border-radius: 50%;
-    border: 1.5px solid var(--color-highlight);
+    border: 2px solid var(--color-highlight);
     background: transparent;
     color: var(--color-highlight);
+    cursor: pointer;
 
     transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
@@ -101,16 +112,23 @@
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     color: var(--color-accent);
     border-color: var(--color-accent);
+}
+
+/* Fade-in Animation Styles. */
+@keyframes fadeInUp
+{
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Query Styles. */
 @media (max-width: 768px)
 {
-    .header { height: 90vh; }
-    .header-title { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+    .header { min-height: 90vh; }
+    .header-title { font-size: clamp(2.4rem, 8vw, 3.8rem); }
     .header-subtitle { font-size: 0.95rem; max-width: 90%; }
     .scroll-cue { width: 2.5rem; height: 2.5rem; }
 }

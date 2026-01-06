@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 22 December 2025
+//Date: 5 January 2026
 //Description: This file contains the header component for the Saint Louis Facts React project Header section.
 
 import React from "react";
@@ -32,28 +32,27 @@ function Header ({ scrollTargetRef })
         <div className="header-content" data-testid="header-content">
           <h1 className="header-title">Saint&nbsp;Louis</h1>
           <p className="header-subtitle">
-            Gateway to the West - where history, architecture, and innovation
-            meet along the Mississippi River.
+            Gateway to the West - history, architecture, and innovation along
+            the Mississippi River.
           </p>
 
           <button
             className="scroll-cue"
             onClick={handleScroll}
-            aria-label="Scroll to introduction."
+            aria-label="Scroll to introduction"
           >
             <svg
-              width="28"
-              height="28"
+              width="32"
+              height="32"
               viewBox="0 0 24 24"
               fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               aria-hidden="true"
             >
-              <path
-                d="M6 9l6 6 6-6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+              <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
         </div>

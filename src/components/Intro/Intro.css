@@ -6,12 +6,11 @@
 .intro
 {
     position: relative;
-    padding-block: clamp(5rem, 8vw, 7rem);
+    padding-block: clamp(4.5rem, 7vw, 6.5rem);
     padding-inline: var(--pad-x);
     text-align: center;
 
     background: var(--color-bg);
-    overflow: visible;
     isolation: isolate;
 }
 
@@ -20,63 +19,65 @@
 {
     content: "";
     position: absolute;
-    inset: -20%;
+    inset: 0;
 
     background: radial-gradient(
-      circle at 50% 30%,
-      rgba(255, 215, 0, 0.03),
-      transparent 70%
+      circle at 50% 20%,
+      rgba(255, 215, 0, 0.025),
+      transparent 65%
     );
 
-    filter: blur(80px);
+    pointer-events: none;
     z-index: -1;
 }
 
 .intro-inner
 {
-    max-width: 700px;
+    max-width: 720px;
     margin-inline: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.6rem;
 }
 
 /* Title Styles. */
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 4.8vw, 3.2rem);
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+    letter-spacing: 0.035em;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.5rem;
     color: var(--color-primary);
 }
 
 /* Lead Paragraph Styles. */
 .intro-lead
 {
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-    line-height: 1.8;
+    font-size: clamp(1.05rem, 1.6vw, 1.15rem);
+    line-height: 1.75;
+
     color: var(--color-text);
     max-width: 640px;
     margin-inline: auto;
 }
 
-/* Body Paragraph Styles. */
+/* Supporting Body Paragraph Styles. */
 .intro-body
 {
-    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
     line-height: 1.8;
+
     color: var(--color-text-muted);
-    max-width: 620px;
+    max-width: 600px;
     margin-inline: auto;
 }
 
 /* Highlighted Word Styles. */
 .highlight
 {
-    background: var(--color-accent);
     font-weight: 600;
+    background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -85,7 +86,6 @@
 /* Media Query Styles. */
 @media (max-width: 768px)
 {
-    .intro-title { font-size: 2.1rem; }
-    .intro-lead { font-size: 1rem; }
-    .intro-body { font-size: 0.95rem; }
+    .intro { padding-block: 4rem; }
+    .intro-title { font-size: 2rem; }
 }

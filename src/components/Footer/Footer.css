@@ -5,48 +5,35 @@
 ======================================= */
 .footer
 {
-    padding-block: clamp(2.6rem, 5vw, 3.4rem);
+    padding-block: clamp(2.8rem, 5vw, 3.8rem);
     padding-inline: var(--pad-x);
-    text-align: center;
 
     background: var(--color-bg-alt);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--stl-border);
     color: var(--color-text);
-    position: relative;
-    isolation: isolate;
+
+    text-align: center;
 }
 
-/* Section Glow Layer Styles. */
-.footer::before
-{
-    content: "";
-    position: absolute;
-    inset: -25%;
-
-    background: radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.02), transparent 70%);
-
-    filter: blur(80px);
-    z-index: -1;
-}
-
-/* Footer Inner Container Styles. */
+/* Footer Inner Layout Styles. */
 .footer-inner
 {
-    max-width: 960px;
+    max-width: 900px;
     margin-inline: auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.2rem;
 }
 
 /* Footer Message Styles. */
 .footer-message
 {
-    max-width: 600px;
-    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    max-width: 620px;
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
     line-height: 1.7;
+
     color: var(--color-text-muted);
 }
 .footer-emphasis { font-weight: 600; color: var(--color-text); }
@@ -57,7 +44,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.6rem;
 
     list-style: none;
     padding: 0;
@@ -67,59 +54,60 @@
 .footer-link,
 .back-to-top
 {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
     text-decoration: none;
 
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
 
-    transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 /* Hover and Focus Effects Styles. */
 .footer-link:hover,
-.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-2px); }
+.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-1px); }
 
 /* Special Button: Back to Top Styles. */
 .back-to-top
 {
     font-weight: 600;
-
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
-    color: var(--color-bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    color: var(--color-primary);
+    border: 1px solid var(--stl-border);
+    background: transparent;
 }
 
 .back-to-top:hover,
 .back-to-top:focus-visible
 {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 /* Footer Meta Line Styles. */
 .footer-meta
 {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
     color: var(--color-text-muted);
-    letter-spacing: 0.02em;
+
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
 }
 .footer-brand { font-weight: 600; color: var(--color-primary); }
 
 /* Highlight Gradient Text Styles. */
-.footer-divider { margin-inline: 0.35rem; }
+.footer-divider { opacity: 0.6; }
 
 /* Author Signature Styles. */
-.footer-author { font-weight: 600; color: var(--color-text); }
+.footer-author { font-weight: 500; color: var(--color-text); }
 
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner { gap: 1.5rem; }
+    .footer-inner { gap: 1.6rem; }
     .footer-message { font-size: 0.9rem; }
-    .footer-link, .back-to-top { font-size: 0.85rem; padding: 0.45rem 1rem; }
+    .footer-link, .back-to-top { font-size: 0.83rem; padding: 0.4rem 0.95rem; }
 }
