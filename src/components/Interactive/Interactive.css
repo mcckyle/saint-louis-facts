@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.2rem;
+    gap: 2.5rem;
 }
 
 /* Section Heading Styles. */
@@ -40,7 +40,7 @@
 .interactive-subtitle
 {
     font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-    line-height: 1.7;
+    line-height: 1.75;
 
     color: var(--color-text-muted);
     max-width: 520px;
@@ -50,7 +50,7 @@
 .interactive-button
 {
     margin-top: 0.5rem;
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(135deg, var(--color-primary) 40%, var(--color-accent) 100%);
     color: var(--color-inverse);
 
     font-family: var(--font-heading);
@@ -58,32 +58,43 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
 
-    padding: 0.9rem 2.1rem;
+    padding: 0.95rem 2.25rem;
     border-radius: 999px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, var(--color-accent) 40%, var(--color-primary) 100%);
 }
 
 /* Fact Card Styles. */
 .interactive-fact
 {
-    margin-top: 2.4rem;
+    margin-top: 2.5rem;
     padding: 2rem 2.1rem;
 
     background: var(--color-bg-alt);
     border-radius: var(--radius);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     box-shadow: var(--shadow-soft);
     max-width: 100%;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.interactive-fact:hover
+{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
 }
 
 /* Fact Title Styles. */
@@ -99,7 +110,7 @@
 /* Fact Description Body Styles. */
 .interactive-fact .fact-description
 {
-    font-size: 0.96rem;
+    font-size: 0.97rem;
     line-height: 1.75;
 
     color: var(--color-text-muted);

@@ -1,7 +1,7 @@
 /* Filename: src/components/Footer/Footer.css */
 
 /* ====================================
-   Footer Styles.
+   Footer Section Styles.
 ======================================= */
 .footer
 {
@@ -13,9 +13,13 @@
     color: var(--color-text);
 
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }
 
-/* Footer Inner Layout Styles. */
+/* Footer Inner Container Styles. */
 .footer-inner
 {
     max-width: 900px;
@@ -24,7 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.2rem;
+    gap: 2rem;
 }
 
 /* Footer Message Styles. */
@@ -35,8 +39,9 @@
     line-height: 1.7;
 
     color: var(--color-text-muted);
+    text-align: center;
 }
-.footer-emphasis { font-weight: 600; color: var(--color-text); }
+.footer-emphasis { font-weight: 600; color: var(--color-primary); }
 
 /* Footer Navigation Links Styles. */
 .footer-links
@@ -61,12 +66,12 @@
     padding: 0.45rem 1.1rem;
     border-radius: 999px;
 
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
 }
 
 /* Hover and Focus Effects Styles. */
 .footer-link:hover,
-.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-1px); }
+.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-2px); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
 
 /* Special Button: Back to Top Styles. */
 .back-to-top
@@ -75,6 +80,8 @@
     color: var(--color-primary);
     border: 1px solid var(--stl-border);
     background: transparent;
+
+    transition: all 0.25s ease;
 }
 
 .back-to-top:hover,
@@ -82,6 +89,8 @@
 {
     color: var(--color-accent);
     border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Footer Meta Line Styles. */
@@ -107,7 +116,7 @@
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner { gap: 1.6rem; }
+    .footer-inner { gap: 1.5rem; }
     .footer-message { font-size: 0.9rem; }
-    .footer-link, .back-to-top { font-size: 0.83rem; padding: 0.4rem 0.95rem; }
+    .footer-link, .back-to-top { font-size: 0.82rem; padding: 0.4rem 0.95rem; }
 }

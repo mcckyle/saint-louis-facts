@@ -10,8 +10,6 @@
     --stl-blue: #003DA5; /* Color: Deep River Blue (Mississippi/Missouri). */
     --stl-yellow: #FFD200; /* Color: Fleur-de-lis Yellow. */
     --stl-white: #FFFFFF; /* Color: Crisp White (Flag Waves). */
-
-    /* Neutral Colors. */
     --stl-ink: #1C1C1C; /* Color: Strong Ink Black For Text. */
     --stl-muted: #5E6A75; /* Color: Muted Gray For Secondary Text. */
     --stl-light: #F7F9FB; /* Color: Light Neutral Background. */
@@ -42,7 +40,7 @@
     --transition: 280ms cubic-bezier(0.25, 0.8, 0.4, 1);
 }
 
-/* Dark Mode Variables. */
+/* Dark Mode Tokens. */
 [data-theme="dark"] {
     --color-bg: #0F141A;
     --color-bg-alt: #141A21;
@@ -51,7 +49,7 @@
 }
 
 /* ====================================
-   Main Layout Styles.
+   Root Layout Styles.
 ======================================= */
 .app
 {
@@ -65,8 +63,7 @@
 {
     display: grid;
     gap: var(--space-3);
-    padding-block: var(--pad-y);
-    padding-inline: var(--pad-x);
+    padding: var(--pad-x) var(--pad-y);
 
     background: linear-gradient(180deg, var(--color-bg-alt), transparent 85%);
 }
