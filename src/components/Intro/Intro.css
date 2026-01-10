@@ -6,7 +6,7 @@
 .intro
 {
     position: relative;
-    padding-block: clamp(4.5rem, 7vw, 6.5rem);
+    padding-block: clamp(5rem, 8vw, 7rem);
     padding-inline: var(--pad-x);
     text-align: center;
 
@@ -22,15 +22,16 @@
     inset: 0;
 
     background: radial-gradient(
-      circle at 50% 20%,
-      rgba(255, 215, 0, 0.03),
-      transparent 65%
+      circle at 50% 15%,
+      rgba(255, 223, 0, 0.05),
+      transparent 70%
     );
 
     pointer-events: none;
     z-index: -1;
 }
 
+/* Intro Inner Container Styles. */
 .intro-inner
 {
     max-width: 720px;
@@ -38,44 +39,52 @@
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
+
+    animation: fadeInUp 1s ease forwards;
 }
 
 /* Title Styles. */
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 5vw, 3.2rem);
-    letter-spacing: 0.035em;
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-primary);
     line-height: 1.2;
+
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Lead Paragraph Styles. */
 .intro-lead
 {
-    font-size: clamp(1.1rem, 1.6vw, 1.2rem);
+    font-size: clamp(1.15rem, 1.8vw, 1.25rem);
     line-height: 1.75;
 
     color: var(--color-text);
     max-width: 640px;
     margin-inline: auto;
     font-weight: 500;
+    opacity: 0.95;
 }
 
 /* Supporting Body Paragraph Styles. */
 .intro-body
 {
-    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
     line-height: 1.8;
 
     color: var(--color-text-muted);
     max-width: 600px;
     margin-inline: auto;
+    opacity: 0.88;
 }
 
-/* Highlighted Word Styles. */
+/* Highlighted Words Styles. */
 .highlight
 {
     display: inline-block;
@@ -84,13 +93,15 @@
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    transition: background 0.4s ease;
 }
 
 /* Media Query Styles. */
 @media (max-width: 768px)
 {
     .intro { padding-block: 4rem; }
-    .intro-title { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+    .intro-title { font-size: clamp(2rem, 6vw, 2.8rem); }
     .intro-lead { font-size: 1rem; }
     .intro-body { font-size: 0.94rem; }
 }

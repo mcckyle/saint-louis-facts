@@ -49,7 +49,7 @@
 }
 
 /* ====================================
-   Root Layout Styles.
+   App Layout Styles.
 ======================================= */
 .app
 {
@@ -63,9 +63,9 @@
 {
     display: grid;
     gap: var(--space-3);
-    padding: var(--pad-x) var(--pad-y);
+    padding: var(--pad-y) var(--pad-x);
 
-    background: linear-gradient(180deg, var(--color-bg-alt), transparent 85%);
+    background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg) 95%);
 }
 
 /* ====================================
@@ -77,6 +77,11 @@ section
     border-radius: var(--radius);
     padding: clamp(2.25rem, 4vw, 3.25rem);
     box-shadow: var(--shadow-soft);
+
+    opacity: 0;
+    transform: translateY(16px);
+
+    animation: fadeInSection 1s ease forwards;
 }
 
 /* ====================================
@@ -93,12 +98,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 button
 {
     border-radius: 50px;
-    background: linear-gradient(
-        120deg,
-        color-mix(in srgb, var(--color-primary) 85%, white),
-        color-mix(in srgb, var(--color-accent) 85%, white)
-    );
-
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     color: var(--color-inverse);
     padding: 0.8rem 1.6rem;
     font-weight: 600;
@@ -141,5 +141,10 @@ button:focus-visible
 @keyframes fadeIn
 {
     from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSection
+{
     to { opacity: 1; transform: translateY(0); }
 }

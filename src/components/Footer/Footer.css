@@ -5,7 +5,7 @@
 ======================================= */
 .footer
 {
-    padding-block: clamp(2.8rem, 5vw, 3.8rem);
+    padding-block: clamp(3rem, 5vw, 4rem);
     padding-inline: var(--pad-x);
 
     background: var(--color-bg-alt);
@@ -17,6 +17,24 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    position: relative;
+}
+
+/* Ambient Glow Overlay Styles. */
+.footer::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at 50% 10%,
+        rgba(0, 61, 165, 0.03),
+        transparent 70%
+    );
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Footer Inner Container Styles. */
@@ -34,14 +52,14 @@
 /* Footer Message Styles. */
 .footer-message
 {
-    max-width: 620px;
+    max-width: 640px;
     font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-    line-height: 1.7;
+    line-height: 1.75;
 
     color: var(--color-text-muted);
     text-align: center;
 }
-.footer-emphasis { font-weight: 600; color: var(--color-primary); }
+.footer-emphasis { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* Footer Navigation Links Styles. */
 .footer-links
@@ -66,7 +84,7 @@
     padding: 0.45rem 1.1rem;
     border-radius: 999px;
 
-    transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Hover and Focus Effects Styles. */
@@ -81,7 +99,7 @@
     border: 1px solid var(--stl-border);
     background: transparent;
 
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 .back-to-top:hover,
@@ -90,7 +108,7 @@
     color: var(--color-accent);
     border-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 /* Footer Meta Line Styles. */
@@ -103,9 +121,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
-.footer-brand { font-weight: 600; color: var(--color-primary); }
+.footer-brand { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* Highlight Gradient Text Styles. */
 .footer-divider { opacity: 0.6; }
