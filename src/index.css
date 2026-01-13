@@ -54,18 +54,25 @@ a:focus-visible
 }
 
 /* ====================================
-   Global Paragraph Styles.
+   Global Paragraphs Styles.
 ======================================= */
 p { line-height: 1.7; }
+
+/* ====================================
+   Fade-in Animation Styles.
+======================================= */
+@keyframes fadeInUp
+{
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* ====================================
    Reduced Motion Styles.
 ======================================= */
 @media (prefers-reduced-motion: reduce)
 {
-    *,
-    *::before,
-    *::after
+    *, *::before, *::after
     {
         animation: none !important;
         transition: none !important;

@@ -65,7 +65,7 @@
     gap: var(--space-3);
     padding: var(--pad-y) var(--pad-x);
 
-    background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg) 95%);
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 95%);
 }
 
 /* ====================================
@@ -104,7 +104,7 @@ button
     font-weight: 600;
     cursor: pointer;
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 button:hover,
@@ -112,6 +112,7 @@ button:focus-visible
 {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(120deg, var(--color-accent), var(--color-primary));
 }
 
 /* ====================================
