@@ -9,14 +9,14 @@
     display: grid;
     place-items: center;
     position: relative;
-    isolation: isolate;
     overflow: hidden;
+    isolation: isolate;
 
     background: var(--color-bg);
     color: var(--color-inverse);
 }
 
-/* Background Image Styles. */
+/* Full-Screen Background Image Styles. */
 .header-image
 {
     position: absolute;
@@ -24,7 +24,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.08);
+    transform: scale(1.05);
     filter: brightness(45%) contrast(1.1) saturate(1.05);
     z-index: -2;
 
@@ -41,7 +41,7 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.25) 60%,
       rgba(0, 0, 0, 0)
     );
@@ -76,7 +76,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Subtitle Styles. */
+/* Header Subtitle Styles. */
 .header-subtitle
 {
     font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -90,7 +90,7 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Scroll Cue Button Styles. */
+/* Header Scroll Cue Button Styles. */
 .scroll-cue
 {
     display: inline-flex;

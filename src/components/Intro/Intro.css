@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-/* Ambient Glow Styles. */
+/* Ambient Glow Behind Section Styles. */
 .intro::before
 {
     content: "";
@@ -45,14 +45,13 @@
     animation: fadeInUp 1s ease forwards;
 }
 
-/* Intro Title Styles. */
+/* Intro Main Title Styles. */
 .intro-title
 {
     font-family: var(--font-heading);
     font-size: clamp(2.8rem, 6vw, 3.8rem);
     letter-spacing: 0.045em;
     text-transform: uppercase;
-    color: var(--color-primary);
     line-height: 1.2;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 
@@ -61,7 +60,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Lead Paragraph Styles. */
+/* Intro Lead Paragraph Styles. */
 .intro-lead
 {
     font-size: clamp(1.2rem, 1.8vw, 1.3rem);
@@ -74,7 +73,7 @@
     opacity: 0.96;
 }
 
-/* Supporting Body Paragraph Styles. */
+/* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
     font-size: clamp(1.05rem, 1.4vw, 1.15rem);

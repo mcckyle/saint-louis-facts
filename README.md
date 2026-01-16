@@ -80,16 +80,25 @@ saint-louis-facts/
 │
 ├── src/
 │   ├── components/
-│   │   ├── Footer.css
-│   │   └── Footer.jsx
-│   │   ├── FunFactsList.css   # Fact component styling.
-│   │   └── FunFactsList.jsx   # Component displaying all facts
-│   │   ├── Header.css
-│   │   └── Header.jsx
-│   │   ├── Interactive.css
-│   │   └── Interactive.jsx
-│   │   ├── Intro.css
-│   │   └── Intro.jsx
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.css
+│   │   │
+│   │   ├── Intro/
+│   │   │   ├── Intro.jsx
+│   │   │   └── Intro.css
+│   │   │
+│   │   ├── FunFactsList/
+│   │   │   ├── FunFactsList.jsx
+│   │   │   └── FunFactsList.css
+│   │   │
+│   │   ├── Interactive/
+│   │   │   ├── Interactive.jsx
+│   │   │   └── Interactive.css
+│   │   │
+│   │   └── Footer/
+│   │       ├── Footer.jsx
+│   │       └── Footer.css
 │   │ 
 │   ├── __mocks__/
 │   │   └── styleMock.js
