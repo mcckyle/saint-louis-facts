@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#003DA5"></rect>
+
+  <!-- Gateway Arch -->
+  <path d="
+      M32 10
+      C20 10 14 24 14 38
+      C14 46 18 52 22 52
+      L26 52
+      C22 48 20 42 20 36
+      C20 24 25 16 32 16
+      C39 16 44 24 44 36
+      C44 42 42 48 38 52
+      L42 52
+      C46 52 50 46 50 38
+      C50 24 44 10 32 10
+      Z
+    " fill="#FFFFFF"></path>
+</svg>
