@@ -22,6 +22,7 @@ html
 body
 {
     min-height: 100vh;
+    margin: 0;
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--color-text);

@@ -6,15 +6,15 @@
     <title>Saint Louis Facts - Gateway to the West</title>
     <meta
       name="description"
-      content="Discover Saint Louis: history, culture, architecture, and the vibrant spirit of the Gateway to the West."
+      content="Discover Saint Louis through history, culture, architecture, and the enduring spirit of the Gateway to the West."
     />
     <meta name="theme-color" content="#003DA5" />
     <meta name="color-scheme" content="light dark" />
     <meta name="application-name" content="Saint Louis Facts" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- Icons. -->
+    <link rel="icon" type="image/svg+xml" href="/images/saint-louis-facts-favicon-02032026.svg" />
+    <link rel="apple-touch-icon" href="/images/saint-louis-facts-favicon-02032026.png" />
 
     <!-- External Fonts Imports. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,7 @@
       rel="preload"
       as="image"
       href="/src/assets/images/gateway-arch-background.jpg"
-      importance="high"
+      fetchpriority="high"
     />
   </head>
 
@@ -37,7 +37,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- React Mount Point. -->
-    <div id="root" role="application"></div>
+    <div id="root"></div>
 
     <!-- Main App Entry. -->
     <script type="module" src="/src/main.jsx"></script>

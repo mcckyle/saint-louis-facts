@@ -1,7 +1,7 @@
 /* Filename: src/App.css */
 
 /* ====================================
-    Root Variables.
+    App Root Variables.
 ======================================= */
 :root
 {
@@ -69,54 +69,15 @@
 }
 
 /* ====================================
-   Section Base Styles.
+   App Headings Styles.
 ======================================= */
-section
-{
-    background: var(--color-bg-alt);
-    border-radius: var(--radius);
-    padding: clamp(2.25rem, 4vw, 3.25rem);
-    box-shadow: var(--shadow-soft);
-
-    opacity: 0;
-    transform: translateY(16px);
-
-    animation: fadeInSection 1s ease forwards;
-}
-
-/* ====================================
-   Headings Styles.
-======================================= */
-h1, h2, h3 { font-family: var(--font-heading); margin: 0 0 1rem; letter-spacing: 0.015em; }
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--color-primary); }
-h2 { font-size: clamp(1.75rem, 4vw, 2.3rem); color: var(--color-accent); }
+h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.015em; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem);}
+h2 { font-size: clamp(1.75rem, 4vw, 2.3rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 /* ====================================
-   Buttons Styles.
-======================================= */
-button
-{
-    border-radius: 50px;
-    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
-    color: var(--color-inverse);
-    padding: 0.8rem 1.6rem;
-    font-weight: 600;
-    cursor: pointer;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-button:hover,
-button:focus-visible
-{
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(120deg, var(--color-accent), var(--color-primary));
-}
-
-/* ====================================
-   Skip Link Styles.
+   App Skip Link Styles.
 ======================================= */
 .skip-link { position: absolute; left: -9999px; }
 .skip-link:focus
@@ -124,18 +85,19 @@ button:focus-visible
     position: fixed;
     left: 1rem;
     top: 1rem;
+
+    padding: 0.6rem 1rem;
     background: var(--color-bg-alt);
     color: var(--color-primary);
-    padding: 0.6rem 1rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--stl-border);
 
+    border-radius: var(--radius);
+    border: 1px solid var(--stl-border);
+    box-shadow: var(--shadow-soft);
     z-index: 1000;
 }
 
 /* ====================================
-   Fade Animations Styles.
+   App Animations Styles.
 ======================================= */
 @keyframes fadeInUp
 {
@@ -143,13 +105,8 @@ button:focus-visible
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInSection
-{
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* ====================================
-   Reduced Motion Styles.
+   App Reduced Motion Styles.
 ======================================= */
 @media (prefers-reduced-motion: reduce)
 {

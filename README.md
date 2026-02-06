@@ -14,10 +14,9 @@
 ## 🛠️ Technologies Used
 
 - **React**: A robust JavaScript library for building dynamic and interactive user interfaces.
-- **Vite**: A fast and modern build tool optimized for frontend development, ensuring quick setup and blazing-fast hot module replacement (HMR).
+- **Vite**: A fast and modern build tool optimized for frontend development, enabling quick setup and hot module replacement (HMR).
 - **HTML/CSS**: For structuring and designing a responsive, user-friendly application.
 - **JavaScript (ES6+)**: Enhancing functionality with modern syntax and state management.
-- **React Hooks**: Simplifying state and side-effect management within functional components.
 - **Deployment**: Hosted via [GitHub Pages](https://pages.github.com/) for easy public access.
 - **Continuous Integration**: Automated testing and builds powered by [GitHub Actions](https://github.com/features/actions).
 
@@ -61,7 +60,7 @@ You will see the landing page with facts about Greater Saint Louis. Click the **
 saint-louis-facts/
 │
 ├── public/
-│   └── vite.svg
+│   └── saint-louis-facts-favicon-02032026.svg
 │
 ├── .github/
 │   └── workflows/
@@ -71,12 +70,7 @@ saint-louis-facts/
 │   └── /...                   # Node JS dependencies.
 │
 ├── dist/
-│   ├── assets/
-│   │   ├── index-XXXXXX.js    # Component for GitHub pages deployment.
-│   │   └── index-XXXXXX.css   # Component for GitHub pages deployment.
-│   │
-│   ├── index.html             # Main app component
-│   └── vite.svg               # Entry point for React app
+│   └── /...                   # Vite build folder.
 │
 ├── src/
 │   ├── components/
@@ -121,15 +115,15 @@ saint-louis-facts/
 │   ├── index.css
 │   └── main.jsx
 │
-├── package.json              # Project metadata and dependencies
-├── package-lock.json         # Project documentation
+├── package.json              # Project metadata 
+├── package-lock.json         # Project dependencies
 ├── .gitignore                # Project configuration
-├── LICENSE                   # Project documentation
+├── vite.config.js            # Project configuration
 ├── babel.config.cjs          # Project configuration
 ├── eslint.config.js          # Project configuration
 ├── index.html                # Project documentation
 ├── README.md                 # Project documentation
-└── vite.config.js            # Project configuration
+└── LICENSE                   # Project documentation
 ```
 
 ## Contributing
