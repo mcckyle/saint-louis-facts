@@ -9,19 +9,11 @@
     padding-inline: var(--pad-x);
 
     background: var(--color-bg-alt);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--color-text);
-
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
+    border-top: 1px solid var(--stl-border);
     position: relative;
-    isolation: isolate;
 }
 
-/* Ambient Glow Overlay Styles. */
+/* Footer Simple Ambient Glow Overlay Styles. */
 .footer::before
 {
     content: "";
@@ -29,8 +21,8 @@
     inset: 0;
 
     background: radial-gradient(
-        circle at 50% 15%,
-        rgba(0, 61, 165, 0.03),
+        circle at 50% 10%,
+        rgba(0, 61, 165, 0.025),
         transparent 75%
     );
 
@@ -47,19 +39,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    text-align: center;
+    gap: 2.2rem;
 }
+
+/* Footer Top Group Styles. */
+.footer-top { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
 
 /* Footer Message Styles. */
 .footer-message
 {
-    max-width: 680px;
-    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-    line-height: 1.8;
-
+    max-width: 640px;
+    font-size: clamp(0.92rem, 1.2vw, 1.02rem);
+    line-height: 1.75;
     color: var(--color-text-muted);
-    text-align: center;
-    opacity: 0.92;
 }
 .footer-emphasis { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
@@ -69,7 +62,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.7rem;
+    gap: 0.6rem;
 
     list-style: none;
     padding: 0;
@@ -79,30 +72,29 @@
 .footer-link,
 .back-to-top
 {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     font-weight: 500;
     text-decoration: none;
 
-    padding: 0.5rem 1.2rem;
+    padding: 0.45rem 1.1rem;
     border-radius: 999px;
 
-    transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--stl-border);
+    color: var(--color-text-muted);
+    background: transparent;
+
+    transition: transform var(--transition),
+                color var(--transition),
+                border-color var(--transition),
+                background var(--transition);
 }
 
 /* Hover and Focus Effects Styles. */
 .footer-link:hover,
-.footer-link:focus-visible { color: var(--color-accent); transform: translateY(-2px); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+.footer-link:focus-visible { color: var(--color-accent); border-color: var(--color-accent); transform: translateY(-2px); }
 
 /* Special Button: Back to Top Styles. */
-.back-to-top
-{
-    font-weight: 600;
-    color: var(--color-primary);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: transparent;
-
-    transition: all 0.3s ease;
-}
+.back-to-top { color: var(--color-primary); font-weight: 600; }
 
 .back-to-top:hover,
 .back-to-top:focus-visible
@@ -110,25 +102,25 @@
     color: var(--color-accent);
     border-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
+.footer-bottom { display: flex; justify-content: center; }
 
 /* Footer Meta Line Styles. */
 .footer-meta
 {
-    font-size: 0.78rem;
-    letter-spacing: 0.03em;
+    font-size: 0.74rem;
+    letter-spacing: 0.035em;
     color: var(--color-text-muted);
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 .footer-brand { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* Highlight Gradient Text Styles. */
-.footer-divider { opacity: 0.6; }
+.footer-divider { opacity: 0.5; }
 
 /* Author Signature Styles. */
 .footer-author { font-weight: 500; color: var(--color-text); }
@@ -136,7 +128,7 @@
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner { gap: 1.5rem; }
-    .footer-message { font-size: 0.9rem; max-width: 90%; }
-    .footer-link, .back-to-top { font-size: 0.82rem; padding: 0.4rem 0.95rem; }
+    .footer-inner { gap: 1.8rem; }
+    .footer-message { max-width: 90%; font-size: 0.88rem; }
+    .footer-link, .back-to-top { font-size: 0.78rem; padding: 0.4rem 0.95rem; }
 }

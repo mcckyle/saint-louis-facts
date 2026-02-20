@@ -6,16 +6,13 @@
 .intro
 {
     position: relative;
-    padding-block: clamp(6rem, 9vw, 8rem);
+    padding-block: clamp(5rem, 8vw, 7rem);
     padding-inline: var(--pad-x);
-    text-align: center;
-
     background: var(--color-bg);
-    isolation: isolate;
-    overflow: hidden;
+    overflow: clip;
 }
 
-/* Ambient Glow Behind Section Styles. */
+/* Simple Ambient Glow Styles. */
 .intro::before
 {
     content: "";
@@ -23,37 +20,38 @@
     inset: 0;
 
     background: radial-gradient(
-      circle at 50% 10%,
-      rgba(255, 223, 0, 0.08),
-      transparent 65%
+      600px circle at 50% 0%,
+      rgba(255, 223, 0, 0.06),
+      transparent 70%
     );
 
     pointer-events: none;
     z-index: -1;
 }
 
-/* Intro Inner Container Styles. */
+/* Intro Inner Layout Styles. */
 .intro-inner
 {
-    max-width: 720px;
+    max-width: 680px;
     margin-inline: auto;
 
     display: flex;
     flex-direction: column;
-    gap: 2.8rem;
+    gap: 2.2rem;
 
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 0.9s ease forwards;
 }
+/* Header Grouping Styles. */
+.intro-header { display: flex; flex-direction: column; gap: 1.4rem; }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 6vw, 3.8rem);
-    letter-spacing: 0.045em;
+    font-size: clamp(2.4rem, 5.2vw, 3.2rem);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.2;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    line-height: 1.15;
 
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
@@ -63,46 +61,39 @@
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    font-size: clamp(1.2rem, 1.8vw, 1.3rem);
-    line-height: 1.75;
+    font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
 
     color: var(--color-text);
-    max-width: 640px;
-    margin-inline: auto;
-    font-weight: 500;
-    opacity: 0.96;
+    opacity: 0.95;
 }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+    font-size: clamp(1rem, 1.25vw, 1.08rem);
     line-height: 1.8;
 
     color: var(--color-text-muted);
-    max-width: 620px;
-    margin-inline: auto;
-    opacity: 0.88;
+    opacity: 0.9;
 }
 
 /* Highlighted Words Styles. */
 .highlight
 {
-    display: inline-block;
     font-weight: 600;
     background: linear-gradient(120deg, var(--color-accent), var(--color-highlight));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    transition: background 0.4s ease;
 }
 
-/* Media Query Styles. */
+/* Intro Media Query Styles. */
 @media (max-width: 768px)
 {
-    .intro { padding-block: 4.5rem; }
-    .intro-title { font-size: clamp(2.2rem, 6vw, 3rem); }
+    .intro { padding-block: 4rem; }
+    .intro-inner { gap: 1.8rem; }
+    .intro-title { font-size: clamp(2rem, 7vw, 2.6rem); }
     .intro-lead { font-size: 1rem; }
-    .intro-body { font-size: 0.94rem; }
+    .intro-body { font-size: 0.95rem; }
 }

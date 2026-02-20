@@ -28,8 +28,12 @@
     /* Fonts and Motion. */
     --font-heading: "Playfair Display", serif;
     --font-body: "Lora", serif;
+
     --radius: 16px;
     --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    --content-max: 1100px;
+
     --pad-x: clamp(1.5rem, 4vw, 3.5rem);
     --pad-y: clamp(4rem, 7vw, 7rem);
 
@@ -57,6 +61,7 @@
     flex-direction: column;
     min-height: 100vh;
     background: var(--color-bg);
+    overflow-x: hidden;
 }
 
 .main
@@ -64,6 +69,9 @@
     display: grid;
     gap: var(--space-3);
     padding: var(--pad-y) var(--pad-x);
+    width: 100%;
+    max-width: var(--content-max);
+    margin-inline: auto;
 
     background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 95%);
 }
@@ -95,6 +103,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     box-shadow: var(--shadow-soft);
     z-index: 1000;
 }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
 /* ====================================
    App Animations Styles.

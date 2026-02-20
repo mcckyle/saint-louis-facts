@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Header matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <img
+      alt=""
+      aria-hidden="true"
+      class="header-image"
+      decoding="async"
+      loading="eager"
+      src="test-file-stub"
+    />
+    <div
+      class="header-overlay"
+    />
+    <div
+      class="header-inner"
+    >
+      <div
+        class="header-content"
+        data-testid="header-content"
+      >
+        <h1
+          class="header-title"
+        >
+          Saint Louis
+        </h1>
+        <p
+          class="header-subtitle"
+        >
+          Gateway to the West - history and innovation along the Mississippi River.
+        </p>
+        <button
+          aria-label="Scroll to introduction"
+          class="scroll-cue"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="28"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="28"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

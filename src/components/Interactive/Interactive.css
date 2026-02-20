@@ -7,14 +7,11 @@
 {
     padding-block: clamp(5rem, 8vw, 7rem);
     padding-inline: var(--pad-x);
-    text-align: center;
-
     background: var(--color-bg);
     position: relative;
-    isolation: isolate;
 }
 
-/* Ambient Glow Behind Section Styles. */
+/* Interactive Simple Ambient Glow Styles. */
 .interactive::before
 {
     content: "";
@@ -22,8 +19,8 @@
     inset: 0;
 
     background: radial-gradient(
-        circle at 50% 25%,
-        rgba(255, 223, 0, 0.05),
+        circle at 50% 20%,
+        rgba(255, 223, 0, 0.04),
         transparent 75%
     );
 
@@ -34,24 +31,27 @@
 /* Interactive Container Styles. */
 .interactive-container
 {
-    max-width: 700px;
+    max-width: 720px;
     margin-inline: auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.8rem;
+    gap: 2.4rem;
+    text-align: center;
 }
+
+/* Interactive Header Wrapper Styles. */
+.interactive-header { display: flex; flex-direction: column; gap: 0.8rem; }
 
 /* Section Heading Styles. */
 .interactive-title
 {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 4.5vw, 3rem);
+    font-size: clamp(2.2rem, 4.2vw, 2.8rem);
     text-transform: uppercase;
     letter-spacing: 0.035em;
     line-height: 1.2;
-    margin-bottom: 0.5rem;
 
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
@@ -61,13 +61,10 @@
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
-    line-height: 1.75;
-
+    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    line-height: 1.7;
     color: var(--color-text-muted);
-    max-width: 540px;
-    margin-bottom: 1rem;
-    opacity: 0.92;
+    max-width: 520px;
 }
 
 /* The Button Styles. */
@@ -81,47 +78,51 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
 
-    padding: 1rem 2.5rem;
+    padding: 0.9rem 2.2rem;
     border-radius: 999px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform var(--transition),
+                box-shadow var(--transition),
+                background var(--transition);
 }
 
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
     background: linear-gradient(135deg, var(--color-accent) 40%, var(--color-primary) 100%);
 }
 
 /* Fact Card Styles. */
 .interactive-fact
 {
-    margin-top: 3rem;
-    padding: 2rem;
+    width: 100%;
+    padding: 1.8rem;
 
     background: var(--color-bg-alt);
     border-radius: var(--radius);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--stl-border);
     box-shadow: var(--shadow-soft);
-    max-width: 100%;
-    text-align: left;
 
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: left;
+
+    transition: transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
 }
 
 .interactive-fact:hover
 {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
     border-color: var(--color-accent);
 }
 
@@ -129,28 +130,23 @@
 .interactive-fact .fact-title
 {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
-    margin-bottom: 0.4rem;
-
+    font-size: 1.12rem;
     color: var(--color-accent);
 }
 
 /* Fact Description Body Styles. */
 .interactive-fact .fact-description
 {
-    font-size: 1rem;
-    line-height: 1.75;
-
+    font-size: 0.98rem;
+    line-height: 1.7;
     color: var(--color-text-muted);
-    opacity: 0.9;
 }
 
-/* Media Query Styles. */
+/* Interactive Media Query Styles. */
 @media (max-width: 768px)
 {
     .interactive-container { gap: 2rem; }
-    .interactive-title { font-size: clamp(1.8rem, 6vw, 2.6rem); }
-    .interactive-subtitle { font-size: 0.95rem; max-width: 90%; }
-    .interactive-button { font-size: 0.88rem; padding: 0.85rem 2rem; }
-    .interactive-fact { padding: 1.6rem; }
+    .interactive-title { font-size: clamp(2rem, 6vw, 2.4rem); }
+    .interactive-button { font-size: 0.85rem; padding: 0.8rem 2rem; }
+    .interactive-fact { padding: 1.5rem; }
 }

@@ -1,6 +1,6 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 5 January 2026
+//Date: 20 February 2026
 //Description: This file contains the facts list component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -13,19 +13,21 @@ function FunFactsList({ facts = defaultFacts })
   return (
     <section id="facts" className="fun-facts" role="region" aria-labelledby="facts-heading">
       <div className="facts-inner" data-testid="facts-container">
-        <h2 id="facts-heading" className="fun-facts-heading">
-            Fascinating Facts About{" "}
-            <span className="highlight">Saint&nbsp;Louis</span>
-        </h2>
+        <header className="facts-header">
+          <h2 id="facts-heading" className="fun-facts-heading">
+              Fascinating Facts About{" "}
+              <span className="highlight">Saint&nbsp;Louis</span>
+          </h2>
+        </header>
 
         <ul className="fact-list">
           {facts.map((fact, index) => (
             <motion.li
               key={index}
               className="fact-item"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+              transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
               viewport={{ once: true, margin: "-64px" }}
             >
               <h3 className="fact-title">{fact.title}</h3>
@@ -33,18 +35,20 @@ function FunFactsList({ facts = defaultFacts })
               {fact.sources?.length > 0 && (
                 <div className="fact-sources">
                   <span className="sources-label">Sources</span>
-                  {fact.sources.map((source, sourceIndex) => (
-                    <a
-                      key={sourceIndex}
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="source-link"
-                    >
-                      {source.name}
-                    </a>
-                  ))}
+                  <div className="sources-links">
+                    {fact.sources.map((source, sourceIndex) => (
+                      <a
+                        key={sourceIndex}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="source-link"
+                      >
+                        {source.name}
+                      </a>
+                    ))}
                 </div>
+              </div>
               )}
             </motion.li>
           ))}

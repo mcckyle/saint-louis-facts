@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 15 January 2026
+//Date: 20 February 2026
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -20,20 +20,22 @@ export default function Interactive()
     return (
       <section id="interactive" className="interactive" role="region" aria-labelledby="interactive-title">
         <div className="interactive-container">
-          <motion.h2
-            id="interactive-title"
-            className="interactive-title"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            A Moment of <span className="highlight">Discovery</span>
-          </motion.h2>
+          <header className="interactive-header">
+            <motion.h2
+              id="interactive-title"
+              className="interactive-title"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-64px" }}
+            >
+              A Moment of <span className="highlight">Discovery</span>
+            </motion.h2>
 
-          <p className="interactive-subtitle">
-            Uncover a surprising detail from the history and culture of Saint&nbsp;Louis.
-          </p>
+            <p className="interactive-subtitle">
+              Uncover a surprising detail from the history and culture of Saint&nbsp;Louis.
+            </p>
+          </header>
 
           <motion.button
             type="button"
@@ -42,7 +44,7 @@ export default function Interactive()
             aria-label="Reveal a random fact about Saint Louis."
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.18 }}
           >
               Show Me a Fact
           </motion.button>
@@ -53,10 +55,10 @@ export default function Interactive()
                 key={randomFact.title}
                 className="interactive-fact"
                 aria-live="polite"
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <h3 className="fact-title">{randomFact.title}</h3>
                 <p className="fact-description">{randomFact.description}</p>

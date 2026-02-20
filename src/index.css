@@ -30,9 +30,12 @@ body
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
     transition: background-color 0.4s ease, color 0.4s ease;
 }
+/* Media Elements Styles. */
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
 
 /* ====================================
    Global Links Styles.
@@ -46,13 +49,8 @@ a
 
     transition: color var(--transition), border-color var(--transition);
 }
-
 a:hover,
-a:focus-visible
-{
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-}
+a:focus-visible { color: var(--color-accent); border-color: var(--color-accent); }
 
 /* ====================================
    Global Paragraphs Styles.
