@@ -42,7 +42,7 @@
     animation: fadeInUp 0.9s ease forwards;
 }
 /* Header Grouping Styles. */
-.intro-header { display: flex; flex-direction: column; gap: 1.4rem; }
+.intro-header { display: flex; flex-direction: column; gap: 1.4rem; text-align: center; }
 
 /* Intro Main Title Styles. */
 .intro-title
