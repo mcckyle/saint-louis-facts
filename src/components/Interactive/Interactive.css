@@ -5,10 +5,10 @@
  ==================================== */
 .interactive
 {
-    padding-block: clamp(5rem, 8vw, 7rem);
+    position: relative;
+    padding-block: var(--space-3);
     padding-inline: var(--pad-x);
     background: var(--color-bg);
-    position: relative;
 }
 
 /* Interactive Simple Ambient Glow Styles. */
@@ -19,13 +19,12 @@
     inset: 0;
 
     background: radial-gradient(
-        circle at 50% 20%,
-        rgba(255, 223, 0, 0.04),
+        420px circle at 50% 20%,
+        rgba(255, 210, 0, 0.04),
         transparent 75%
     );
 
     pointer-events: none;
-    z-index: -1;
 }
 
 /* Interactive Container Styles. */
@@ -37,21 +36,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.4rem;
+    gap: var(--space-2);
     text-align: center;
 }
 
 /* Interactive Header Wrapper Styles. */
-.interactive-header { display: flex; flex-direction: column; gap: 0.8rem; }
+.interactive-header { display: flex; flex-direction: column; gap: 0.7rem; }
 
 /* Section Heading Styles. */
 .interactive-title
 {
-    font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 4.2vw, 2.8rem);
+    font-size: clamp(2.2rem, 4vw, 2.6rem);
     text-transform: uppercase;
     letter-spacing: 0.035em;
-    line-height: 1.2;
 
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
@@ -61,47 +58,43 @@
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
     line-height: 1.7;
-    color: var(--color-text-muted);
     max-width: 520px;
+    color: var(--color-text-muted);
 }
 
 /* The Button Styles. */
 .interactive-button
 {
-    background: linear-gradient(135deg, var(--color-primary) 40%, var(--color-accent) 100%);
-    color: var(--color-inverse);
-
     font-family: var(--font-heading);
-    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-
-    padding: 0.9rem 2.2rem;
+    padding: 0.85rem 2.2rem;
     border-radius: 999px;
     border: none;
     cursor: pointer;
+    color: var(--color-inverse);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 
     transition: transform var(--transition),
                 box-shadow var(--transition),
                 background var(--transition);
 }
-
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
     transform: translateY(-3px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, var(--color-accent) 40%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
 }
 
 /* Fact Card Styles. */
 .interactive-fact
 {
     width: 100%;
-    padding: 1.8rem;
+    padding: 1.7rem;
 
     background: var(--color-bg-alt);
     border-radius: var(--radius);
@@ -110,27 +103,19 @@
 
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-
+    gap: 0.8rem;
     text-align: left;
-
-    transition: transform var(--transition),
-                box-shadow var(--transition),
-                border-color var(--transition);
 }
-
 .interactive-fact:hover
 {
     transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
     border-color: var(--color-accent);
 }
 
 /* Fact Title Styles. */
 .interactive-fact .fact-title
 {
-    font-family: var(--font-heading);
-    font-size: 1.12rem;
+    font-size: 1.1rem;
     color: var(--color-accent);
 }
 
@@ -145,8 +130,8 @@
 /* Interactive Media Query Styles. */
 @media (max-width: 768px)
 {
-    .interactive-container { gap: 2rem; }
+/*    .interactive-container { gap: 2rem; }
     .interactive-title { font-size: clamp(2rem, 6vw, 2.4rem); }
     .interactive-button { font-size: 0.85rem; padding: 0.8rem 2rem; }
-    .interactive-fact { padding: 1.5rem; }
+    .interactive-fact { padding: 1.5rem; }*/
 }

@@ -1,21 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Header Component Header matches snapshot 1`] = `
 <DocumentFragment>
   <header
     class="header"
   >
-    <img
-      alt=""
-      aria-hidden="true"
-      class="header-image"
-      decoding="async"
-      loading="eager"
-      src="test-file-stub"
-    />
     <div
-      class="header-overlay"
-    />
+      class="header-hero"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        class="header-image"
+        decoding="async"
+        loading="eager"
+        src="test-file-stub"
+      />
+      <div
+        class="header-overlay"
+      />
+    </div>
     <div
       class="header-inner"
     >

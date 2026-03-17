@@ -1,19 +1,19 @@
 /* Filename: src/components/Header/Header.css */
 
 /* ====================================
-   Header Section Styles.
+   Header Hero Layout Styles.
 ======================================= */
 .header
 {
     position: relative;
-    min-height: 100vh;
+    min-height: 100svh;
     display: grid;
     place-items: center;
     overflow: hidden;
-
-    background: var(--color-bg);
     color: var(--color-inverse);
 }
+/* Header Hero Layer Container Styles. */
+.header-hero { position: absolute; inset: 0; z-index: 0; }
 
 /* ====================================
    Header Full-Screen Background Image Styles.
@@ -26,9 +26,11 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.06);
-    filter: brightness(42%) contrast(1.08) saturate(1.05);
+    transform: scale(1.05);
+    filter: brightness(0.42) contrast(1.08) saturate(1.05);
     will-change: transform;
+
+    transition: transform 10s ease;
 }
 
 /* ====================================
@@ -41,22 +43,24 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.35) 55%,
-      rgba(0, 0, 0, 0.15) 80%,
-      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.45) 45%,
+      rgba(0, 0, 0, 0.18) 75%,
+      rgba(0, 0, 0, 0.05) 100%
     );
 }
 
 /* ====================================
-   Header Inner Width Container Styles.
+   Header Content Container Styles.
 ======================================= */
 .header-inner
 {
     position: relative;
+    z-index: 1;
+
     width: 100%;
     max-width: var(--content-max);
-    padding: 0 var(--pad-x);
+    padding-inline: var(--pad-x);
     display: grid;
     place-items: center;
 }
@@ -66,40 +70,48 @@
 ======================================= */
 .header-content
 {
-    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
     align-items: center;
+    text-align: center;
+
+    gap: var(--space-2);
     max-width: 720px;
 
-    animation: headerFade 900ms ease-out both;
+    animation: heroFade 900ms ease-out both;
 }
 
-/* Header Main Title Styles. */
+/* ====================================
+   Header Main Title Styles.
+======================================= */
 .header-title
 {
     font-size: clamp(3rem, 7vw, 5rem);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 
     background: linear-gradient(120deg, var(--color-highlight), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Header Subtitle Styles. */
+/* ====================================
+   Header Subtitle Styles.
+======================================= */
 .header-subtitle
 {
     font-size: clamp(1rem, 1.6vw, 1.25rem);
-    line-height: 1.7;
     max-width: 38ch;
+    line-height: 1.7;
+
     color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
 }
 
-/* Header Scroll Cue Button Styles. */
+/* ====================================
+   Header Scroll Cue Button Styles.
+======================================= */
 .scroll-cue
 {
     display: inline-flex;
@@ -116,11 +128,10 @@
     cursor: pointer;
 
     transition: transform var(--transition),
-                color var(--transition),
                 border-color var(--transition),
-                background-color var(--transition);
+                color var(--transition),
+                background var(--transition);
 }
-
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
@@ -133,9 +144,9 @@
 /* ====================================
    Header Animations Styles.
 ======================================= */
-@keyframes headerFade
+@keyframes heroFade
 {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -147,13 +158,14 @@
 
 @media (prefers-reduced-motion: reduce)
 {
+    .header-image { transition: none; }
     .header-content { animation: none; }
 }
 
 /* Header Media Query Styles. */
 @media (max-width: 768px)
 {
-    .header { min-height: 92vh; }
+    .header { min-height: 92svh; }
     .header-title { letter-spacing: 0.04em; }
     .scroll-cue { width: 2.5rem; height: 2.5rem; }
 }

@@ -5,12 +5,12 @@
 ======================================= */
 .footer
 {
-    padding-block: clamp(4rem, 5vw, 5.5rem);
+    position: relative;
+    padding-block: clamp(4rem, 5vw, 5.25rem);
     padding-inline: var(--pad-x);
 
     background: var(--color-bg-alt);
     border-top: 1px solid var(--stl-border);
-    position: relative;
 }
 
 /* Footer Simple Ambient Glow Overlay Styles. */
@@ -21,9 +21,9 @@
     inset: 0;
 
     background: radial-gradient(
-        circle at 50% 10%,
-        rgba(0, 61, 165, 0.025),
-        transparent 75%
+        circle at 50% 0%,
+        rgba(0, 61, 165, 0.03),
+        transparent 70%
     );
 
     pointer-events: none;
@@ -33,25 +33,22 @@
 /* Footer Inner Container Styles. */
 .footer-inner
 {
-    max-width: 900px;
+    max-width: 880px;
     margin-inline: auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2.2rem;
+    gap: clamp(1.8rem, 2.5vw, 2.5rem);
 }
-
-/* Footer Top Group Styles. */
-.footer-top { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
 
 /* Footer Message Styles. */
 .footer-message
 {
     max-width: 640px;
-    font-size: clamp(0.92rem, 1.2vw, 1.02rem);
-    line-height: 1.75;
+    font-size: clamp(0.92rem, 1.15vw, 1rem);
+    line-height: 1.7;
     color: var(--color-text-muted);
 }
 .footer-emphasis { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -69,14 +66,17 @@
     margin: 0;
 }
 
-.footer-link,
-.back-to-top
+.footer-link
 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     font-size: 0.82rem;
     font-weight: 500;
     text-decoration: none;
 
-    padding: 0.45rem 1.1rem;
+    padding: 0.45rem 1rem;
     border-radius: 999px;
 
     border: 1px solid var(--stl-border);
@@ -86,40 +86,28 @@
     transition: transform var(--transition),
                 color var(--transition),
                 border-color var(--transition),
-                background var(--transition);
+                background-color var(--transition);
 }
-
-/* Hover and Focus Effects Styles. */
 .footer-link:hover,
-.footer-link:focus-visible { color: var(--color-accent); border-color: var(--color-accent); transform: translateY(-2px); }
+.footer-link:focus-visible { transform: translateY(-2px); color: var(--color-accent); border-color: var(--color-accent); background: rgba(255, 255, 255, 0.04); }
 
 /* Special Button: Back to Top Styles. */
-.back-to-top { color: var(--color-primary); font-weight: 600; }
-
-.back-to-top:hover,
-.back-to-top:focus-visible
-{
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-}
-.footer-bottom { display: flex; justify-content: center; }
+.footer-top-link { color: var(--color-primary); font-weight: 600; }
 
 /* Footer Meta Line Styles. */
 .footer-meta
 {
-    font-size: 0.74rem;
-    letter-spacing: 0.035em;
-    color: var(--color-text-muted);
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.4rem;
+    align-items: center;
+    gap: 0.35rem;
+
+    font-size: 0.74rem;
+    letter-spacing: 0.03em;
+    color: var(--color-text-muted);
 }
 .footer-brand { font-weight: 600; background: linear-gradient(120deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-/* Highlight Gradient Text Styles. */
 .footer-divider { opacity: 0.5; }
 
 /* Author Signature Styles. */
@@ -128,7 +116,7 @@
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner { gap: 1.8rem; }
-    .footer-message { max-width: 90%; font-size: 0.88rem; }
-    .footer-link, .back-to-top { font-size: 0.78rem; padding: 0.4rem 0.95rem; }
+    .footer-inner { gap: 1.7rem; }
+    .footer-message { max-width: 92%; font-size: 0.9rem; }
+    .footer-link { font-size: 0.78rem; padding: 0.38rem 0.9rem; }
 }

@@ -10,12 +10,13 @@
     --stl-blue: #003DA5; /* Color: Deep River Blue (Mississippi/Missouri). */
     --stl-yellow: #FFD200; /* Color: Fleur-de-lis Yellow. */
     --stl-white: #FFFFFF; /* Color: Crisp White (Flag Waves). */
+
     --stl-ink: #1C1C1C; /* Color: Strong Ink Black For Text. */
     --stl-muted: #5E6A75; /* Color: Muted Gray For Secondary Text. */
     --stl-light: #F7F9FB; /* Color: Light Neutral Background. */
     --stl-border: #E1E5EA; /* Color: Soft Border Color. */
 
-    /* Semantic Token Variables. */
+    /* Semantic Tokens. */
     --color-bg: var(--stl-light);
     --color-bg-alt: var(--stl-white);
     --color-text: var(--stl-ink);
@@ -25,15 +26,15 @@
     --color-highlight: var(--stl-yellow);
     --color-inverse: var(--stl-white);
 
-    /* Fonts and Motion. */
+    /* Fonts. */
     --font-heading: "Playfair Display", serif;
     --font-body: "Lora", serif;
 
+    --content-max: 1100px;
     --radius: 16px;
     --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
 
-    --content-max: 1100px;
-
+    /* Spacing. */
     --pad-x: clamp(1.5rem, 4vw, 3.5rem);
     --pad-y: clamp(4rem, 7vw, 7rem);
 
@@ -50,6 +51,7 @@
     --color-bg-alt: #141A21;
     --color-text: #E8EDF3;
     --color-text-muted: #A9B3BE;
+    --stl-border: #2A3440;
 }
 
 /* ====================================
@@ -60,20 +62,23 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
     background: var(--color-bg);
     overflow-x: hidden;
 }
 
+/* App Main Content Container Styles. */
 .main
 {
-    display: grid;
-    gap: var(--space-3);
-    padding: var(--pad-y) var(--pad-x);
     width: 100%;
     max-width: var(--content-max);
     margin-inline: auto;
 
-    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 95%);
+    display: grid;
+    gap: var(--space-3);
+
+    padding: var(--pad-y) var(--pad-x);
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
 }
 
 /* ====================================
@@ -81,7 +86,7 @@
 ======================================= */
 h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.015em; }
 h1 { font-size: clamp(2.5rem, 5vw, 3.5rem);}
-h2 { font-size: clamp(1.75rem, 4vw, 2.3rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 /* ====================================
@@ -121,8 +126,8 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 {
     *, *::before, *::after
     {
-        animation: none !important;
-        transition: none !important;
         scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 }

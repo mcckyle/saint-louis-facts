@@ -6,10 +6,9 @@
 .intro
 {
     position: relative;
-    padding-block: clamp(5rem, 8vw, 7rem);
+    padding-block: var(--space-3);
     padding-inline: var(--pad-x);
     background: var(--color-bg);
-    overflow: clip;
 }
 
 /* Simple Ambient Glow Styles. */
@@ -20,35 +19,38 @@
     inset: 0;
 
     background: radial-gradient(
-      600px circle at 50% 0%,
-      rgba(255, 223, 0, 0.06),
+      520px circle at 50% 0%,
+      rgba(255, 210, 0, 0.06),
       transparent 70%
     );
 
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 
-/* Intro Inner Layout Styles. */
+/* Intro Content Container Styles. */
 .intro-inner
 {
+    position: relative;
+    z-index: 1;
+
     max-width: 680px;
     margin-inline: auto;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: var(--space-2);
 
     animation: fadeInUp 0.9s ease forwards;
 }
 /* Header Grouping Styles. */
-.intro-header { display: flex; flex-direction: column; gap: 1.4rem; text-align: center; }
+.intro-header { display: flex; flex-direction: column; gap: 1.2rem; }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 5.2vw, 3.2rem);
+    font-size: clamp(2.4rem, 5vw, 3rem);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 1.15;
@@ -63,19 +65,15 @@
 {
     font-size: clamp(1.1rem, 1.5vw, 1.2rem);
     line-height: 1.7;
-
     color: var(--color-text);
-    opacity: 0.95;
 }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    font-size: clamp(1rem, 1.25vw, 1.08rem);
-    line-height: 1.8;
-
+    font-size: clamp(1rem, 1.25vw, 1.05rem);
+    line-height: 1.75;
     color: var(--color-text-muted);
-    opacity: 0.9;
 }
 
 /* Highlighted Words Styles. */
@@ -91,9 +89,9 @@
 /* Intro Media Query Styles. */
 @media (max-width: 768px)
 {
-    .intro { padding-block: 4rem; }
-    .intro-inner { gap: 1.8rem; }
+    .intro { padding-block: clamp(3.5rem, 7vw, 4.5rem); }
+/*    .intro-inner { gap: 1.8rem; }
     .intro-title { font-size: clamp(2rem, 7vw, 2.6rem); }
     .intro-lead { font-size: 1rem; }
-    .intro-body { font-size: 0.95rem; }
+    .intro-body { font-size: 0.95rem; }*/
 }

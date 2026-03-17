@@ -3,28 +3,23 @@
 /* ====================================
     CSS Reset and Base Styles.
 ======================================= */
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
 
+/* ====================================
+   Root Document Styles.
+======================================= */
 html
 {
     font-size: 16px; /* Root font size for rem scaling. */
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body
 {
     min-height: 100vh;
-    margin: 0;
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--color-text);
     background: var(--color-bg);
 
@@ -32,7 +27,7 @@ body
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
 /* Media Elements Styles. */
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
@@ -56,3 +51,4 @@ a:focus-visible { color: var(--color-accent); border-color: var(--color-accent);
    Global Paragraphs Styles.
 ======================================= */
 p { line-height: 1.7; }
+strong { font-weight: 600; }

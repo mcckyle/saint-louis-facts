@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 22 December 2025
+//Date: 16 March 2026
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -39,7 +39,7 @@ describe('Footer Component', () => {
     const backToTopLink = screen.getByRole('link', { name: /back to top/i });
     expect(backToTopLink).toBeInTheDocument();
     expect(backToTopLink).toHaveAttribute('href', '#top');
-    expect(backToTopLink).toHaveClass('back-to-top');
+    expect(backToTopLink).toHaveClass('footer-top-link');
   });
 
   // Test #5:
