@@ -1,7 +1,7 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 20 February 2026
-//Description: This file contains the facts list component for the Saint Louis Facts React project.
+//Date: 23 March 2026
+//Description: This file contains the facts list for the Saint Louis Facts React project.
 
 import React from "react";
 import { motion } from "motion/react";
@@ -11,9 +11,15 @@ import "./FunFactsList.css";
 function FunFactsList({ facts = defaultFacts })
 {
   return (
-    <section id="facts" className="fun-facts" role="region" aria-labelledby="facts-heading">
+    <section
+      id="facts"
+      className="fun-facts"
+      role="region"
+      aria-labelledby="facts-heading"
+    >
       <div className="facts-inner" data-testid="facts-container">
         <header className="facts-header">
+          <p className="facts-eyebrow">Local history and culture</p>
           <h2 id="facts-heading" className="fun-facts-heading">
               Fascinating Facts About{" "}
               <span className="highlight">Saint&nbsp;Louis</span>
@@ -27,11 +33,17 @@ function FunFactsList({ facts = defaultFacts })
               className="fact-item"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
+              transition={{
+                duration: 0.35,
+                delay: index * 0.04,
+                ease: "easeOut",
+              }}
               viewport={{ once: true, margin: "-64px" }}
             >
-              <h3 className="fact-title">{fact.title}</h3>
-              <p className="fact-description">{fact.description}</p>
+              <div className="fact-copy">
+                <h3 className="fact-title">{fact.title}</h3>
+                <p className="fact-description">{fact.description}</p>
+              </div>
               {fact.sources?.length > 0 && (
                 <div className="fact-sources">
                   <span className="sources-label">Sources</span>

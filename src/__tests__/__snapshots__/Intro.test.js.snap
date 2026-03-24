@@ -14,6 +14,11 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
       <header
         class="intro-header"
       >
+        <p
+          class="intro-eyebrow"
+        >
+          An American city with soul
+        </p>
         <h2
           class="intro-title"
           id="intro-heading"

@@ -1,7 +1,7 @@
 /* Filename: src/App.css */
 
 /* ====================================
-    App Root Variables.
+    App Root Design Tokens.
 ======================================= */
 :root
 {
@@ -16,42 +16,58 @@
     --stl-light: #F7F9FB; /* Color: Light Neutral Background. */
     --stl-border: #E1E5EA; /* Color: Soft Border Color. */
 
-    /* Semantic Tokens. */
+    /* Semantic Colors. */
     --color-bg: var(--stl-light);
     --color-bg-alt: var(--stl-white);
+    --color-surface: rgba(255, 255, 255, 0.72);
     --color-text: var(--stl-ink);
     --color-text-muted: var(--stl-muted);
     --color-primary: var(--stl-blue);
     --color-accent: var(--stl-red);
     --color-highlight: var(--stl-yellow);
     --color-inverse: var(--stl-white);
+    --color-border: var(--stl-border);
 
     /* Fonts. */
     --font-heading: "Playfair Display", serif;
     --font-body: "Lora", serif;
 
+    /* Layout. */
     --content-max: 1100px;
+    --content-narrow: 720px;
+
+    /* Radius. */
+    --radius-sm: 12px;
     --radius: 16px;
-    --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --radius-lg: 24px;
+
+    /* Shadows. */
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.1);
 
     /* Spacing. */
-    --pad-x: clamp(1.5rem, 4vw, 3.5rem);
+    --pad-x: clamp(1.25rem, 4vw, 3.5rem);
     --pad-y: clamp(4rem, 7vw, 7rem);
 
-    --space-1: clamp(1rem, 2vw, 1.5rem);
+    --space-1: clamp(0.9rem, 1.5vw, 1.25rem);
     --space-2: clamp(2rem, 4vw, 3rem);
     --space-3: clamp(3.5rem, 6vw, 6rem);
 
+    /* Motion. */
     --transition: 280ms cubic-bezier(0.25, 0.8, 0.4, 1);
 }
 
-/* Dark Mode Tokens. */
-[data-theme="dark"] {
+/* ====================================
+   App Dark Mode Tokens.
+======================================= */
+[data-theme="dark"]
+{
     --color-bg: #0F141A;
     --color-bg-alt: #141A21;
+    --color-surface: rgba(20, 26, 33, 0.82);
     --color-text: #E8EDF3;
     --color-text-muted: #A9B3BE;
-    --stl-border: #2A3440;
+    --color-border: #2A3440;
 }
 
 /* ====================================
@@ -59,35 +75,33 @@
 ======================================= */
 .app
 {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 
-    background: var(--color-bg);
-    overflow-x: hidden;
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    overflow-x: clip;
 }
 
-/* App Main Content Container Styles. */
+/* App Main Content Frame Styles. */
 .main
 {
-    width: 100%;
-    max-width: var(--content-max);
+    width: min(100%, calc(var(--content-max) + (var(--pad-x) * 2)));
     margin-inline: auto;
 
     display: grid;
     gap: var(--space-3);
 
     padding: var(--pad-y) var(--pad-x);
-    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
 }
 
 /* ====================================
    App Headings Styles.
 ======================================= */
-h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.015em; }
+h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.015em; line-height: 1.15; text-wrap: balance; }
 h1 { font-size: clamp(2.5rem, 5vw, 3.5rem);}
 h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
 
 /* ====================================
    App Skip Link Styles.
@@ -96,16 +110,17 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 .skip-link:focus
 {
     position: fixed;
-    left: 1rem;
     top: 1rem;
+    left: 1rem;
 
-    padding: 0.6rem 1rem;
+    padding: 0.65rem 1rem;
     background: var(--color-bg-alt);
     color: var(--color-primary);
 
-    border-radius: var(--radius);
-    border: 1px solid var(--stl-border);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     box-shadow: var(--shadow-soft);
+
     z-index: 1000;
 }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }

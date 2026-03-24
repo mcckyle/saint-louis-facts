@@ -9,9 +9,9 @@
     padding-block: var(--space-3);
     padding-inline: var(--pad-x);
     background: var(--color-bg);
+    overflow: clip;
 }
-
-/* Simple Ambient Glow Styles. */
+/* Intro Simple Ambient Glow Styles. */
 .intro::before
 {
     content: "";
@@ -20,40 +20,49 @@
 
     background: radial-gradient(
       520px circle at 50% 0%,
-      rgba(255, 210, 0, 0.06),
-      transparent 70%
+      rgba(255, 210, 0, 0.05),
+      transparent 72%
     );
 
     pointer-events: none;
-    z-index: 0;
 }
 
-/* Intro Content Container Styles. */
+/* ====================================
+   Intro Content Container Styles.
+======================================= */
 .intro-inner
 {
     position: relative;
-    z-index: 1;
-
-    max-width: 680px;
+    max-width: 720px;
     margin-inline: auto;
-    text-align: center;
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    align-items: center;
+    gap: clamp(1.25rem, 2vw, 1.75rem);
+    text-align: center;
 
     animation: fadeInUp 0.9s ease forwards;
 }
-/* Header Grouping Styles. */
-.intro-header { display: flex; flex-direction: column; gap: 1.2rem; }
+.intro-header { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Intro Eyebrow Styles. */
+.intro-eyebrow
+{
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    font-size: clamp(2.4rem, 5vw, 3rem);
-    letter-spacing: 0.04em;
+    font-size: clamp(2.3rem, 5vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: 0.035em;
     text-transform: uppercase;
-    line-height: 1.15;
 
     background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
@@ -63,16 +72,18 @@
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    font-size: clamp(1.1rem, 1.5vw, 1.2rem);
-    line-height: 1.7;
+    /*max-width: 34ch;*/
+    font-size: clamp(1.08rem, 1.5vw, 1.18rem);
+    line-height: 1.75;
     color: var(--color-text);
 }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    font-size: clamp(1rem, 1.25vw, 1.05rem);
-    line-height: 1.75;
+    max-width: 42ch;
+    font-size: clamp(1rem, 1.2vw, 1.05rem);
+    line-height: 1.8;
     color: var(--color-text-muted);
 }
 
@@ -90,8 +101,5 @@
 @media (max-width: 768px)
 {
     .intro { padding-block: clamp(3.5rem, 7vw, 4.5rem); }
-/*    .intro-inner { gap: 1.8rem; }
-    .intro-title { font-size: clamp(2rem, 7vw, 2.6rem); }
-    .intro-lead { font-size: 1rem; }
-    .intro-body { font-size: 0.95rem; }*/
+    .intro-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; }
 }

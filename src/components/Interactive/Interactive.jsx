@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 20 February 2026
+//Date: 23 March 2026
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -12,15 +12,22 @@ export default function Interactive()
 {
     const [randomFact, setRandomFact] = useState(null);
 
-    const getRandomFact = useCallback(() => {
+    const getRandomFact = useCallback(() =>
+    {
       const randomIndex = Math.floor(Math.random() * facts.length);
       setRandomFact(facts[randomIndex]);
     }, []);
 
     return (
-      <section id="interactive" className="interactive" role="region" aria-labelledby="interactive-title">
+      <section
+        id="interactive"
+        className="interactive"
+        role="region"
+        aria-labelledby="interactive-title"
+      >
         <div className="interactive-container">
           <header className="interactive-header">
+            <p className="interactive-eyebrow">A quieter kind of exploration</p>
             <motion.h2
               id="interactive-title"
               className="interactive-title"
@@ -43,7 +50,7 @@ export default function Interactive()
             onClick={getRandomFact}
             aria-label="Reveal a random fact about Saint Louis."
             whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.97 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.18 }}
           >
               Show Me a Fact
@@ -64,7 +71,7 @@ export default function Interactive()
                 <p className="fact-description">{randomFact.description}</p>
               </motion.article>
             )}
-            </AnimatePresence>
+          </AnimatePresence>
         </div>
       </section>
     );

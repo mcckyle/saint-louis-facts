@@ -10,6 +10,7 @@
     display: grid;
     place-items: center;
     overflow: hidden;
+    isolation: isolate;
     color: var(--color-inverse);
 }
 /* Header Hero Layer Container Styles. */
@@ -26,11 +27,11 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.05);
-    filter: brightness(0.42) contrast(1.08) saturate(1.05);
+    transform: scale(1.04);
+    filter: brightness(0.42) contrast(1.06) saturate(1.02);
     will-change: transform;
 
-    transition: transform 10s ease;
+    transition: transform 8s ease;
 }
 
 /* ====================================
@@ -43,10 +44,10 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.45) 45%,
-      rgba(0, 0, 0, 0.18) 75%,
-      rgba(0, 0, 0, 0.05) 100%
+      rgba(0, 0, 0, 0.76),
+      rgba(0, 0, 0, 0.48) 44%,
+      rgba(0, 0, 0, 0.2) 76%,
+      rgba(0, 0, 0, 0.08) 100%
     );
 }
 
@@ -55,14 +56,8 @@
 ======================================= */
 .header-inner
 {
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-    max-width: var(--content-max);
+    width: min(100%, calc(var(--content-max) + (var(--pad-x) * 2)));
     padding-inline: var(--pad-x);
-    display: grid;
-    place-items: center;
 }
 
 /* ====================================
@@ -70,43 +65,52 @@
 ======================================= */
 .header-content
 {
+    max-width: 760px;
+    margin-inline: auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    gap: var(--space-2);
-    max-width: 720px;
+    gap: clamp(1rem, 2vw, 1.5rem);
 
     animation: heroFade 900ms ease-out both;
 }
 
 /* ====================================
-   Header Main Title Styles.
+   Header Titles Styles.
 ======================================= */
+.header-eyebrow
+{
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+}
+
 .header-title
 {
-    font-size: clamp(3rem, 7vw, 5rem);
-    letter-spacing: 0.06em;
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 5.25rem);
+    line-height: 0.98;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 
-    background: linear-gradient(120deg, var(--color-highlight), var(--color-accent));
+    background: linear-gradient(120deg, var(--color-highlight) 0%, #ffe58a 18%, var(--color-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ====================================
-   Header Subtitle Styles.
-======================================= */
 .header-subtitle
 {
-    font-size: clamp(1rem, 1.6vw, 1.25rem);
-    max-width: 38ch;
-    line-height: 1.7;
+    max-width: 34ch;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.75;
 
-    color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.32);
 }
 
 /* ====================================
@@ -118,27 +122,34 @@
     align-items: center;
     justify-content: center;
 
-    width: 3rem;
-    height: 3rem;
+    width: 3.1rem;
+    height: 3.1rem;
+    margin-top: 0.35rem;
 
-    border-radius: 50%;
-    border: 2px solid var(--color-highlight);
-    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.06);
     color: var(--color-highlight);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     cursor: pointer;
 
     transition: transform var(--transition),
-                border-color var(--transition),
                 color var(--transition),
-                background var(--transition);
+                border-color var(--transition),
+                background-color var(--transition),
+                box-shadow var(--transition);
 }
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(-6px) scale(1.08);
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-3px);
+    color: var(--color-inverse);
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
 }
 
 /* ====================================
@@ -153,7 +164,7 @@
 /* Simple Parallax on Hover-Capable Devices. */
 @media (hover: hover) and (pointer: fine)
 {
-    .header:hover .header-image { transform: scale(1.1); }
+    .header:hover .header-image { transform: scale(1.075); }
 }
 
 @media (prefers-reduced-motion: reduce)
@@ -162,10 +173,13 @@
     .header-content { animation: none; }
 }
 
-/* Header Media Query Styles. */
+/* ====================================
+   Header Media Query Styles.
+======================================= */
 @media (max-width: 768px)
 {
     .header { min-height: 92svh; }
     .header-title { letter-spacing: 0.04em; }
-    .scroll-cue { width: 2.5rem; height: 2.5rem; }
+    .header-eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; }
+    .scroll-cue { width: 2.75rem; height: 2.75rem; }
 }

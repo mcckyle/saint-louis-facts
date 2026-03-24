@@ -5,19 +5,11 @@
 ======================================= */
 * { margin: 0; }
 *, *::before, *::after { box-sizing: border-box; }
-
-/* ====================================
-   Root Document Styles.
-======================================= */
-html
-{
-    font-size: 16px; /* Root font size for rem scaling. */
-    scroll-behavior: smooth;
-}
-
+html { font-size: 16px; scroll-behavior: smooth; }
 body
 {
     min-height: 100vh;
+
     font-family: var(--font-body);
     line-height: 1.65;
     color: var(--color-text);
@@ -26,11 +18,14 @@ body
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-
-    transition: background-color 0.35s ease, color 0.35s ease;
 }
 /* Media Elements Styles. */
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
+img { height: auto; }
+body, button, input, textarea, select { font: inherit; }
+button { color: inherit; }
+p { line-height: 1.7; text-wrap: pretty; }
+strong { font-weight: 600; }
 
 /* ====================================
    Global Links Styles.
@@ -38,17 +33,9 @@ img, picture, video, canvas, svg { display: block; max-width: 100%; }
 a
 {
     color: var(--color-primary);
-    font-weight: 500;
     text-decoration: none;
     border-bottom: 1px solid transparent;
 
     transition: color var(--transition), border-color var(--transition);
 }
-a:hover,
-a:focus-visible { color: var(--color-accent); border-color: var(--color-accent); }
-
-/* ====================================
-   Global Paragraphs Styles.
-======================================= */
-p { line-height: 1.7; }
-strong { font-weight: 600; }
+a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; }

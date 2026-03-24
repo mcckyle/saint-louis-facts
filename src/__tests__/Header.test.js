@@ -1,6 +1,6 @@
 //Filename: Header.test.js
 //Author: Kyle McColgan
-//Date: 20 February 2026
+//Date: 23 March 2026
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Header component.
 
 import React from 'react';
@@ -26,7 +26,7 @@ describe('Header Component', () => {
 
   // Test #3: Check if the description renders.
   test('renders the header description', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - history and innovation along the Mississippi River./i);
+    const descriptionElement = screen.getByText(/History and innovation along the Mississippi River./i);
     expect(descriptionElement).toBeInTheDocument();
   });
 
@@ -38,7 +38,7 @@ describe('Header Component', () => {
 
   // Test #5: Check if the description has the correct class.
   test('description has the correct class', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - history and innovation along the Mississippi River./i);
+    const descriptionElement = screen.getByText(/History and innovation along the Mississippi River./i);
     expect(descriptionElement).toHaveClass('header-subtitle');
   });
 
@@ -68,7 +68,7 @@ describe('Header Component', () => {
 
   // Test #10: Ensure the description has correct text content.
   test('description has correct text content', () => {
-    const descriptionElement = screen.getByText(/Gateway to the West - history and innovation along the Mississippi River./i);
-    expect(descriptionElement.textContent).toBe('Gateway to the West - history and innovation along the Mississippi River.');
+    const descriptionElement = screen.getByText(/History and innovation along the Mississippi River./i);
+    expect(descriptionElement.textContent).toBe('History and innovation along the Mississippi River.');
   });
 });

@@ -6,11 +6,11 @@ exports[`Header Component Header matches snapshot 1`] = `
     class="header"
   >
     <div
+      aria-hidden="true"
       class="header-hero"
     >
       <img
         alt=""
-        aria-hidden="true"
         class="header-image"
         decoding="async"
         loading="eager"
@@ -27,6 +27,11 @@ exports[`Header Component Header matches snapshot 1`] = `
         class="header-content"
         data-testid="header-content"
       >
+        <p
+          class="header-eyebrow"
+        >
+          Gateway to the West
+        </p>
         <h1
           class="header-title"
         >
@@ -35,7 +40,7 @@ exports[`Header Component Header matches snapshot 1`] = `
         <p
           class="header-subtitle"
         >
-          Gateway to the West - history and innovation along the Mississippi River.
+          History and innovation along the Mississippi River.
         </p>
         <button
           aria-label="Scroll to introduction"
@@ -45,13 +50,13 @@ exports[`Header Component Header matches snapshot 1`] = `
           <svg
             aria-hidden="true"
             fill="none"
-            height="28"
+            height="26"
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
             viewBox="0 0 24 24"
-            width="28"
+            width="26"
           >
             <polyline
               points="6 9 12 15 18 9"
