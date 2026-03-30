@@ -3,17 +3,18 @@
 /* ====================================
     CSS Reset and Base Styles.
 ======================================= */
-* { margin: 0; }
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; text-size-adjust: 100%; scroll-behavior: smooth; }
 body
 {
     min-height: 100vh;
+    margin: 0;
 
     font-family: var(--font-body);
     line-height: 1.65;
-    color: var(--color-text);
+    letter-spacing: 0.01em;
     background: var(--color-bg);
+    color: var(--color-text);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -38,4 +39,4 @@ a
 
     transition: color var(--transition), border-color var(--transition);
 }
-a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; }
+a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; opacity: 0.9; }

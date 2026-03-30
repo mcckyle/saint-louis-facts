@@ -19,7 +19,8 @@
     /* Semantic Colors. */
     --color-bg: var(--stl-light);
     --color-bg-alt: var(--stl-white);
-    --color-surface: rgba(255, 255, 255, 0.72);
+    --color-surface: var(--stl-white);
+    --color-surface-muted: rgba(255, 255, 255, 0.6);
     --color-text: var(--stl-ink);
     --color-text-muted: var(--stl-muted);
     --color-primary: var(--stl-blue);
@@ -51,24 +52,13 @@
 
     --space-1: clamp(0.9rem, 1.5vw, 1.25rem);
     --space-2: clamp(2rem, 4vw, 3rem);
-    --space-3: clamp(3.5rem, 6vw, 6rem);
+    --space-3: clamp(3rem, 5vw, 5rem);
 
     /* Motion. */
     --transition: 280ms cubic-bezier(0.25, 0.8, 0.4, 1);
 }
 
-/* ====================================
-   App Dark Mode Tokens.
-======================================= */
-[data-theme="dark"]
-{
-    --color-bg: #0F141A;
-    --color-bg-alt: #141A21;
-    --color-surface: rgba(20, 26, 33, 0.78);
-    --color-text: #E8EDF3;
-    --color-text-muted: #A9B3BE;
-    --color-border: #2A3440;
-}
+
 
 /* ====================================
    App Layout Styles.
@@ -79,7 +69,7 @@
     display: flex;
     flex-direction: column;
 
-    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    background: var(--color-bg);
     overflow-x: clip;
 }
 
@@ -95,13 +85,15 @@
 
     padding: var(--pad-y) var(--pad-x);
 }
+.main > * { max-width: var(--content-max); }
+.main > *:where(p, section, article) { margin-inline: auto; }
 
 /* ====================================
    App Headings Styles.
 ======================================= */
-h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.015em; line-height: 1.15; text-wrap: balance; }
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem);}
-h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.015em; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.15; }
 h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
 
 /* ====================================
@@ -127,11 +119,27 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
 /* ====================================
+   App Dark Mode Media Query Styles.
+======================================= */
+@media (prefers-color-scheme: dark)
+{
+    :root {
+    --color-bg: #0F141A;
+    --color-bg-alt: #141A21;
+    --color-surface: #141A21;
+    --color-surface-muted: rgba(20, 26, 33, 0.6);
+    --color-text: #E8EDF3;
+    --color-text-muted: #A9B3BE;
+    --color-border: #2A3440;
+    }
+}
+
+/* ====================================
    App Animations Styles.
 ======================================= */
 @keyframes fadeInUp
 {
-    from { opacity: 0; transform: translateY(32px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
 }
 

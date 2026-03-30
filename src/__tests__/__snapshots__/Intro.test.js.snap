@@ -6,7 +6,6 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
     aria-labelledby="intro-heading"
     class="intro"
     id="intro"
-    role="region"
   >
     <div
       class="intro-inner"
