@@ -22,8 +22,8 @@ body
 /* Media Elements Styles. */
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
 img { height: auto; }
-body, button, input, textarea, select { font: inherit; }
-button { color: inherit; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: none; }
 p { line-height: 1.7; text-wrap: pretty; }
 strong { font-weight: 600; }
 

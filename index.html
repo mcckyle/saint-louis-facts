@@ -12,10 +12,6 @@
     <meta name="theme-color" content="#003DA5" />
     <meta name="color-scheme" content="light dark" />
 
-    <!-- Icons. -->
-    <link rel="icon" type="image/svg+xml" href="/images/saint-louis-facts-favicon-02032026.svg" />
-    <link rel="apple-touch-icon" href="/images/saint-louis-facts-favicon-02032026.png" />
-
     <!-- Fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +20,10 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&display=swap"
     />
 
+    <!-- Icons. -->
+    <link rel="icon" type="image/svg+xml" href="/images/saint-louis-facts-favicon-02032026.svg" />
+    <link rel="apple-touch-icon" href="/images/saint-louis-facts-favicon-02032026.png" />
+
     <!-- Preload Header Image. -->
     <link
       rel="preload"
@@ -31,6 +31,9 @@
       href="/src/assets/images/gateway-arch-background.jpg"
       fetchpriority="high"
     />
+
+    <!-- Prevent White Flash Before CSS Loads. -->
+    <style>html { background: #000; }</style>
   </head>
 
   <body>
@@ -41,7 +44,7 @@
 
     <noscript>
       <p style="padding: 1rem; font-family: serif;">
-        This website requires JavaScript to display the Saint Louis facts experience.
+        JavaScript enables the full Saint Louis experience.
       </p>
     </noscript>
 

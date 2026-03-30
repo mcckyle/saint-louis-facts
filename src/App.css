@@ -43,7 +43,7 @@
 
     /* Shadows. */
     --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.1);
+    --shadow-lift: 0 20px 44px rgba(0, 0, 0, 0.12);
 
     /* Spacing. */
     --pad-x: clamp(1.25rem, 4vw, 3.5rem);
@@ -64,7 +64,7 @@
 {
     --color-bg: #0F141A;
     --color-bg-alt: #141A21;
-    --color-surface: rgba(20, 26, 33, 0.82);
+    --color-surface: rgba(20, 26, 33, 0.78);
     --color-text: #E8EDF3;
     --color-text-muted: #A9B3BE;
     --color-border: #2A3440;
@@ -86,7 +86,8 @@
 /* App Main Content Frame Styles. */
 .main
 {
-    width: min(100%, calc(var(--content-max) + (var(--pad-x) * 2)));
+    width: 100%;
+    max-width: var(--content-max);
     margin-inline: auto;
 
     display: grid;

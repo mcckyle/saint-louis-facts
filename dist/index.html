@@ -12,10 +12,6 @@
     <meta name="theme-color" content="#003DA5" />
     <meta name="color-scheme" content="light dark" />
 
-    <!-- Icons. -->
-    <link rel="icon" type="image/svg+xml" href="/saint-louis-facts/images/saint-louis-facts-favicon-02032026.svg" />
-    <link rel="apple-touch-icon" href="/images/saint-louis-facts-favicon-02032026.png" />
-
     <!-- Fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +20,10 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&display=swap"
     />
 
+    <!-- Icons. -->
+    <link rel="icon" type="image/svg+xml" href="/saint-louis-facts/images/saint-louis-facts-favicon-02032026.svg" />
+    <link rel="apple-touch-icon" href="/images/saint-louis-facts-favicon-02032026.png" />
+
     <!-- Preload Header Image. -->
     <link
       rel="preload"
@@ -31,8 +31,11 @@
       href="/saint-louis-facts/assets/gateway-arch-background-B_qzuTD9.jpg"
       fetchpriority="high"
     />
-    <script type="module" crossorigin src="/saint-louis-facts/assets/index-CCcIfAH6.js"></script>
-    <link rel="stylesheet" crossorigin href="/saint-louis-facts/assets/index-BlnLq6lP.css">
+
+    <!-- Prevent White Flash Before CSS Loads. -->
+    <style>html { background: #000; }</style>
+    <script type="module" crossorigin src="/saint-louis-facts/assets/index-BkR2CI_r.js"></script>
+    <link rel="stylesheet" crossorigin href="/saint-louis-facts/assets/index-H0U3xfZY.css">
   </head>
 
   <body>
@@ -43,7 +46,7 @@
 
     <noscript>
       <p style="padding: 1rem; font-family: serif;">
-        This website requires JavaScript to display the Saint Louis facts experience.
+        JavaScript enables the full Saint Louis experience.
       </p>
     </noscript>
 
