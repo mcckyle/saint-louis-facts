@@ -4,7 +4,7 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 16px; text-size-adjust: 100%; scroll-behavior: smooth; }
+html { font-size: 16px; text-size-adjust: 100%; scroll-behavior: smooth; background: var(--color-bg); }
 body
 {
     min-height: 100vh;
@@ -24,8 +24,8 @@ body
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
 img { height: auto; }
 button, input, textarea, select { font: inherit; color: inherit; }
-button { background: none; border: none; }
-p { line-height: 1.7; text-wrap: pretty; }
+button { background: none; border: none; cursor: pointer; }
+p { text-wrap: pretty; }
 strong { font-weight: 600; }
 
 /* ====================================
@@ -39,4 +39,4 @@ a
 
     transition: color var(--transition), border-color var(--transition);
 }
-a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; opacity: 0.9; }
+a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; }

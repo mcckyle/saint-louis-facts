@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 30 March 2026
+//Date: 6 April 2026
 //Description: This file contains the header component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -45,6 +45,7 @@ function Header({ scrollTargetRef })
             className="scroll-cue"
             onClick={handleScroll}
             aria-label="Scroll to introduction"
+            aria-controls="intro"
           >
             <svg
               width="26"
@@ -56,6 +57,7 @@ function Header({ scrollTargetRef })
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
+              focusable="false"
             >
               <polyline points="6 9 12 15 18 9" />
             </svg>

@@ -45,6 +45,7 @@ exports[`Header Component Header matches snapshot 1`] = `
           History and innovation along the Mississippi River.
         </p>
         <button
+          aria-controls="intro"
           aria-label="Scroll to introduction"
           class="scroll-cue"
           type="button"
@@ -52,6 +53,7 @@ exports[`Header Component Header matches snapshot 1`] = `
           <svg
             aria-hidden="true"
             fill="none"
+            focusable="false"
             height="26"
             stroke="currentColor"
             stroke-linecap="round"

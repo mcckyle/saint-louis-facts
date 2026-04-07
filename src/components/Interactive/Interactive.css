@@ -14,14 +14,13 @@
 ===================================== */
 .interactive-container
 {
-    position: relative;
     max-width: 760px;
     margin-inline: auto;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1.2rem, 2.2vw, 1.8rem);
+    gap: clamp(1.3rem, 2.4vw, 1.9rem);
     text-align: center;
 }
 
@@ -36,19 +35,20 @@
 
 .interactive-eyebrow
 {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-text-muted);
+    opacity: 0.85;
 }
 
 /* Section Heading Styles. */
 .interactive-title
 {
-    font-size: clamp(2.1rem, 3.8vw, 2.5rem);
-    line-height: 1.15;
-    letter-spacing: 0.03em;
+    font-size: clamp(2rem, 3.6vw, 2.4rem);
+    line-height: 1.12;
+    letter-spacing: 0.025em;
     text-transform: uppercase;
     color: var(--color-text);
 }
@@ -56,7 +56,7 @@
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    max-width: 34ch;
+    max-width: 38ch;
     font-size: clamp(0.98rem, 1.3vw, 1.05rem);
     line-height: 1.75;
     color: var(--color-text-muted);
@@ -81,6 +81,7 @@
     color: var(--color-text);
     background: var(--color-surface);
     box-shadow: var(--shadow-soft);
+    will-change: transform;
 
     transition: transform var(--transition),
                 box-shadow var(--transition),
@@ -91,10 +92,10 @@
 .interactive-button:focus-visible
 {
     transform: translateY(-2px);
-    border-color: var(--color-border);
     background: var(--color-bg-alt);
     box-shadow: var(--shadow-lift);
 }
+.interactive-button:active { transform: translateY(0); box-shadow: var(--shadow-soft); }
 
 /* Fact Card Styles. */
 .interactive-fact
@@ -111,16 +112,17 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
+    will-change: transform;
 
     transition: transform var(--transition),
                 box-shadow var(--transition);
 }
-.interactive-fact:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.interactive-fact:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
 
 /* Fact Title Styles. */
 .interactive-fact .fact-title
 {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     line-height: 1.35;
     color: var(--color-text);
 }
@@ -128,11 +130,15 @@
 /* Fact Description Body Styles. */
 .interactive-fact .fact-description
 {
-    font-size: 0.97rem;
+    font-size: 0.96rem;
     line-height: 1.7;
     color: var(--color-text-muted);
 }
-.highlight { font-weight: 600; color: var(--color-primary); }
+
+@media (prefers-reduced-motion: reduce)
+{
+    .interactive-button, .interactive-fact { transition: none; }
+}
 
 /* Interactive Media Query Styles. */
 @media (max-width: 768px)

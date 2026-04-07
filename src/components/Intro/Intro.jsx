@@ -1,6 +1,6 @@
 //Filename: Intro.jsx
 //Author: Kyle McColgan
-//Date: 30 March 2026
+//Date: 6 April 2026
 //Description: This file contains the intro component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -22,8 +22,10 @@ const Intro = React.forwardRef((props, ref) => (
           </h2>
 
           <p className="intro-lead">
-            Where the Mississippi meets a city shaped by soul and
-            enduring character.
+            <span className="intro-lead-emphasis">
+              Where the Mississippi meets a city shaped by soul
+            </span>{" "}
+            and enduring character.
           </p>
         </header>
 
