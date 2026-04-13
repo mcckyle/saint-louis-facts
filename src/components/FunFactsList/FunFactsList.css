@@ -17,7 +17,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: clamp(2rem, 3vw, 2.75rem);
+    gap: clamp(2rem, 3vw, 2.5rem);
 }
 .facts-header
 {
@@ -25,7 +25,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
 }
 .facts-eyebrow
 {
@@ -34,15 +34,15 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-text-muted);
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 /* Section Heading Styles. */
 .fun-facts-heading
 {
-    font-size: clamp(2rem, 3.6vw, 2.4rem);
+    font-size: clamp(2rem, 3.6vw, 2.35rem);
     line-height: 1.12;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.02em;
 }
 
 /* ====================================
@@ -52,8 +52,8 @@
 {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1.1rem, 1.8vw, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1rem, 1.6vw, 1.35rem);
     padding: 0;
     margin: 0;
 }
@@ -64,39 +64,38 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.4rem;
+    gap: 1.2rem;
 
-    padding: clamp(1.3rem, 2vw, 1.6rem);
+    padding: clamp(1.25rem, 1.8vw, 1.5rem);
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
-    will-change: transform;
 
     transition: transform var(--transition),
-                border-color var(--transition),
                 box-shadow var(--transition);
 }
 .fact-item:hover
 {
-    transform: translateY(-4px);
-    border-color: rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lift);
 }
-.fact-copy { display: flex; flex-direction: column; gap: 0.8rem; }
+.fact-copy { display: flex; flex-direction: column; gap: 0.7rem; }
 
 /* Fact Title Styles. */
 .fact-title
 {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.35;
+    color: var(--color-text);
 }
 
 /* Fact Description Styles. */
 .fact-description
 {
-    font-size: 0.96rem;
+    font-size: 0.95rem;
     line-height: 1.7;
+    color: var(--color-text-muted);
 }
 
 /* Fact Sources Block Styles. */
@@ -104,45 +103,47 @@
 {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
     margin-top: auto; /* Keeps Sources aligned at the bottom of the source card. */
-    padding-top: 0.35rem;
 }
 
 .sources-label
 {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-text-muted);
+    opacity: 0.75;
 }
 
 /* Source Links Row Styles. */
-.sources-links { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.sources-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .source-link
 {
     display: inline-flex;
     align-items: center;
-    min-height: 1.85rem;
-    padding: 0.25rem 0.6rem;
 
-    border: 1px solid var(--color-border);
+    padding: 0.2rem 0.55rem;
+    min-height: 1.8rem;
+
+    border: 1px solid transparent;
     border-radius: 999px;
-    background: transparent;
-    color: var(--color-primary);
-    font-size: 0.68rem;
 
-    transition: color var(--transition),
-                border-color var(--transition),
+    font-size: 0.68rem;
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--color-primary);
+
+    transition: transform var(--transition),
                 background-color var(--transition),
-                transform var(--transition);
+                color var(--transition);
 }
 .source-link:hover,
 .source-link:focus-visible
 {
     transform: translateY(-1px);
-    background: rgba(0, 0, 0, 0.035);
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--color-accent);
 }
 
 @media (prefers-reduced-motion: reduce)
@@ -153,7 +154,7 @@
 /* FunFactsList Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .facts-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; }
-    .fact-item { padding: 1.35rem; gap: 1.25rem; }
-    .fact-description { font-size: 0.95rem; }
+    .facts-eyebrow { font-size: 0.7rem; letter-spacing: 0.16em; }
+    .fact-item { padding: 1.25rem; gap: 1.1rem; }
+    .fact-description { font-size: 0.94rem; }
 }
