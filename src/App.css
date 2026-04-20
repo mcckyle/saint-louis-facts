@@ -64,11 +64,13 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--color-bg);
 }
 
 /* App Main Content Frame Styles. */
 .main
 {
+    width: 100%;
     max-width: var(--content-max);
     margin-inline: auto;
 

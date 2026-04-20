@@ -4,7 +4,7 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; scroll-behavior: smooth; background: var(--color-bg); }
 body
 {
     margin: 0;
@@ -17,6 +17,7 @@ body
     color: var(--color-text);
 
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 /* Media Elements Styles. */

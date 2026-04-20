@@ -17,7 +17,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: clamp(2rem, 3vw, 2.5rem);
+    gap: var(--space-2);
 }
 .facts-header
 {
@@ -25,7 +25,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.65rem;
+    gap: 0.6rem;
 }
 .facts-eyebrow
 {
@@ -40,9 +40,8 @@
 /* Section Heading Styles. */
 .fun-facts-heading
 {
-    font-size: clamp(2rem, 3.6vw, 2.35rem);
+    font-size: clamp(2rem, 3.6vw, 2.3rem);
     line-height: 1.12;
-    letter-spacing: 0.02em;
 }
 
 /* ====================================
@@ -53,7 +52,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: clamp(1rem, 1.6vw, 1.35rem);
+    gap: var(--space-1);
     padding: 0;
     margin: 0;
 }
@@ -64,11 +63,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.2rem;
+    gap: 1.1rem;
 
-    padding: clamp(1.25rem, 1.8vw, 1.5rem);
+    padding: 1.4rem;
     background: var(--color-surface);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
 
@@ -77,17 +76,16 @@
 }
 .fact-item:hover
 {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-lift);
 }
-.fact-copy { display: flex; flex-direction: column; gap: 0.7rem; }
+.fact-copy { display: flex; flex-direction: column; gap: 0.65rem; }
 
 /* Fact Title Styles. */
 .fact-title
 {
     font-size: 1.02rem;
     line-height: 1.35;
-    color: var(--color-text);
 }
 
 /* Fact Description Styles. */
@@ -109,12 +107,12 @@
 
 .sources-label
 {
-    font-size: 0.66rem;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-text-muted);
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 /* Source Links Row Styles. */
@@ -127,11 +125,10 @@
     padding: 0.2rem 0.55rem;
     min-height: 1.8rem;
 
-    border: 1px solid transparent;
     border-radius: 999px;
-
     font-size: 0.68rem;
-    background: rgba(0, 0, 0, 0.03);
+
+    background: var(--color-bg-alt);
     color: var(--color-primary);
 
     transition: transform var(--transition),
@@ -142,7 +139,7 @@
 .source-link:focus-visible
 {
     transform: translateY(-1px);
-    background: rgba(0, 0, 0, 0.06);
+    background: var(--color-surface);
     color: var(--color-accent);
 }
 

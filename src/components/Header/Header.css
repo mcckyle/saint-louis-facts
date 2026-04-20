@@ -27,11 +27,13 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.02) translateZ(0);
-    filter: brightness(0.52);
+    transform: scale(1.02);
+    filter: brightness(0.55);
+
+    will-change: transform;
     backface-visibility: hidden;
 
-    transition: transform 10s ease;
+    transition: transform 12s ease;
 }
 
 /* ====================================
@@ -44,9 +46,9 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.68),
-      rgba(0, 0, 0, 0.38) 55%,
-      rgba(0, 0, 0, 0.1) 100%
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.12) 100%
     );
 }
 
@@ -82,7 +84,7 @@
 ======================================= */
 .header-eyebrow
 {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -92,17 +94,17 @@
 .header-title
 {
     margin: 0;
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 6vw, 4.4rem);
     line-height: 1;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.035em;
     text-transform: uppercase;
     color: var(--color-inverse);
-    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
 }
 
 .header-subtitle
 {
-    max-width: 38ch;
+    max-width: 36ch;
     font-size: clamp(1rem, 1.4vw, 1.1rem);
     line-height: 1.65;
 
@@ -118,8 +120,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 2.9rem;
-    height: 2.9rem;
+    width: 2.75rem;
+    height: 2.75rem;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
@@ -153,7 +155,7 @@
 /* Simple Parallax Hover Effect Media Query (Desktop Only) Styles. */
 @media (hover: hover) and (pointer: fine)
 {
-    .header:hover .header-image { transform: scale(1.04) translateZ(0); }
+    .header:hover .header-image { transform: scale(1.04); }
 }
 
 @media (prefers-reduced-motion: reduce)
@@ -168,6 +170,6 @@
 @media (max-width: 768px)
 {
     .header { min-height: 92svh; }
-    .header-eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; }
-    .scroll-cue { width: 2.6rem; height: 2.6rem; }
+    .header-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; }
+    .scroll-cue { width: 2.5rem; height: 2.5rem; }
 }
