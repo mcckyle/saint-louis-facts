@@ -6,7 +6,7 @@
 .header
 {
     position: relative;
-    min-height: 100svh;
+    min-height: max(44rem, 100svh);
     display: grid;
     place-items: center;
     color: var(--color-inverse);
@@ -28,7 +28,7 @@
     object-fit: cover;
 
     transform: scale(1.02);
-    filter: brightness(0.55);
+    filter: brightness(0.68) saturate(1.05) contrast(1.02);
 
     will-change: transform;
     backface-visibility: hidden;
@@ -46,9 +46,9 @@
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.35) 55%,
-      rgba(0, 0, 0, 0.12) 100%
+      rgba(5, 10, 18, 0.72),
+      rgba(5, 10, 18, 0.46) 48%,
+      rgba(5, 10, 18, 0.16) 100%
     );
 }
 
@@ -67,7 +67,7 @@
 ======================================= */
 .header-content
 {
-    max-width: 680px;
+    max-width: 52rem;
     margin-inline: auto;
 
     display: flex;
@@ -86,7 +86,7 @@
 {
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -94,19 +94,20 @@
 .header-title
 {
     margin: 0;
-    font-size: clamp(3rem, 6vw, 4.4rem);
-    line-height: 1;
-    letter-spacing: 0.035em;
-    text-transform: uppercase;
+    font-size: clamp(3.4rem, 8vw, 5.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+
     color: var(--color-inverse);
-    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 }
 
 .header-subtitle
 {
     max-width: 36ch;
     font-size: clamp(1rem, 1.4vw, 1.1rem);
-    line-height: 1.65;
+    font-weight: 500;
+    line-height: 1.8;
 
     color: rgba(255, 255, 255, 0.88);
 }
@@ -126,8 +127,9 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
 
-    background: transparent;
+    background: rgba(255, 255, 255, 0.04);
     color: var(--color-inverse);
+    backdrop-filter: blur(10px);
 
     transition: transform var(--transition),
                 border-color var(--transition),
@@ -137,7 +139,7 @@
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
     border-color: rgba(255, 255, 255, 0.45);
     background: rgba(255, 255, 255, 0.06);
     box-shadow: var(--shadow-soft);
@@ -169,7 +171,8 @@
 ======================================= */
 @media (max-width: 768px)
 {
-    .header { min-height: 92svh; }
-    .header-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; }
-    .scroll-cue { width: 2.5rem; height: 2.5rem; }
+    .header { min-height: 88svh; }
+    .header-content { gap: 1.25rem; }
+    .header-eyebrow { font-size: 0.72rem; letter-spacing: 0.12em; }
+    .scroll-cue { width: 2.6rem; height: 2.6rem; }
 }

@@ -19,6 +19,7 @@ exports[`Header Component Header matches snapshot 1`] = `
         src="test-file-stub"
       />
       <div
+        aria-hidden="true"
         class="header-overlay"
       />
     </div>

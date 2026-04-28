@@ -5,7 +5,7 @@
 ======================================= */
 .intro
 {
-    padding-block: var(--space-3);
+    padding-block: var(--main-padding);
     padding-inline: var(--pad-x);
 }
 
@@ -14,7 +14,7 @@
 ======================================= */
 .intro-inner
 {
-    max-width: var(--content-narrow);
+    max-width: 46rem;
     margin-inline: auto;
 
     display: flex;
@@ -25,14 +25,14 @@
 
     animation: fadeInUp 600ms ease-out both;
 }
-.intro-header { display: flex; flex-direction: column; gap: 0.6rem; }
+.intro-header { display: flex; flex-direction: column; gap: 0.85rem; }
 
 /* Intro Eyebrow Styles. */
 .intro-eyebrow
 {
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-text-muted);
     opacity: 0.8;
@@ -41,10 +41,9 @@
 /* Intro Main Title Styles. */
 .intro-title
 {
-    font-size: clamp(2rem, 3.8vw, 2.4rem);
-    line-height: 1.12;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
 }
 
 /* Intro Lead Paragraph Styles. */
@@ -52,8 +51,8 @@
 {
     max-width: 42ch;
     margin-inline: auto;
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+    line-height: 1.85;
 }
 .intro-lead-emphasis { font-weight: 500; }
 
@@ -69,9 +68,10 @@
 /* Highlighted Words Styles. */
 .highlight
 {
-    font-weight: 600;
     color: var(--color-primary);
+    font-weight: 600;
 }
+.intro-title .highlight { color: color-mix(in srgb, var(--color-primary) 88%, white); }
 
 @media (prefers-reduced-motion: reduce)
 {

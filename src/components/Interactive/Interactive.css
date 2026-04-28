@@ -5,7 +5,7 @@
  ==================================== */
 .interactive
 {
-    padding-block: var(--space-3);
+    padding-block: var(--main-padding);
     padding-inline: var(--pad-x);
 }
 
@@ -14,7 +14,7 @@
 ===================================== */
 .interactive-container
 {
-    max-width: var(--content-narrow);
+    max-width: 48rem;
     margin-inline: auto;
 
     display: flex;
@@ -53,7 +53,7 @@
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    max-width: 34ch;
+    max-width: 42ch;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--color-text-muted);
@@ -62,31 +62,36 @@
 /* The Button Styles. */
 .interactive-button
 {
-    min-height: 2.9rem;
-    padding: 0.75rem 1.8rem;
+    min-height: 3rem;
+    padding: 0.8rem 1.9rem;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid transparent;
     border-radius: 999px;
 
     font-family: var(--font-heading);
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 
-    background: var(--color-surface);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92),
+        rgba(255, 255, 255, 1)
+    );
     color: var(--color-text);
     box-shadow: var(--shadow-soft);
 
     transition: transform var(--transition),
                 box-shadow var(--transition),
+                border-color var(--transition),
                 background-color var(--transition);
 }
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
-    transform: translateY(-1px);
-    background: var(--color-bg-alt);
+    transform: translateY(-2px) scale(1.01);
+    border-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
     box-shadow: var(--shadow-lift);
 }
 .interactive-button:active { transform: translateY(0); box-shadow: var(--shadow-soft); }
@@ -95,14 +100,18 @@
 .interactive-fact
 {
     width: min(100%, 640px);
-    padding: 1.4rem;
+    padding: clamp(1.5rem, 2vw, 2rem);
 
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
     text-align: left;
 
-    background: var(--color-surface);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 1)
+    );
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -110,8 +119,26 @@
     transition: transform var(--transition),
                 box-shadow var(--transition);
 }
-.interactive-fact:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.interactive-fact:hover { transform: translateY(-2px) scale(1.004); box-shadow: var(--shadow-lift); }
 .interactive-fact .fact-description { color: var(--color-text-muted); }
+
+@media (prefers-color-scheme: dark)
+{
+    .interactive-button {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 61, 165, 0.08),
+            rgba(0, 61, 165, 0.1)
+        );
+    }
+    .interactive-fact {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 61, 165, 0.08),
+            rgba(0, 61, 165, 0.1)
+        );
+    }
+}
 
 @media (prefers-reduced-motion: reduce)
 {

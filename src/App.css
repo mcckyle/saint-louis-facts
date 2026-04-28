@@ -18,8 +18,8 @@
 
     /* Semantic Colors. */
     --color-bg: var(--stl-light);
-    --color-bg-alt: var(--stl-white);
     --color-surface: var(--stl-white);
+    --color-surface-secondary: #FFFFFF;
     --color-text: var(--stl-ink);
     --color-text-muted: var(--stl-muted);
     --color-primary: var(--stl-blue);
@@ -29,31 +29,33 @@
     --color-border: var(--stl-border);
 
     /* Fonts. */
-    --font-heading: "Playfair Display", serif;
-    --font-body: "Lora", serif;
+    --font-heading: "Playfair Display", Georgia, serif;
+    --font-body: "Lora", Georgia, serif;
 
     /* Layout. */
     --content-max: 1100px;
     --content-narrow: 720px;
 
     /* Radius. */
-    --radius-sm: 12px;
-    --radius: 16px;
+    --radius-sm: clamp(10px, 1vw, 12px);
+    --radius: clamp(16px, 2vw, 20px);
+    --radius-lg: clamp(24px, 3vw, 32px);
 
     /* Shadows. */
-    --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.05);
-    --shadow-lift: 0 12px 28px rgba(0, 0, 0, 0.08);
+    --shadow-soft: 0 1px 2px rgba(15, 20, 26, 0.04), 0 8px 24px rgba(15, 20, 26, 0.06);
+    --shadow-lift: 0 4px 10px rgba(15, 20, 26, 0.06), 0 20px 40px rgba(15, 20, 26, 0.12);
 
     /* Spacing. */
     --pad-x: clamp(1.25rem, 4vw, 3.5rem);
     --pad-y: clamp(4rem, 7vw, 7rem);
+    --main-padding: clamp(5rem, 10vw, 8rem);
 
-    --space-1: clamp(1rem, 1.6vw, 1.3rem);
-    --space-2: clamp(2.2rem, 4vw, 3.2rem);
-    --space-3: clamp(3.2rem, 5vw, 5.2rem);
+    --space-1: clamp(1rem, 1.5vw, 1.25rem);
+    --space-2: clamp(2rem, 3vw, 3rem);
+    --space-3: clamp(3rem, 5vw, 5rem);
 
     /* Motion. */
-    --transition: 260ms cubic-bezier(0.25, 0.8, 0.4, 1);
+    --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ====================================
@@ -64,29 +66,35 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: var(--color-bg);
+    background: radial-gradient(
+        circle at top,
+        rgba(0, 61, 165, 0.05),
+        transparent 42%),
+        var(--color-bg);
 }
 
 /* App Main Content Frame Styles. */
 .main
 {
     width: 100%;
-    max-width: var(--content-max);
+    max-width: calc(var(--content-max) + (var(--pad-x) * 2));
     margin-inline: auto;
 
     display: grid;
-    gap: var(--space-3);
+    gap: clamp(4rem, 8vw, 8rem);
 
-    padding: var(--pad-y) var(--pad-x);
+    padding: clamp(4rem, 8vw, 7rem) var(--pad-x);
 }
 
 /* ====================================
    App Headings Styles.
 ======================================= */
-h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.015em; line-height: 1.15; text-wrap: balance; }
+h1, h2, h3 { margin: 0; font-family: var(--font-heading); font-weight: 600; text-wrap: balance; }
+h1, h2 { line-height: 1.02; letter-spacing: -0.03em; }
+h3 { line-height: 1.18; letter-spacing: -0.01em; }
 h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
 h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
-h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
+h3 { font-size: clamp(1.15rem, 2.2vw, 1.4rem); }
 
 /* ====================================
    App Skip Link Styles.
@@ -108,8 +116,8 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
 
     z-index: 1000;
 }
-:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-::selection { background: var(--color-primary); color: var(--color-inverse); }
+:focus-visible { outline: 2px solid color-mix(in srgb, var(--color-primary) 78%, white); outline-offset: 4px; }
+::selection { background: color-mix(in srgb, var(--color-primary) 82%, white); color: var(--color-inverse); }
 
 /* ====================================
    App Dark Mode Media Query Styles.
@@ -118,12 +126,16 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); }
 {
     :root
     {
-        --color-bg: #0F141A;
+        --color-bg: #0A0F14;
         --color-bg-alt: #141A21;
-        --color-surface: #141A21;
+        --color-surface: #121820;
+        --color-surface-secondary: #1B2430;
         --color-text: #E8EDF3;
         --color-text-muted: #A9B3BE;
         --color-border: #2A3440;
+
+        --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.24);
+        --shadow-lift: 0 12px 30px rgba(0, 0, 0, 0.34);
     }
 }
 

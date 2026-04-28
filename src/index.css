@@ -4,28 +4,29 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 16px; scroll-behavior: smooth; background: var(--color-bg); }
+html { font-size: 16px; scroll-behavior: smooth; background: var(--color-bg); scrollbar-gutter: stable; }
 body
 {
     margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
 
     font-family: var(--font-body);
-    line-height: 1.65;
+    line-height: 1.72;
     letter-spacing: 0.01em;
     background: var(--color-bg);
     color: var(--color-text);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
 }
 /* Media Elements Styles. */
-img, picture, video, canvas, svg { display: block; max-width: 100%; }
+img, picture, video, canvas, svg, iframe { display: block; max-width: 100%; }
 img { height: auto; }
 button, input, textarea, select { font: inherit; color: inherit; }
-button { background: none; border: none; cursor: pointer; }
-p { text-wrap: pretty; }
+button { background: none; border: none; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+p { margin: 0; text-wrap: pretty; /* Margin important for spacing purposes. */ }
 strong { font-weight: 600; }
 
 /* ====================================
@@ -34,9 +35,11 @@ strong { font-weight: 600; }
 a
 {
     color: var(--color-primary);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+    text-decoration-color: transparent;
 
-    transition: color var(--transition), border-color var(--transition);
+    transition: color var(--transition), text-decoration-color var(--transition), opacity var(--transition);
 }
-a:hover, a:focus-visible { color: var(--color-accent); border-color: currentColor; }
+a:hover, a:focus-visible { color: var(--color-accent); text-decoration-color: currentColor; }

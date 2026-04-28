@@ -1,6 +1,6 @@
 //Filename: Intro.test.js
 //Author: Kyle McColgan
-//Date: 30 March 2026
+//Date: 27 April 2026
 //Description: This file contains the Jest unit tests for the Saint Louis Facts project Intro section.
 
 import React from 'react';
@@ -21,7 +21,7 @@ describe('Intro Component', () => {
   //Test #2
   test('renders the correct heading', () => {
     const heading = screen.getByRole('heading', { level: 2 });
-    expect(heading).toHaveTextContent(/Welcome to the Heart of Saint Louis/i);
+    expect(heading).toHaveTextContent(/Welcome to the Saint Louisexperience/i);
   });
 
   //Test #3
@@ -68,9 +68,9 @@ describe('Intro Component', () => {
     expect(paragraph).not.toBeEmptyDOMElement();
   });
 
-  //Test #10 - TODO: refactor for aria-labelledby.
-  // test('renders an accessible region with appropriate role', () => {
-  //   const introSection = screen.getByRole('region');
-  //   expect(introSection).toHaveAttribute('role', 'region');
-  // });
+  //Test #10
+  test('Intro matches the snapshot.', () => {
+    const { asFragment } = render(<Intro />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
