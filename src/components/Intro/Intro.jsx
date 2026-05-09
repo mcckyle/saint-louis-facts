@@ -1,6 +1,6 @@
 //Filename: Intro.jsx
 //Author: Kyle McColgan
-//Date: 27 April 2026
+//Date: 9 May 2026
 //Description: This file contains the intro component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -10,16 +10,15 @@ const Intro = React.forwardRef((props, ref) => (
     <section
       id="intro"
       ref={ref}
-      className="intro"
+      className="intro section"
       aria-labelledby="intro-heading"
     >
       <div className="intro-inner">
         <header className="intro-header">
-          <p className="intro-eyebrow">An American city with soul</p>
+          <p className="section-eyebrow">An American city with soul</p>
           <h2 id="intro-heading" className="intro-title">
             Welcome to the
-            <span className="highlight"> Saint&nbsp;Louis</span>
-            <br />
+            <span className="highlight"> Saint&nbsp;Louis </span>
             experience
           </h2>
 

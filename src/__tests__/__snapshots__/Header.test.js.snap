@@ -4,7 +4,6 @@ exports[`Header Component Header matches snapshot 1`] = `
 <DocumentFragment>
   <header
     class="header"
-    role="banner"
   >
     <div
       aria-hidden="true"
@@ -31,7 +30,7 @@ exports[`Header Component Header matches snapshot 1`] = `
         data-testid="header-content"
       >
         <p
-          class="header-eyebrow"
+          class="section-eyebrow header-eyebrow"
         >
           Gateway to the West
         </p>
@@ -48,20 +47,18 @@ exports[`Header Component Header matches snapshot 1`] = `
         </p>
         <button
           aria-controls="intro"
-          aria-label="Scroll to introduction"
+          aria-label="Scroll to the introduction section"
           class="scroll-cue"
           type="button"
         >
           <svg
             aria-hidden="true"
             fill="none"
-            height="24"
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
             viewBox="0 0 24 24"
-            width="24"
           >
             <polyline
               points="6 9 12 15 18 9"

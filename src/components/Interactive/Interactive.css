@@ -3,44 +3,24 @@
 /* ==================================
    Interactive Section Styles.
  ==================================== */
-.interactive
-{
-    padding-block: var(--main-padding);
-    padding-inline: var(--pad-x);
-}
-
-/* ==================================
-   Interactive Container Styles.
-===================================== */
 .interactive-container
 {
     max-width: 48rem;
     margin-inline: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
+    display: grid;
+    place-items: center;
+    gap: var(--space-md);
     text-align: center;
 }
 
 /* Interactive Header Wrapper Styles. */
 .interactive-header
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    place-items: center;
     gap: 0.6rem;
-}
-
-.interactive-eyebrow
-{
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    opacity: 0.8;
+    text-align: center;
 }
 
 /* Section Heading Styles. */
@@ -69,16 +49,12 @@
     border-radius: 999px;
 
     font-family: var(--font-heading);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
 
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.92),
-        rgba(255, 255, 255, 1)
-    );
+    background: var(--surface-raised);
     color: var(--color-text);
     box-shadow: var(--shadow-soft);
 
@@ -90,7 +66,7 @@
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
-    transform: translateY(-2px) scale(1.01);
+    transform: translateY(-2px);
     border-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
     box-shadow: var(--shadow-lift);
 }
@@ -107,11 +83,7 @@
     gap: 0.65rem;
     text-align: left;
 
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.75),
-        rgba(255, 255, 255, 1)
-    );
+    background: var(--surface-raised);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
@@ -122,7 +94,7 @@
 .interactive-fact:hover { transform: translateY(-2px) scale(1.004); box-shadow: var(--shadow-lift); }
 .interactive-fact .fact-description { color: var(--color-text-muted); }
 
-@media (prefers-color-scheme: dark)
+/*@media (prefers-color-scheme: dark)
 {
     .interactive-button {
         background: linear-gradient(
@@ -138,7 +110,7 @@
             rgba(0, 61, 165, 0.1)
         );
     }
-}
+}*/
 
 @media (prefers-reduced-motion: reduce)
 {
@@ -149,6 +121,4 @@
 @media (max-width: 768px)
 {
     .interactive-eyebrow { font-size: 0.7rem; letter-spacing: 0.16em; }
-    .interactive-button { min-height: 2.9rem; font-size: 0.85rem; }
-    .interactive-fact .fact-description { font-size: 0.94rem; }
 }

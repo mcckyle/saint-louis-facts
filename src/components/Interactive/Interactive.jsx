@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 27 April 2026
+//Date: 9 May 2026
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -21,39 +21,30 @@ export default function Interactive()
     return (
       <section
         id="interactive"
-        className="interactive"
+        className="interactive section"
         aria-labelledby="interactive-title"
       >
         <div className="interactive-container">
           <header className="interactive-header">
-            <p className="interactive-eyebrow">A quieter kind of exploration</p>
-            <motion.h2
-              id="interactive-title"
-              className="interactive-title"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
+            <p className="section-eyebrow">A quieter kind of exploration</p>
+            <h2 id="interactive-title" className="interactive-title">
               A Moment of <span className="highlight">Discovery</span>
-            </motion.h2>
+            </h2>
 
             <p className="interactive-subtitle">
               Uncover a surprising detail from the history and culture of Saint&nbsp;Louis.
             </p>
           </header>
 
-          <motion.button
+          <button
             type="button"
             className="interactive-button"
             onClick={getRandomFact}
             aria-label="Reveal a random fact about Saint Louis."
             aria-controls="interactive-result"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.99 }}
-            transition={{ duration: 0.15 }}
           >
               Show Me a Fact
-          </motion.button>
+          </button>
 
           <AnimatePresence mode="wait">
             {randomFact && (
@@ -63,6 +54,7 @@ export default function Interactive()
                 className="interactive-fact"
                 aria-live="polite"
                 aria-atomic="true"
+                role="status"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}

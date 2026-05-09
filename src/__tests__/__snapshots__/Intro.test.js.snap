@@ -4,7 +4,7 @@ exports[`Intro Component Intro matches the snapshot. 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="intro-heading"
-    class="intro"
+    class="intro section"
     id="intro"
   >
     <div
@@ -14,7 +14,7 @@ exports[`Intro Component Intro matches the snapshot. 1`] = `
         class="intro-header"
       >
         <p
-          class="intro-eyebrow"
+          class="section-eyebrow"
         >
           An American city with soul
         </p>
@@ -26,9 +26,8 @@ exports[`Intro Component Intro matches the snapshot. 1`] = `
           <span
             class="highlight"
           >
-             Saint Louis
+             Saint Louis 
           </span>
-          <br />
           experience
         </h2>
         <p
@@ -62,7 +61,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
 <div>
   <section
     aria-labelledby="intro-heading"
-    class="intro"
+    class="intro section"
     id="intro"
   >
     <div
@@ -72,7 +71,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
         class="intro-header"
       >
         <p
-          class="intro-eyebrow"
+          class="section-eyebrow"
         >
           An American city with soul
         </p>
@@ -84,9 +83,8 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
           <span
             class="highlight"
           >
-             Saint Louis
+             Saint Louis 
           </span>
-          <br />
           experience
         </h2>
         <p
