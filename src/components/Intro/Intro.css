@@ -5,7 +5,7 @@
 ======================================= */
 .intro-inner
 {
-    max-width: 42rem;
+    width: min(100%, 42rem);
     margin-inline: auto;
 
     display: grid;
@@ -13,48 +13,51 @@
     gap: var(--space-sm);
     text-align: center;
 }
-.intro-header { display: grid; gap: 0.85rem; }
+.intro-header { display: grid; gap: 1rem; }
+
 /* Intro Main Title Styles. */
 .intro-title
 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    line-height: 1.04;
-    letter-spacing: -0.035em;
+    max-width: 12ch;
+    margin-inline: auto;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
+    max-width: 40ch;
     margin-inline: auto;
-    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
-    line-height: 1.85;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--color-text);
 }
 .intro-lead-emphasis { font-weight: 500; }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    max-width: 38ch;
+    max-width: 36ch;
     font-size: 0.98rem;
-    line-height: 1.75;
+    line-height: 1.8;
     color: var(--color-text-muted);
 }
 
 /* Highlighted Words Styles. */
 .highlight
 {
-    color: var(--color-primary);
+    color: color-mix(in srgb, var(--color-primary) 90%, white);
     font-weight: 600;
 }
 .intro-title .highlight { color: color-mix(in srgb, var(--color-primary) 90%, white); }
 
-@media (prefers-reduced-motion: reduce)
-{
-    .intro-inner { animation: none; }
-}
-
 /* Intro Media Query Styles. */
 @media (max-width: 768px)
 {
-    .intro-eyebrow { letter-spacing: 0.16em; }
+    .intro-inner { gap: var(--space-xs); }
+    .intro-header { gap: 0.85rem; }
+    .intro-title { max-width: 100%; }
+    .intro-body { max-width: 32ch; }
 }

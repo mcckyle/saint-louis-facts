@@ -8,7 +8,7 @@ html { font-size: 16px; scroll-behavior: smooth; background: var(--color-bg); sc
 body
 {
     margin: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
 
     font-family: var(--font-body);
@@ -20,13 +20,15 @@ body
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-kerning: normal;
 }
 /* Media Elements Styles. */
-:where(img, picture, video, canvas, svg, iframe) { display: block; max-width: 100%; }
+:where(img, picture, video, canvas, iframe) { display: block; max-width: 100%; }
+svg { max-width: 100%; }
 img { height: auto; }
 button, input, textarea, select { font: inherit; color: inherit; }
 button { background: none; border: none; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-p { margin: 0; text-wrap: pretty; /* Margin important for spacing purposes. */ }
+p { margin: 0; /* Margin important for spacing purposes. */ }
 strong { font-weight: 600; }
 
 /* ====================================
@@ -39,6 +41,7 @@ a
     text-decoration-thickness: 1px;
     text-underline-offset: 0.16em;
     text-decoration-color: transparent;
+    text-decoration-skip-ink: auto;
 
     transition: color var(--transition), text-decoration-color var(--transition), opacity var(--transition);
 }

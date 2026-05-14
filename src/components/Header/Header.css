@@ -9,9 +9,10 @@
     min-height: max(44rem, 100dvh);
     display: grid;
     place-items: center;
-    color: var(--color-inverse);
+
     overflow: hidden;
     isolation: isolate;
+    color: var(--color-inverse);
 }
 /* Header Hero Layer Container Styles. */
 .header-hero { position: absolute; inset: 0; z-index: 0; }
@@ -27,10 +28,10 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.01);
-    filter: brightness(0.68) saturate(1.05) contrast(1.02);
+    transform: scale(1.015);
+    filter: brightness(0.72) saturate(1.04) contrast(1.01);
 
-    transition: transform 12s ease;
+    transition: transform 14s ease;
 }
 
 /* ====================================
@@ -41,10 +42,15 @@
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
+    background: radial-gradient(
+        circle at top,
+        rgba(255, 255, 255, 0.06),
+        transparent 42%
+    ),
+    linear-gradient(
       180deg,
-      rgba(5, 10, 18, 0.64),
-      rgba(5, 10, 18, 0.42) 48%,
+      rgba(5, 10, 18, 0.62),
+      rgba(5, 10, 18, 0.42) 50%,
       rgba(5, 10, 18, 0.18) 100%
     );
 }
@@ -54,9 +60,11 @@
 ======================================= */
 .header-inner
 {
+    position: relative;
+    z-index: 1;
+
     width: min(100%, var(--content-max));
     padding-inline: var(--pad-x);
-    z-index: 1;
 }
 
 /* ====================================
@@ -64,13 +72,13 @@
 ======================================= */
 .header-content
 {
-    max-width: 52rem;
+    max-width: 46rem;
     margin-inline: auto;
 
     display: grid;
     place-items: center;
     text-align: center;
-    gap: var(--space-sm);
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 /* ====================================
@@ -84,22 +92,22 @@
 .header-title
 {
     margin: 0;
-    font-size: clamp(3.4rem, 8vw, 5.75rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    font-size: clamp(3.5rem, 8vw, 5.9rem);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
 
     color: var(--color-inverse);
-    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .header-subtitle
 {
-    max-width: 36ch;
+    max-width: 40ch;
     font-size: clamp(1rem, 1.4vw, 1.1rem);
     font-weight: 500;
-    line-height: 1.8;
+    line-height: 1.85;
 
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.86);
 }
 
 /* ====================================
@@ -111,15 +119,15 @@
     align-items: center;
     justify-content: center;
 
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.7rem;
+    height: 2.7rem;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.035);
     color: var(--color-inverse);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
     transition: transform var(--transition),
                 border-color var(--transition),
@@ -130,31 +138,21 @@
 .scroll-cue:focus-visible
 {
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.055);
     box-shadow: var(--shadow-soft);
 }
-.scroll-cue svg { width: 1.1rem; height: 1.1rem; }
-
-/* ====================================
-   Header Animations Styles.
-======================================= */
-/*@keyframes heroFade
-{
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}*/
+.scroll-cue svg { width: 1.05rem; height: 1.05rem; }
 
 /* Simple Parallax Hover Effect Media Query (Desktop Only) Styles. */
 @media (hover: hover) and (pointer: fine)
 {
-    .header:hover .header-image { transform: scale(1.025); }
+    .header:hover .header-image { transform: scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
     .header-image { transition: none; }
-    .header-content { animation: none; }
 }
 
 /* ====================================
@@ -163,4 +161,5 @@
 @media (max-width: 768px)
 {
     .header { min-height: 88svh; }
+    .header-content { gap: 1.1rem; }
 }
