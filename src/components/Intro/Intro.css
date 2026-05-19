@@ -3,35 +3,42 @@
 /* ====================================
    Intro Content Container Styles.
 ======================================= */
+.intro { position: relative; }
 .intro-inner
 {
-    width: min(100%, 42rem);
+    width: min(100%, 46rem);
     margin-inline: auto;
 
     display: grid;
-    place-items: center;
-    gap: var(--space-sm);
+    justify-items: center;
+    gap: var(--space-md);
     text-align: center;
 }
-.intro-header { display: grid; gap: 1rem; }
+.intro-header { display: grid; gap: var(--space-sm); }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    max-width: 12ch;
+    max-width: 11ch;
     margin-inline: auto;
-    font-size: clamp(2.4rem, 5vw, 3.4rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+/* Highlighted Words Styles. */
+.highlight
+{
+    color: color-mix(in srgb, var(--color-primary) 88%, white);
+    font-weight: 600;
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    max-width: 40ch;
+    max-width: 38ch;
     margin-inline: auto;
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-    line-height: 1.8;
+    font-size: var(--text-xl);
+    line-height: 1.75;
     color: var(--color-text);
 }
 .intro-lead-emphasis { font-weight: 500; }
@@ -39,25 +46,17 @@
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    max-width: 36ch;
-    font-size: 0.98rem;
-    line-height: 1.8;
+    max-width: 40ch;
+    font-size: var(--text-base);
+    line-height: 1.9;
     color: var(--color-text-muted);
 }
-
-/* Highlighted Words Styles. */
-.highlight
-{
-    color: color-mix(in srgb, var(--color-primary) 90%, white);
-    font-weight: 600;
-}
-.intro-title .highlight { color: color-mix(in srgb, var(--color-primary) 90%, white); }
 
 /* Intro Media Query Styles. */
 @media (max-width: 768px)
 {
-    .intro-inner { gap: var(--space-xs); }
-    .intro-header { gap: 0.85rem; }
-    .intro-title { max-width: 100%; }
-    .intro-body { max-width: 32ch; }
+    .intro-inner { gap: var(--space-sm); }
+    .intro-header { gap: 1rem; }
+    .intro-title { max-width: 100%; font-size: clamp(2.5rem, 12vw, 3.6rem); }
+    .intro-body { max-width: 34ch; }
 }
