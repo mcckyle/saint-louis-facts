@@ -11,7 +11,8 @@
 
     display: grid;
     place-items: center;
-    min-height: max(46rem, 100dvh);
+    min-height: 100dvh;
+    min-height: 100svh;
     color: white;
 }
 
@@ -27,8 +28,8 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.02);
-    filter: brightness(0.68) saturate(1.04) contrast(1.02);
+    transform: scale(1.01);
+    filter: brightness(0.72) saturate(1.02) contrast(1.01);
 
     transition: transform 16s ease;
 }
@@ -43,19 +44,14 @@
 
     background: radial-gradient(
         circle at top,
-        rgba(255, 255, 255, 0.08),
-        transparent 36%
-    ),
-    radial-gradient(
-        circle at bottom,
-        rgba(0, 61, 165, 0.18),
-        transparent 44%
+        rgba(255, 255, 255, 0.06),
+        transparent 34%
     ),
     linear-gradient(
       180deg,
-      rgba(6, 10, 18, 0.72) 0%,
-      rgba(6, 10, 18, 0.48) 48%,
-      rgba(6, 10, 18, 0.22) 100%
+      rgba(6, 10, 18, 0.66) 0%,
+      rgba(6, 10, 18, 0.42) 52%,
+      rgba(6, 10, 18, 0.2) 100%
     );
 }
 
@@ -76,7 +72,7 @@
 ======================================= */
 .header-content
 {
-    max-width: 52rem;
+    max-width: 46rem;
     margin-inline: auto;
 
     display: grid;
@@ -97,11 +93,11 @@
 {
     margin: 0;
     font-size: clamp(4rem, 10vw, 7rem);
-    line-height: 0.92;
+    line-height: 0.95;
     letter-spacing: -0.06em;
 
     color: white;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
 .header-subtitle
@@ -109,7 +105,7 @@
     max-width: 38ch;
     font-size: clamp(1rem, 1.3vw, 1.14rem);
     font-weight: 500;
-    line-height: 1.9;
+    line-height: 1.72;
 
     color: rgba(255, 255, 255, 0.88);
     text-wrap: balance;
@@ -132,16 +128,16 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     color: white;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
 
     transition: transform var(--transition),
                 border-color var(--transition),
                 background var(--transition),
                 box-shadow var(--transition);
 }
-.scroll-cue::before
+/*.scroll-cue::before
 {
     content: "";
     position: absolute;
@@ -151,24 +147,24 @@
     opacity: 0;
 
     transition: opacity var(--transition), transform var(--transition);
-}
+}*/
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
-.scroll-cue:hover::before,
-.scroll-cue:focus-visible::before { opacity: 1; transform: scale(1.04); }
+/*.scroll-cue:hover::before,
+.scroll-cue:focus-visible::before { opacity: 1; transform: scale(1.04); }*/
 .scroll-cue:active { transform: translateY(0); }
 .scroll-cue svg { width: 1rem; height: 1rem; }
 
 /* Simple Parallax Hover Effect Media Query (Desktop Only) Styles. */
 @media (hover: hover) and (pointer: fine)
 {
-    .header:hover .header-image { transform: scale(1.045); }
+    .header:hover .header-image { transform: scale(1.02); }
 }
 
 @media (prefers-reduced-motion: reduce)

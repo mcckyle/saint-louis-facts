@@ -1,6 +1,6 @@
 //Filename: App.jsx
 //Author: Kyle McColgan
-//Date: 14 May 2026
+//Date: 22 May 2026
 //Description: This file contains the App component for the Saint Louis facts project.
 
 import React, { useRef } from "react";
@@ -17,13 +17,13 @@ function App()
   const introRef = useRef(null);
 
   return (
-    <div className="app" data-theme="saint-louis">
+    <div className="app">
       <Header scrollTargetRef={introRef} />
 
       <main
         id="main"
         className="main"
-        aria-labelledby="page-title"
+        aria-labelledby="page-title" //Exists in Header.jsx...
       >
         <Intro ref={introRef} />
         <FunFactsList />

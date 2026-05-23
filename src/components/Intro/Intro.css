@@ -11,10 +11,10 @@
 
     display: grid;
     justify-items: center;
-    gap: var(--space-md);
+    gap: clamp(1.75rem, 4vw, 2.5rem);
     text-align: center;
 }
-.intro-header { display: grid; gap: var(--space-sm); }
+.intro-header { display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
 
 /* Intro Main Title Styles. */
 .intro-title
@@ -22,13 +22,13 @@
     max-width: 11ch;
     margin-inline: auto;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
-    line-height: 0.96;
+    line-height: 1;
     letter-spacing: -0.05em;
 }
 /* Highlighted Words Styles. */
 .highlight
 {
-    color: color-mix(in srgb, var(--color-primary) 88%, white);
+    color: color-mix(in srgb, var(--color-primary) 82%, white);
     font-weight: 600;
 }
 
@@ -38,10 +38,9 @@
     max-width: 38ch;
     margin-inline: auto;
     font-size: var(--text-xl);
-    line-height: 1.75;
+    line-height: 1.68;
     color: var(--color-text);
 }
-.intro-lead-emphasis { font-weight: 500; }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body

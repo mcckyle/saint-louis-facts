@@ -23,6 +23,8 @@
     <meta property="og:url" content="https://mcckyle.github.io/saint-louis-facts/" />
     <meta property="og:image" content="https://mcckyle.github.io/saint-louis-facts/public/images/social-preview.png" />
     <meta property="og:image:alt" content="Saint Louis grayscale skyline." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Twitter Metadata. -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -53,7 +55,7 @@
     />
 
     <!-- Prevent White Flash Before CSS Loads. -->
-    <style>html { background: #0F141A; color-scheme: light dark; }</style>
+    <!--<style>html { background: #0F141A; color-scheme: light dark; }</style>-->
   </head>
 
   <body>
@@ -66,6 +68,11 @@
         </p>
       </div>
     </noscript>
+    <script>
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.style.background = prefersDark ? "#0B1015" : "#F7F9FB";
+      document.documentElement.style.colorScheme = prefersDark ? "dark" : "light";
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -10,13 +10,14 @@ body
     margin: 0;
     min-height: 100dvh;
     overflow-x: hidden;
+    text-wrap: pretty;
 
     background: var(--color-bg);
     color: var(--color-text);
 
     font-family: var(--font-body);
     font-size: var(--text-base);
-    line-height: 1.72;
+    line-height: 1.68;
     letter-spacing: 0.01em;
 
     -webkit-font-smoothing: antialiased;
@@ -26,7 +27,7 @@ body
 }
 /* Media Elements Styles. */
 :where(img, picture, video, canvas, iframe, svg) { display: block; max-width: 100%; }
-img { height: auto; }
+img { height: auto; backface-visibility: hidden; }
 button, input, textarea, select { font: inherit; color: inherit; }
 button { border: none; cursor: pointer; background: transparent; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 p { margin: 0; /* Margin important for spacing purposes. */ }
@@ -43,12 +44,8 @@ a
     text-underline-offset: 0.16em;
     text-decoration-color: transparent;
     text-decoration-skip-ink: auto;
+    -webkit-tap-highlight-color: transparent;
 
     transition: color var(--transition), text-decoration-color var(--transition), opacity var(--transition);
 }
 a:hover, a:focus-visible { color: var(--color-accent); text-decoration-color: currentColor; }
-
-@media (prefers-reduced-motion: reduce)
-{
-    html { scroll-behavior: auto; }
-}

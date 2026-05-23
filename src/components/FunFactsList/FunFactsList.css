@@ -31,7 +31,7 @@
 .fact-list
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     gap: clamp(1rem, 2vw, 1.5rem);
 
     list-style: none;
@@ -49,21 +49,18 @@
     gap: 1.5rem;
     min-height: 100%;
 
-    padding: clamp(1.6rem, 2vw, 2rem);
+    padding: clamp(1.5rem, 2vw, 1.85rem);
     background: var(--color-surface);
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
 
-    transition: transform var(--transition),
-                box-shadow var(--transition),
-                border-color var(--transition),
-                background var(--transition);
+    transition: var(--surface-transition);
 }
 .fact-item::before
 {
-    /* FunFactsList Ambient Accent Styles. */
+    /* FunFactsList Ambient Top Accent Line Styles. */
     content: "";
     position: absolute;
     inset: 0 auto auto 0;
@@ -71,14 +68,14 @@
     height: 1px;
     background: linear-gradient(
         to right,
-        rgba(0, 61, 165, 0.45),
+        rgba(0, 61, 165, 0.24),
         transparent 70%
     );
     opacity: 0.5;
 }
 .fact-item:hover
 {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     background: var(--color-surface-strong);
     border-color: color-mix(in srgb, var(--color-primary) 16%, var(--color-border));
     box-shadow: var(--shadow-lg);
@@ -97,7 +94,7 @@
 .fact-description
 {
     font-size: 0.98rem;
-    line-height: 1.85;
+    line-height: 1.72;
     color: var(--color-text-muted);
 }
 
@@ -132,11 +129,11 @@
     border: 1px solid transparent;
     border-radius: 999px;
 
-    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 5%, transparent);
     color: var(--color-primary);
 
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
 
     transition: transform var(--transition),

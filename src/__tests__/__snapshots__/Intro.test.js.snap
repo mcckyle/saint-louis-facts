@@ -27,25 +27,20 @@ exports[`Intro Component Intro matches the snapshot. 1`] = `
           <span
             class="highlight"
           >
-             Saint Louis 
+            Saint Louis
           </span>
-          experience
+           experience
         </h2>
         <p
           class="intro-lead"
         >
-          <span
-            class="intro-lead-emphasis"
-          >
-            Where the Mississippi meets a city shaped by soul
-          </span>
-           and enduring character.
+          Where the Mississippi meets a city shaped by music, neighborhoods, history, and enduring character.
         </p>
       </header>
       <p
         class="intro-body"
       >
-        From the Gateway Arch to its baseball and barbecue, experience the rhythm of the 
+        From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the 
         <span
           class="highlight"
         >
@@ -85,26 +80,21 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
           <span
             class="highlight"
           >
-             Saint Louis 
+            Saint Louis
           </span>
+           
           experience
         </h2>
         <p
           class="intro-lead"
         >
-          <span
-            class="intro-lead-emphasis"
-          >
-            Where the Mississippi meets a city shaped by soul
-          </span>
-           
-          and enduring character.
+          Where the Mississippi meets a city shaped by music, neighborhoods, history, and enduring character.
         </p>
       </header>
       <p
         class="intro-body"
       >
-        From the Gateway Arch to its baseball and barbecue, experience the rhythm of the
+        From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the
          
         <span
           class="highlight"
