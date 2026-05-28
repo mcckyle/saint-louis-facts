@@ -6,56 +6,56 @@
 .intro { position: relative; }
 .intro-inner
 {
-    width: min(100%, 46rem);
+    width: min(100%, 48rem);
     margin-inline: auto;
 
     display: grid;
     justify-items: center;
-    gap: clamp(1.75rem, 4vw, 2.5rem);
+    gap: clamp(1.75rem, 4vw, 2.75rem);
     text-align: center;
 }
-.intro-header { display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
+.intro-header { display: grid; gap: clamp(1rem, 2vw, 1.4rem); }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    max-width: 11ch;
+    max-width: 10.5ch;
     margin-inline: auto;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+    font-size: clamp(2.9rem, 6vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
 }
 /* Highlighted Words Styles. */
 .highlight
 {
-    color: color-mix(in srgb, var(--color-primary) 82%, white);
+    color: color-mix(in srgb, var(--color-primary) 84%, white);
     font-weight: 600;
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    max-width: 38ch;
+    max-width: 36ch;
     margin-inline: auto;
     font-size: var(--text-xl);
-    line-height: 1.68;
+    line-height: 1.72;
     color: var(--color-text);
 }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    max-width: 40ch;
+    max-width: 42ch;
     font-size: var(--text-base);
     line-height: 1.9;
-    color: var(--color-text-muted);
 }
+.intro-body-muted { color: var(--color-text-muted); }
 
 /* Intro Media Query Styles. */
 @media (max-width: 768px)
 {
     .intro-inner { gap: var(--space-sm); }
     .intro-header { gap: 1rem; }
-    .intro-title { max-width: 100%; font-size: clamp(2.5rem, 12vw, 3.6rem); }
+    .intro-title { max-width: 100%; font-size: clamp(2.5rem, 11vw, 3.8rem); }
     .intro-body { max-width: 34ch; }
 }

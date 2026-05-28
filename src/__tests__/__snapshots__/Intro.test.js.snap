@@ -38,7 +38,7 @@ exports[`Intro Component Intro matches the snapshot. 1`] = `
         </p>
       </header>
       <p
-        class="intro-body"
+        class="intro-body intro-body-muted"
       >
         From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the 
         <span
@@ -92,7 +92,7 @@ exports[`Intro Component renders the intro section with correct structure 1`] = 
         </p>
       </header>
       <p
-        class="intro-body"
+        class="intro-body intro-body-muted"
       >
         From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the
          

@@ -1,6 +1,6 @@
 //Filename: Header.jsx
 //Author: Kyle McColgan
-//Date: 22 May 2026
+//Date: 28 May 2026
 //Description: This file contains the header component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -37,7 +37,7 @@ function Header({ scrollTargetRef })
         <div className="header-content" data-testid="header-content">
           <p className="section-eyebrow header-eyebrow">Gateway to the West</p>
           <h1 id="page-title" className="header-title">Saint&nbsp;Louis</h1>
-          <p className="header-subtitle">
+          <p className="header-subtitle header-copy">
             History and innovation along the Mississippi River.
           </p>
 

@@ -28,10 +28,10 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.01);
+    transform: scale(1.015);
     filter: brightness(0.72) saturate(1.02) contrast(1.01);
 
-    transition: transform 16s ease;
+    transition: transform 18s ease;
 }
 
 /* ====================================
@@ -49,9 +49,21 @@
     ),
     linear-gradient(
       180deg,
-      rgba(6, 10, 18, 0.66) 0%,
-      rgba(6, 10, 18, 0.42) 52%,
-      rgba(6, 10, 18, 0.2) 100%
+      rgba(6, 10, 18, 0.72) 0%,
+      rgba(6, 10, 18, 0.46) 52%,
+      rgba(6, 10, 18, 0.24) 100%
+    );
+}
+.header-overlay::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 72%,
+        rgba(11, 16, 21, 0.42) 100%
     );
 }
 
@@ -72,13 +84,13 @@
 ======================================= */
 .header-content
 {
-    max-width: 46rem;
+    max-width: 48rem;
     margin-inline: auto;
 
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: clamp(1rem, 2vw, 1.6rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 /* ====================================
@@ -86,28 +98,27 @@
 ======================================= */
 .header-eyebrow
 {
-    color: rgba(255, 255, 255, 0.74);
+    color: rgba(255, 255, 255, 0.72);
 }
 
 .header-title
 {
     margin: 0;
-    font-size: clamp(4rem, 10vw, 7rem);
-    line-height: 0.95;
-    letter-spacing: -0.06em;
+    font-size: clamp(4rem, 10vw, 7.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
 
     color: white;
-    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
 }
-
+.header-copy { max-width: 38ch; }
 .header-subtitle
 {
-    max-width: 38ch;
     font-size: clamp(1rem, 1.3vw, 1.14rem);
     font-weight: 500;
-    line-height: 1.72;
+    line-height: 1.74;
 
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.86);
     text-wrap: balance;
 }
 
@@ -128,48 +139,36 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.045);
     color: white;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     transition: transform var(--transition),
                 border-color var(--transition),
                 background var(--transition),
                 box-shadow var(--transition);
 }
-/*.scroll-cue::before
-{
-    content: "";
-    position: absolute;
-    inset: -0.4rem;
-    border-radius: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    opacity: 0;
-
-    transition: opacity var(--transition), transform var(--transition);
-}*/
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
 }
-/*.scroll-cue:hover::before,
-.scroll-cue:focus-visible::before { opacity: 1; transform: scale(1.04); }*/
 .scroll-cue:active { transform: translateY(0); }
 .scroll-cue svg { width: 1rem; height: 1rem; }
 
 /* Simple Parallax Hover Effect Media Query (Desktop Only) Styles. */
 @media (hover: hover) and (pointer: fine)
 {
-    .header:hover .header-image { transform: scale(1.02); }
+    .header:hover .header-image { transform: scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce)
 {
-    .header-image, .scroll-cue, .scroll-cue::before { transition: none; }
+    .header-image, .scroll-cue { transition: none; }
 }
 
 /* ====================================
@@ -178,7 +177,7 @@
 @media (max-width: 768px)
 {
     .header { min-height: 92svh; }
-    .header-content { gap: 1.15rem; }
-    .header-title { font-size: clamp(3.5rem, 16vw, 5rem); }
+    .header-content { gap: 1.1rem; }
+    .header-title { font-size: clamp(3.6rem, 16vw, 5.2rem); }
     .header-subtitle { max-width: 28ch; }
 }
