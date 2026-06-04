@@ -1,6 +1,6 @@
 //Filename: Footer.test.js
 //Author: Kyle McColgan
-//Date: 27 March 2026
+//Date: 4 June 2026
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -75,9 +75,9 @@ describe('Footer Component', () => {
   });
 
   // Test #9: Renders expected number of links.
-  test('renders exactly three links in the footer.', () => {
+  test('renders exactly four links in the footer.', () => {
     const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(3);
+    expect(links).toHaveLength(4);
   });
 
   // Test #10:

@@ -40,7 +40,7 @@ exports[`Header Component Header matches snapshot 1`] = `
           Saint Louis
         </h1>
         <p
-          class="header-subtitle header-copy"
+          class="header-subtitle"
         >
           History and innovation along the Mississippi River.
         </p>

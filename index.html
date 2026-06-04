@@ -52,11 +52,9 @@
       rel="preload"
       as="image"
       href="/src/assets/images/gateway-arch-background.jpg"
+      imagesrcset="/src/assets/images/gateway-arch-background.jpg"
       fetchpriority="high"
     />
-
-    <!-- Prevent White Flash Before CSS Loads. -->
-    <!--<style>html { background: #0F141A; color-scheme: light dark; }</style>-->
   </head>
 
   <body>
@@ -69,11 +67,6 @@
         </p>
       </div>
     </noscript>
-    <script>
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.style.background = prefersDark ? "#0B1015" : "#F7F9FB";
-      document.documentElement.style.colorScheme = prefersDark ? "dark" : "light";
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

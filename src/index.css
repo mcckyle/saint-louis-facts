@@ -17,7 +17,7 @@ body
 
     font-family: var(--font-body);
     font-size: var(--text-base);
-    line-height: 1.68;
+    line-height: 1.72;
     letter-spacing: 0.01em;
 
     -webkit-font-smoothing: antialiased;
@@ -31,7 +31,7 @@ body
 img { height: auto; backface-visibility: hidden; }
 button, input, textarea, select { font: inherit; color: inherit; }
 button { border: none; cursor: pointer; background: transparent; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-p { margin: 0; /* Margin important for spacing purposes. */ }
+p { max-width: 75ch; margin: 0; /* Margin important for spacing purposes. */ }
 strong { font-weight: 600; }
 
 /* ====================================

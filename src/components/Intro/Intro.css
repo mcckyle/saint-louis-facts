@@ -6,7 +6,7 @@
 .intro { position: relative; }
 .intro-inner
 {
-    width: min(100%, 48rem);
+    width: min(100%, 52rem);
     margin-inline: auto;
 
     display: grid;
@@ -14,7 +14,7 @@
     gap: clamp(1.75rem, 4vw, 2.75rem);
     text-align: center;
 }
-.intro-header { display: grid; gap: clamp(1rem, 2vw, 1.4rem); }
+/*.intro-header { display: grid; gap: clamp(1rem, 2vw, 1.4rem); }*/
 
 /* Intro Main Title Styles. */
 .intro-title
@@ -28,14 +28,14 @@
 /* Highlighted Words Styles. */
 .highlight
 {
-    color: color-mix(in srgb, var(--color-primary) 84%, white);
+    color: var(--color-primary);
     font-weight: 600;
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    max-width: 36ch;
+    max-width: var(--measure-copy);
     margin-inline: auto;
     font-size: var(--text-xl);
     line-height: 1.72;
