@@ -1,6 +1,6 @@
 //Filename: Interactive.test.js
 //Author: Kyle McColgan
-//Date: 22 December 2025
+//Date: 11 June 2026
 //Description: This file contains the Jest unit tests for the Saint Louis facts project Interactive section.
 
 import React from 'react';
@@ -53,8 +53,8 @@ describe('Interactive Component', () => {
     expect(displayed).toBe(true);
   });
 
-  //Test #4: The fact container includes the aria-live attribute when visible.
-  test('Fact container includes the aria-live=polite when a fact gets displayed.', async () => {
+  //Test #4: The fact container includes the role=status attribute when visible.
+  test('Fact container includes the role=status when a fact gets displayed.', async () => {
     const button = screen.getByRole("button", {
       name: /Reveal a Random Fact about Saint Louis/i,
     });
@@ -65,7 +65,7 @@ describe('Interactive Component', () => {
     const titleElement = await screen.findByRole("heading", { level: 3 });
     const liveRegion = titleElement.closest(".interactive-fact");
 
-    expect(liveRegion).toHaveAttribute("aria-live", "polite");
+    expect(liveRegion).toHaveAttribute("role", "status");
   });
 
   //Test #5: No facts are visible on initial UI render.

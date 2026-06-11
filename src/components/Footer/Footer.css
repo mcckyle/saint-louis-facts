@@ -11,27 +11,13 @@
     border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
     background: transparent;
 }
-.footer::before
-{
-    /* Footer Ambient Top Glow Styles. */
-    content: "";
-    position: absolute;
-    inset: 0 0 auto;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(0, 61, 165, 0.14),
-        transparent
-    );
-}
 
 /* ====================================
    Footer Inner Layout Styles.
 ======================================= */
 .footer-inner
 {
-    width: min(100%, 48rem);
+    width: min(100%, 52rem);
     margin-inline: auto;
 
     display: grid;
@@ -83,19 +69,17 @@
     background: transparent;
     color: var(--color-text-muted);
 
-    font-size: 0.74rem;
-    font-weight: 500;
+    font-size: 0.78rem;
+    font-weight: 600;
     text-decoration: none;
 
-    transition: transform var(--transition),
-                border-color var(--transition),
+    transition: border-color var(--transition),
                 background-color var(--transition),
                 color var(--transition);
 }
 .footer-link:hover,
 .footer-link:focus-visible
 {
-    transform: translateY(-1px);
     background: color-mix(in srgb, var(--color-primary) 8%, transparent);
     border-color: color-mix(in srgb, var(--color-primary) 16%, var(--color-border));
     color: var(--color-text);
@@ -120,7 +104,7 @@
 }
 .footer-brand { color: var(--color-text); font-weight: 600; }
 .footer-separator { opacity: 0.24; }
-.footer-credit { display: inline-flex; align-items: center; gap: 0.15rem; }
+.footer-credit { display: inline; }
 .footer-author { color: var(--color-text); font-weight: 500; }
 
 @media (prefers-reduced-motion: reduce)

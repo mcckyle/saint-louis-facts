@@ -43,11 +43,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    transform: scale(1.01);
     filter: brightness(0.72) saturate(1.02) contrast(1.01);
-
-    transition: transform 18s ease;
 }
 
 /* ====================================
@@ -58,16 +54,10 @@
     position: absolute;
     inset: 0;
 
-    background: radial-gradient(
-        circle at top,
-        rgba(255, 255, 255, 0.06),
-        transparent 34%
-    ),
-    linear-gradient(
+    background: linear-gradient(
       180deg,
-      rgba(6, 10, 18, 0.72) 0%,
-      rgba(6, 10, 18, 0.46) 52%,
-      rgba(6, 10, 18, 0.24) 78%,
+      rgba(6, 10, 18, 0.68) 0%,
+      rgba(6, 10, 18, 0.42) 50%,
       rgba(11, 16, 21, 0.42) 100%
     );
 }
@@ -80,7 +70,7 @@
     position: relative;
     z-index: 1;
 
-    width: min(100%, calc(var(--content-width) + (var(--page-padding) * 2)));
+    width: min(100%, calc(var(--layout-max-width) + (var(--page-padding) * 2)));
     padding-inline: var(--page-padding);
 }
 
@@ -95,28 +85,23 @@
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: clamp(1rem, 2vw, 1.5rem);
+    gap: clamp(1.25rem, 2vw, 1.75rem);
 }
 
 /* ====================================
    Header Titles Styles.
 ======================================= */
-.header-eyebrow
-{
-    color: rgba(255, 255, 255, 0.72);
-}
-
+.header-eyebrow { color: rgba(255, 255, 255, 0.72); }
 .header-title
 {
     margin: 0;
     font-size: clamp(4rem, 10vw, 7.2rem);
     line-height: 0.92;
-    letter-spacing: -0.065em;
+    letter-spacing: -0.05em;
 
     color: white;
     text-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
 }
-.header-copy { max-width: 38ch; }
 .header-subtitle
 {
     max-width: 38ch;
@@ -145,10 +130,8 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(255, 255, 255, 0.06);
     color: white;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
 
     transition: transform var(--transition),
                 border-color var(--transition),
@@ -158,23 +141,20 @@
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
 }
-.scroll-cue:active { transform: translateY(0); }
 .scroll-cue svg { width: 1.1rem; height: 1.1rem; }
 
 /* Simple Parallax Hover Effect Media Query (Desktop Only) Styles. */
-@media (hover: hover) and (pointer: fine)
+/*@media (hover: hover) and (pointer: fine)
 {
     .header:hover .header-image { transform: scale(1.02); }
-}
+}*/
 
 @media (prefers-reduced-motion: reduce)
 {
-    .header-image, .scroll-cue { transition: none; }
+    .scroll-cue { transition: none; }
 }
 
 /* ====================================

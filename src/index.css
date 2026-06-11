@@ -22,10 +22,10 @@ body
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
     font-kerning: normal;
 }
-#root { isolation: isolate; }
+
 /* Media Elements Styles. */
 :where(img, picture, video, canvas, iframe, svg) { display: block; max-width: 100%; }
 img { height: auto; backface-visibility: hidden; }

@@ -30,7 +30,7 @@ const Intro = React.forwardRef((props, ref) => (
           </p>
         </header>
 
-        <p className="intro-body intro-body-muted">
+        <p className="intro-body">
           From the Gateway Arch to baseball traditions and
           beloved local food, Saint&nbsp;Louis carries the
           spirit of the{" "}

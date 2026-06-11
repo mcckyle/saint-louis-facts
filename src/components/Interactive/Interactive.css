@@ -5,7 +5,7 @@
  ==================================== */
 .interactive-container
 {
-    width: min(100%, 48rem);
+    width: min(100%, 52rem);
     margin-inline: auto;
     grid-template-rows: auto auto minmax(10rem, auto);
 
@@ -49,8 +49,6 @@
     background: var(--color-surface);
     color: var(--color-text);
     box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
 
     font-family: var(--font-heading);
     font-size: 0.78rem;
@@ -66,8 +64,7 @@
 .interactive-button:hover,
 .interactive-button:focus-visible
 {
-    transform: translateY(-1px);
-    background: var(--color-surface-strong);
+    background: var(--color-surface-hover);
     border-color: color-mix(in srgb, var(--color-primary) 16%, var(--color-border));
     box-shadow: var(--shadow-lg);
 }
@@ -83,6 +80,7 @@
     gap: 0.75rem;
     text-align: left;
 }
+.interactive-fact .fact-title { font-size: 1.25rem; }
 .interactive-fact .fact-description { color: var(--color-text-muted); }
 
 @media (prefers-reduced-motion: reduce)
