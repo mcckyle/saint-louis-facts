@@ -1,14 +1,15 @@
-//Filename: Interactive.test.js
+//Filename: Interactive.test.jsx
 //Author: Kyle McColgan
-//Date: 11 June 2026
-//Description: This file contains the Jest unit tests for the Saint Louis facts project Interactive section.
+//Date: 17 June 2026
+//Description: This file contains the Vitest unit tests for the Saint Louis facts project Interactive section.
 
 import React from 'react';
+import { beforeAll, describe, test, expect, vi } from "vitest";
 import { render, screen, fireEvent } from '@testing-library/react';
 import Interactive from '../components/Interactive/Interactive.jsx';
 
 // Mock the data module for testing purposes.
-jest.mock('../data/facts', () => ({
+vi.mock('../data/facts', () => ({
   facts: [
     { title: 'Fact 1', description: 'Description 1' },
     { title: 'Fact 2', description: 'Description 2' },
@@ -96,7 +97,7 @@ describe('Interactive Component', () => {
 
   //Test #7: Each button click reveals a different fact.
   test('Multiple action button clicks display different facts.', async () => {
-    jest.spyOn(Math, "random")
+    vi.spyOn(Math, "random")
       .mockReturnValueOnce(0.0) //First Fact (index 0).
       .mockReturnValueOnce(0.9); //Last Fact (index 2).
 

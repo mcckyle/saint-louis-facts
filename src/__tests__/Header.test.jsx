@@ -1,9 +1,10 @@
-//Filename: Header.test.js
+//Filename: Header.test.jsx
 //Author: Kyle McColgan
-//Date: 23 March 2026
-//Description: This file contains the Jest unit tests for the Saint Louis facts project Header component.
+//Date: 17 June 2026
+//Description: This file contains the Vitest unit tests for the Saint Louis facts project Header component.
 
 import React from 'react';
+import { beforeAll, describe, test, expect, vi } from "vitest";
 import { render, screen } from '@testing-library/react';
 import Header from '../components/Header/Header.jsx';
 

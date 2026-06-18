@@ -1,15 +1,12 @@
-#Date: 11 April 2025
 #File name: ci.yml
+#Date: 17 June 2026
 #Author: Kyle McColgan
-#Description: GitHub Actions workflow file for GitHub Pages deployment of the site.
+#Description: This file contains the GitHub Actions workflow file for GitHub Pages deployment of the Saint Louis Facts React project.
 
-name: CI and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -17,25 +14,24 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v3
       with:
         node-version: '22'
 
-    - name: Install dependencies
+    - name: Install package dependencies
       run: npm install
 
     - name: Run tests
       run: npm test
 
-    - name: Build the site
+    - name: Build the project
       run: npm run build
 
     - name: Deploy to GitHub Pages

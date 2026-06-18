@@ -1,9 +1,10 @@
-//Filename: Footer.test.js
+//Filename: Footer.test.jsx
 //Author: Kyle McColgan
-//Date: 4 June 2026
-//Description: This file contains the Jest unit tests for the Saint Louis facts project Footer section.
+//Date: 17 June 2026
+//Description: This file contains the Vitest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
+import { beforeAll, describe, test, expect, vi } from "vitest";
 import { render, screen } from '@testing-library/react';
 import Footer from '../components/Footer/Footer.jsx';
 

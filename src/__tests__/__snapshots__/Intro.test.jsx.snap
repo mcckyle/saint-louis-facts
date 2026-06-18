@@ -1,0 +1,108 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Intro Component > Intro matches the snapshot. 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="intro-heading"
+    class="intro section"
+    id="intro"
+  >
+    <div
+      class="intro-inner"
+    >
+      <header
+        class="intro-header center-stack"
+      >
+        <p
+          class="section-eyebrow"
+        >
+          An American city with soul
+        </p>
+        <h2
+          class="intro-title"
+          id="intro-heading"
+        >
+          Welcome to the
+          <span
+            class="highlight"
+          >
+             Saint Louis
+          </span>
+           experience
+        </h2>
+        <p
+          class="intro-lead"
+        >
+          Where the Mississippi meets a city shaped by music, neighborhoods, history, and enduring character.
+        </p>
+      </header>
+      <p
+        class="intro-body"
+      >
+        From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the 
+        <span
+          class="highlight"
+        >
+          Gateway to the West
+        </span>
+        .
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Intro Component > renders the intro section with correct structure 1`] = `
+<div>
+  <section
+    aria-labelledby="intro-heading"
+    class="intro section"
+    id="intro"
+  >
+    <div
+      class="intro-inner"
+    >
+      <header
+        class="intro-header center-stack"
+      >
+        <p
+          class="section-eyebrow"
+        >
+          An American city with soul
+        </p>
+        <h2
+          class="intro-title"
+          id="intro-heading"
+        >
+          Welcome to the
+          <span
+            class="highlight"
+          >
+             
+            Saint Louis
+          </span>
+           
+          experience
+        </h2>
+        <p
+          class="intro-lead"
+        >
+          Where the Mississippi meets a city shaped by music, neighborhoods, history, and enduring character.
+        </p>
+      </header>
+      <p
+        class="intro-body"
+      >
+        From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the
+         
+        <span
+          class="highlight"
+        >
+          Gateway to the West
+        </span>
+        .
+      </p>
+    </div>
+  </section>
+</div>
+`;

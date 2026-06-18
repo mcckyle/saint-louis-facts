@@ -52,7 +52,7 @@ Follow these steps to set up and run the project locally:
    http://localhost:5173/saint-louis-facts/
    ```
 
-You will see the landing page with facts about Greater Saint Louis. Click the **Get a Fun Fact** button to display a random fact.
+You will see the landing page with facts about Greater Saint Louis. Click the **Show Me a Fact** button to display a random fact.
 
 ## Project Structure
 
@@ -64,7 +64,7 @@ saint-louis-facts/
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml             # Github actions config.
+│       └── ci.yml             # Github Actions config.
 │
 ├── node_modules/
 │   └── /...                   # Node JS dependencies.
@@ -95,16 +95,18 @@ saint-louis-facts/
 │   │       └── Footer.css
 │   │ 
 │   ├── __mocks__/
+│   │   ├── fileMock.js
 │   │   └── styleMock.js
 │   │
 │   ├── data/
 │   │   └── facts.js
 │   │
 │   ├── __tests__/
-│   │   ├── Footer.test.js
-│   │   ├── Header.test.js
-│   │   ├── Interactive.test.js
-│   │   └── Intro.test.js
+│   │   ├── Header.test.jsx
+│   │   ├── Intro.test.jsx
+│   │   ├── FunFactsList.test.jsx
+│   │   ├── Interactive.test.jsx
+│   │   └── Footer.test.jsxx
 │   │
 │   ├── assets/
 │   │   └── images/
@@ -119,7 +121,7 @@ saint-louis-facts/
 ├── package-lock.json         # Project dependencies
 ├── .gitignore                # Project configuration
 ├── vite.config.js            # Project configuration
-├── babel.config.cjs          # Project configuration
+├── vitest.setup.js          # Project configuration
 ├── eslint.config.js          # Project configuration
 ├── index.html                # Project documentation
 ├── README.md                 # Project documentation

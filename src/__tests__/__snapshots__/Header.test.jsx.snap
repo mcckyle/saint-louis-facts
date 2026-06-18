@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header Component > Header matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      aria-hidden="true"
+      class="header-hero"
+    >
+      <img
+        alt=""
+        class="header-image"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        src="/src/assets/images/gateway-arch-background.jpg"
+      />
+      <div
+        class="header-overlay"
+      />
+    </div>
+    <div
+      class="header-inner"
+    >
+      <div
+        class="header-content"
+        data-testid="header-content"
+      >
+        <p
+          class="section-eyebrow header-eyebrow"
+        >
+          Gateway to the West
+        </p>
+        <h1
+          class="header-title"
+          id="page-title"
+        >
+          Saint Louis
+        </h1>
+        <p
+          class="header-subtitle"
+        >
+          History and innovation along the Mississippi River.
+        </p>
+        <button
+          aria-controls="intro"
+          aria-label="Scroll to the Saint Louis introduction section"
+          class="scroll-cue"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
