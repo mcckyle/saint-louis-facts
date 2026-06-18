@@ -22,11 +22,11 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
           class="intro-title"
           id="intro-heading"
         >
-          Welcome to the
+          Welcome to the 
           <span
             class="highlight"
           >
-             Saint Louis
+            Saint Louis
           </span>
            experience
         </h2>
@@ -75,10 +75,10 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
           id="intro-heading"
         >
           Welcome to the
+           
           <span
             class="highlight"
           >
-             
             Saint Louis
           </span>
            

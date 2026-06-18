@@ -4,49 +4,33 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 16px; scroll-behavior: smooth; scrollbar-gutter: stable both-edges; background: var(--color-bg); color-scheme: light dark; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); color-scheme: light dark; }
 body
 {
     margin: 0;
     min-height: 100dvh;
-    overflow-x: hidden;
-    text-wrap: pretty;
-
-    background: var(--color-bg);
-    color: var(--color-text);
-
     font-family: var(--font-body);
-    font-size: var(--text-base);
-    line-height: 1.72;
-    letter-spacing: 0.01em;
-
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
 }
 
 /* Media Elements Styles. */
-:where(img, picture, video, canvas, iframe, svg) { display: block; max-width: 100%; }
-img { height: auto; backface-visibility: hidden; }
-button, input, textarea, select { font: inherit; color: inherit; }
-button { border: none; cursor: pointer; background: transparent; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+img, svg, video { display: block; max-width: 100%; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
 p { max-width: 75ch; margin: 0; /* Margin important for spacing purposes. */ }
-strong { font-weight: 600; }
 
 /* ====================================
    Global Links Styles.
 ======================================= */
 a
 {
-    color: var(--color-primary);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
-    text-decoration-color: transparent;
-    text-decoration-skip-ink: auto;
-    -webkit-tap-highlight-color: transparent;
+    color: var(--primary);
+    text-decoration: none;
 
-    transition: color var(--transition), text-decoration-color var(--transition), opacity var(--transition);
+    transition: color var(--transition);
 }
-a:hover, a:focus-visible { color: var(--color-accent); text-decoration-color: currentColor; }
+a:hover, a:focus-visible { color: var(--accent); }
+::selection { background: var(--primary); color: white; }

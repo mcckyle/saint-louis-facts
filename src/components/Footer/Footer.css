@@ -6,10 +6,8 @@
 .footer
 {
     position: relative;
-    overflow: hidden;
-    padding: clamp(5rem, 9vw, 7rem) var(--page-padding) clamp(2.5rem, 5vw, 4rem);
-    border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
-    background: transparent;
+    padding: clamp(4rem, 8vw, 7rem) 1.5rem 3rem;
+    border-top: 1px solid rgba(15, 20, 26, 0.08);
 }
 
 /* ====================================
@@ -23,31 +21,21 @@
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: clamp(1.8rem, 3vw, 2.4rem);
+    gap: 2rem;
 }
-.footer-copy { display: grid; gap: 0.75rem; }
-.footer-eyebrow { opacity: 0.84; }
-
-/* Footer Message Styles. */
-.footer-message
-{
-    max-width: 38rem;
-    font-size: clamp(1rem, 1.3vw, 1.08rem);
-    line-height: 1.8;
-    color: var(--color-text-muted);
-    text-wrap: balance;
-}
+.footer-copy { display: grid; gap: 0.8rem; }
+.footer-eyebrow { opacity: 0.8; }
+.footer-message { max-width: 42rem; color: var(--muted); line-height: 1.8; }
 
 /* ====================================
    Footer Navigation Styles.
 ======================================= */
-.footer-nav { width: 100%; }
 .footer-links
 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.65rem;
+    gap: 0.6rem;
 
     list-style: none;
     padding: 0;
@@ -58,30 +46,24 @@
 {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
 
-    min-height: 2.2rem;
-    padding: 0.42rem 0.92rem;
+    min-height: 2.25rem;
+    padding: 0.4rem 0.9rem;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(15, 20, 26, 0.1);
     border-radius: 999px;
+    color: var(--muted);
 
-    background: transparent;
-    color: var(--color-text-muted);
-
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    text-decoration: none;
 
-    transition: border-color var(--transition),
-                background-color var(--transition),
+    transition: background var(--transition),
                 color var(--transition);
 }
 .footer-link:hover,
 .footer-link:focus-visible
 {
-    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
-    border-color: color-mix(in srgb, var(--color-primary) 16%, var(--color-border));
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
     color: var(--color-text);
 }
 
@@ -94,18 +76,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 0.45rem;
 
-    max-width: 42rem;
-    font-size: 0.72rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
+    max-width: 44rem;
+    font-size: 0.75rem;
+    color: var(--muted);
 }
-.footer-brand { color: var(--color-text); font-weight: 600; }
-.footer-separator { opacity: 0.24; }
-.footer-credit { display: inline; }
-.footer-author { color: var(--color-text); font-weight: 500; }
+.footer-brand, .footer-author { color: var(--text); font-weight: 600; }
+.footer-author { text-decoration: none; }
+.footer-separator { opacity: 0.35; }
 
 @media (prefers-reduced-motion: reduce)
 {
@@ -115,7 +94,5 @@
 /* Footer Media Queries Styles. */
 @media (max-width: 768px)
 {
-    .footer-inner { gap: 1.6rem; }
-    .footer-message { max-width: 30ch; }
-    .footer-meta { font-size: 0.68rem; }
+    .footer-meta { font-size: 0.7rem; }
 }
