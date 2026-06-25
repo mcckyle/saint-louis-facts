@@ -20,9 +20,9 @@
     content: "";
     position: absolute;
     inset: auto 0 0;
-    height: 12rem;
-    background: linear-gradient(transparent, var(--bg));
+    height: 10rem;
     pointer-events: none;
+    background: linear-gradient(transparent, var(--bg));
 }
 
 /* ====================================
@@ -49,18 +49,9 @@
     background: linear-gradient(
       180deg,
       rgba(4, 8, 15, 0.72),
-      rgba(4, 8, 15, 0.35) 50%,
+      rgba(4, 8, 15, 0.32) 55%,
       rgba(4, 8, 15, 0.45)
     );
-}
-
-/* ====================================
-   Header Content Container Styles.
-======================================= */
-.header-inner
-{
-    width: min(100%, calc(var(--page-width) + 3rem));
-    padding-inline: 1.5rem;
 }
 
 /* ====================================
@@ -68,19 +59,19 @@
 ======================================= */
 .header-content
 {
-    max-width: 56rem;
-    margin-inline: auto;
+    width: min(100%, var(--page-width));
+    padding-inline: var(--page-padding);
 
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: clamp(1rem, 3vw, 2rem);
+    gap: var(--space-sm);
 }
 
 /* ====================================
    Header Titles Styles.
 ======================================= */
-.header-eyebrow { color: rgba(255, 255, 255, 0.75); }
+.header-eyebrow { color: rgba(255, 255, 255, 0.78); }
 .header-title
 {
     color: white;
@@ -104,13 +95,12 @@
 {
     width: 3.5rem;
     height: 3.5rem;
-    margin-top: 0.5rem;
 
     display: grid;
     place-items: center;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
+    border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.08);
     color: white;
@@ -138,5 +128,4 @@
 @media (max-width: 768px)
 {
     .header { min-height: 92svh; }
-    .header-title { font-size: clamp(3.5rem, 16vw, 5rem); }
 }

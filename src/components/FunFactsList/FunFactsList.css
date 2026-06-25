@@ -1,22 +1,19 @@
 /* Filename: src/components/FunFactsList/FunFactsList.css */
 
 /* ====================================
-   Fun Facts Section Styles.
+   FunFactsList Styles.
 ======================================= */
-.facts-inner
+.fun-facts .section-content
 {
     display: grid;
     gap: clamp(3rem, 7vw, 5rem);
 }
 
-/* ====================================
-   FunFactsList Grid Styles.
-======================================= */
 .fact-list
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
+    gap: var(--space-sm);
 
     list-style: none;
     padding: 0;
@@ -26,11 +23,10 @@
 /* Fact Card Styles. */
 .fact-card
 {
-    min-height: 100%;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    display: grid;
-    gap: 1.5rem;
     position: relative;
+    display: grid;
+    gap: var(--space-sm);
+    padding: clamp(1.5rem, 3vw, 2rem);
     overflow: hidden;
 }
 .fact-card::before
@@ -40,7 +36,7 @@
     inset: 0 0 auto;
     height: 3px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0.7;
+    opacity: 0.65;
 }
 .fact-copy { display: grid; gap: 0.75rem; }
 
@@ -81,23 +77,14 @@
 
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
-
     background: color-mix(in srgb, var(--primary) 8%, transparent);
-    color: var(--primary);
 
     font-size: 0.78rem;
     font-weight: 600;
-    text-decoration: none;
 
-    transition: transform var(--transition),
-                background var(--transition);
+    transition: transform var(--transition);
 }
 .source-link:hover, .source-link:focus-visible { transform: translateY(-2px); }
-
-/*@media (prefers-reduced-motion: reduce)
-{
-    .source-link { transition: none; }
-}*/
 
 /* FunFactsList Media Queries Styles. */
 @media (max-width: 768px)

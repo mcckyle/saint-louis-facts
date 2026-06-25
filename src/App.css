@@ -1,89 +1,19 @@
 /* Filename: src/App.css */
 
 /* ====================================
-    App Root Design Tokens.
-======================================= */
-:root
-{
-    /* Saint Louis Flag Palette. */
-    --stl-red: #D01C1F; /* Color: Vibrant Red (Flag Background). */
-    --stl-blue: #003DA5; /* Color: Deep River Blue (Mississippi/Missouri). */
-    --stl-gold: #FFD200; /* Color: Fleur-de-lis Yellow. */
-
-    /* Semantic Colors. */
-    --bg: #F7F9FB;
-    --surface: rgba(255, 255, 255, 0.72);
-    --surface-solid: #FFFFFF;
-
-    --text: #1C1F24;
-    --muted: #687382;
-
-    --primary: var(--stl-blue);
-    --accent: var(--stl-red);
-
-    /* Fonts. */
-    --font-display: "Playfair Display", Georgia, serif;
-    --font-body: "Lora", Georgia, serif;
-
-    --text-xs: 0.78rem;
-    --text-sm: 0.94rem;
-    --text-base: 1rem;
-    --text-lg: 1.12rem;
-    --text-xl: clamp(1.15rem, 1vw + 1rem, 1.42rem);
-
-    /* Layout. */
-    --layout-max-width: 1200px;
-    --space-2xs: clamp(0.45rem, 0.7vw, 0.7rem);
-    --space-xs: clamp(0.75rem, 1vw, 1rem);
-    --space-sm: clamp(1.1rem, 1.5vw, 1.5rem);
-    --space-md: clamp(2rem, 3vw, 3rem);
-    --space-lg: clamp(3.5rem, 5vw, 5rem);
-    --space-xl: clamp(5rem, 8vw, 8rem);
-
-    --section-padding: clamp(4.5rem, 8vw, 7rem);
-    --page-padding: clamp(1.25rem, 4vw, 3.5rem);
-    --page-width: 1200px;
-    --measure-copy: 38ch;
-
-    /* Radius. */
-    --radius: 24px;
-    --radius-sm: 14px;
-    --radius-md: 22px;
-    --radius-lg: 36px;
-
-    /* Shadows. */
-    --shadow: 0 24px 70px rgba(15, 20, 26, 0.10);
-    --shadow-sm: 0 1px 2px rgba(15, 20, 26, 0.04), 0 10px 24px rgba(15, 20, 26, 0.04);
-    --shadow-lg: 0 10px 30px rgba(15, 20, 26, 0.08), 0 24px 60px rgba(15, 20, 26, 0.10);
-
-    /* Motion. */
-    --ease: 220ms cubic-bezier(0.22, 1, 0.36, 1);
-    --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
-    --surface-transition: transform var(--transition),
-                          box-shadow var(--transition),
-                          border-color var(--transition),
-                          background-color var(--transition);
-}
-
-/* ====================================
    Application Shell Styles.
 ======================================= */
 .app
 {
     min-height: 100dvh;
-    overflow: hidden;
     isolation: isolate;
     color: var(--text);
     background: radial-gradient(
         circle at top,
         rgba(0, 61, 165, 0.10),
-        transparent 42%
+        transparent 45%
     ),
-    linear-gradient(
-        180deg,
-        #ffffff,
-        var(--bg)
-    );
+    var(--bg);
 }
 .app::before
 {
@@ -96,11 +26,6 @@
     background: radial-gradient(
         circle at 15% 20%,
         rgba(208, 28, 31, 0.05),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 85% 0%,
-        rgba(0, 61, 165, 0.08),
         transparent 35%
     );
 }
@@ -109,12 +34,12 @@
 ======================================= */
 .main
 {
-    width: min(100%, calc(var(--page-width) + 3rem));
+    width: min(100%, var(--page-width));
     margin-inline: auto;
 
     display: grid;
-    gap: clamp(4rem, 8vw, 8rem);
-    padding: clamp(4rem, 8vw, 7rem) 1.5rem 6rem;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--page-padding);
 }
 .section { padding-block: var(--section-padding); }
 .section-eyebrow
@@ -128,7 +53,7 @@
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--muted);
     opacity: 0.84;
 }
 .center-stack
@@ -142,11 +67,11 @@
 {
     background: var(--surface);
     border: 1px solid rgba(15, 20, 26, 0.08);
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     backdrop-filter: blur(18px);
 
-    transition: transform var(--ease), box-shadow var(--ease);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 .surface-card:hover { transform: translateY(-4px); }
 
@@ -161,43 +86,20 @@ h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
 /* ====================================
    App Skip Link Styles.
 ======================================= */
-.skip-link { position: fixed; top: 1rem; left: 1rem; transform: translateY(-200%); }
-.skip-link:focus
+.skip-link
 {
-    transform: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    transform: translateY(-200%);
     z-index: 1000;
-
     padding: 0.8rem 1rem;
     background: var(--surface-solid);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     box-shadow: var(--shadow);
 }
+.skip-link:focus { transform: translateY(0); }
 :focus-visible { outline: 3px solid var(--stl-gold); outline-offset: 4px; }
-
-/* ====================================
-   App Dark Mode Media Query Styles.
-======================================= */
-@media (prefers-color-scheme: dark)
-{
-    :root
-    {
-        --bg: #0B1015;
-        --surface: rgba(20, 28, 38, 0.72);
-        --surface-solid: #121A24;
-
-        --text: #E8EDF2;
-        --muted: #AAB5C1;
-    }
-    .app
-    {
-        background: radial-gradient(
-            circle at top,
-            rgba(0, 61, 165, 0.18),
-            transparent 50%
-        ),
-        var(--bg);
-    }
-}
 
 /* ====================================
    App Reduced Motion Styles.

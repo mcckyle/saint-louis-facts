@@ -1,6 +1,6 @@
 //Filename: Footer.test.jsx
 //Author: Kyle McColgan
-//Date: 17 June 2026
+//Date: 24 June 2026
 //Description: This file contains the Vitest unit tests for the Saint Louis facts project Footer section.
 
 import React from 'react';
@@ -56,7 +56,7 @@ describe('Footer Component', () => {
 
   // Test #6:
   test('renders the container div with appropriate class name.', () => {
-    const container = screen.getByText(/enduring spirit/i).closest('.footer-inner');
+    const container = screen.getByText(/enduring spirit/i).closest('.footer-content');
     expect(container).toBeInTheDocument();
   });
 

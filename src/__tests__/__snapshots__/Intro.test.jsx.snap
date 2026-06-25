@@ -8,10 +8,10 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
     id="intro"
   >
     <div
-      class="intro-inner"
+      class="section-content"
     >
       <header
-        class="intro-header center-stack"
+        class="section-header center-stack"
       >
         <p
           class="section-eyebrow"
@@ -60,10 +60,10 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
     id="intro"
   >
     <div
-      class="intro-inner"
+      class="section-content"
     >
       <header
-        class="intro-header center-stack"
+        class="section-header center-stack"
       >
         <p
           class="section-eyebrow"

@@ -5,15 +5,14 @@
 ======================================= */
 .footer
 {
-    position: relative;
-    padding: clamp(4rem, 8vw, 7rem) 1.5rem 3rem;
+    padding: var(--space-xl) var(--page-padding) var(--space-lg);
     border-top: 1px solid rgba(15, 20, 26, 0.08);
 }
 
 /* ====================================
    Footer Inner Layout Styles.
 ======================================= */
-.footer-inner
+.footer-content
 {
     width: min(100%, 52rem);
     margin-inline: auto;
@@ -21,10 +20,9 @@
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: var(--space-md);
 }
 .footer-copy { display: grid; gap: 0.8rem; }
-.footer-eyebrow { opacity: 0.8; }
 .footer-message { max-width: 42rem; color: var(--muted); line-height: 1.8; }
 
 /* ====================================
@@ -64,11 +62,11 @@
 .footer-link:focus-visible
 {
     background: color-mix(in srgb, var(--primary) 8%, transparent);
-    color: var(--color-text);
+    color: var(--text);
 }
 
 /* Special Button: Back to Top Styles. */
-.footer-top-link { color: var(--color-primary); }
+.footer-top-link { color: var(--primary); }
 
 /* Footer Meta Line Styles. */
 .footer-meta
@@ -83,7 +81,6 @@
     color: var(--muted);
 }
 .footer-brand, .footer-author { color: var(--text); font-weight: 600; }
-.footer-author { text-decoration: none; }
 .footer-separator { opacity: 0.35; }
 
 @media (prefers-reduced-motion: reduce)

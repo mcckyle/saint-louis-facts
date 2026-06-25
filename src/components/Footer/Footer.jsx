@@ -1,6 +1,6 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 17 June 2026
+//Date: 24 June 2026
 //Description: This file contains the footer component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -12,7 +12,7 @@ function Footer()
 
   return (
     <footer className="footer" aria-label="Site footer">
-      <div className="footer-inner">
+      <div className="section-content footer-content">
         <div className="footer-copy">
           <p className="section-eyebrow footer-eyebrow">A city shaped by history and pride</p>
 

@@ -1,25 +1,24 @@
 /* Filename: src/components/Intro/Intro.css */
 
 /* ====================================
-   Intro Content Container Styles.
+   Intro Section Styles.
 ======================================= */
-.intro-inner
+.intro .section-content
 {
     width: min(100%, 56rem);
     margin-inline: auto;
 
     display: grid;
     justify-items: center;
-    gap: clamp(2rem, 5vw, 3.5rem);
+    gap: var(--space-lg);
     text-align: center;
 }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    max-width: 12ch;
+    max-width: 14ch;
     font-size: clamp(3rem, 8vw, 5.5rem);
-    line-height: 0.98;
 }
 .highlight { color: var(--primary); font-weight: 600; }
 
