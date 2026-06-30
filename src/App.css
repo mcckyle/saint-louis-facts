@@ -10,25 +10,12 @@
     color: var(--text);
     background: radial-gradient(
         circle at top,
-        rgba(0, 61, 165, 0.10),
+        rgba(0, 61, 165, 0.08),
         transparent 45%
     ),
     var(--bg);
 }
-.app::before
-{
-    /* App Ambient Backdrop Glow Styles. */
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(
-        circle at 15% 20%,
-        rgba(208, 28, 31, 0.05),
-        transparent 35%
-    );
-}
+
 /* ====================================
    App Main Layout Styles.
 ======================================= */
@@ -39,7 +26,7 @@
 
     display: grid;
     gap: var(--space-xl);
-    padding: var(--space-xl) var(--page-padding);
+    padding-inline: var(--page-padding);
 }
 .section { padding-block: var(--section-padding); }
 .section-eyebrow
@@ -59,9 +46,9 @@
 .center-stack
 {
     display: grid;
-    gap: var(--space-sm);
     justify-items: center;
     text-align: center;
+    gap: var(--space-sm);
 }
 .surface-card
 {
@@ -69,17 +56,16 @@
     border: 1px solid rgba(15, 20, 26, 0.08);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
 
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
-.surface-card:hover { transform: translateY(-4px); }
+.surface-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 /* ====================================
    App Headings Styles.
 ======================================= */
 :where(h1, h2, h3) { margin: 0; font-family: var(--font-display); text-wrap: balance; }
-:where(h1, h2) { letter-spacing: -0.04em; line-height: 1.05; }
+:where(h1, h2) { letter-spacing: -0.045em; line-height: 1.05; }
 h1 { font-size: clamp(3rem, 8vw, 5rem); }
 h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
 
@@ -106,7 +92,7 @@ h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
 ======================================= */
 @media (prefers-reduced-motion: reduce)
 {
-    html { scroll-behavior: auto !important; }
+    html { scroll-behavior: auto; }
     *, *::before, *::after
     {
         transition-duration: 0.01ms !important;

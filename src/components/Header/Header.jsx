@@ -34,11 +34,13 @@ function Header({ scrollTargetRef })
       </div>
 
       <div className="header-content" data-testid="header-content">
+        <div className="header-copy">
         <p className="section-eyebrow header-eyebrow">Gateway to the West</p>
-        <h1 id="page-title" className="header-title">Saint&nbsp;Louis</h1>
-        <p className="header-subtitle">
-          History and innovation along the Mississippi River.
-        </p>
+          <h1 id="page-title" className="header-title">Saint&nbsp;Louis</h1>
+          <p className="header-subtitle">
+            History and innovation along the Mississippi River.
+          </p>
+        </div>
 
         <button
           type="button"

@@ -65,8 +65,8 @@
     gap: 0.75rem;
     text-align: left;
 }
-.interactive-fact .fact-title { font-size: 1.25rem; }
-.interactive-fact .fact-description { color: var(--muted); }
+.interactive-fact-title { font-size: 1.25rem; }
+.interactive-fact-description { color: var(--muted); }
 
 @media (prefers-reduced-motion: reduce)
 {

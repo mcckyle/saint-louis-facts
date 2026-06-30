@@ -5,7 +5,7 @@
 ======================================= */
 .intro .section-content
 {
-    width: min(100%, 56rem);
+    width: min(100%, 58rem);
     margin-inline: auto;
 
     display: grid;
@@ -20,7 +20,7 @@
     max-width: 14ch;
     font-size: clamp(3rem, 8vw, 5.5rem);
 }
-.highlight { color: var(--primary); font-weight: 600; }
+.intro-highlight { color: var(--primary); }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead

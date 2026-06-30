@@ -6,14 +6,14 @@
 .fun-facts .section-content
 {
     display: grid;
-    gap: clamp(3rem, 7vw, 5rem);
+    gap: var(--space-xl);
 }
 
 .fact-list
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: var(--space-sm);
+    gap: var(--space-md);
 
     list-style: none;
     padding: 0;
@@ -26,29 +26,29 @@
     position: relative;
     display: grid;
     gap: var(--space-sm);
-    padding: clamp(1.5rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
     overflow: hidden;
 }
 .fact-card::before
 {
     content: "";
     position: absolute;
-    inset: 0 0 auto;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0.65;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(var(--primary), var(--accent));
+    opacity: 0.75;
 }
 .fact-copy { display: grid; gap: 0.75rem; }
 
 /* Fact Title Styles. */
-.fact-title
+.fact-card-title
 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: 1.25;
 }
 
 /* Fact Description Styles. */
-.fact-description
+.fact-card-description
 {
     color: var(--muted);
     line-height: 1.75;
@@ -75,16 +75,16 @@
     align-items: center;
     min-height: 2rem;
 
-    padding: 0.35rem 0.75rem;
+    padding: 0.35rem 0.8rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--primary) 8%, transparent);
 
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 600;
 
-    transition: transform var(--transition);
+    transition: transform var(--transition), background var(--transition);
 }
-.source-link:hover, .source-link:focus-visible { transform: translateY(-2px); }
+.source-link:hover, .source-link:focus-visible { transform: translateY(-2px); background: color-mix(in srgb, var(--primary) 16%, transparent); }
 
 /* FunFactsList Media Queries Styles. */
 @media (max-width: 768px)

@@ -12,7 +12,7 @@
 
     /* Semantic Colors. */
     --bg: #F7F9FB;
-    --surface: rgba(255, 255, 255, 0.72);
+    --surface: rgba(255, 255, 255, 0.78);
     --surface-solid: #FFFFFF;
 
     --text: #1C1F24;
@@ -35,13 +35,13 @@
     --layout-max-width: 1200px;
     --space-2xs: clamp(0.45rem, 0.7vw, 0.7rem);
     --space-xs: clamp(0.75rem, 1vw, 1rem);
-    --space-sm: clamp(1.1rem, 1.5vw, 1.5rem);
-    --space-md: clamp(2rem, 3vw, 3rem);
+    --space-sm: clamp(1rem, 2vw, 1.5rem);
+    --space-md: clamp(2rem, 4vw, 3rem);
     --space-lg: clamp(3.5rem, 5vw, 5rem);
-    --space-xl: clamp(5rem, 8vw, 8rem);
+    --space-xl: clamp(5rem, 10vw, 8rem);
 
-    --section-padding: clamp(4.5rem, 8vw, 7rem);
-    --page-padding: clamp(1.25rem, 4vw, 3.5rem);
+    --section-padding: clamp(4rem, 8vw, 7rem);
+    --page-padding: clamp(1rem, 4vw, 3.5rem);
     --page-width: 1200px;
     --measure-copy: 38ch;
 
@@ -68,13 +68,12 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); color-scheme: light dark; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); }
 body
 {
     margin: 0;
     min-height: 100dvh;
     font-family: var(--font-body);
-    font-size: 1rem;
     line-height: 1.7;
     color: var(--text);
     -webkit-font-smoothing: antialiased;
