@@ -10,7 +10,7 @@
 
     display: grid;
     justify-items: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     text-align: center;
 }
 
@@ -37,7 +37,7 @@
 
     background: var(--primary);
     color: white;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-sm);
 
     font-family: var(--font-display);
     font-weight: 700;
@@ -51,14 +51,15 @@
 .interactive-button:focus-visible
 {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 .interactive-button:active { transform: translateY(0); }
 
 /* FunFactsList Revealed Fact Card Styles. */
 .interactive-fact
 {
-    width: min(100%, 42rem);
+    width: 100%;
+    max-width: 44rem;
     padding: clamp(1.5rem, 4vw, 2.25rem);
 
     display: grid;
@@ -71,10 +72,4 @@
 @media (prefers-reduced-motion: reduce)
 {
     .interactive-button { transition: none; }
-}
-
-/* Interactive Media Query Styles. */
-@media (max-width: 768px)
-{
-    .interactive-fact { padding: 1.4rem; }
 }

@@ -21,7 +21,8 @@
 ======================================= */
 .main
 {
-    width: min(100%, var(--page-width));
+    width: 100%;
+    max-width: var(--page-width);
     margin-inline: auto;
 
     display: grid;
@@ -43,6 +44,21 @@
     color: var(--muted);
     opacity: 0.84;
 }
+.section-content
+{
+    display: grid;
+    gap: var(--space-lg);
+}
+.section-content--narrow
+{
+    width: min(100%, 58rem);
+    margin-inline: auto;
+}
+.section-content--center
+{
+    justify-items: center;
+    text-align: center;
+}
 .center-stack
 {
     display: grid;
@@ -55,11 +71,13 @@
     background: var(--surface);
     border: 1px solid rgba(15, 20, 26, 0.08);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(18px);
 
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    transition: var(--surface-transition);
 }
-.surface-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.surface-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.highlight { color: var(--primary); }
 
 /* ====================================
    App Headings Styles.
@@ -83,9 +101,11 @@ h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
     background: var(--surface-solid);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow);
+
+    transition: transform var(--transition);
 }
 .skip-link:focus { transform: translateY(0); }
-:focus-visible { outline: 3px solid var(--stl-gold); outline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 4px; }
 
 /* ====================================
    App Reduced Motion Styles.

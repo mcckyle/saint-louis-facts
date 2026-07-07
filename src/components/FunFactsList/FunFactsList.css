@@ -24,8 +24,8 @@
 .fact-card
 {
     position: relative;
-    display: grid;
-    gap: var(--space-sm);
+    display: flex;
+    flex-direction: column;
     padding: clamp(1.5rem, 3vw, 2.25rem);
     overflow: hidden;
 }
@@ -34,11 +34,11 @@
     content: "";
     position: absolute;
     inset: 0 auto 0 0;
-    width: 4px;
+    width: 3px;
     background: linear-gradient(var(--primary), var(--accent));
-    opacity: 0.75;
+    opacity: 0.6;
 }
-.fact-copy { display: grid; gap: 0.75rem; }
+.fact-copy { display: grid; gap: 0.75rem; margin-bottom: auto; }
 
 /* Fact Title Styles. */
 .fact-card-title
@@ -75,7 +75,7 @@
     align-items: center;
     min-height: 2rem;
 
-    padding: 0.35rem 0.8rem;
+    padding: 0.45rem 0.85rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--primary) 8%, transparent);
 

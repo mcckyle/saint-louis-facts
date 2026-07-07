@@ -8,7 +8,7 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
     id="intro"
   >
     <div
-      class="section-content"
+      class="section-content section-content--narrow section-content--center"
     >
       <header
         class="section-header center-stack"
@@ -24,7 +24,7 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
         >
           Welcome to the 
           <span
-            class="intro-highlight"
+            class="highlight"
           >
             Saint Louis
           </span>
@@ -41,7 +41,7 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
       >
         From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the 
         <span
-          class="intro-highlight"
+          class="highlight"
         >
           Gateway to the West
         </span>
@@ -60,7 +60,7 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
     id="intro"
   >
     <div
-      class="section-content"
+      class="section-content section-content--narrow section-content--center"
     >
       <header
         class="section-header center-stack"
@@ -77,7 +77,7 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
           Welcome to the
            
           <span
-            class="intro-highlight"
+            class="highlight"
           >
             Saint Louis
           </span>
@@ -96,7 +96,7 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
         From the Gateway Arch to baseball traditions and beloved local food, Saint Louis carries the spirit of the
          
         <span
-          class="intro-highlight"
+          class="highlight"
         >
           Gateway to the West
         </span>

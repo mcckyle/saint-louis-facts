@@ -43,18 +43,18 @@
     --section-padding: clamp(4rem, 8vw, 7rem);
     --page-padding: clamp(1rem, 4vw, 3.5rem);
     --page-width: 1200px;
-    --measure-copy: 38ch;
+    --measure-copy: 42ch;
 
     /* Radius. */
-    --radius: 24px;
     --radius-sm: 14px;
     --radius-md: 22px;
     --radius-lg: 36px;
 
     /* Shadows. */
-    --shadow: 0 24px 70px rgba(15, 20, 26, 0.10);
-    --shadow-sm: 0 1px 2px rgba(15, 20, 26, 0.04), 0 10px 24px rgba(15, 20, 26, 0.04);
+    --shadow-sm: 0 24px 70px rgba(15, 20, 26, 0.10);
+    --shadow-md: 0 1px 2px rgba(15, 20, 26, 0.04), 0 10px 24px rgba(15, 20, 26, 0.04);
     --shadow-lg: 0 10px 30px rgba(15, 20, 26, 0.08), 0 24px 60px rgba(15, 20, 26, 0.10);
+    --focus-ring: var(--stl-gold);
 
     /* Motion. */
     --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -75,15 +75,18 @@ body
     min-height: 100dvh;
     font-family: var(--font-body);
     line-height: 1.7;
+    background: var(--bg);
     color: var(--text);
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Media Elements Styles. */
 img, svg, video { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; }
-button { cursor: pointer; }
-p { max-width: 75ch; margin: 0; /* Margin important for spacing purposes. */ }
+button { cursor: pointer; border: none; background: none; color: inherit; }
+p { max-width: var(--measure-copy); margin: 0; /* Margin important for spacing purposes. */ }
 
 /* ====================================
    Global Links Styles.

@@ -34,8 +34,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.72) saturate(1.05) contrast(1.05);
-    transform: scale(1.04);
+    filter: brightness(0.76) saturate(1.02) contrast(1.02);
 }
 
 /* ====================================
@@ -48,9 +47,9 @@
 
     background: linear-gradient(
       180deg,
-      rgba(4, 8, 15, 0.62),
-      rgba(4, 8, 15, 0.22) 55%,
-      rgba(4, 8, 15, 0.48)
+      rgba(5, 10, 18, 0.55),
+      rgba(5, 10, 18, 0.22) 55%,
+      rgba(5, 10, 18, 0.42)
     );
 }
 
@@ -59,7 +58,8 @@
 ======================================= */
 .header-content
 {
-    width: min(100%, var(--page-width));
+    width: 100%;
+    max-width: var(--page-width);
     padding-inline: var(--page-padding);
 
     display: grid;
@@ -71,7 +71,7 @@
 /* ====================================
    Header Titles Styles.
 ======================================= */
-.header-copy { display: grid; justify-items: center; gap: var(--space-sm); }
+.header-copy { display: grid; justify-items: center; gap: var(--space-md); }
 .header-eyebrow { color: rgba(255, 255, 255, 0.78); }
 .header-title
 {
@@ -83,7 +83,7 @@
 }
 .header-subtitle
 {
-    max-width: 40ch;
+    max-width: 36ch;
     color: rgba(255, 255, 255, 0.86);
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.75;
@@ -108,25 +108,18 @@
     backdrop-filter: blur(14px);
 
     transition: transform var(--transition),
-                background var(--transition);
+                background-color var(--transition),
+                border-color var(--transition);
 }
 .scroll-cue:hover,
 .scroll-cue:focus-visible
 {
-    transform: translateY(5px);
+    transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.16);
 }
-.scroll-cue svg { width: 1.25rem; }
+.scroll-cue svg { width: 1.2rem; height: 1.2rem; }
 
 @media (prefers-reduced-motion: reduce)
 {
     .scroll-cue { transition: none; }
-}
-
-/* ====================================
-   Header Media Query Styles.
-======================================= */
-@media (max-width: 768px)
-{
-    .header { min-height: 92svh; }
 }

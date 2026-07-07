@@ -14,16 +14,16 @@
 ======================================= */
 .footer-content
 {
-    width: min(100%, 52rem);
+    width: min(100%, 48rem);
     margin-inline: auto;
 
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
 }
-.footer-copy { display: grid; gap: 0.8rem; }
-.footer-message { max-width: 42rem; color: var(--muted); line-height: 1.8; }
+.footer-copy { display: grid; gap: var(--space-xs); }
+.footer-message { max-width: var(--measure-copy); color: var(--muted); line-height: 1.8; }
 
 /* ====================================
    Footer Navigation Styles.
@@ -46,7 +46,7 @@
     align-items: center;
 
     min-height: 2rem;
-    padding: 0.35rem 0.8rem;
+    padding: 0.45rem 0.9rem;
     border-radius: 999px;
     color: var(--muted);
 
@@ -60,7 +60,6 @@
 .footer-link:focus-visible
 {
     background: color-mix(in srgb, var(--primary) 8%, transparent);
-    color: var(--text);
 }
 
 /* Special Button: Back to Top Styles. */
@@ -72,14 +71,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.45rem;
+    gap: 0.6rem;
 
     max-width: 44rem;
     font-size: 0.75rem;
     color: var(--muted);
 }
-.footer-brand, .footer-author { color: var(--text); font-weight: 600; }
-.footer-separator { opacity: 0.35; }
+.footer-brand { font-weight: 500; }
+.footer-author { color: var(--text); font-weight: 600; }
+.footer-separator { opacity: 0.45; }
 
 @media (prefers-reduced-motion: reduce)
 {

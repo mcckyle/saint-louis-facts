@@ -17,10 +17,9 @@
 /* Intro Main Title Styles. */
 .intro-title
 {
-    max-width: 14ch;
+    max-width: 12ch;
     font-size: clamp(3rem, 8vw, 5.5rem);
 }
-.intro-highlight { color: var(--primary); }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
@@ -33,13 +32,7 @@
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
-    max-width: 48ch;
+    max-width: var(--measure-copy);
     color: var(--muted);
     line-height: 1.85;
-}
-
-/* Intro Media Query Styles. */
-@media (max-width: 768px)
-{
-    .intro-title { max-width: 100%; }
 }
