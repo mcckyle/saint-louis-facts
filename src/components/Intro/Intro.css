@@ -6,25 +6,20 @@
 .intro .section-content
 {
     width: min(100%, 58rem);
-    margin-inline: auto;
-
-    display: grid;
-    justify-items: center;
-    gap: var(--space-lg);
-    text-align: center;
 }
 
 /* Intro Main Title Styles. */
 .intro-title
 {
-    max-width: 12ch;
+    max-width: 11ch;
     font-size: clamp(3rem, 8vw, 5.5rem);
+    text-wrap: balance;
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    max-width: 42ch;
+    max-width: var(--measure-copy);
     font-size: clamp(1.1rem, 2vw, 1.35rem);
     line-height: 1.7;
 }

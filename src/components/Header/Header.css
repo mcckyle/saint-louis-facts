@@ -34,6 +34,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     filter: brightness(0.76) saturate(1.02) contrast(1.02);
 }
 
@@ -47,8 +48,8 @@
 
     background: linear-gradient(
       180deg,
-      rgba(5, 10, 18, 0.55),
-      rgba(5, 10, 18, 0.22) 55%,
+      rgba(5, 10, 18, 0.56),
+      rgba(5, 10, 18, 0.16) 55%,
       rgba(5, 10, 18, 0.42)
     );
 }
@@ -61,6 +62,7 @@
     width: 100%;
     max-width: var(--page-width);
     padding-inline: var(--page-padding);
+    padding-block: var(--space-lg);
 
     display: grid;
     justify-items: center;
@@ -83,7 +85,7 @@
 }
 .header-subtitle
 {
-    max-width: 36ch;
+    max-width: var(--measure-copy);
     color: rgba(255, 255, 255, 0.86);
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.75;
@@ -111,13 +113,16 @@
                 background-color var(--transition),
                 border-color var(--transition);
 }
-.scroll-cue:hover,
-.scroll-cue:focus-visible
+.scroll-cue:focus-visible { background: rgba(255, 255, 255, 0.16); }
+.scroll-cue svg { display: block; width: 1.2rem; height: 1.2rem; }
+@media (hover: hover)
 {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.16);
+    .scroll-cue:hover
+    {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.16);
+    }
 }
-.scroll-cue svg { width: 1.2rem; height: 1.2rem; }
 
 @media (prefers-reduced-motion: reduce)
 {

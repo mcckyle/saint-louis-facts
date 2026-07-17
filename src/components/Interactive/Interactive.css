@@ -5,13 +5,7 @@
  ==================================== */
 .interactive .section-content
 {
-    width: min(100%, 52rem);
-    margin-inline: auto;
-
-    display: grid;
-    justify-items: center;
-    gap: var(--space-lg);
-    text-align: center;
+    max-width: 52rem;
 }
 
 /* Section Heading Styles. */
@@ -23,7 +17,7 @@
 /* Interactive Subtitle Styles. */
 .interactive-subtitle
 {
-    max-width: 42ch;
+    max-width: var(--measure-copy);
     color: var(--muted);
 }
 
@@ -45,9 +39,9 @@
     text-transform: uppercase;
 
     transition: transform var(--transition),
-                box-shadow var(--transition);
+                box-shadow var(--transition),
+                background-color var(--transition);
 }
-.interactive-button:hover,
 .interactive-button:focus-visible
 {
     transform: translateY(-3px);
@@ -63,11 +57,16 @@
     padding: clamp(1.5rem, 4vw, 2.25rem);
 
     display: grid;
-    gap: 0.75rem;
+    gap: var(--space-xs);
     text-align: left;
 }
 .interactive-fact-title { font-size: 1.25rem; }
-.interactive-fact-description { color: var(--muted); }
+.interactive-fact-description { color: var(--muted); line-height: 1.75; }
+
+@media (hover: hover)
+{
+    .interactive-button:hover { background: color-mix(in srgb, var(--primary) 90%, black); }
+}
 
 @media (prefers-reduced-motion: reduce)
 {

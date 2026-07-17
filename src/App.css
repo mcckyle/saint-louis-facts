@@ -29,7 +29,7 @@
     gap: var(--space-xl);
     padding-inline: var(--page-padding);
 }
-.section { padding-block: var(--section-padding); }
+.section { display: grid; gap: var(--space-lg); padding-block: var(--section-padding); }
 .section-eyebrow
 {
     display: inline-flex;
@@ -76,13 +76,12 @@
 
     transition: var(--surface-transition);
 }
-.surface-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-.highlight { color: var(--primary); }
+.highlight { color: var(--primary); font-weight: 600; }
 
 /* ====================================
    App Headings Styles.
 ======================================= */
-:where(h1, h2, h3) { margin: 0; font-family: var(--font-display); text-wrap: balance; }
+:where(h1, h2, h3, h4, h5, h6) { margin: 0; font-family: var(--font-display); text-wrap: balance; }
 :where(h1, h2) { letter-spacing: -0.045em; line-height: 1.05; }
 h1 { font-size: clamp(3rem, 8vw, 5rem); }
 h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
@@ -105,7 +104,12 @@ h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
     transition: transform var(--transition);
 }
 .skip-link:focus { transform: translateY(0); }
-:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 4px; border-radius: var(--radius-sm); }
+
+@media (hover: hover)
+{
+    .surface-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+}
 
 /* ====================================
    App Reduced Motion Styles.

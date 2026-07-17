@@ -1,6 +1,6 @@
 //Filename: Intro.jsx
 //Author: Kyle McColgan
-//Date: 6 July 2026
+//Date: 17 July 2026
 //Description: This file contains the intro component for the Saint Louis Facts React project.
 
 import React from "react";

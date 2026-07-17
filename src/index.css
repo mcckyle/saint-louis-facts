@@ -6,6 +6,7 @@
 :root
 {
     /* Saint Louis Flag Palette. */
+    color-scheme: light dark;
     --stl-red: #D01C1F; /* Color: Vibrant Red (Flag Background). */
     --stl-blue: #003DA5; /* Color: Deep River Blue (Mississippi/Missouri). */
     --stl-gold: #FFD200; /* Color: Fleur-de-lis Yellow. */
@@ -32,7 +33,6 @@
     --text-xl: clamp(1.15rem, 1vw + 1rem, 1.42rem);
 
     /* Layout. */
-    --layout-max-width: 1200px;
     --space-2xs: clamp(0.45rem, 0.7vw, 0.7rem);
     --space-xs: clamp(0.75rem, 1vw, 1rem);
     --space-sm: clamp(1rem, 2vw, 1.5rem);
@@ -46,9 +46,9 @@
     --measure-copy: 42ch;
 
     /* Radius. */
-    --radius-sm: 14px;
-    --radius-md: 22px;
-    --radius-lg: 36px;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
 
     /* Shadows. */
     --shadow-sm: 0 24px 70px rgba(15, 20, 26, 0.10);
@@ -77,13 +77,14 @@ body
     line-height: 1.7;
     background: var(--bg);
     color: var(--text);
+    overflow-wrap: anywhere;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 /* Media Elements Styles. */
-img, svg, video { display: block; max-width: 100%; }
+img, svg, video { display: block; max-width: 100%; height: auto; }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; border: none; background: none; color: inherit; }
 p { max-width: var(--measure-copy); margin: 0; /* Margin important for spacing purposes. */ }
@@ -99,7 +100,7 @@ a
     transition: color var(--transition);
 }
 a:hover, a:focus-visible { color: var(--accent); }
-::selection { background: var(--primary); color: white; }
+::selection { background: color-mix(in srgb, var(--primary) 85%, white); color: #fff; }
 
 /* ====================================
    Dark Mode Media Query Styles.

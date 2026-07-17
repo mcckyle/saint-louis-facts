@@ -15,12 +15,7 @@
 .footer-content
 {
     width: min(100%, 48rem);
-    margin-inline: auto;
-
-    display: grid;
-    justify-items: center;
-    text-align: center;
-    gap: var(--space-lg);
+    margin: 0 auto;
 }
 .footer-copy { display: grid; gap: var(--space-xs); }
 .footer-message { max-width: var(--measure-copy); color: var(--muted); line-height: 1.8; }
@@ -33,7 +28,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
+    gap: var(--space-2xs);
 
     list-style: none;
     padding: 0;
@@ -56,11 +51,7 @@
     transition: color var(--transition),
                 background var(--transition);
 }
-.footer-link:hover,
-.footer-link:focus-visible
-{
-    background: color-mix(in srgb, var(--primary) 8%, transparent);
-}
+.footer-link:focus-visible { background: color-mix(in srgb, var(--primary) 8%, transparent); }
 
 /* Special Button: Back to Top Styles. */
 .footer-top-link { color: var(--primary); }
@@ -71,15 +62,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
+    gap: var(--space-2xs);
 
     max-width: 44rem;
     font-size: 0.75rem;
     color: var(--muted);
 }
-.footer-brand { font-weight: 500; }
+.footer-brand { font-weight: 600; }
 .footer-author { color: var(--text); font-weight: 600; }
 .footer-separator { opacity: 0.45; }
+
+@media (hover: hover)
+{
+    .footer-link:hover { background: color-mix(in srgb, var(--primary) 8%, transparent); }
+}
 
 @media (prefers-reduced-motion: reduce)
 {
