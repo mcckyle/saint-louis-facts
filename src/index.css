@@ -15,7 +15,7 @@
     --bg: #F7F9FB;
     --surface: rgba(255, 255, 255, 0.78);
     --surface-solid: #FFFFFF;
-    --boder-subtle: color-mix(in srgb, var(--primary) 18%, transparent),
+    --border-subtle: color-mix(in srgb, var(--primary) 18%, transparent),
 
     --text: #1C1F24;
     --muted: #687382;
