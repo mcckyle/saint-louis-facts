@@ -8,6 +8,7 @@ exports[`Header Component > Header matches snapshot 1`] = `
     <div
       aria-hidden="true"
       class="header-hero"
+      role="presentation"
     >
       <img
         alt=""

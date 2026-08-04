@@ -3,14 +3,9 @@
 /* ==================================
    Interactive Section Styles.
  ==================================== */
-.interactive .section-content
-{
-    max-width: 52rem;
-}
-
-/* Section Heading Styles. */
 .interactive-title
 {
+    max-width: 12ch;
     font-size: clamp(2.2rem, 5vw, 3.4rem);
 }
 
@@ -24,18 +19,21 @@
 /* The Button Styles. */
 .interactive-button
 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.50rem;
     min-height: 3.25rem;
     padding: 0.9rem 2rem;
-    border: 0;
     border-radius: 999px;
 
     background: var(--primary);
     color: white;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
 
     transition: transform var(--transition),
@@ -49,6 +47,9 @@
 }
 .interactive-button:active { transform: translateY(0); }
 
+/* Increase min-height to reserve space for ~10 lines of text + padding. */
+.interactive-result { min-height: 20rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+
 /* FunFactsList Revealed Fact Card Styles. */
 .interactive-fact
 {
@@ -57,18 +58,13 @@
     padding: clamp(1.5rem, 4vw, 2.25rem);
 
     display: grid;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
     text-align: left;
 }
-.interactive-fact-title { font-size: 1.25rem; }
+.interactive-fact-title { max-width: 18ch; font-size: 1.25rem; text-wrap: balance; }
 .interactive-fact-description { color: var(--muted); line-height: 1.75; }
 
 @media (hover: hover)
 {
-    .interactive-button:hover { background: color-mix(in srgb, var(--primary) 90%, black); }
-}
-
-@media (prefers-reduced-motion: reduce)
-{
-    .interactive-button { transition: none; }
+    .interactive-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: color-mix(in srgb, var(--primary) 90%, black); }
 }

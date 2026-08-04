@@ -12,13 +12,9 @@
 /* ====================================
    Footer Inner Layout Styles.
 ======================================= */
-.footer-content
-{
-    width: min(100%, 48rem);
-    margin: 0 auto;
-}
-.footer-copy { display: grid; gap: var(--space-xs); }
-.footer-message { max-width: var(--measure-copy); color: var(--muted); line-height: 1.8; }
+.footer-content { display: contents; }
+.footer-copy { display: grid; gap: var(--space-2xs); }
+.footer-message { color: var(--muted); line-height: 1.8; }
 
 /* ====================================
    Footer Navigation Styles.
@@ -28,7 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-2xs);
+    gap: var(--space-xs);
 
     list-style: none;
     padding: 0;
@@ -45,10 +41,11 @@
     border-radius: 999px;
     color: var(--muted);
 
-    font-size: 0.82rem;
+    font-size: var(--text-xs);
     font-weight: 600;
 
     transition: color var(--transition),
+                transform var(--transition),
                 background var(--transition);
 }
 .footer-link:focus-visible { background: color-mix(in srgb, var(--primary) 8%, transparent); }
@@ -63,6 +60,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-2xs);
+    row-gap: 0.35rem;
 
     max-width: 44rem;
     font-size: 0.75rem;
@@ -70,16 +68,11 @@
 }
 .footer-brand { font-weight: 600; }
 .footer-author { color: var(--text); font-weight: 600; }
-.footer-separator { opacity: 0.45; }
+.footer-credit::before { content: "·"; margin-inline: 0.50rem; opacity: 0.45; }
 
 @media (hover: hover)
 {
-    .footer-link:hover { background: color-mix(in srgb, var(--primary) 8%, transparent); }
-}
-
-@media (prefers-reduced-motion: reduce)
-{
-    .footer-link { transition: none; }
+    .footer-link:hover { transform: translateY(-1px); background: color-mix(in srgb, var(--primary) 8%, transparent); }
 }
 
 /* Footer Media Queries Styles. */
