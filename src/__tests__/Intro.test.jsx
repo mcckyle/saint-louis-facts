@@ -1,6 +1,6 @@
 //Filename: Intro.test.jsx
 //Author: Kyle McColgan
-//Date: 17 June 2026
+//Date: 21 August 2026
 //Description: This file contains the Vitest unit tests for the Saint Louis Facts project Intro section.
 
 import React from 'react';
@@ -22,7 +22,7 @@ describe('Intro Component', () => {
   //Test #2
   test('renders the correct heading', () => {
     const heading = screen.getByRole('heading', { level: 2 });
-    expect(heading).toHaveTextContent(/Welcome to the Saint Louis experience/i);
+    expect(heading).toHaveTextContent(/Welcome to Saint Louis/i);
   });
 
   //Test #3

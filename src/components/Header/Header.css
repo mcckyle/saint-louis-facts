@@ -12,7 +12,9 @@
     place-items: center;
     isolation: isolate;
     overflow: hidden;
-    color: white;
+
+    background: #10151b;
+    color: #ffffff;
 }
 .header::after
 {
@@ -20,9 +22,9 @@
     content: "";
     position: absolute;
     inset: auto 0 0;
-    height: clamp(8rem, 14vw, 12rem);
+    height: clamp(8rem, 16vw, 14rem);
     pointer-events: none;
-    background: linear-gradient(transparent, var(--bg));
+    background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
 /* ====================================
@@ -35,7 +37,8 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.76) saturate(1.02) contrast(1.02);
+    filter: brightness(0.72) saturate(0.96) contrast(1.04);
+    transform: scale(1.015);
 }
 
 /* ====================================
@@ -47,10 +50,15 @@
     inset: 0;
 
     background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--bg) 78%, transparent),
-      color-mix(in srgb, var(--bg) 18%, transparent) 55%,
-      color-mix(in srgb, var(--bg) 62%, transparent)
+      to bottom,
+      rgba(7, 12, 18, 0.58),
+      rgba(7, 12, 18, 0.12) 48%,
+      rgba(7, 12, 18, 0.34)
+    ),
+    radial-gradient(
+        ellipse at 50% 42%,
+        transparent 15%,
+        rgba(0, 0, 0, 0.35) 100%
     );
 }
 
@@ -60,12 +68,13 @@
 .header-content
 {
     width: min(100%, var(--content-width));
+    min-height: 100svh;
     margin-inline: auto;
-    padding-inline: var(--page-padding);
-    padding-block: var(--space-lg);
+    padding: var(--page-padding);
 
     display: grid;
-    justify-items: center;
+    place-items: center;
+    align-content: center;
     text-align: center;
     gap: clamp(3rem, 8vh, 6rem);
 }
@@ -78,19 +87,19 @@
 .header-title
 {
     max-width: 8ch;
-    color: white;
+    color: #ffffff;
     font-size: clamp(4rem, 11vw, 8rem);
-    line-height: 0.9;
+    line-height: 0.88;
     letter-spacing: -0.06em;
-    text-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 12px 36px rgba(0, 0, 0, 0.22), 0 24px 72px rgba(0, 0, 0, 0.28);
     text-wrap: balance;
 }
 .header-subtitle
 {
-    max-width: var(--measure-copy);
+    max-width: 40rem;
     color: rgba(255, 255, 255, 0.86);
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.75;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.7;
 }
 
 /* ====================================
@@ -108,21 +117,30 @@
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.08);
-    color: white;
+    color: #ffffff;
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     transition: transform var(--transition),
                 background-color var(--transition),
+                border-color var(--transition),
                 box-shadow var(--transition);
 }
-.scroll-cue:focus-visible { background: rgba(255, 255, 255, 0.16); }
-.scroll-cue svg { display: block; width: 1.2rem; height: 1.2rem; }
+.scroll-cue svg { width: 1.15rem; height: 1.15rem; }
+.scroll-cue:focus-visible { background: rgba(255, 255, 255, 0.16); border-color: rgba(255, 255, 255, 0.50); }
+
 @media (hover: hover)
 {
     .scroll-cue:hover
     {
         transform: translateY(-2px);
-        background: rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.42);
         box-shadow: var(--shadow-md);
     }
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    .header-image { transform: none; }
 }

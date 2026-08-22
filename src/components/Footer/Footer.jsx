@@ -1,6 +1,6 @@
 //Filename: Footer.jsx
 //Author: Kyle McColgan
-//Date: 4 August 2026
+//Date: 21 August 2026
 //Description: This file contains the footer component for the Saint Louis Facts React project.
 
 import React from "react";
@@ -11,10 +11,10 @@ function Footer()
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer" aria-label="Site footer">
-      <div className="section-content section-content--center section-content--compact footer-content">
+    <footer className="footer">
+      <div className="footer-content section-content section-content--compact section-content--center">
         <div className="footer-copy">
-          <p className="section-eyebrow footer-eyebrow">A city shaped by history and pride</p>
+          <p className="section-eyebrow">A city shaped by history and pride</p>
 
           <p className="footer-message">
             Celebrating the enduring spirit of
@@ -24,7 +24,7 @@ function Footer()
           </p>
         </div>
 
-        <nav className="footer-nav" aria-label="Footer">
+        <nav className="footer-nav" aria-label="Footer navigation">
           <ul className="footer-links">
             <li>
               <a
@@ -32,7 +32,6 @@ function Footer()
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-link"
-                aria-label="Visit City of Saint Louis website"
               >
                 City of Saint Louis
               </a>
@@ -44,7 +43,6 @@ function Footer()
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-link"
-                aria-label="Visit Explore STL website"
               >
                 Explore STL
               </a>
@@ -59,8 +57,7 @@ function Footer()
         </nav>
 
         <small className="footer-meta">
-          © {currentYear}
-          <span className="footer-brand">Saint Louis Facts</span>
+          <span>{currentYear} Saint Louis Facts</span>
           <span className="footer-credit">
             Designed in Saint Louis by{" "}
             <a
@@ -68,7 +65,6 @@ function Footer()
               href="https://mcckyle.github.io/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit Kyle McColgan's website"
             >
               Kyle McColgan
             </a>

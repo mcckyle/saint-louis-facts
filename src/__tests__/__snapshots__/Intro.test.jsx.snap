@@ -11,7 +11,7 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
       class="section-content section-content--narrow section-content--center"
     >
       <header
-        class="section-header center-stack"
+        class="center-stack"
       >
         <p
           class="section-eyebrow"
@@ -22,13 +22,12 @@ exports[`Intro Component > Intro matches the snapshot. 1`] = `
           class="intro-title"
           id="intro-heading"
         >
-          Welcome to the 
+          Welcome to 
           <span
             class="highlight"
           >
             Saint Louis
           </span>
-           experience
         </h2>
         <p
           class="intro-lead"
@@ -63,7 +62,7 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
       class="section-content section-content--narrow section-content--center"
     >
       <header
-        class="section-header center-stack"
+        class="center-stack"
       >
         <p
           class="section-eyebrow"
@@ -74,15 +73,12 @@ exports[`Intro Component > renders the intro section with correct structure 1`] 
           class="intro-title"
           id="intro-heading"
         >
-          Welcome to the
-           
+          Welcome to 
           <span
             class="highlight"
           >
             Saint Louis
           </span>
-           
-          experience
         </h2>
         <p
           class="intro-lead"

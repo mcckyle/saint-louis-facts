@@ -3,24 +3,31 @@
 /* ====================================
    Intro Section Styles.
 ======================================= */
+.intro
+{
+    min-height: min(82dvh, 52rem);
+    align-items: center;
+}
 .intro-title
 {
-    max-width: 12ch;
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    text-wrap: balance;
+    max-width: 11ch;
+    font-size: clamp(3.25rem, 8vw, 5.5rem);
 }
 
 /* Intro Lead Paragraph Styles. */
 .intro-lead
 {
-    max-width: var(--measure-copy);
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
-    line-height: 1.75;
+    max-width: 40rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    line-height: 1.7;
 }
 
 /* Intro Supporting Body Paragraph Styles. */
 .intro-body
 {
+    max-width: 38rem;
+    margin-inline: auto;
     color: var(--muted);
-    line-height: 1.85;
+    font-size: var(--text-lg);
+    line-height: 1.8;
 }

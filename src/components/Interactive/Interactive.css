@@ -6,7 +6,7 @@
 .interactive-title
 {
     max-width: 12ch;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 /* Interactive Subtitle Styles. */
@@ -22,49 +22,43 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.50rem;
+
     min-height: 3.25rem;
-    padding: 0.9rem 2rem;
+    padding: 0.85rem 1.75rem;
     border-radius: 999px;
 
     background: var(--primary);
-    color: white;
+    color: #ffffff;
     box-shadow: var(--shadow-md);
 
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: 0.10em;
+    letter-spacing: 0.08em;
+    line-height: 1;
     text-transform: uppercase;
 
     transition: transform var(--transition),
                 box-shadow var(--transition),
                 background-color var(--transition);
 }
-.interactive-button:focus-visible
-{
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
 .interactive-button:active { transform: translateY(0); }
 
-/* Increase min-height to reserve space for ~10 lines of text + padding. */
-.interactive-result { min-height: 20rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+.interactive-result { display: flex; width: 100%; min-height: clamp(12rem, 20vw, 16rem); align-items: flex-start; justify-content: center; }
 
 /* FunFactsList Revealed Fact Card Styles. */
 .interactive-fact
 {
-    width: 100%;
-    max-width: 44rem;
+    width: min(100%, 44rem);
     padding: clamp(1.5rem, 4vw, 2.25rem);
 
     display: grid;
     gap: var(--space-sm);
     text-align: left;
 }
-.interactive-fact-title { max-width: 18ch; font-size: 1.25rem; text-wrap: balance; }
+.interactive-fact-title { max-width: 18ch; font-size: 1.3rem; line-height: 1.25; text-wrap: balance; }
 .interactive-fact-description { color: var(--muted); line-height: 1.75; }
 
 @media (hover: hover)
 {
-    .interactive-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: color-mix(in srgb, var(--primary) 90%, black); }
+    .interactive-button:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--primary) 90%, black); box-shadow: var(--shadow-lg); }
 }

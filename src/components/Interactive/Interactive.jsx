@@ -1,6 +1,6 @@
 //Filename: Interactive.jsx
 //Author: Kyle McColgan
-//Date: 4 August 2026
+//Date: 21 August 2026
 //Description: This file contains the interactive component for the Saint Louis Facts React project.
 
 import React, { useState, useCallback } from "react";
@@ -25,7 +25,7 @@ export default function Interactive()
         aria-labelledby="interactive-title"
       >
         <div className="section-content section-content--compact section-content--center">
-          <header className="section-header center-stack">
+          <header className="center-stack">
             <p className="section-eyebrow">A quieter kind of exploration</p>
             <h2 id="interactive-title" className="interactive-title">
               A Moment of <span className="highlight">Discovery</span>
@@ -42,17 +42,20 @@ export default function Interactive()
             className="interactive-button"
             onClick={getRandomFact}
             aria-label="Reveal a random fact about Saint Louis."
-            aria-controls="interactive-result"
           >
-              Show Me a Fact
+            Show Me a Fact
           </button>
 
-          <div className="interactive-result">
+          <div
+            id="interactive-result"
+            className="interactive-result"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             <AnimatePresence mode="wait">
               {randomFact && (
                 <motion.article
                   key={randomFact.title ?? randomFact.description}
-                  id="interactive-result"
                   className="interactive-fact surface-card"
                   role="status" //Let status role handle announcements.
                   initial={{ opacity: 0, y: 12 }}
@@ -61,7 +64,9 @@ export default function Interactive()
                   transition={{ duration: 0.28, ease: "easeOut" }}
                 >
                   <h3 className="interactive-fact-title">{randomFact.title}</h3>
-                  <p className="interactive-fact-description">{randomFact.description}</p>
+                  <p className="interactive-fact-description">
+                    {randomFact.description}
+                  </p>
                 </motion.article>
               )}
             </AnimatePresence>
