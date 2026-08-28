@@ -48,7 +48,7 @@
 /* FunFactsList Revealed Fact Card Styles. */
 .interactive-fact
 {
-    width: min(100%, 44rem);
+    width: fit-content; /* Ensure proper card width and padding around the card content. */
     padding: clamp(1.5rem, 4vw, 2.25rem);
 
     display: grid;
