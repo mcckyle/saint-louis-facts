@@ -66,7 +66,7 @@
     CSS Reset and Base Styles.
 ======================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); }
+html { min-height: 100%; scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); }
 body
 {
     margin: 0;
@@ -84,9 +84,7 @@ body
 }
 
 /* Media Elements Styles. */
-img, svg, video { display: block; max-width: 100%; }
-picture { display: block; }
-canvas { display: block; max-width: 100%; }
+img, svg, video, canvas, picture { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; }
 button { min-block-size: 2.75rem; cursor: pointer; border: 0; background: none; color: inherit; }
 p { max-width: var(--measure-copy); margin: 0; /* Margin important for spacing purposes. */ }

@@ -1,6 +1,6 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 21 August 2026
+//Date: 19 September 2026
 //Description: This file contains the facts list for the Saint Louis Facts React project.
 
 import React from "react";
@@ -33,11 +33,11 @@ function FunFactsList({ facts = defaultFacts })
             <motion.li
               key={fact.title ?? index}
               className="fact-card surface-card"
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.28,
-                delay: index * 0.04,
+                duration: 0.35,
+                delay: index * 0.045,
                 ease: "easeOut",
               }}
               viewport={{ once: true, margin: "-64px" }}

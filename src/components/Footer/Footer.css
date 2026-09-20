@@ -5,7 +5,7 @@
 ======================================= */
 .footer
 {
-    padding: var(--space-xl) var(--page-padding) var(--space-lg);
+    padding: var(--space-lg) var(--page-padding) var(--space-md);
     border-top: 1px solid var(--border-subtle);
 }
 
@@ -13,8 +13,8 @@
    Footer Inner Layout Styles.
 ======================================= */
 .footer-content { display: grid; gap: var(--space-lg); }
-.footer-copy { display: grid; justify-items: center; gap: var(--space-sm); margin-top: 2rem; }
-.footer-message { max-width: 40rem; color: var(--muted); line-height: 1.8; }
+.footer-copy { display: grid; justify-items: center; gap: var(--space-sm); }
+.footer-message { max-width: 40rem; color: var(--muted); }
 
 /* ====================================
    Footer Navigation Styles.
@@ -52,14 +52,14 @@
 /* Footer Meta Line Styles. */
 .footer-meta
 {
+    margin: 0;
+    max-width: 44rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.40rem 1rem;
-    margin-bottom: 2rem;
 
     color: var(--muted);
-    max-width: 44rem;
     font-size: var(--text-xs);
     line-height: 1.6;
     text-align: center;

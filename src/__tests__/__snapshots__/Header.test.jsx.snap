@@ -46,7 +46,6 @@ exports[`Header Component > Header matches snapshot 1`] = `
         </p>
       </div>
       <button
-        aria-controls="intro"
         aria-label="Scroll to the Saint Louis introduction section"
         class="scroll-cue"
         type="button"

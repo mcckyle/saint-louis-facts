@@ -7,7 +7,6 @@
 {
     max-width: 16ch;
     margin-inline: auto;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
 .fact-list
 {
@@ -25,7 +24,7 @@
 {
     display: grid;
     grid-template-rows: 1fr auto;
-    gap: var(--space-lg);
+    gap: var(--space-md);
 
     min-height: 100%;
     padding: clamp(1.5rem, 3vw, 2.25rem);
@@ -40,13 +39,7 @@
     line-height: 1.25;
     text-wrap: balance;
 }
-
-/* Fact Description Styles. */
-.fact-card-description
-{
-    color: var(--muted);
-    line-height: 1.75;
-}
+.fact-card-description { color: var(--muted); }
 
 /* Fact Sources Block Styles. */
 .fact-sources

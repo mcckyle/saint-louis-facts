@@ -6,7 +6,7 @@
 .interactive-title
 {
     max-width: 12ch;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-inline: auto;
 }
 
 /* Interactive Subtitle Styles. */
@@ -56,7 +56,7 @@
     text-align: left;
 }
 .interactive-fact-title { max-width: 18ch; font-size: 1.3rem; line-height: 1.25; text-wrap: balance; }
-.interactive-fact-description { color: var(--muted); line-height: 1.75; }
+.interactive-fact-description { color: var(--muted); }
 
 @media (hover: hover)
 {

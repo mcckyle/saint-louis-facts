@@ -22,7 +22,7 @@
     content: "";
     position: absolute;
     inset: auto 0 0;
-    height: clamp(8rem, 16vw, 14rem);
+    height: clamp(7rem, 14vw, 12rem);
     pointer-events: none;
     background: linear-gradient(to bottom, transparent, var(--bg));
 }
@@ -37,7 +37,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.72) saturate(0.96) contrast(1.04);
+    filter: brightness(0.72) saturate(0.90) contrast(1.04);
     transform: scale(1.015);
 }
 
@@ -52,13 +52,13 @@
     background: linear-gradient(
       to bottom,
       rgba(7, 12, 18, 0.58),
-      rgba(7, 12, 18, 0.12) 48%,
-      rgba(7, 12, 18, 0.34)
+      rgba(7, 12, 18, 0.08) 48%,
+      rgba(7, 12, 18, 0.38)
     ),
     radial-gradient(
         ellipse at 50% 42%,
-        transparent 15%,
-        rgba(0, 0, 0, 0.35) 100%
+        transparent 18%,
+        rgba(0, 0, 0, 0.34) 100%
     );
 }
 
@@ -76,7 +76,7 @@
     place-items: center;
     align-content: center;
     text-align: center;
-    gap: clamp(3rem, 8vh, 6rem);
+    gap: clamp(2.75rem, 7vh, 5rem);
 }
 
 /* ====================================
@@ -99,7 +99,6 @@
     max-width: 40rem;
     color: rgba(255, 255, 255, 0.86);
     font-size: clamp(1rem, 1.8vw, 1.25rem);
-    line-height: 1.7;
 }
 
 /* ====================================
@@ -108,7 +107,7 @@
 .scroll-cue
 {
     width: clamp(3.25rem, 5vw, 3.75rem);
-    height: clamp(3.25rem, 5vw, 3.75rem);
+    aspect-ratio: 1;
 
     display: grid;
     place-items: center;

@@ -19,7 +19,6 @@
 {
     max-width: 40rem;
     font-size: clamp(1.1rem, 1.5vw, 1.35rem);
-    line-height: 1.7;
 }
 
 /* Intro Supporting Body Paragraph Styles. */
@@ -29,5 +28,4 @@
     margin-inline: auto;
     color: var(--muted);
     font-size: var(--text-lg);
-    line-height: 1.8;
 }
