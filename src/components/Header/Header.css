@@ -3,151 +3,159 @@
 /* ====================================
    Header Hero Layout Styles.
 ======================================= */
-.header
-{
-    position: relative;
-    min-height: 100vh;
-    min-height: 100svh;
+.header {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
 
-    display: grid;
-    place-items: center;
-    isolation: isolate;
-    overflow: clip;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: clip;
 
-    background: #10151b;
-    color: #ffffff;
+  background: #10151b;
+  color: #ffffff;
 }
-.header::after
-{
-    /* Header Bottom Transition Styles. */
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    z-index: -1;
-    height: clamp(7rem, 14vw, 12rem);
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, var(--bg));
+.header::after {
+  /* Header Bottom Transition Styles. */
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  height: clamp(7rem, 14vw, 12rem);
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
 /* ====================================
    Header Full-Screen Background Image Styles.
 ======================================= */
-.header-hero { position: absolute; inset: 0; z-index: -2; }
-.header-image
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%) brightness(0.76) contrast(1.05);
-    transform: scale(1.015);
+.header-hero {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) brightness(0.76) contrast(1.05);
+  transform: scale(1.015);
 }
 
 /* ====================================
    Header Atmospheric Overlay Styles.
 ======================================= */
-.header-overlay
-{
-    position: absolute;
-    inset: 0;
+.header-overlay {
+  position: absolute;
+  inset: 0;
 
-    background: linear-gradient(
+  background:
+    linear-gradient(
       to bottom,
       rgb(7 12 18 / 38%),
       rgb(7 12 18 / 8%) 42%,
       rgb(7 12 18 / 48%) 100%
     ),
-    radial-gradient(
-        ellipse at 50% 42%,
-        transparent 12%,
-        rgb(0 0 0 / 25%) 100%
-    );
+    radial-gradient(ellipse at 50% 42%, transparent 12%, rgb(0 0 0 / 25%) 100%);
 }
 
 /* ====================================
    Header Content Block Styles.
 ======================================= */
-.header-content
-{
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    text-align: center;
-    gap: clamp(2.75rem, 7vh, 5rem);
+.header-content {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: clamp(2.75rem, 7vh, 5rem);
 
-    width: min(100%, var(--content-width));
-    min-height: 100vh;
-    min-height: 100svh;
-    margin-inline: auto;
-    padding: var(--page-padding);
+  width: min(100%, var(--content-width));
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: var(--page-padding);
 }
 
 /* ====================================
    Header Titles Styles.
 ======================================= */
-.header-copy { display: grid; justify-items: center; gap: clamp(1.5rem, 3.5vh, 2.5rem); }
-.header-eyebrow { color: rgb(255 255 255 / 76%); }
-.header-title
-{
-    max-width: none;
-    color: #ffffff;
-    font-size: clamp(4rem, 11vw, 8rem);
-    font-weight: 500;
-    line-height: 0.95;
-    letter-spacing: -0.065em;
-    text-shadow: 0 12px 36px rgb(0 0 0 / 22%);
+.header-copy {
+  display: grid;
+  justify-items: center;
+  gap: clamp(1.5rem, 3.5vh, 2.5rem);
 }
-.header-subtitle
-{
-    max-width: 40rem;
-    color: rgb(255 255 255 / 88%);
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
-    line-height: 1.65;
+.header-eyebrow {
+  color: rgb(255 255 255 / 76%);
+}
+.header-title {
+  max-width: none;
+  color: #ffffff;
+  font-size: clamp(4rem, 11vw, 8rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+  text-shadow: 0 12px 36px rgb(0 0 0 / 22%);
+}
+.header-subtitle {
+  max-width: 40rem;
+  color: rgb(255 255 255 / 88%);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
 }
 
 /* ====================================
    Header Scroll Cue Button Styles.
 ======================================= */
-.scroll-cue
-{
-    display: grid;
-    place-items: center;
+.scroll-cue {
+  display: grid;
+  place-items: center;
 
-    width: 3.5rem;
-    aspect-ratio: 1;
-    padding: 0;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  padding: 0;
 
-    border: 1px solid rgb(255 255 255 / 30%);
-    border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50%;
 
-    background: rgb(255 255 255 / 7%);
-    color: #ffffff;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  background: rgb(255 255 255 / 7%);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-    transition: transform var(--transition),
-                background-color var(--transition),
-                border-color var(--transition);
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition);
 }
-.scroll-cue svg { width: 1.15rem; height: 1.15rem; }
-.scroll-cue:focus-visible { background: rgb(255 255 255 / 15%); border-color: #ffffff; }
-@media (hover: hover)
-{
-    .scroll-cue:hover
-    {
-        transform: translateY(2px);
-        background: rgb(255 255 255 / 14%);
-        border-color: rgb(255 255 255 / 60%);
-    }
+.scroll-cue svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.scroll-cue:focus-visible {
+  background: rgb(255 255 255 / 15%);
+  border-color: #ffffff;
+}
+@media (hover: hover) {
+  .scroll-cue:hover {
+    transform: translateY(2px);
+    background: rgb(255 255 255 / 14%);
+    border-color: rgb(255 255 255 / 60%);
+  }
 }
 
-@media (prefers-reduced-motion: reduce)
-{
-    .header-image { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .header-image {
+    transform: none;
+  }
 }
 
-@media (max-width: 480px)
-{
-    .header-title { font-size: clamp(3.5rem, 16vw, 5rem); }
-    .header-content { gap: 3rem; }
+@media (max-width: 480px) {
+  .header-title {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+  }
+  .header-content {
+    gap: 3rem;
+  }
 }
