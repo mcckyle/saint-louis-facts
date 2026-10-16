@@ -63,8 +63,10 @@ saint-louis-facts/
 │   └── saint-louis-facts-favicon-02032026.svg
 │
 ├── .github/
-│   └── workflows/
-│       └── ci.yml             # Github Actions config.
+│   ├── workflows/
+│   │   ├── ci.yml             # Github Actions config.
+│   │   └── format-code.yml
+│   └── dependabot.yml
 │
 ├── node_modules/
 │   └── /...                   # Node JS dependencies.

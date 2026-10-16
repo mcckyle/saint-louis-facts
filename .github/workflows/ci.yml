@@ -1,7 +1,7 @@
-#Filename: ci.yml
+#File name: ci.yml
 #Author: Kyle McColgan
-#Date: 4 August 2026
-#Description: This file contains the GitHub Actions workflow file for GitHub Pages deployment of the Saint Louis Facts React project.
+#Date: 15 October 2026
+#Description: This file contains the workflow for GitHub Actions and the GitHub Pages deployment processes.
 
 name: Deploy to GitHub Pages
 
@@ -9,33 +9,54 @@ on:
   push:
     branches:
       - main
+  #Dependabot merges can explicitly trigger the workflow.
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write #Required to deploy to GitHub Pages natives.
+  id-token: write #Required for secure OIDC authentication.
+
+#Prevents multiple concurrent deployments from stepping on each other...
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
+          cache: 'npm'
 
-      - name: Install package dependencies
-        run: npm install
+      - name: Install dependencies
+        run: npm ci #Safer/faster alternative to npm install in CI environments.
 
-      - name: Run tests
+      - name: Execute test cases
         run: npm test
 
       - name: Build the project
-        run: npm run build
+        run: npm run build  # Vite outputs to ./dist directory.
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      #Upload the production build as a secure artifact.
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: ./dist
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      #Securely deploy the compiled code directly to Pages without a gh-pages branch.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

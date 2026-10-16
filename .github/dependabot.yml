@@ -1,0 +1,30 @@
+#File name: dependabot.yml
+#Author: Kyle McColgan
+#Date: 15 October 2026
+#Description: This file contains the Dependabot configuration for updating GitHub Actions version tags automatically.
+
+version: 2
+updates:
+  #1. Automate GitHub Actions Updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly" #Checks for new action versions every week.
+    open-pull-requests-limit: 3 #Prevents spamming PR list.
+    #Group all GitHub Actions updates together
+    groups:
+      action-updates:
+        patterns:
+          - "*"
+
+  #2. Automate Node.js npm Packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    #Group all npm package updates together
+    groups:
+      npm-updates:
+        patterns:
+          - "*"

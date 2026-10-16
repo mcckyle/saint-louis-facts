@@ -5,13 +5,13 @@
 ======================================= */
 .intro
 {
-    min-height: min(82dvh, 52rem);
+    min-height: min(76vh, 52rem);
     align-items: center;
 }
 .intro-title
 {
     max-width: 11ch;
-    font-size: clamp(3.25rem, 8vw, 5.5rem);
+    font-size: clamp(3rem, 7vw, 5.25rem);
 }
 
 /* Intro Lead Paragraph Styles. */
@@ -19,6 +19,7 @@
 {
     max-width: 40rem;
     font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    line-height: 1.8;
 }
 
 /* Intro Supporting Body Paragraph Styles. */
@@ -28,4 +29,5 @@
     margin-inline: auto;
     color: var(--muted);
     font-size: var(--text-lg);
+    line-height: 1.9;
 }

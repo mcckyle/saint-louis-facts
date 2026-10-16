@@ -1,0 +1,65 @@
+#File name: format-code.yml
+#Author: Kyle McColgan
+#Date: 15 October 2026
+#Description: This file contains the workflow for GitHub Actions to run the linter prettier.
+
+name: Auto-Format Code
+
+on:
+  push:
+    branches:
+      - main
+  #Dependabot merges can explicitly trigger the workflow.
+  workflow_dispatch:
+
+permissions:
+  contents: write #Allow GitHub to write the formatted code to the repository.
+  pull-requests: write #Required for the GitHub CLI to create pull requests.
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Run Native Prettier
+        # Installs prettier locally on the fly and formats files without committing.
+        run: npx prettier --write "**/*.css"
+
+      - name: Check for formatting changes
+        id: git-check
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request via GitHub CLI
+        if: steps.git-check.outputs.changes == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 1. Configure a generic Git user for the temporary commit
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # 2. Create and switch to a clean branch
+          BRANCH_NAME="automated-formatting-updates"
+          git checkout -b $BRANCH_NAME
+
+          # 3. Commit the changes to this branch
+          git add .
+          git commit -m "chore: apply prettier formatting to HTML"
+
+          # 4. Force push the formatting branch to the repository
+          git push origin $BRANCH_NAME --force
+
+          # 5. Use the official GitHub CLI to generate the PR cleanly
+          gh pr create \
+            --head "$BRANCH_NAME" \
+            --base "main" \
+            --title "Prettier Layout Cleanups (Automated)" \
+            --body "This Pull Request contains automated code styling adjustments for custom HTML files. Review the structural differences before merging!"
