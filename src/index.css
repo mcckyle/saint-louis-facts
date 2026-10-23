@@ -3,138 +3,170 @@
 /* ====================================
    Core Design Tokens.
 ======================================= */
-:root
-{
-    /* Saint Louis Flag Palette. */
-    color-scheme: light dark;
-    --stl-red: #c9282d; /* Color: Vibrant Red (Flag Background). */
-    --stl-blue: #174a91; /* Color: Deep River Blue (Mississippi/Missouri). */
-    --stl-gold: #f2c94c; /* Color: Fleur-de-lis Yellow. */
+:root {
+  /* Saint Louis Flag Palette. */
+  color-scheme: light dark;
+  --stl-red: #c9282d; /* Color: Vibrant Red (Flag Background). */
+  --stl-blue: #174a91; /* Color: Deep River Blue (Mississippi/Missouri). */
+  --stl-gold: #f2c94c; /* Color: Fleur-de-lis Yellow. */
 
-    /* Semantic Colors. */
-    --bg: #f7f8fa;
-    --surface: rgba(255, 255, 255, 0.88);
-    --surface-solid: #ffffff;
+  /* Semantic Colors. */
+  --bg: #f7f8fa;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-solid: #ffffff;
 
-    --text: #202630;
-    --muted: #687382;
+  --text: #202630;
+  --muted: #687382;
 
-    --primary: var(--stl-blue);
-    --accent: var(--stl-red);
-    --focus-ring: #b58a00;
-    --primary-soft: color-mix(in srgb, var(--primary) 8%, transparent);
-    --border: color-mix(in srgb, var(--primary) 22%, transparent);
-    --border-subtle: color-mix(in srgb, var(--text) 10%, transparent);
+  --primary: var(--stl-blue);
+  --accent: var(--stl-red);
+  --focus-ring: #b58a00;
+  --primary-soft: color-mix(in srgb, var(--primary) 8%, transparent);
+  --border: color-mix(in srgb, var(--primary) 22%, transparent);
+  --border-subtle: color-mix(in srgb, var(--text) 10%, transparent);
 
-    /* Fonts. */
-    --font-display: "Playfair Display", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-    --font-body: "Lora", Charter, "Bitstream Charter", Georgia, serif;
+  /* Fonts. */
+  --font-display:
+    "Playfair Display", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Lora", Charter, "Bitstream Charter", Georgia, serif;
 
-    --text-xs: 0.78rem;
-    --text-sm: 0.9rem;
-    --text-base: 1rem;
-    --text-lg: 1.12rem;
-    --text-xl: clamp(1.15rem, 1vw + 1rem, 1.42rem);
+  --text-xs: 0.78rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.12rem;
+  --text-xl: clamp(1.15rem, 1vw + 1rem, 1.42rem);
 
-    /* Layout. */
-    --space-xs: clamp(0.75rem, 1vw, 1rem);
-    --space-sm: clamp(1rem, 2vw, 1.5rem);
-    --space-md: clamp(2rem, 4vw, 3rem);
-    --space-lg: clamp(3.5rem, 5vw, 5rem);
+  /* Layout. */
+  --space-xs: clamp(0.75rem, 1vw, 1rem);
+  --space-sm: clamp(1rem, 2vw, 1.5rem);
+  --space-md: clamp(2rem, 4vw, 3rem);
+  --space-lg: clamp(3.5rem, 5vw, 5rem);
 
-    --section-padding: clamp(4rem, 8vw, 7rem);
-    --page-padding: clamp(1rem, 4vw, 3.5rem);
-    --content-width: 1200px;
-    --measure-copy: 44ch;
+  --section-padding: clamp(4rem, 8vw, 7rem);
+  --page-padding: clamp(1rem, 4vw, 3.5rem);
+  --content-width: 1200px;
+  --measure-copy: 44ch;
 
-    /* Radius. */
-    --radius-sm: 0.75rem;
-    --radius-md: 1.25rem;
-    --radius-lg: 1.75rem;
+  /* Radius. */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
 
-    /* Shadows. */
-    --shadow-md: 0 1px 2px rgb(15 20 26 / 4%), 0 10px 24px rgb(15 20 26 / 4%);
-    --shadow-lg: 0 10px 30px rgb(15 20 26 / 8%), 0 24px 60px rgb(15 20 26 / 10%);
+  /* Shadows. */
+  --shadow-md: 0 1px 2px rgb(15 20 26 / 4%), 0 10px 24px rgb(15 20 26 / 4%);
+  --shadow-lg: 0 10px 30px rgb(15 20 26 / 8%), 0 24px 60px rgb(15 20 26 / 10%);
 
-    /* Motion. */
-    --duration-fast: 220ms;
-    --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
-    --transition: var(--duration-fast) var(--ease-standard);
+  /* Motion. */
+  --duration-fast: 220ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: var(--duration-fast) var(--ease-standard);
 }
 
 /* ====================================
     CSS Reset and Base Styles.
 ======================================= */
-*, *::before, *::after { box-sizing: border-box; }
-html { min-height: 100%; scroll-behavior: smooth; scrollbar-gutter: stable; background: var(--bg); }
-body
-{
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin: 0;
-    overflow-x: clip;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  background: var(--bg);
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: clip;
 
-    background: var(--bg);
-    color: var(--text);
+  background: var(--bg);
+  color: var(--text);
 
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
 
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Media Elements Styles. */
-img, svg, video, canvas, picture { display: block; max-width: 100%; }
-button, input, textarea, select { font: inherit; }
-button { min-block-size: 2.75rem; cursor: pointer; border: 0; background: none; color: inherit; }
-p { max-width: var(--measure-copy); margin: 0; /* Margin important for spacing purposes. */ }
+img,
+svg,
+video,
+canvas,
+picture {
+  display: block;
+  max-width: 100%;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  min-block-size: 2.75rem;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+p {
+  max-width: var(--measure-copy);
+  margin: 0; /* Margin important for spacing purposes. */
+}
 
 /* ====================================
    Global Links Styles.
 ======================================= */
-a
-{
-    color: var(--primary);
-    text-decoration: none;
+a {
+  color: var(--primary);
+  text-decoration: none;
 
-    transition: color var(--transition);
+  transition: color var(--transition);
 }
-a:hover { color: var(--accent); }
-::selection { background: var(--primary); color: #ffffff; }
+a:hover {
+  color: var(--accent);
+}
+::selection {
+  background: var(--primary);
+  color: #ffffff;
+}
 
 /* Avoid animated scrolling when requested by the user. */
-@media (prefers-reduced-motion: reduce)
-{
-    html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* ====================================
    Dark Mode Media Query Styles.
 ======================================= */
-@media (prefers-color-scheme: dark)
-{
-    :root
-    {
-        --bg: #0d1219;
-        --surface: rgb(22 30 41 / 88%);
-        --surface-solid: #151d28;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1219;
+    --surface: rgb(22 30 41 / 88%);
+    --surface-solid: #151d28;
 
-        --text: #edf1f5;
-        --muted: #a8b3c0;
+    --text: #edf1f5;
+    --muted: #a8b3c0;
 
-        --primary: #8bb7f0;
-        --accent: #ff8a86;
-        --focus-ring: #f2cf68;
+    --primary: #8bb7f0;
+    --accent: #ff8a86;
+    --focus-ring: #f2cf68;
 
-        --primary-soft: color-mix(in srgb, var(--primary) 15%, transparent);
-        --border: color-mix(in srgb, var(--primary) 28%, transparent);
-        --border-subtle: color-mix(in srgb, var(--text) 12%, transparent);
+    --primary-soft: color-mix(in srgb, var(--primary) 15%, transparent);
+    --border: color-mix(in srgb, var(--primary) 28%, transparent);
+    --border-subtle: color-mix(in srgb, var(--text) 12%, transparent);
 
-        /* Shadows. */
-        --shadow-md: 0 8px 28px rgb(0 0 0 / 16%);
-        --shadow-lg: 0 16px 48px rgb(0 0 0 / 24%);
-    }
+    /* Shadows. */
+    --shadow-md: 0 8px 28px rgb(0 0 0 / 16%);
+    --shadow-lg: 0 16px 48px rgb(0 0 0 / 24%);
+  }
 }

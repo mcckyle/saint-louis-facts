@@ -3,72 +3,95 @@
 /* ====================================
    Footer Section Styles.
 ======================================= */
-.footer
-{
-    padding: var(--space-lg) var(--page-padding) var(--space-md);
-    border-top: 1px solid var(--border-subtle);
+.footer {
+  padding: var(--space-lg) var(--page-padding) var(--space-md);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* ====================================
    Footer Inner Layout Styles.
 ======================================= */
-.footer-content { display: grid; gap: var(--space-lg); }
-.footer-copy { display: grid; justify-items: center; gap: var(--space-sm); }
-.footer-message { max-width: 40rem; color: var(--muted); text-align: center; }
+.footer-content {
+  display: grid;
+  gap: var(--space-lg);
+}
+.footer-copy {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+}
+.footer-message {
+  max-width: 40rem;
+  color: var(--muted);
+  text-align: center;
+}
 
 /* ====================================
    Footer Navigation Styles.
 ======================================= */
-.footer-links
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem 1.25rem;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
 
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-link
-{
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.5rem;
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
 
-    color: var(--muted);
-    font-size: var(--text-xs);
-    font-weight: 600;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
 
-    transition: color var(--transition);
+  transition: color var(--transition);
 }
-.footer-link:focus-visible { color: var(--primary); }
+.footer-link:focus-visible {
+  color: var(--primary);
+}
 
 /* Special Button: Back to Top Styles. */
-.footer-top-link { color: var(--primary); }
+.footer-top-link {
+  color: var(--primary);
+}
 
 /* Footer Meta Line Styles. */
-.footer-meta
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem 1rem;
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1rem;
 
-    margin-inline: auto;
-    max-width: 44rem;
+  margin-inline: auto;
+  max-width: 44rem;
 
-    color: var(--muted);
-    font-size: var(--text-xs);
-    line-height: 1.7;
-    text-align: center;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  text-align: center;
 }
-.footer-credit { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem; }
-.footer-author { color: var(--text); font-weight: 600; }
-.footer-author:hover { color: var(--primary); }
+.footer-credit {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.footer-author {
+  color: var(--text);
+  font-weight: 600;
+}
+.footer-author:hover {
+  color: var(--primary);
+}
 
-@media (hover: hover)
-{
-    .footer-link:hover { color: var(--primary); }
+@media (hover: hover) {
+  .footer-link:hover {
+    color: var(--primary);
+  }
 }
