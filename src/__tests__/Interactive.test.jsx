@@ -1,158 +1,156 @@
 //Filename: Interactive.test.jsx
 //Author: Kyle McColgan
-//Date: 17 June 2026
+//Date: 18 November 2026
 //Description: This file contains the Vitest unit tests for the Saint Louis facts project Interactive section.
 
-import React from 'react';
-import { beforeAll, describe, test, expect, vi } from "vitest";
-import { render, screen, fireEvent } from '@testing-library/react';
-import Interactive from '../components/Interactive/Interactive.jsx';
+import React from "react";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import Interactive from "../components/Interactive/Interactive.jsx";
 
 // Mock the data module for testing purposes.
-vi.mock('../data/facts', () => ({
-  facts: [
-    { title: 'Fact 1', description: 'Description 1' },
-    { title: 'Fact 2', description: 'Description 2' },
-    { title: 'Fact 3', description: 'Description 3' },
-  ],
+const mockFacts = vi.hoisted(() => [
+  { title: "Fact 1", description: "Description 1" },
+  { title: "Fact 2", description: "Description 2" },
+  { title: "Fact 3", description: "Description 3" },
+]);
+
+vi.mock("../data/facts", () => ({
+  facts: mockFacts,
 }));
 
-describe('Interactive Component', () => {
+const initialFacts = [
+  { title: "Fact 1", description: "Description 1" },
+  { title: "Fact 2", description: "Description 2" },
+  { title: "Fact 3", description: "Description 3" },
+];
+
+describe("Interactive", () => {
   beforeEach(() => {
+    mockFacts.splice(0, mockFacts.length, ...initialFacts);
     render(<Interactive />);
   });
 
-  //Test #1: Renders landmark and heading.
-  test('renders an accessible region labelled by its heading.', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  //Test #1: Renders the accessible section.
+  test("renders a section labelled by its heading", () => {
     const region = screen.getByRole("region", {
-      name: /A moment of/i,
+      name: /A moment of discovery/i,
     });
     expect(region).toBeInTheDocument();
   });
 
-  //Test #2: Renders button with proper aria-label attribute.
-  test('renders the action button.', () => {
+  //Test #2: Renders the initial action button.
+  test("renders the button with its initial label", () => {
     const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
+      name: /show me a fact/i,
     });
     expect(button).toBeInTheDocument();
   });
 
-  //Test #3: Clicking the button shows a fact.
-  test('Fact gets displayed after clicking on the button.', () => {
-    const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
-    });
-
-    fireEvent.click(button);
-
-    const possibleTitles = ["Fact 1", "Fact 2", "Fact 3"];
-    const displayed = possibleTitles.some((t) =>
-      screen.queryByRole("heading", { name: t })
-    );
-
-    expect(displayed).toBe(true);
+  //Test #3: Renders the initial empty state.
+  test("displays the discovery placeholder before a fact is revealed", () => {
+    expect(
+      screen.getByText("There is always more to discover.")
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { level: 3 })
+    ).not.toBeInTheDocument();
   });
 
-  //Test #4: The fact container includes the role=status attribute when visible.
-  test('Fact container includes the role=status when a fact gets displayed.', async () => {
-    const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
-    });
-
-    fireEvent.click(button);
-
-    //Wait for the <h3> (level 3) to render, then check its parent element.
-    const titleElement = await screen.findByRole("heading", { level: 3 });
-    const liveRegion = titleElement.closest(".interactive-fact");
-
-    expect(liveRegion).toHaveAttribute("role", "status");
+  //Test #4: Provides as accessible live region.
+  test("announces discovery updates through a polite live region", () => {
+    expect(
+      screen.getByRole("region", { name: /a moment of discovery/i})
+        .querySelector('[aria-live="polite"]')
+    ).toBeInTheDocument();
   });
 
-  //Test #5: No facts are visible on initial UI render.
-  test('No fact is displayed before initial button click', () => {
-    const factTitle = screen.queryByRole('heading', { level: 3 });
-    expect(factTitle).toBeNull(); // Fact should not be displayed before button click
+  //Test #5: Reveals a fact and its matching description
+  test("displays the selected fact title and description", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    fireEvent.click(screen.getByRole("button", { name: /show me a fact/i }));
+    expect(
+      await screen.findByRole("heading", {
+        name: "Fact 1",
+        level: 3,
+      })
+    ).toBeInTheDocument();
+    expect(await screen.findByText("Description 1")).toBeInTheDocument();
   });
 
-  //Test #6: Fact desciption gets rendered and corresponds to the displayed title.
-  test('Clicking the action button shows corresponding description for the displayed title', () => {
-    const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
-    });
+  //Test #6: Updates the button label after revealing a fact
+  test("changes the button label after a fact is revealed", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
 
-    fireEvent.click(button);
-
-    //Get the title text.
-    const titleElement = screen.getByRole("heading", { level: 3 });
-    const titleText = titleElement.textContent;
-
-    //The fact description should contain the same index number.
-    const desciptionElement = screen.getByText(/description/i);
-    expect(desciptionElement).toBeInTheDocument();
-    expect(desciptionElement.textContent.toLowerCase()).toContain(
-      titleText.split(" ")[1].toLowerCase() // "1", "2", or "3" here.
-    );
+    fireEvent.click(screen.getByRole("button", { name: /show me a fact/i }));
+    expect(
+      screen.getByRole("button", { name: /show me another fact/i })
+    ).toBeInTheDocument();
   });
 
-  //Test #7: Each button click reveals a different fact.
-  test('Multiple action button clicks display different facts.', async () => {
-    vi.spyOn(Math, "random")
-      .mockReturnValueOnce(0.0) //First Fact (index 0).
-      .mockReturnValueOnce(0.9); //Last Fact (index 2).
+  //Test #7: Prevents immediately repeating the previous fact.
+  test("reveals a different fact on consecutive clicks", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
 
     const button = screen.getByRole("button", {
-      name: /reveal a random fact about saint louis/i,
+      name: /show me a fact/i,
     });
 
     //First click => Fact 1.
     fireEvent.click(button);
-    const firstTitle = await screen.findByText("Fact 1");
+    expect(
+      await screen.findByRole("heading", { name: "Fact 1" })
+    ).toBeInTheDocument();
 
-    //Second click => Fact 3.
+    //Second click => Fact 2, since Fact 1 is excluded from the pool.
     fireEvent.click(button);
-    const secondTitle = await screen.findByText("Fact 3");
-
-    expect(firstTitle.textContent).not.toBe(secondTitle.textContent);
-
-    Math.random.mockRestore();
+    expect(
+      await screen.findByRole("heading", { name: "Fact 2" })
+    ).toBeInTheDocument();
   });
 
-  //Test #8: Only ONE fact container gets rendered at a time.
-  test('Renders a single fact container after multiple clicks.', () => {
+  //Test #8: Replaces the previous fact instead of accumulating cards.
+  test("Renders only one revealed fact after multiple clicks.", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
     const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
+      name: /show me a fact/i,
     });
 
     fireEvent.click(button);
     fireEvent.click(button);
     fireEvent.click(button);
-
-    const containers = screen.getAllByRole("heading", { level: 3 }).map((h) =>
-      h.closest(".interactive-fact-display")
-    );
-
-    const uniqueContainers = [...new Set(containers)];
-    expect(uniqueContainers).toHaveLength(1);
+    await waitFor(() => {
+      expect(document.querySelectorAll(".interactive-fact")).toHaveLength(1);
+    });
   });
 
-  //Test #9: Action button remains focusable (keyboard navigation).
-  test('The action button is focusable via the keyboard.', () => {
+  //Test #9: Keeps the action button keyboard-focusable.
+  test("allows the action button to receive keyboard focus", () => {
     const button = screen.getByRole("button", {
-      name: /Reveal a Random Fact about Saint Louis/i,
+      name: /show me a fact/i,
     });
 
     button.focus();
     expect(button).toHaveFocus();
   });
 
-  //Test #10: Region has correct id for anchor navigation.
-  test('Section element carries the proper id attribute.', () => {
-    const region = screen.getByRole("region", {
-      name: /A moment of/i,
-    });
+  //Test #10: Safely handles an empty facts collection.
+  test("does not reveal a fact when no facts are available", () => {
+    mockFacts.length = 0;
 
-    expect(region).toHaveAttribute("id", "interactive");
+    //Render with the updated empty dataset.
+    const { unmount } = render(<Interactive />);
+
+    fireEvent.click(
+      screen.getAllByRole("button", { name: /show me a fact/i })[1]
+    );
+    expect(screen.getAllByText("There is always more to discover.")).toHaveLength(2);
+    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
+    unmount();
   });
 
   // --- OLD TESTS BELOW THIS LINE ---

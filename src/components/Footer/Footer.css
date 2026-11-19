@@ -12,18 +12,19 @@
    Footer Inner Layout Styles.
 ======================================= */
 .footer-content {
-  display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 .footer-copy {
   display: grid;
   justify-items: center;
   gap: var(--space-sm);
+  text-align: center;
 }
 .footer-message {
   max-width: 40rem;
   color: var(--muted);
-  text-align: center;
+  font-size: var(--text-base);
+  line-height: 1.8;
 }
 
 /* ====================================
@@ -33,7 +34,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.25rem 1.25rem;
+  gap: 0.25rem 1.5rem;
 
   list-style: none;
   padding: 0;
@@ -43,6 +44,7 @@
 .footer-link {
   display: inline-flex;
   align-items: center;
+  gap: 0.35rem;
   min-height: 2.5rem;
 
   color: var(--muted);
@@ -51,8 +53,8 @@
 
   transition: color var(--transition);
 }
-.footer-link:focus-visible {
-  color: var(--primary);
+.footer-link span {
+  transition: transform var(--transition);
 }
 
 /* Special Button: Back to Top Styles. */
@@ -65,7 +67,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem 1rem;
+  gap: 0.5rem 1.25rem;
 
   margin-inline: auto;
   max-width: 44rem;
@@ -80,7 +82,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 .footer-author {
   color: var(--text);
@@ -93,5 +95,8 @@
 @media (hover: hover) {
   .footer-link:hover {
     color: var(--primary);
+  }
+  .footer-top-link:hover span {
+    transform: translateY(-2px);
   }
 }

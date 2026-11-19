@@ -3,6 +3,13 @@
 /* ==================================
    Interactive Section Styles.
  ==================================== */
+.interactive {
+  justify-content: center;
+  text-align: center;
+}
+.interactive-header {
+  gap: var(--space-sm);
+}
 .interactive-title {
   max-width: 12ch;
   margin-inline: auto;
@@ -10,8 +17,9 @@
 
 /* Interactive Subtitle Styles. */
 .interactive-subtitle {
-  max-width: var(--measure-copy);
+  max-width: 40rem;
   color: var(--muted);
+  font-size: var(--text-lg);
 }
 
 /* The Button Styles. */
@@ -19,26 +27,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
 
   min-height: 3.25rem;
-  padding: 0.9rem 1.75rem;
+  padding: 0.85rem 1.5rem;
   border-radius: 999px;
 
   background: var(--primary);
   color: #ffffff;
   box-shadow: var(--shadow-md);
 
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
   line-height: 1.4;
-  text-transform: uppercase;
 
   transition:
     transform var(--transition),
-    box-shadow var(--transition),
-    background-color var(--transition);
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+.interactive-button span {
+  font-size: 1.1rem;
+  transition: transform var(--transition);
 }
 .interactive-button:active {
   transform: scale(0.98);
@@ -48,36 +59,61 @@
 }
 
 .interactive-result {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+
   width: 100%;
-  min-height: clamp(12rem, 20vw, 16rem);
+  min-height: 17rem;
+  padding: clamp(1rem, 3vw, 2rem);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--primary-soft);
+}
+.interactive-result.has-fact {
+  background: var(--surface);
+}
+.interactive-empty {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+.discovery-symbol {
+  color: var(--primary);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.interactive-empty p {
+  font-size: var(--text-sm);
 }
 
 /* FunFactsList Revealed Fact Card Styles. */
 .interactive-fact {
   display: grid;
+  justify-items: center;
   gap: var(--space-sm);
 
-  width: fit-content; /* Ensure proper card width and padding around the card content. */
-  padding: clamp(1.5rem, 4vw, 2.25rem);
-
-  text-align: left;
+  width: min(100%, 42rem);
+  margin-inline: auto;
+  text-align: center;
+}
+.discovery-label {
+  color: var(--primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .interactive-fact-title {
-  max-width: 18ch;
-  font-size: 1.3rem;
+  max-width: 26ch;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.3;
 }
 .interactive-fact-description {
   color: var(--muted);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .interactive-button:active {
-    transform: none;
-  }
+  line-height: 1.85;
 }
 
 @media (hover: hover) {
@@ -85,5 +121,19 @@
     transform: translateY(-2px);
     background: color-mix(in srgb, var(--primary) 86%, black);
     box-shadow: var(--shadow-lg);
+  }
+  .interactive-button:hover span {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .interactive-result {
+    min-height: 15rem;
+    padding: 1.25rem;
+  }
+  .interactive-button {
+    width: 100%;
+    max-width: 20rem;
   }
 }
