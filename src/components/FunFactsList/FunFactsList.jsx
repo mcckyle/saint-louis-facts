@@ -1,6 +1,6 @@
 //Filename: FunFactsList.jsx
 //Author: Kyle McColgan
-//Date: 19 September 2026
+//Date: 18 November 2026
 //Description: This file contains the facts list for the Saint Louis Facts React project.
 
 import React from "react";
@@ -17,12 +17,16 @@ function FunFactsList({ facts = defaultFacts })
       aria-labelledby="facts-heading"
     >
       <div className="section-content" data-testid="facts-container">
-        <header className="center-stack">
+        <header className="facts-header">
           <p className="section-eyebrow">Local history and culture</p>
           <h2 id="facts-heading" className="fun-facts-heading">
               Fascinating Facts About{" "}
               <span className="highlight">Saint&nbsp;Louis</span>
           </h2>
+          <p className="facts-intro">
+            A closer look at the places and stories that make this
+            city remarkable.
+          </p>
         </header>
 
         <ul
@@ -33,31 +37,33 @@ function FunFactsList({ facts = defaultFacts })
             <motion.li
               key={fact.title ?? index}
               className="fact-card surface-card"
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.35,
-                delay: index * 0.045,
+                duration: 0.45,
+                delay: index * 0.04,
                 ease: "easeOut",
               }}
-              viewport={{ once: true, margin: "-64px" }}
+              viewport={{ once: true, margin: "-48px" }}
             >
               <div className="fact-copy">
+                <span className="fact-index" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h3 className="fact-card-title">{fact.title}</h3>
                 <p className="fact-card-description">{fact.description}</p>
               </div>
               {fact.sources?.length > 0 && (
                 <footer className="fact-sources">
-                  <span className="sources-label">Sources</span>
+                  <span className="sources-label">Explore sources</span>
                   <div className="sources-links">
                     {fact.sources.map((source, sourceIndex) => (
                       <a
-                        key={sourceIndex}
+                        key={source.url ?? sourceIndex}
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="source-link"
-                        aria-label={`Visit ${source.name} source`}
                       >
                         {source.name}
                       </a>

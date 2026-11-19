@@ -1,7 +1,7 @@
 /* Filename: src/index.css */
 
 /* ====================================
-   Core Design Tokens.
+   Design Tokens.
 ======================================= */
 :root {
   /* Saint Louis Flag Palette. */
@@ -12,7 +12,7 @@
 
   /* Semantic Colors. */
   --bg: #f7f8fa;
-  --surface: rgba(255, 255, 255, 0.88);
+  --surface: rgb(255 255 255 / 88%);
   --surface-solid: #ffffff;
 
   --text: #202630;
@@ -28,7 +28,7 @@
   /* Fonts. */
   --font-display:
     "Playfair Display", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-body: "Lora", Charter, "Bitstream Charter", Georgia, serif;
+  --font-body: "Lora", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 
   --text-xs: 0.78rem;
   --text-sm: 0.9rem;
@@ -111,6 +111,7 @@ select {
 }
 button {
   min-block-size: 2.75rem;
+  padding: 0;
   cursor: pointer;
   border: 0;
   background: none;
